@@ -110,3 +110,10 @@ Hosted CI at c78bd05 passed six jobs; Windows failed one new Python fixture writ
 using cp1252. All Rust and consumer checks passed. Added explicit UTF-8 locally and
 reran all 19 tool tests successfully. The corrected hosted gate awaits the visibility
 answer and subsequent push; do not claim all-platform prep acceptance yet.
+
+## Public visibility resolved — 2026-10-17
+
+Jason confirmed public visibility is intentional for crates.io distribution.
+The visibility blocker and push hold are removed; no setting change is needed.
+Proceed with the UTF-8 correction push and hosted verification. Cargo publication
+remains disabled during release preparation; no package upload or live call occurred.

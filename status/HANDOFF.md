@@ -1,6 +1,6 @@
 # Development handoff
 
-2026-10-17 · M1–M7 complete; live-check preparation complete; execution blocked.
+2026-10-17 · M1–M7 complete; live-check preparation complete; public candidate verification active.
 
 Read [CURRENT](CURRENT.md), [VALIDATION](VALIDATION.md), and the
 [qualification packet](../qualification/README.md). The 12 tickets and author labels
@@ -27,16 +27,11 @@ are frozen in qualification/triage-v1.json; do not tune policy or labels on outc
 
 No hosted requests or private-document transfer occurred. No service remains
 running. Library, consumer Rust code and frozen Python parity fixtures are unchanged.
-The live check is blocked on model/call scope. Further pushes are separately held
-on unexpected PUBLIC repository visibility, pending Jason's direction. Update
-status, validate, commit/push and refresh the registry after material work.
+Jason confirmed PUBLIC visibility is intentional for crates.io. The earlier push
+hold is resolved; keep the repository public and proceed with normal project pushes.
+The live check still needs exact model/call scope; it is separate from package
+engineering checks. Follow RELEASE.md for the actual registry release operation.
 
-Visibility: explicit GitHub repo and API reads after c78bd05 returned PUBLIC.
-No visibility mutation was performed. Ask/consume Jason's pending answer before
-pushing the local correction/CI receipt commit; preserve the existing public/private
-state until that instruction. Earlier private statements are historical observations.
-
-Preparation CI 39076027736 at c78bd05: six jobs passed; both Windows jobs failed
-only the new Unicode fixture writer (implicit cp1252). The local fix sets UTF-8,
-and all 19 tests pass locally. Once visibility is resolved, push the retained local
-fix/status commit and verify hosted CI before calling the platform gate complete.
+Preparation CI 39076027736 at c78bd05 passed six jobs; both Windows jobs failed only
+one new Unicode fixture writer (implicit cp1252). The fix specifies UTF-8 and all
+19 tool tests pass locally. Verify the corrected pushed revision in hosted CI.

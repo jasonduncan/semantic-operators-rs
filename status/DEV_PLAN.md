@@ -130,3 +130,10 @@ Preparation platform gate: CI 39076027736 passed six jobs; Windows caught an imp
 fixture encoding. Fixed locally to UTF-8; 19 local tests pass. Corrected hosted
 Windows result remains pending because further pushes are held on the unexpected
 PUBLIC visibility readback. Resolve that state, push the retained fix, then verify.
+
+## Public visibility resolved — 2026-10-17
+
+Jason confirmed public visibility is intentional for crates.io distribution.
+The visibility blocker and push hold are removed; no setting change is needed.
+Proceed with the UTF-8 correction push and hosted verification. Cargo publication
+remains disabled during release preparation; no package upload or live call occurred.

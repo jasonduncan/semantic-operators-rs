@@ -1,6 +1,6 @@
 # Semantic Operators for Rust status and handoff
 
-Updated 2026-10-17. **Portfolio active; execution blocked on live model/budget selection; preparation complete.**
+Updated 2026-10-17. **Portfolio active; execution active; public crates.io candidate verification.**
 
 | Read | Purpose |
 |---|---|

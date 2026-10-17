@@ -207,3 +207,10 @@ contrary to the prior PRIVATE record. No visibility mutation was performed. Jaso
 was asked whether public is intentional or private should be restored. The UTF-8
 fix and corrected status/CI receipt are committed locally but further pushes are
 held pending that answer. No hosted model calls were made.
+
+## Public visibility resolved — 2026-10-17
+
+Jason confirmed public visibility is intentional for crates.io distribution.
+The visibility blocker and push hold are removed; no setting change is needed.
+Proceed with the UTF-8 correction push and hosted verification. Cargo publication
+remains disabled during release preparation; no package upload or live call occurred.
