@@ -43,3 +43,12 @@ API lookup returned 403 and remains inconclusive. Future release gates are open.
 
 Hosted CI and final clean/pushed readback are checked after the first push and
 recorded in a subsequent evidence update; no earlier claim of a passing run.
+
+## CI configuration refresh
+
+Initial hosted run flagged deprecated Node 20 action versions. Official GitHub
+release API readback on 2026-10-17 identified actions/checkout v7.0.1 and
+actions/setup-python v7.0.0; workflow updated to those exact tags. A new hosted
+run verifies the revised workflow. Added explicit LF attributes for portable
+source/fixture hashing. Seed fixture regeneration was byte-identical and both
+reference source checkouts remained clean.
