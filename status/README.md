@@ -1,6 +1,6 @@
 # Semantic Operators for Rust status and handoff
 
-Updated 2026-10-17. **Portfolio active; execution ready; public alpha verified, crates.io release preparation next.**
+Updated 2026-10-17. **Portfolio active; execution ready; alpha 0.1.0-alpha.1 verified, upload direction pending.**
 
 | Read | Purpose |
 |---|---|

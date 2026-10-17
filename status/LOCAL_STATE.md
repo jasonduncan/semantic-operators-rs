@@ -32,3 +32,7 @@ Run artifacts belong in ignored var/triage-check-* with owner-only POSIX permiss
 The runner builds with cached locked dependencies and records source/tool/binary
 hashes. New tests mock processes and use temporary synthetic files, cleaned at exit.
 No live run directory was created during preparation; model and call cap are unset.
+
+Release preparation logs and archive receipt: ignored target/release-check/.
+Publish dry-run reads registry metadata but uploads nothing. The Cargo credential
+provider has not been inspected; no secret values were read or persisted.

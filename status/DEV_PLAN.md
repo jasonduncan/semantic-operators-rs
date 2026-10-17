@@ -152,3 +152,30 @@ execution ready for release preparation. Optional live-model scope is still unse
 not a package-engineering blocker. publish=false remains; no upload, live inference
 or credential inspection occurred. Closing updates only change documentation/status;
 source/tests/workflow match the passing run above.
+
+## Crates.io alpha preparation — 2026-10-17
+
+Retained candidate 0.1.0-alpha.1, added registry discovery/docs.rs metadata, packaged
+CHANGELOG.md, and replaced publish=false with a crates.io-only allowlist for dry-run.
+Package checker now rejects all unexpected archive paths. All optional features
+will be built by docs.rs. No source API/behavior change; corrected a frame-timestamp
+documentation mismatch found by independent review.
+
+Local package/extracted consumer checks, one all-feature doctest, and online
+`cargo publish --dry-run --locked --all-features` passed at 2640da883ee6b5100526d4052d55917bf50396a9.
+The initial offline dry-run failed because registry metadata was unavailable;
+updated CI/docs use the verified online command, which still suppresses upload.
+32-file archive, 54439 bytes, SHA-256
+`a7496cd603c3e9009b73d01647372e6172f9d8fe833ce4804b325d45e08d3c90`.
+Logs/receipt are under ignored target/release-check. Final hosted CI is 39080731154,
+result pending when this entry was written. Actual upload/version tag and registry/
+docs.rs acceptance remain unperformed. Credential authentication is unverified.
+
+## Final alpha-preparation CI receipt — 2026-10-17
+
+[CI 39080731154](https://github.com/jasonduncan/semantic-operators-rs/actions/runs/39080731154)
+passed all eight jobs at 2640da883ee6b5100526d4052d55917bf50396a9: Linux/macOS/Windows
+stable and 1.85.0, documentation, feature/package checks and the new publish dry-run.
+Preparation is complete. Portfolio active; execution ready for exact-version upload
+direction. No registry upload, release tag or live model request occurred. Closing
+edits record status/evidence only; tested package inputs and workflow are unchanged.

@@ -1,27 +1,30 @@
 # Current state
 
-2026-10-17 · portfolio active · execution ready: crates.io release preparation.
+2026-10-17 · portfolio active · execution ready: verified alpha, upload direction pending.
 
-The native Rust `semantic-operators` 0.1.0-alpha.1 library (M1–M6), standalone
-JSONL triage consumer (M7), and bounded-check tooling are implemented and verified.
-Jason confirmed GitHub PUBLIC visibility is intentional for crates.io distribution.
-Keep it public; the earlier visibility hold is resolved. Cargo publication remains
-disabled and the alpha API unstable; no registry release exists.
+Prepared **semantic-operators 0.1.0-alpha.1** for crates.io. The version retains its
+alpha designation and unstable API. Manifest publication is now restricted to
+crates.io (`publish = ["crates-io"]`); this is a local package setting, not an upload.
+Public GitHub distribution was explicitly confirmed by Jason.
 
-[CI 39079995335](https://github.com/jasonduncan/semantic-operators-rs/actions/runs/39079995335) passed all eight jobs at
-0c311756b9572fbf44a45c2ad4b3c8b669a11f99, including Linux/macOS/Windows on stable
-and Rust 1.85.0. The Windows Unicode-fixture correction is verified. All 19 Python
-tool tests pass; package audit and default/optional extracted consumers pass.
-Closing updates only record evidence and handoff; source/tests/workflow match that run.
+Release notes are included in the 32-file package. Registry keywords/category and
+docs.rs all-feature configuration are set. The package checker enforces the archive
+allowlist and exercises extracted default/optional consumers. Local package audit,
+all-feature doctest and `cargo publish --dry-run --locked --all-features` passed at
+2640da883ee6b5100526d4052d55917bf50396a9. No registry upload or release tag exists.
 
-Next is the [crates.io release procedure](../docs/RELEASE.md): version/changelog,
-publication setting, final package dry-run and registry release. Name checks now
-support apparent availability but do not reserve it. No credential was read for
-release checks and no upload occurred.
+The dry-run needs registry index access; --offline failed before packaging and was
+removed from that command. Ordinary package checks still use cached dependencies.
+Independent release review corrected one frame-timestamp compatibility statement;
+no Rust behavior changed. [CI 39080731154](https://github.com/jasonduncan/semantic-operators-rs/actions/runs/39080731154)
+passed all eight jobs at the same 2640da8 revision. Closing edits only record
+status/evidence; package inputs, tests and workflow match that passing run.
 
-The [bounded provider-check packet](../qualification/README.md) is separately ready:
-12 synthetic tickets, 10 assistant-authored clear labels and 2 exploratory review
-probes; explicit runner; strict offline scorer; ignored run receipts. Executing it
-still requires an exact TypeSafe model and call ceiling. No hosted inference, model
-acceptance or private corpus upload occurred. This optional scope is not a blocker
-for package engineering work. Deferred library surfaces remain deferred.
+Next: get direction for the exact alpha upload, then follow
+[RELEASE](../docs/RELEASE.md). The release procedure includes publication wording,
+final clean-package check, registry/checksum/docs.rs verification and version tag.
+Credential authentication and registry acceptance have not been tested.
+
+M1–M7 remain complete. The optional 12-ticket live-provider packet still needs exact
+model/call scope; no hosted inference or semantic acceptance is claimed. It is not
+a blocker for this package release preparation.
