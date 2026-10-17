@@ -619,12 +619,12 @@ mod tests {
     #[test]
     fn multipart_metadata_and_full_size_are_checked() {
         let mut collision = request();
-        collision.uploads[0].bytes = Arc::from(
-            (0..16)
-                .map(|n| format!("semops-rust-multipart-{n} "))
-                .collect::<String>()
-                .into_bytes(),
-        );
+        let mut boundaries = String::new();
+        for n in 0..16 {
+            use std::fmt::Write;
+            write!(&mut boundaries, "semops-rust-multipart-{n} ").unwrap();
+        }
+        collision.uploads[0].bytes = Arc::from(boundaries.into_bytes());
         assert_eq!(
             encode_http_body(&collision).unwrap_err().kind(),
             ErrorKind::InvalidArgument

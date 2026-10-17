@@ -119,6 +119,8 @@ impl Image {
         if !(MIN_AREA..=MAX_AREA).contains(&(u64::from(width) * u64::from(height))) {
             return Err(invalid("image area must be 78400-2458624 pixels"));
         }
+        // New Rust versions rename this to try_update; retain the Rust 1.85 API.
+        #[allow(deprecated)]
         let id = NEXT_IMAGE
             .fetch_update(Ordering::Relaxed, Ordering::Relaxed, |n| n.checked_add(1))
             .map_err(|_| invalid("image reference identity space exhausted"))?;

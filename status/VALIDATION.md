@@ -18,7 +18,7 @@ These checks exercise implemented library behavior; they do not qualify model qu
 | python3 tools/check_docs.py | pass: local file links and all 4 generator/revision provenance records |
 | Five offline examples | pass; actual image example run with images feature |
 
-The differential fixtures contain 213 expected scenarios: 172 core/wire, 25 recipe, 
+The differential fixtures contain 213 expected scenarios: 172 core/wire, 25 recipe,
 16 benchmark reports/scenarios. CPython 3.13.13 generated expectations from pinned
 Python source; Rust consumes them. This is finite differential evidence, not a
 claim of exhaustive equivalence. Full sibling Python/C++ suites were not rerun.
@@ -38,7 +38,12 @@ development docs; it includes the standalone CRATE.md, source, license, Cargo
 metadata and examples. Cargo warns about excluded integration tests during archive
 creation; consumers build the extracted package successfully. No crate published.
 
-Hosted CI for this implementation is pending the first implementation push.
+Initial hosted run [39067871282](https://github.com/jasonduncan/semantic-operators-rs/actions/runs/39067871282)
+at 78e18a5 passed documentation and the individual-feature/package job. Matrix
+Clippy stopped on an older format-collection lint and a newer atomic-method
+deprecation. The test builder now uses write!; the atomic call retains the MSRV
+API with a narrow documented deprecation allowance. Local MSRV Clippy and relevant
+tests pass after these corrections; a corrected hosted run is required.
 It covers 6 OS/toolchain jobs (Linux/macOS/Windows, stable/1.85.0), documentation,
 and individual-feature/package verification. Results will be appended with exact
 commit/run links before closing the candidate handoff.

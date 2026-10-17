@@ -40,7 +40,7 @@ library surface with core/wire, image/recipe and transport agents, integrating
 execution/flows, packaging and documentation centrally. API is now actual Rust
 rather than proposal. Version 0.1.0-alpha.1 remains private and unpublished.
 
-Expanded frozen evidence to 213 Python expected scenarios: 172 core/wire, 25 recipes, 
+Expanded frozen evidence to 213 Python expected scenarios: 172 core/wire, 25 recipes,
 16 benchmark scenarios. Independent review caught numeric parsing/summation,
 Python whitespace, Debug leakage, abstention restoration, extreme-weight overflow,
 disabled-runtime handling, adversarial multipart boundaries, and delayed flow

@@ -89,7 +89,7 @@ requested names exactly; missing/extra responses are protocol errors.
 Errors distinguish invalid question, invalid argument/state/image, invalid wire
 request with field path, malformed provider response, provider failure, timeout,
 unsupported capability, and runtime misuse. Errors implement standard Error and
-Display with a source where safe. No panic for caller/provider input; programming
+Display with a classified message and optional field path. No panic for caller/provider input; programming
 bugs remain bugs, not synthetic abstentions. Do not expose request bodies or keys
 through error formatting or Debug by default.
 

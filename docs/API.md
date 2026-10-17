@@ -168,10 +168,10 @@ labels; labels are checked against questions before scoring or any runner warmup
 `bench::score(questions, cases, answers, latencies_ms, total_ms)` produces a Report.
 `bench::at_min_confidence` recomputes that report without calls and cannot restore
 an existing abstention. `bench::stability` compares aligned decisions;
-`bench::ndcg` accepts relevance grades and an explicit cutoff (`ndcg_default` uses10).
+`bench::ndcg` accepts relevance grades and an explicit cutoff (`ndcg_default` uses 10).
 
 `bench::run(provider, questions, cases, options)` measures bounded concurrent calls.
-RunOptions defaults to concurrency4 and warmup1; Report exposes warmup_calls and
+RunOptions defaults to concurrency 4 and warmup 1; Report exposes warmup_calls and
 calls so the extra invocation is visible. Provider errors abort and drop pending
 work. `bench::run_flow` executes borrowing flow closures sequentially and preserves
 traces in FlowReport or FlowFailure. Pure `score_flows` accepts completed outcomes.
