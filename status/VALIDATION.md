@@ -192,3 +192,18 @@ reference source checkouts remained clean.
 
 No hosted inference occurred. The model and call ceiling remain unset. Synthetic
 labels are assistant-authored and unreviewed; ambiguity probes are exploratory.
+
+### Preparation CI result and local correction
+
+[CI 39076027736](https://github.com/jasonduncan/semantic-operators-rs/actions/runs/39076027736)
+at c78bd05078ad3e3f6af1a7ccaf2e70025fec71cb completed: six jobs passed, both Windows
+jobs failed only the new scorer Unicode-fixture test. All Rust and consumer checks
+passed. Python 3.12 on Windows used cp1252 for a test's Path.write_text; corrected
+that fixture to specify encoding="utf-8". All 19 tests pass locally after the fix.
+The corrected test has NOT yet run in hosted Windows CI.
+
+Explicit GitHub repo/API readbacks after the preparation push returned PUBLIC,
+contrary to the prior PRIVATE record. No visibility mutation was performed. Jason
+was asked whether public is intentional or private should be restored. The UTF-8
+fix and corrected status/CI receipt are committed locally but further pushes are
+held pending that answer. No hosted model calls were made.

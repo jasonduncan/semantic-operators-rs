@@ -13,7 +13,7 @@ no hosted inference or model-quality qualification has been performed.
 - Cargo package: `semantic-operators`; import: `semantic_operators`.
 - Edition 2024, MSRV Rust 1.85, MIT license.
 - Default features have no network or Tokio dependency.
-- Private repository: [jasonduncan/semantic-operators-rs](https://github.com/jasonduncan/semantic-operators-rs).
+- Repository: [jasonduncan/semantic-operators-rs](https://github.com/jasonduncan/semantic-operators-rs).
 - Release publication remains disabled. Crate name appears unregistered, not reserved.
 
 ## Use it locally

@@ -125,3 +125,8 @@ Execution is blocked on Jason specifying the exact TypeSafe model and call ceili
 Proposed complete run: 12 requests, no retries/warm-up, 30-second per-request timeout.
 Once scoped, invoke once, retain outputs/hashes/receipts, report descriptive outcomes
 and actual unknowns. No model acceptance, cost prediction or publication is implied.
+
+Preparation platform gate: CI 39076027736 passed six jobs; Windows caught an implicit
+fixture encoding. Fixed locally to UTF-8; 19 local tests pass. Corrected hosted
+Windows result remains pending because further pushes are held on the unexpected
+PUBLIC visibility readback. Resolve that state, push the retained fix, then verify.

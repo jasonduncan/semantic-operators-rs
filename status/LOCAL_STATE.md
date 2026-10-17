@@ -1,7 +1,7 @@
 # Local state
 
 Project: `/Users/jason/PDLabsShare/Projects/semantic-operators-rs`.
-Remote: `https://github.com/jasonduncan/semantic-operators-rs.git`; private; main.
+Remote: `https://github.com/jasonduncan/semantic-operators-rs.git`; GitHub readback PUBLIC after preparation push; main.
 
 Local toolchains: Rust 1.98.1 and installed Rust 1.85.0 (MSRV). CPython 3.13.13 generated
 reference fixtures; CI tools use Python 3.12. Source siblings are pinned in

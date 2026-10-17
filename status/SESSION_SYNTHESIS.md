@@ -99,3 +99,14 @@ Nineteen offline tests pass, and the workflow includes them across supported OSs
 Library and consumer Rust code are unchanged. No hosted request, real-document
 transmission, paid inference or publication occurred. Preparation is complete;
 portfolio remains active and execution is blocked only on model/call scope.
+
+A final explicit repo/API readback found PUBLIC visibility, contrary to the prior
+private record. No visibility setting was changed by this work. Preparation commit
+c78bd05 had already been pushed. Asked Jason whether public visibility is intentional
+or should be restored; further pushes are held while local status corrections and
+CI receipts are completed. Origin was rechecked as the expected repository.
+
+Hosted CI at c78bd05 passed six jobs; Windows failed one new Python fixture writer
+using cp1252. All Rust and consumer checks passed. Added explicit UTF-8 locally and
+reran all 19 tool tests successfully. The corrected hosted gate awaits the visibility
+answer and subsequent push; do not claim all-platform prep acceptance yet.

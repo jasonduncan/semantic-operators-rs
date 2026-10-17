@@ -27,5 +27,16 @@ are frozen in qualification/triage-v1.json; do not tune policy or labels on outc
 
 No hosted requests or private-document transfer occurred. No service remains
 running. Library, consumer Rust code and frozen Python parity fixtures are unchanged.
-The live check is blocked solely on model/call scope, not on implementation. Update
+The live check is blocked on model/call scope. Further pushes are separately held
+on unexpected PUBLIC repository visibility, pending Jason's direction. Update
 status, validate, commit/push and refresh the registry after material work.
+
+Visibility: explicit GitHub repo and API reads after c78bd05 returned PUBLIC.
+No visibility mutation was performed. Ask/consume Jason's pending answer before
+pushing the local correction/CI receipt commit; preserve the existing public/private
+state until that instruction. Earlier private statements are historical observations.
+
+Preparation CI 39076027736 at c78bd05: six jobs passed; both Windows jobs failed
+only the new Unicode fixture writer (implicit cp1252). The local fix sets UTF-8,
+and all 19 tests pass locally. Once visibility is resolved, push the retained local
+fix/status commit and verify hosted CI before calling the platform gate complete.

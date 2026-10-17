@@ -181,7 +181,7 @@ class TriageScoringTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             identity = "case\u2028one"
             path = Path(directory) / "results.jsonl"
-            path.write_text(json.dumps(row(identity), ensure_ascii=False) + "\n")
+            path.write_text(json.dumps(row(identity), ensure_ascii=False) + "\n", encoding="utf-8")
             rows = scoring.load_results(path)
             self.assertEqual(len(rows), 1)
             self.assertEqual(scoring.score(dataset(clear(identity)), rows)["counts"]["clear_correct"], 1)
