@@ -134,8 +134,10 @@ explicit design amendment. Live model stochastic outputs cannot prove bit parity
   whitespace includes U+001C–U+001F, which Rust trim alone does not consider blank.
 - Question/State/Answer/request Debug omit prompt/input/raw values. Invalid wire
   confidence errors omit arbitrary offending input repr while retaining the path.
-- Frame timestamps must be finite nonnegative and oldest-first; Python frames only
-  checks lengths. Image headers receive stricter structural checks for truncation.
+- Frames preserve caller order and timestamps, including negative/nonmonotonic
+  values like Python. Rust requires finite timestamps for JSON and matching lengths;
+  callers supply oldest-first order. Image headers receive stricter structural
+  checks for truncation.
 - TypeSafe additionally enforces current service image limits; see IMAGES.md.
 - Per-item Provider/Timeout/InvalidResponse errors are retained; local configuration,
   invalid assets and Unsupported abort and drop pending calls. No error becomes unsure.

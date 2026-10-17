@@ -55,5 +55,5 @@ jobs:
       - run: cargo test --locked --features typesafe
       - run: cargo test --locked --all-features
       - run: python tools/check_package.py
-      - run: cargo publish --dry-run --locked --offline --all-features
+      - run: cargo publish --dry-run --locked --all-features
 

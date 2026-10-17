@@ -23,11 +23,12 @@ Run on the exact clean candidate revision:
 ```sh
 python3 tools/check_docs.py
 python3 tools/check_package.py
-cargo publish --dry-run --locked --offline --all-features
+cargo publish --dry-run --locked --all-features
 ```
 
-The offline dry-run performs packaging/build verification without upload. It needs
-cached dependencies; fetch locked dependencies first on a fresh checkout. Hosted CI
+The dry-run performs packaging/build verification without upload. It reads the
+crates.io index; this new-crate dry-run did not work with --offline, even with cached
+dependencies. The separate package/consumer checker uses cached dependencies offline. Hosted CI
 also runs the dry-run and the existing platform/MSRV/feature/package checks.
 Cargo may report that repository-only test targets were excluded: this is intentional;
 those tests run in CI before packaging. Do not suppress a build or validation failure.
