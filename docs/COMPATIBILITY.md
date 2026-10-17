@@ -69,6 +69,32 @@ document its information loss; rich library answers keep per-answer metadata.
 Do not extend schema 1 to images or Box even though the library supports them.
 Any richer wire representation needs a separately versioned contract.
 
+## Evaluation and recipe semantics
+
+Reference benchmark decisions use Boolean/Choice values directly and round Score
+half up (`floor(value + 0.5)`) to a level index; Box benchmarking is rejected.
+For each labeled question: answered = total - undecided, accuracy = correct/total,
+conditional accuracy = correct/answered, with zero for empty denominators. Mean
+probability of the correct outcome is retained. Undecided results are not misses.
+Threshold sweeps can only remove decisions; they never restore an already
+undecided result. Provider failures abort the reference runner; a future Rust
+failure-summary report must be a labeled extension, not silently alter denominators.
+The reference label-to-probability lookup does not support an abstention label;
+must-abstain evaluation needs a separate explicit extension with its own metrics.
+
+NDCG uses gain `2^grade - 1` discounted by `log2(position + 2)`, missing IDs grade
+zero, default k=10, and None when the ideal gain is zero. Stability is the fraction
+of cases with identical decisions across reports, including identical abstentions;
+it says nothing about correctness. Validate empty/misaligned reports instead of
+porting Python indexing errors. Benchmark warm-up defaults to one extra call;
+make that cost visible and count it in any authorized budget. Async benchmark
+concurrency defaults to four (per-item recipe default is eight).
+
+Reranking uses exact descending score and original position for ties. Reweighting
+uses `sum(weight[i]*p[i])/sum(p[i])`, finite strictly increasing weights, and no
+new provider calls. Filtering preserves exactly one match/no/unsure/failed outcome
+per item. Input IDs are metadata, not part of provider state.
+
 ## Deliberate Rust adaptations
 
 | Adaptation | Reason / impact |

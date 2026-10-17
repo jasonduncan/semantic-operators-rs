@@ -31,7 +31,8 @@
   arbitrary completion order; input-order filter outcomes; stable rerank ties;
   errors unscored; normalization of reweighted expectations; invalid weights.
 - Bench: coverage/conditional accuracy/failures, expected-score-to-level conversion,
-  abstention labels, zero denominators, NDCG empty/zero ideal and stability cases.
+  reject unsupported abstention labels in the parity API, zero denominators,
+  NDCG empty/zero ideal and stability cases.
   Compare complete reports against Python, not just aggregate headline accuracy.
 - Wire: all request types; absent/null request_id; rejected extras; exact error paths;
   4-significant-digit floats; bool stays bool; mixed-call projection; Box rejected.
