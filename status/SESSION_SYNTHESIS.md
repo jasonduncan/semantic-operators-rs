@@ -27,3 +27,8 @@ The local research dossier PR-2026-009 preserves source/design rationale and lin
 this project through PD Labs discovery. The active registry points to this status
 package; it is not a second project truth source. Next is M1 normalization and
 validation, not provider networking. See VALIDATION for measured setup evidence.
+
+Completion evidence: hosted CI passed seven jobs twice, including the refreshed
+workflow on Linux/macOS/Windows and Rust stable/1.85.0. Official package Git index
+checks support an apparently unused name; direct registry access stayed blocked.
+The final commit records this evidence without extending implementation scope.

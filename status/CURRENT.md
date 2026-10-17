@@ -15,7 +15,9 @@ benchmarks, images, wire codecs, CLI, or MCP. No Rust semantic tests exist yet.
 Build success is bootstrap evidence only. See [validation](VALIDATION.md).
 
 No blocker prevents M1. Crate name availability could not be verified (HTTP 403);
-this is a future release concern, not a development blocker. TypeSafe Rust SDK
+both hyphen/underscore names are absent from the accessible official Git index,
+so the name appears unregistered. Guaranteed availability/reservation remains a
+future release concern, not a development blocker. TypeSafe Rust SDK
 selection and current service image capabilities remain M4/M5 investigations.
 
 Next: implement validated questions and answer normalization with frozen reference

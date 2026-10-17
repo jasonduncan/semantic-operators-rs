@@ -41,8 +41,7 @@ API lookup returned 403 and remains inconclusive. Future release gates are open.
   This is a contents check, not a published or full package verification.
 - New local research dossier/topic links resolve.
 
-Hosted CI and final clean/pushed readback are checked after the first push and
-recorded in a subsequent evidence update; no earlier claim of a passing run.
+Initial clean/pushed registry check passed at 6e257e5 after the first push.
 
 ## CI configuration refresh
 
@@ -52,3 +51,18 @@ actions/setup-python v7.0.0; workflow updated to those exact tags. A new hosted
 run verifies the revised workflow. Added explicit LF attributes for portable
 source/fixture hashing. Seed fixture regeneration was byte-identical and both
 reference source checkouts remained clean.
+
+## Observed hosted results
+
+- [Initial run 39064650863](https://github.com/jasonduncan/semantic-operators-rs/actions/runs/39064650863)
+  at 6e257e502e04f1b43614a9e5fb2276508238fffc: all seven jobs passed.
+- [Updated run 39064742276](https://github.com/jasonduncan/semantic-operators-rs/actions/runs/39064742276)
+  at 0363816f09a44d79ee30e320110f8b1b4b316f40: all seven jobs passed with current
+  action versions. This covers Linux, macOS, Windows on stable and 1.85.0 plus
+  the documentation job. Rust suites contain zero tests; no semantic qualification.
+- The closing commit changes documentation/status only. The Rust source, Cargo
+  manifest, fixtures and CI workflow match the updated passing run; local document
+  checks are repeated after those text edits. Do not imply hosted CI ran on a
+  later documentation commit before its actual result is observed.
+- Official crates.io Git index cross-check: both hyphen/underscore entries absent,
+  known serde entry accessible. Name appears unregistered; not reserved.

@@ -42,3 +42,11 @@ External references were consulted online, not archived as full documents. No
 private source text was sent in web queries. Future provider endpoint/SDK/image
 decisions require their own current official documentation/source check.
 
+
+## Package-index cross-check
+
+GitHub contents API for the official
+[rust-lang/crates.io-index](https://github.com/rust-lang/crates.io-index) returned
+404 for both semantic-operators and semantic_operators index paths; a serde
+control lookup succeeded. This supports apparently unregistered, not guaranteed
+availability. Direct crates.io access remained blocked as recorded above.

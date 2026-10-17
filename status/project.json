@@ -20,8 +20,8 @@
   },
   "next_action": "Implement validated questions and answer normalization against the frozen Python fixtures in M1.",
   "blockers": [],
-  "updated_at": "2026-10-17T19:53:04Z",
-  "handoff_version": 1,
+  "updated_at": "2026-10-17T19:59:58Z",
+  "handoff_version": 2,
   "tags": [
     "rust",
     "semantic-operators"
