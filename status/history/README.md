@@ -5,3 +5,4 @@
 - [2026-10-17 M1–M6 alpha](2026-10-17-M1-M6-alpha.md): native implementation and offline/platform gates complete.
 - [2026-10-17 M7 consumer](2026-10-17-M7-consumer.md): standalone public-API app and platform HTTP verification complete.
 - [2026-10-17 live-check preparation](2026-10-17-live-check-preparation.md): synthetic packet/tooling complete; exact model and call scope pending.
+- [2026-10-17 public candidate](2026-10-17-public-candidate.md): public distribution confirmed; all eight corrected CI jobs passed; release preparation next.

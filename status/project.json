@@ -3,9 +3,9 @@
   "project_id": "semantic-operators-rs",
   "name": "Semantic Operators for Rust",
   "portfolio_status": "active",
-  "execution_status": "active",
-  "phase": "Public crates.io candidate; provider-check CI correction pending",
-  "summary": "Native Rust alpha and consumer complete; 12-case synthetic provider-check packet prepared and verified offline.",
+  "execution_status": "ready",
+  "phase": "Public alpha candidate verified; crates.io release preparation next",
+  "summary": "Public Rust alpha, standalone consumer and bounded-check tooling verified across supported platforms; unpublished.",
   "repository": {
     "remote": "https://github.com/jasonduncan/semantic-operators-rs.git",
     "default_branch": "main"
@@ -18,15 +18,9 @@
     "validation": "VALIDATION.md",
     "local_state": "LOCAL_STATE.md"
   },
-  "next_action": "Verify the pushed Windows fixture correction in CI, then complete crates.io release preparation. Live qualification separately requires model/call scope.",
-  "blockers": [
-    {
-      "id": "live-model-budget",
-      "summary": "Live provider model and call ceiling have not been specified.",
-      "needs": "Jason supplies the exact TypeSafe model and call ceiling for the documented 12-ticket run, as required by AGENTS.md."
-    }
-  ],
-  "updated_at": "2026-10-17T23:41:30Z",
+  "next_action": "Prepare the crates.io release version/changelog and publish dry-run under docs/RELEASE.md. Live qualification remains separately scoped.",
+  "blockers": [],
+  "updated_at": "2026-10-17T23:45:34Z",
   "handoff_version": 8,
   "tags": [
     "rust",

@@ -48,3 +48,14 @@ verified revision using the owner's Cargo credential provider. Never place a tok
 in a command, document or chat. Verify the resulting crates.io/docs.rs pages and tag.
 The [official Cargo publishing guide](https://doc.rust-lang.org/cargo/reference/publishing.html)
 was rechecked on 2026-10-17; packaging/dry-run verifies the archive before upload.
+
+## Name and package recheck — 2026-10-17
+
+The crates.io API at /api/v1/crates/semantic-operators returned 404. Sparse index
+entries for semantic-operators and semantic_operators also returned 404, while
+serde returned 200. These current observations support apparent availability,
+not reservation. Recheck immediately before upload.
+
+`python3 tools/check_package.py` passed: 31 files, 202.4 KiB unpacked / 52.4 KiB
+compressed; default dependency isolation and both extracted-package consumers
+(default and optional features). `publish=false` is still set; no upload occurred.

@@ -1,37 +1,29 @@
 # Development handoff
 
-2026-10-17 · M1–M7 complete; live-check preparation complete; public candidate verification active.
+2026-10-17 · M1–M7 and provider-check tooling complete; public alpha verified.
 
-Read [CURRENT](CURRENT.md), [VALIDATION](VALIDATION.md), and the
-[qualification packet](../qualification/README.md). The 12 tickets and author labels
-are frozen in qualification/triage-v1.json; do not tune policy or labels on outcomes.
+Jason confirmed PUBLIC repository visibility is intentional for crates.io. Keep
+that state and proceed with normal project pushes. No visibility decision is pending.
 
-1. Inspect Git state and remote main; preserve unrelated changes. The latest prior
-   closing commit 4735d9923d8b7b924af1ce046a64c701f99ba365 passed all eight CI jobs in
-   [run 39074703366](https://github.com/jasonduncan/semantic-operators-rs/actions/runs/39074703366).
-2. Verify the prep tools with `python3 -m unittest discover -s tests -p 'test_triage_*.py'`.
-   Nineteen tests mock subprocesses and use synthetic output; no provider access.
-   `python3 tools/run_triage_check.py` prints an offline plan with unset model/cap.
-3. Obtain Jason's exact TypeSafe model and call ceiling for the documented 12-ticket
-   run. The earlier model/cap question remains unanswered. Credentials were observed
-   present in the environment (value not read into artifacts); presence does not
-   establish authentication, funding, model access or authorization. Recheck presence
-   at invocation. Do not load sibling private environment files unnecessarily.
-4. Only after that scope is supplied, use the packet's explicit `--execute` command
-   once. It builds offline, freezes inputs, writes unique ignored var/ artifacts,
-   and stops on error. Do not retry failed/unknown requests without new scope.
-5. Review receipt and report separately: completion is execution evidence; small-set
-   author-label agreement is descriptive, not quality acceptance. Keep live evidence
-   local and retain unknown usage. Update status with actual outcomes and limits.
-6. Publication follows [RELEASE](../docs/RELEASE.md) under explicit release direction.
+1. Inspect Git state/remote main and preserve unrelated work. Read CURRENT.md and
+   VALIDATION.md for measured boundaries.
+2. [CI 39079995335](https://github.com/jasonduncan/semantic-operators-rs/actions/runs/39079995335) passed all eight jobs at
+   0c311756b9572fbf44a45c2ad4b3c8b669a11f99. The previous cp1252 fixture failure is
+   fixed and verified on both Windows toolchains. Closing changes are docs/status only.
+3. Follow [RELEASE](../docs/RELEASE.md) for crates.io preparation. The current version
+   is 0.1.0-alpha.1; publish=false remains. Confirm release version/changelog, rerun
+   archive checks and publish dry-run, then perform the selected registry release.
+   Name checks support apparent availability; recheck before upload. Credential
+   configuration has not been inspected and no package upload has occurred.
+4. Live qualification is optional and separate. The
+   [packet](../qualification/README.md) is concrete: 12 synthetic tickets, one request
+   each, no retries/warm-up. It still needs Jason's exact model and call ceiling.
+   Use its explicit --execute path only after that scope is supplied; preserve
+   outputs/receipts and distinguish completion from semantic label agreement.
+5. For tool changes, run `python3 -m unittest discover -s tests -p 'test_triage_*.py'`.
+   The 19 checks mock processes/use synthetic output and do not call a model.
 
-No hosted requests or private-document transfer occurred. No service remains
-running. Library, consumer Rust code and frozen Python parity fixtures are unchanged.
-Jason confirmed PUBLIC visibility is intentional for crates.io. The earlier push
-hold is resolved; keep the repository public and proceed with normal project pushes.
-The live check still needs exact model/call scope; it is separate from package
-engineering checks. Follow RELEASE.md for the actual registry release operation.
-
-Preparation CI 39076027736 at c78bd05 passed six jobs; both Windows jobs failed only
-one new Unicode fixture writer (implicit cp1252). The fix specifies UTF-8 and all
-19 tool tests pass locally. Verify the corrected pushed revision in hosted CI.
+No service remains running. Library/consumer Rust source and Python parity fixtures
+are unchanged by the bounded-check and visibility work. The registry points here;
+update and validate this package after material work. No publication or live request
+was performed during verification.
