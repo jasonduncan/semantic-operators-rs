@@ -54,3 +54,10 @@ was extracted and consumed independently with default and optional features.
 No hosted inference, private corpus upload, public release, tag or crates.io
 publication occurred. Localhost test servers terminate inside tests. Hosted CI
 receipts and exact acceptance limits are maintained in VALIDATION.md.
+
+Candidate closure: all eight hosted jobs passed at b92ddf0 in run 39068153607,
+covering Linux/macOS/Windows stable and 1.85.0, feature isolation and extracted
+package consumers. Initial lint differences across toolchains were corrected;
+semantic tests remained green. M1–M6 complete; portfolio stays active, execution
+complete for this phase. Next work is selected consumer integration or separately
+bounded live qualification. No publication was performed.

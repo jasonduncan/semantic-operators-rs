@@ -43,14 +43,26 @@ at 78e18a5 passed documentation and the individual-feature/package job. Matrix
 Clippy stopped on an older format-collection lint and a newer atomic-method
 deprecation. The test builder now uses write!; the atomic call retains the MSRV
 API with a narrow documented deprecation allowance. Local MSRV Clippy and relevant
-tests pass after these corrections; a corrected hosted run is required.
+tests pass after these corrections; the corrected hosted run passed as recorded below.
 It covers 6 OS/toolchain jobs (Linux/macOS/Windows, stable/1.85.0), documentation,
-and individual-feature/package verification. Results will be appended with exact
-commit/run links before closing the candidate handoff.
+and individual-feature/package verification. The final commit/run receipt is recorded below.
 
 No live model calls, paid evaluation, real-document upload, public visibility,
 release tag, registry publication or name reservation. Image tests parse headers;
 full decoding and service acceptance remain unqualified. Performance unmeasured.
+
+## Final candidate CI receipt
+
+[Run 39068153607](https://github.com/jasonduncan/semantic-operators-rs/actions/runs/39068153607)
+passed all eight jobs at b92ddf053282a6f9869f401008a8a2a7bfc099fb:
+Linux, macOS and Windows each on stable and 1.85.0; documentation; individual
+features and packaged consumers. Each platform checks formatting, compilation,
+Clippy, default/all-feature tests, doctests and rustdoc. M1–M6 gates are complete.
+
+The source siblings were rechecked clean at their pinned revisions. Final closing
+changes touch documentation/status only; source, fixtures, dependencies and workflow
+match this passing CI commit. Local documentation/manifest checks are repeated for
+the closing commit. This distinction avoids claiming CI executed a later docs commit.
 
 ## Earlier setup evidence (historical)
 

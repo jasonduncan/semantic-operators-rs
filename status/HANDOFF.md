@@ -1,13 +1,15 @@
 # Development handoff
 
-2026-10-17 · M1–M5 complete; M6 local gates complete, hosted CI pending.
+2026-10-17 · M1–M6 complete; candidate ready for consumer integration.
 
 1. Read [CURRENT](CURRENT.md), [VALIDATION](VALIDATION.md),
    [implementation mapping](../docs/IMPLEMENTATION.md) and
    [compatibility](../docs/COMPATIBILITY.md).
 2. Inspect Git state and remote main before continuing; preserve unrelated edits.
-3. Finish/verify the implementation CI run and record the exact revision and jobs.
-   Repeat relevant local checks from [DEVELOPMENT](../docs/DEVELOPMENT.md) for fixes.
+3. The verified implementation commit is b92ddf053282a6f9869f401008a8a2a7bfc099fb;
+   [CI 39068153607](https://github.com/jasonduncan/semantic-operators-rs/actions/runs/39068153607)
+   passed all eight jobs. The closing handoff commit changes documentation only.
+   Repeat relevant [development checks](../docs/DEVELOPMENT.md) when implementation changes.
 4. Select the next application integration or scoped provider qualification. Do not
    restart M1 or replace the frozen fixtures. Public API remains alpha/unstable.
 5. Publication is separate: recheck crate availability, inspect package/API and use

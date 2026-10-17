@@ -1,7 +1,6 @@
 # Development plan
 
-Implementation candidate: 0.1.0-alpha.1. M1–M5 are implemented and verified offline;
-M6 awaits hosted platform CI. Requirement evidence is mapped in
+Implementation candidate: 0.1.0-alpha.1. M1–M6 are implemented and verified offline and by hosted platform CI. Requirement evidence is mapped in
 [IMPLEMENTATION](../docs/IMPLEMENTATION.md).
 
 Original milestone scope and acceptance criteria follow.
@@ -74,7 +73,7 @@ first-use ordering, stale/missing handles, malformed images, JPEG warnings,
 frames shape and all locate outcomes pass offline. Wire v1 still rejects Box.
 Live image behavior remains separately qualified with synthetic public-safe assets.
 
-## M6 — package and release candidate (local gates complete; hosted CI pending)
+## M6 — package and release candidate (complete)
 
 Add explicit blocking facade only if the preceding API warrants it; reject nested
 runtime misuse. Complete feature matrix, downstream-consumer checks, cargo package
@@ -94,7 +93,6 @@ implicit implementation authorization or reduce R1–R10 to the bootstrap surfac
 
 ## Next selected work
 
-Finish hosted CI for this implementation commit and record the receipt. After
-that, application integration and separately scoped live qualification are ready
-to be selected. Publication requires a crate-name recheck, API/release review and
+Hosted CI passed all eight jobs on b92ddf0. Application integration and separately
+scoped live qualification are ready to be selected. Publication requires a crate-name recheck, API/release review and
 explicit publication direction. These are not blockers to using the local library.
