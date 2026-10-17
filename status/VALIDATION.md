@@ -1,5 +1,29 @@
 # Validation evidence
 
+## M7 standalone consumer — 2026-10-17
+
+The library source, frozen tests and Cargo package are unchanged. Added an
+independent JSONL triage application, its Cargo.lock, a subprocess/HTTP harness,
+and consumer checks to every OS/toolchain CI job.
+
+- Stable and Rust 1.85 consumer builds/Clippy with warnings denied passed locally.
+- 32 JSONL/HTTP scenarios passed on the Rust 1.85 binary, including decided and
+  review outcomes, exact threshold equality, normalized evidence, reported call
+  metadata, call count, partial output on fatal errors, preflight rejection and
+  input size/budget boundaries. Windows runs 31 scenarios, excluding the Unix-only invalid-argv check.
+- The initial local socket bind was denied by the sandbox. The approved localhost
+  rerun passed. Tests use synthetic responses and a fixed fake credential, with
+  inherited proxy settings removed. No hosted model calls.
+- Independent review found a non-UTF8 argv panic; generic fallible argument parsing
+  now gives exit 2. The app's remote opt-in is a configuration guard, not a network
+  sandbox; its inherited proxy behavior is documented.
+- Documentation links/provenance and formatting pass. Cargo package --list still
+  contains 31 files, excluding the integration application and private status.
+- Hosted consumer CI pending the integration push. Prior alpha CI on the exact
+  previous handoff commit c8a64d7 passed all eight jobs in
+  [run 39068393148](https://github.com/jasonduncan/semantic-operators-rs/actions/runs/39068393148).
+
+
 ## Implementation candidate — 2026-10-17
 
 0.1.0-alpha.1, macOS aarch64. Rust 1.98.1 and Rust 1.85.0 minimum toolchain.

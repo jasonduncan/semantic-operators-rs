@@ -43,3 +43,12 @@ reference case counts and do not measure model quality.
   provider calls. Performance and semantic quality require a measured dataset.
 - CLI/MCP, native local inference, native Rank, caches, FFI, WASM and no_std remain
   deferred. Publication and live qualification are separate from this build.
+
+## M7 consumer integration
+
+integrations/triage-app is an independent Rust JSON Lines application using the
+public TypeSafe adapter and typed operators. It preserves confidence/probabilities/
+reported call metadata and distinguishes review from execution failure. The
+subprocess/HTTP harness tools/check_triage_app.py verifies the complete consumer
+path. This adds consumer evidence without modifying core semantics or qualifying a
+hosted model. It is excluded from the library's Cargo archive.

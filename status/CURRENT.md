@@ -1,6 +1,6 @@
 # Current state
 
-2026-10-17 · portfolio active · execution complete · phase M1–M6 native Rust alpha.
+2026-10-17 · portfolio active · execution active · phase M7 standalone consumer integration.
 
 The Rust library is implemented as `semantic-operators` 0.1.0-alpha.1, import
 `semantic_operators`. The repository is private, branch main, publication disabled.
@@ -24,3 +24,7 @@ There is no implementation blocker; crate availability remains a release-time ch
 
 Next: select an application integration or bounded live-provider qualification.
 The API remains alpha; crates.io publication is a separate release decision.
+
+M7 active: integrations/triage-app consumes the public library through its own Cargo
+manifest and emits triage JSON Lines. The local HTTP/subprocess harness and CI are
+being completed. No changes to core semantic behavior or hosted calls are required.

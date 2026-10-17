@@ -1,6 +1,6 @@
 # Semantic Operators for Rust status and handoff
 
-Updated 2026-10-17. **Portfolio active; execution complete; phase: M1–M6 native Rust alpha.**
+Updated 2026-10-17. **Portfolio active; execution active; phase: M7 standalone consumer integration.**
 
 | Read | Purpose |
 |---|---|

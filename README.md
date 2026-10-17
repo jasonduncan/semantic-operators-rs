@@ -51,6 +51,14 @@ cargo run --example rerank
 cargo run --features images --example images
 ```
 
+For a standalone application with its own manifest, JSON Lines input/output and
+real HTTP adapter integration, see [the triage consumer](integrations/triage-app/README.md).
+Its end-to-end verification uses a local fixture server:
+
+```sh
+python3 tools/check_triage_app.py
+```
+
 These examples make no hosted calls. Their answers demonstrate control flow, not
 model accuracy. `Answer::raw()` is opt-in for the TypeSafe adapter and is never
 included in ordinary Debug or wire output.
@@ -88,6 +96,6 @@ python3 tools/check_docs.py
 python3 tools/check_package.py
 ```
 
-Default and optional-feature suites are offline except localhost HTTP tests. No
-CLI/MCP server, Laya runtime, native Rank, caching, or agent framework is included.
+Default and optional-feature suites are offline except localhost HTTP tests. The generic
+wire CLI/MCP server, Laya runtime, native Rank, caching, and agent framework remain deferred.
 Provider confidence is not a guarantee of correctness; measure it on your task.

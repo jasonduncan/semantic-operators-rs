@@ -91,8 +91,19 @@ call-time Choice convenience API, native Rank, caching, server-side multi-state
 batching, graph language, no_std/WASM and C ABI. Do not turn the deferred list into
 implicit implementation authorization or reduce R1–R10 to the bootstrap surface.
 
-## Next selected work
+## M7 — standalone consumer integration (in progress)
 
-Hosted CI passed all eight jobs on b92ddf0. Application integration and separately
-scoped live qualification are ready to be selected. Publication requires a crate-name recheck, API/release review and
-explicit publication direction. These are not blockers to using the local library.
+On “continue”, select a self-contained JSON Lines triage application consuming only
+public library APIs. Keep its manifest/lockfile independent. Batch department and
+urgency questions once per ticket, preserve answer evidence, route uncertainty to
+review, and stop on execution failure. Validate the whole finite input batch and
+explicit call limit before I/O; flush successful rows before another request.
+
+Exit: compile/lint on stable and MSRV, real subprocess/localhost HTTP scenarios for
+routing, uncertainty, threshold equality, provenance, call budget, malformed input,
+partial output and fatal errors. Include portable CI and concrete usage docs.
+The application is a reference consumer; generic library CLI/MCP remains deferred.
+
+Next after M7: select an existing application integration or a bounded live-provider
+qualification brief. Publication still needs a crate-name recheck, API/release review
+and explicit publication direction.

@@ -1,0 +1,20 @@
+[package]
+name = "semops-triage"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.85"
+publish = false
+license = "MIT"
+description = "Standalone JSON Lines consumer of semantic-operators"
+
+[workspace]
+
+[dependencies]
+semantic-operators = { path = "../..", features = ["typesafe"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tokio = { version = "1", features = ["macros", "rt-multi-thread"] }
+url = "2.5"
+
+[lints.rust]
+unsafe_code = "forbid"

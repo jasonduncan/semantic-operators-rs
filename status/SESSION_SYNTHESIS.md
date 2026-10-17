@@ -61,3 +61,18 @@ package consumers. Initial lint differences across toolchains were corrected;
 semantic tests remained green. M1–M6 complete; portfolio stays active, execution
 complete for this phase. Next work is selected consumer integration or separately
 bounded live qualification. No publication was performed.
+
+## 2026-10-17 — standalone consumer integration
+
+On “continue”, selected the prepared consumer-integration path. No existing target
+application was named, so added integrations/triage-app as a self-contained Rust
+consumer rather than changing another product. It depends on the public crate,
+uses an explicit provider endpoint/model/call limit and emits evidence-bearing
+JSON Lines. Both questions are batched once per ticket; uncertainty goes to review.
+Input validates before dispatch; failures stop later calls with earlier rows retained.
+
+The independent subprocess/loopback harness verifies application and HTTP adapter
+together. No hosted provider is called. Rust 1.85 build and Clippy pass. Review found
+non-UTF8 argv could panic; args_os with fallible UTF8 conversion now returns a
+safe configuration error. The harness clears proxy environment settings to keep
+its synthetic traffic local. Full platform CI is the remaining integration gate.

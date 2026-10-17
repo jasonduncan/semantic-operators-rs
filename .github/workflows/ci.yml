@@ -25,6 +25,13 @@ jobs:
       - run: cargo +${{ matrix.toolchain }} doc --locked --no-deps --all-features
         env:
           RUSTDOCFLAGS: -D warnings
+      - run: cargo +${{ matrix.toolchain }} fmt --manifest-path integrations/triage-app/Cargo.toml -- --check
+      - run: cargo +${{ matrix.toolchain }} clippy --locked --manifest-path integrations/triage-app/Cargo.toml --target-dir target/triage-app -- -D warnings
+      - run: cargo +${{ matrix.toolchain }} build --locked --manifest-path integrations/triage-app/Cargo.toml --target-dir target/triage-app
+      - uses: actions/setup-python@v7.0.0
+        with:
+          python-version: '3.12'
+      - run: python tools/check_triage_app.py --skip-build
   documentation:
     runs-on: ubuntu-latest
     steps:

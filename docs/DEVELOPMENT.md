@@ -58,3 +58,14 @@ Update status, handoff_version, validation and cumulative synthesis after materi
 work. Commit/push authorized changes and refresh the active-project pointer. Live
 qualification and publication follow their own separately scoped work; no keys or
 private input bodies belong in fixtures, logs or repository history.
+
+## Standalone consumer integration
+
+The independent manifest in integrations/triage-app consumes only public library
+APIs and has its own lockfile. `python3 tools/check_triage_app.py` builds it and
+runs synthetic end-to-end cases through localhost HTTP. Use `--skip-build` to check
+an existing `target/triage-app/debug/semops-triage` binary (platform suffix applied).
+CI compiles/lints and exercises this consumer on all supported OS/toolchain pairs.
+The script strips proxy environment settings and uses only a synthetic bearer token.
+For app input/output and failure semantics, see
+[its README](../integrations/triage-app/README.md).

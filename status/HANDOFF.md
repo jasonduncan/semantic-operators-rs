@@ -1,27 +1,30 @@
 # Development handoff
 
-2026-10-17 · M1–M6 complete; candidate ready for consumer integration.
+2026-10-17 · M1–M6 complete; M7 standalone consumer integration being verified.
 
-1. Read [CURRENT](CURRENT.md), [VALIDATION](VALIDATION.md),
-   [implementation mapping](../docs/IMPLEMENTATION.md) and
-   [compatibility](../docs/COMPATIBILITY.md).
-2. Inspect Git state and remote main before continuing; preserve unrelated edits.
-3. The verified implementation commit is b92ddf053282a6f9869f401008a8a2a7bfc099fb;
-   [CI 39068153607](https://github.com/jasonduncan/semantic-operators-rs/actions/runs/39068153607)
-   passed all eight jobs. The closing handoff commit changes documentation only.
-   Repeat relevant [development checks](../docs/DEVELOPMENT.md) when implementation changes.
-4. Select the next application integration or scoped provider qualification. Do not
-   restart M1 or replace the frozen fixtures. Public API remains alpha/unstable.
-5. Publication is separate: recheck crate availability, inspect package/API and use
-   [RELEASE](../docs/RELEASE.md) under explicit publication direction.
+Read CURRENT.md, VALIDATION.md and the
+[consumer README](../integrations/triage-app/README.md). The library source is
+unchanged from the verified alpha; this phase adds an independent application,
+localhost subprocess harness and CI coverage.
 
-Jason's “BUILD IT!” authorized the full implementation and subagent work. Offline
-and loopback verification use only synthetic inputs. No credentials, running
-services, paid requests, reservations or deployment need recovery. Ordinary builds
-do not require Python or sibling checkouts; pinned sources are needed only to
-regenerate golden fixtures. Benchmark runners invoke their supplied providers and
-may add warmup calls, so select inputs/provider deliberately.
+1. Inspect Git state and remote main; preserve unrelated changes.
+2. Run `python3 tools/check_triage_app.py` from the repository root to build and
+   exercise the consumer. It uses synthetic responses, a fake token and a local
+   ephemeral server with proxy settings removed. No provider keys are needed.
+3. Complete hosted CI for the consumer integration and record the exact receipt.
+   CI exercises the independent app on Linux/macOS/Windows, stable and 1.85.0.
+4. Next select an existing application integration or separately bounded live
+   qualification with a dataset, exact model and call/cost limit. No existing
+   product was selected in this turn; this consumer provides a concrete template.
+5. Publication follows RELEASE.md under explicit publication direction. The crate
+   name needs rechecking and the alpha API remains unstable.
 
-Known evidence limits: header-only image validation, documented core/service image
-differences, text-only wire v1, bounded parity corpus, no measured model quality or
-performance claim. The complete next-phase scope is retained in DEV_PLAN.md.
+The app takes JSON Lines, validates the full batch before I/O, performs one batched
+request per ticket, and emits confidence/probabilities/call metadata. Uncertainty
+routes to review. Execution errors stop further calls, preserve earlier output and
+exit 1. Input/configuration errors exit 2 before dispatch. No retries/warmup.
+
+No hosted model requests, private-document transfer, paid inference, deployment,
+crate publication or credentials were introduced. No service remains running after
+verification. Source siblings and frozen reference fixtures are unchanged. Update
+status, validate, commit/push and refresh the registry after material work.
