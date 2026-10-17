@@ -19,10 +19,23 @@ and consumer checks to every OS/toolchain CI job.
   sandbox; its inherited proxy behavior is documented.
 - Documentation links/provenance and formatting pass. Cargo package --list still
   contains 31 files, excluding the integration application and private status.
-- Hosted consumer CI pending the integration push. Prior alpha CI on the exact
+- Hosted consumer CI passed as recorded below. Prior alpha CI on the exact
   previous handoff commit c8a64d7 passed all eight jobs in
   [run 39068393148](https://github.com/jasonduncan/semantic-operators-rs/actions/runs/39068393148).
 
+
+### M7 hosted receipt
+
+[Run 39074395130](https://github.com/jasonduncan/semantic-operators-rs/actions/runs/39074395130)
+passed all eight jobs at feb00f2ae3d58f9b75b4c98ef8e2a21aa1a5995c.
+Each Linux/macOS/Windows stable/MSRV job now also formats, lints, builds and runs
+the standalone consumer through its local HTTP harness. Unix runs 32 scenarios;
+Windows runs 31, omitting the non-UTF8 Unix argv case. Existing library suites,
+feature matrix and packaged consumers remain green.
+
+Final closing edits only update handoff/status; app, harness, locks, library and
+workflow match the passing commit. Local docs/manifest checks are repeated after
+closing. No live provider/model evidence is implied by this test receipt.
 
 ## Implementation candidate — 2026-10-17
 

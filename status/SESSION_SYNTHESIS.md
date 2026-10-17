@@ -75,4 +75,7 @@ The independent subprocess/loopback harness verifies application and HTTP adapte
 together. No hosted provider is called. Rust 1.85 build and Clippy pass. Review found
 non-UTF8 argv could panic; args_os with fallible UTF8 conversion now returns a
 safe configuration error. The harness clears proxy environment settings to keep
-its synthetic traffic local. Full platform CI is the remaining integration gate.
+its synthetic traffic local. The final harness passes 32 Unix scenarios (31 Windows); all eight hosted CI jobs
+passed at feb00f2 in run 39074395130. M7 is complete. Library source/API and package
+surface are unchanged. Closing handoff keeps portfolio active and marks this phase
+complete; next work needs a selected existing application or bounded live brief.

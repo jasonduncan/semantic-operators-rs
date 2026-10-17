@@ -3,9 +3,9 @@
   "project_id": "semantic-operators-rs",
   "name": "Semantic Operators for Rust",
   "portfolio_status": "active",
-  "execution_status": "active",
-  "phase": "M7: standalone consumer integration",
-  "summary": "Standalone public-API JSONL consumer built; localhost end-to-end cases pass, platform CI pending.",
+  "execution_status": "complete",
+  "phase": "M7: standalone consumer integration complete",
+  "summary": "Native Rust alpha and standalone JSONL consumer verified across Linux/macOS/Windows, stable and MSRV.",
   "repository": {
     "remote": "https://github.com/jasonduncan/semantic-operators-rs.git",
     "default_branch": "main"
@@ -18,10 +18,10 @@
     "validation": "VALIDATION.md",
     "local_state": "LOCAL_STATE.md"
   },
-  "next_action": "Finish consumer integration checks and handoff.",
+  "next_action": "Select an existing application to integrate, or provide a bounded dataset/model/call-budget brief for live qualification.",
   "blockers": [],
-  "updated_at": "2026-10-17T22:16:03Z",
-  "handoff_version": 5,
+  "updated_at": "2026-10-17T22:20:51Z",
+  "handoff_version": 6,
   "tags": [
     "rust",
     "semantic-operators"

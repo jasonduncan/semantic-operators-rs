@@ -91,7 +91,7 @@ call-time Choice convenience API, native Rank, caching, server-side multi-state
 batching, graph language, no_std/WASM and C ABI. Do not turn the deferred list into
 implicit implementation authorization or reduce R1–R10 to the bootstrap surface.
 
-## M7 — standalone consumer integration (in progress)
+## M7 — standalone consumer integration (complete)
 
 On “continue”, select a self-contained JSON Lines triage application consuming only
 public library APIs. Keep its manifest/lockfile independent. Batch department and
@@ -107,3 +107,7 @@ The application is a reference consumer; generic library CLI/MCP remains deferre
 Next after M7: select an existing application integration or a bounded live-provider
 qualification brief. Publication still needs a crate-name recheck, API/release review
 and explicit publication direction.
+
+M7 acceptance: 32 local scenarios passed; hosted run 39074395130 passed all eight
+jobs at feb00f2, including independent app lint/build/HTTP checks on all six
+OS/toolchain pairs. Windows runs 31 cases, excluding Unix non-UTF8 argv.

@@ -1,30 +1,27 @@
 # Current state
 
-2026-10-17 · portfolio active · execution active · phase M7 standalone consumer integration.
+2026-10-17 · portfolio active · execution complete · M7 consumer integration.
 
-The Rust library is implemented as `semantic-operators` 0.1.0-alpha.1, import
-`semantic_operators`. The repository is private, branch main, publication disabled.
+The native Rust `semantic-operators` 0.1.0-alpha.1 library and a standalone JSONL
+triage consumer are implemented, privately pushed and verified. Main remains private
+and Cargo publication disabled. The alpha API remains unstable.
 
-Implemented: validated Boolean/Choice/Score/Box questions, typed answers, confidence
-normalization, providers/operators, batched asks, cascade and deadlines, traced
-flows, bounded filtering/reranking/reweighting, benchmark reports/runners, text wire
-v1, image assets/frames/localization, TypeSafe HTTP/multipart, and blocking facade.
-Core has no default runtime/network dependencies. Five offline examples are runnable.
+M1–M6 cover validated questions/answers, providers/operators, batching, cascade/
+deadlines, traced flows, recipes/evaluation, wire v1, images/localization, TypeSafe
+HTTP/multipart and blocking. Core has no default network/runtime dependencies.
 
-Local tests, Python differential cases, package consumers, and documentation checks
-provide implementation evidence. All eight hosted CI jobs passed at b92ddf0,
-including Linux/macOS/Windows stable and Rust 1.85.0, feature matrix and package
-consumers. M1–M6 are complete. See [VALIDATION](VALIDATION.md) and the
-[requirement map](../docs/IMPLEMENTATION.md).
+M7 adds integrations/triage-app, an independent Cargo consumer using public APIs.
+It validates the full input batch and explicit call limit before dispatch; batches
+department and urgency once per ticket; emits decisions and probability/call evidence;
+routes uncertainty to review; stops on failures while preserving completed rows.
+See [its usage and input/output contract](../integrations/triage-app/README.md).
 
-No hosted model qualification, real-document transmission, paid inference,
-crates.io publication, reservation or public release occurred. CLI/MCP, local
-inference and other explicitly deferred surfaces remain outside this candidate.
-There is no implementation blocker; crate availability remains a release-time check.
+Local end-to-end checks passed 32 scenarios (31 on Windows, excluding Unix argv).
+All eight hosted jobs passed on feb00f2, including the consumer on Linux/macOS/
+Windows, stable and Rust 1.85.0. [Validation](VALIDATION.md) records exact receipts.
+The library source, fixtures and package surface are unchanged by M7.
 
-Next: select an application integration or bounded live-provider qualification.
-The API remains alpha; crates.io publication is a separate release decision.
-
-M7 active: integrations/triage-app consumes the public library through its own Cargo
-manifest and emits triage JSON Lines. The local HTTP/subprocess harness and CI are
-being completed. No changes to core semantic behavior or hosted calls are required.
+Next: select an existing application to integrate or a bounded live-provider brief
+with dataset, exact model and call/cost limits. No hosted inference, private corpus
+upload, paid calls, deployment, crate reservation or publication occurred. Generic
+CLI/MCP, local inference and other explicitly deferred surfaces remain deferred.
