@@ -1,0 +1,26 @@
+[package]
+name = "semantic-operators"
+version = "0.1.0-dev.0"
+edition = "2024"
+rust-version = "1.85"
+description = "Provider-neutral semantic operators with typed, confidence-aware answers"
+license = "MIT"
+repository = "https://github.com/jasonduncan/semantic-operators-rs"
+readme = "README.md"
+publish = false
+include = ["src/**", "Cargo.toml", "Cargo.lock", "README.md", "LICENSE"]
+
+[lib]
+name = "semantic_operators"
+path = "src/lib.rs"
+
+[features]
+default = []
+
+[lints.rust]
+unsafe_code = "forbid"
+missing_docs = "deny"
+
+[lints.clippy]
+all = "warn"
+

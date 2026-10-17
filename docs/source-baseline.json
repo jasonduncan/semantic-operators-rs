@@ -1,0 +1,396 @@
+{
+  "observed_date": "2026-10-17",
+  "scope": "Local source snapshots; file inventory does not mean every file was individually reviewed or tested.",
+  "sources": [
+    {
+      "name": "Python semantic-operators-lib",
+      "local_path": "/Users/jason/PDLabsShare/Projects/semantic-operators-lib",
+      "remote": "https://github.com/jasonduncan/semantic-operators.git",
+      "revision": "07fb1f3109dac2e69a7dafe9fa349d0daa52012d",
+      "tracked_clean": true,
+      "files": [
+        {
+          "path": "CHANGELOG.md",
+          "sha256": "51568b21e15a54c751fe0e3b907330d3e76232ebf058d93abb39b7b97b277ddc"
+        },
+        {
+          "path": "LICENSE",
+          "sha256": "5e776eedfd7a9a8b74489e11559e391e8ff6aaa7b39071d2b431c869491226b4"
+        },
+        {
+          "path": "README.md",
+          "sha256": "43f0e21408cde59bfbb44be3a7139a4addcc666ceb14cf224907199787450265"
+        },
+        {
+          "path": "ROADMAP.md",
+          "sha256": "87fec280c875c3747d0f717543d14dceb13cff7e9190d7557eef9a9176edd938"
+        },
+        {
+          "path": "docs/benchmarks.md",
+          "sha256": "8c816b8a9a5755e1da61713f9d73f689fe42883a6b2279885e3ee227783928a3"
+        },
+        {
+          "path": "docs/cli-and-mcp.md",
+          "sha256": "11b859b154463b0c5f647b960ddee3ca2a3dae812f2b7baf310e3bfaed597e65"
+        },
+        {
+          "path": "docs/design/semop-filter.md",
+          "sha256": "3909951e23343cecd1a3976550dba4d22674b4efe2ee24dd71da2a82d781f546"
+        },
+        {
+          "path": "docs/writing-a-provider.md",
+          "sha256": "a2f1b2cfd4bb420e49748ac72a6a139aa2efd5834f19b58137f900c875e8ac12"
+        },
+        {
+          "path": "pyproject.toml",
+          "sha256": "6ad45924a443514d61c2d9650faa4f5f7868765cfb7c4503e2bbb8498ef50e3a"
+        },
+        {
+          "path": "src/semantic_operators/__init__.py",
+          "sha256": "2e622be3264068aa3874491344fc5c0bd094b0872499d7128dc704ff1d399b6d"
+        },
+        {
+          "path": "src/semantic_operators/__main__.py",
+          "sha256": "b9329abbbf9efe40397e5d83d80199f148916b1739e12b94ba4fa4b8fd8567de"
+        },
+        {
+          "path": "src/semantic_operators/_each.py",
+          "sha256": "7c96e03c83e3664646e90ee0d1f0e42bd562ee9530f97a15c62ecbd29d1668d9"
+        },
+        {
+          "path": "src/semantic_operators/bench.py",
+          "sha256": "60b68d03f137c0fac9597d04f94eb1a7b62f1e09eeae55e3e5db15f2b5ce4f53"
+        },
+        {
+          "path": "src/semantic_operators/cascade.py",
+          "sha256": "1f52fb39bfc207e52303223abec227b77111f811486271ffa65ccb5960b4e31e"
+        },
+        {
+          "path": "src/semantic_operators/errors.py",
+          "sha256": "0b6fb14e2753d997ee298edfccbe293474ce0464b15aeda3e7738a4ae61a148c"
+        },
+        {
+          "path": "src/semantic_operators/filtering.py",
+          "sha256": "6ff115e05bb6e65134184b0d7d74a5085c82fc6deb9ec7f4b3f7a0bcd1913616"
+        },
+        {
+          "path": "src/semantic_operators/flows.py",
+          "sha256": "fc65a9fc00d3d2f05b694e8c6f681897f2feba7821c22e553ec8366aee7cbad4"
+        },
+        {
+          "path": "src/semantic_operators/images.py",
+          "sha256": "483cab4fead95899f07d67eb85964d2afd7cc457d31c878dd62383c31937c9c3"
+        },
+        {
+          "path": "src/semantic_operators/interfaces/__init__.py",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "src/semantic_operators/interfaces/backends.py",
+          "sha256": "6709abd23c7ee6459ae803f8a70844bee4f44d10e0c15d3357c41f00516fe10f"
+        },
+        {
+          "path": "src/semantic_operators/interfaces/cli.py",
+          "sha256": "f672c0dc665c3631274fccb091839ad2205ab5b07010dd2fc49ae4913b4c4b40"
+        },
+        {
+          "path": "src/semantic_operators/interfaces/filter_cli.py",
+          "sha256": "e6ff4a1499b5c7bd396bcc54efac63d84af1970ce9384e23d9e3a0e0a7e61f85"
+        },
+        {
+          "path": "src/semantic_operators/interfaces/mcp_server.py",
+          "sha256": "ceda317db0e34b62690709062995195508e724dbb139f6e2527c7325d1e59295"
+        },
+        {
+          "path": "src/semantic_operators/interfaces/wire.py",
+          "sha256": "5edfc5fa5596073095c642d134a963103660db2cc6af2b8a7a1d60b17096f091"
+        },
+        {
+          "path": "src/semantic_operators/locate.py",
+          "sha256": "a48d76e8fa766d3f46c6f829feb575885f3c2d17a1f636259377adb5ce385c8b"
+        },
+        {
+          "path": "src/semantic_operators/operators.py",
+          "sha256": "0d60d8b7c4bea77a7b7ee2fe61dd19938e592fc5c4f99df61e1d49d48cb3c14f"
+        },
+        {
+          "path": "src/semantic_operators/provider.py",
+          "sha256": "08f0ba426aec89f1ab9e28be9102e05d03addd0cb573d05ccfeb391895939ba4"
+        },
+        {
+          "path": "src/semantic_operators/providers/__init__.py",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "src/semantic_operators/providers/laya.py",
+          "sha256": "3f37877a962e9c9374ccadaf4ee0565c002cb113eadcc47027512edd10fd38c4"
+        },
+        {
+          "path": "src/semantic_operators/providers/typesafe.py",
+          "sha256": "f917d533cbcad21df9c2b2879caa4ea2ed83b8807fb070225e295340a6fec226"
+        },
+        {
+          "path": "src/semantic_operators/py.typed",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "src/semantic_operators/rerank.py",
+          "sha256": "097fd862c48f7c9b52e9cd30d9dcecc44e7fce80562907c08d55eb7da97b333e"
+        },
+        {
+          "path": "src/semantic_operators/types.py",
+          "sha256": "0610405796747e8de7221fe2b63849e3604848c5089498eec6894127936e950a"
+        },
+        {
+          "path": "tests/imagekit.py",
+          "sha256": "09086aa3cba0afa70a53e3a3325500e3e0a49be89906156a45e51f1c9ece33f6"
+        },
+        {
+          "path": "tests/test_answers.py",
+          "sha256": "cf33957d88c27647e211a54096ba5753754eb17afdcc5476366cdf03fddb479a"
+        },
+        {
+          "path": "tests/test_calls.py",
+          "sha256": "68891e62b16f2016e738b4b74be17f1ab4fc5af3ad47dc3211ac13f83199cd73"
+        },
+        {
+          "path": "tests/test_cascade.py",
+          "sha256": "d51f581cceb274cb7ba7dc3bea37d0d09ce99797864bd5e43f172abc4f5cbc4a"
+        },
+        {
+          "path": "tests/test_errors.py",
+          "sha256": "0c3d9bdcf949811e217229e7c13a57d96d74590e7e3a3a0f8d163dc682bb418f"
+        },
+        {
+          "path": "tests/test_filtering.py",
+          "sha256": "c1c8e4a8c5c788f5ced08c6f0cd44a65a06cbd2ff8dab359a918576a23f31775"
+        },
+        {
+          "path": "tests/test_flows.py",
+          "sha256": "48b7ccc5dadcce08b1faf03b5bddefefd2aaecb46bff6f0a4a55bd58a01226c4"
+        },
+        {
+          "path": "tests/test_images.py",
+          "sha256": "f66968fc0a43be3bc915030eab06a9e7a26e3ae3a66de5ad12671fc9ec0cce90"
+        },
+        {
+          "path": "tests/test_interfaces.py",
+          "sha256": "45972bf38842738f5037f8e8ed9e22a0e35178042f84095f7770828a28f57e1b"
+        },
+        {
+          "path": "tests/test_operators.py",
+          "sha256": "f49edf2a29cffc977df10104fb20f61ba8273f2e53481a6c5b9861ad1c81f55f"
+        },
+        {
+          "path": "tests/test_rerank.py",
+          "sha256": "f83d0d38c56803709cffbdc11f29fe299ad3f02acad278f6e2a0fce4d0259a78"
+        },
+        {
+          "path": "tests/test_timeouts.py",
+          "sha256": "badc0df002cc0c89c2068fae44cf906d4b8753bed76d429a066eaf1ea51c1b69"
+        },
+        {
+          "path": "tests/test_validation.py",
+          "sha256": "1bce31d9418137fff43981534abec48a329cf08ba997ae71e2cf63849736c883"
+        }
+      ]
+    },
+    {
+      "name": "C++ libsemop",
+      "local_path": "/Users/jason/Development/Projects/libsemop",
+      "remote": "https://github.com/jasonduncan/libsemop.git",
+      "revision": "dc3b28f2d22ac6ca27ddcf0b7529a7082de56d82",
+      "tracked_clean": true,
+      "files": [
+        {
+          "path": "AGENTS.md",
+          "sha256": "68d92af8673454bef5d66d60a0c2d8c7410c347d137c3ba6820f237bb969dae4"
+        },
+        {
+          "path": "CHANGELOG.md",
+          "sha256": "ca0baaa5ef4bef8e9b0e46efd1f5eafd456880c4b44aa54d9a8627ee9403af6b"
+        },
+        {
+          "path": "CMakeLists.txt",
+          "sha256": "b70f76eff4b259cb4dde32fa15c15e1f71599f92f8fd31890f7c7a6304db02bd"
+        },
+        {
+          "path": "LICENSE",
+          "sha256": "5e776eedfd7a9a8b74489e11559e391e8ff6aaa7b39071d2b431c869491226b4"
+        },
+        {
+          "path": "README.md",
+          "sha256": "b696e497c1b87b0d9125910ea3ffd4e36e1ed0df74d3f0360a33a050356373c1"
+        },
+        {
+          "path": "docs/DESIGN.md",
+          "sha256": "7db0238332e06cffb5b798b87d79136ae4e48555c6f4edb09c533ba146ab7bb1"
+        },
+        {
+          "path": "include/semop/answers.hpp",
+          "sha256": "031cbe37920fd78267272f3051442aee2ac6726daefb1c147b97e4273970f10c"
+        },
+        {
+          "path": "include/semop/bench.hpp",
+          "sha256": "5dc0a33e38f88c6ae510d70860f59c3bf2e6d4fec7928803d90fa35907407034"
+        },
+        {
+          "path": "include/semop/filtering.hpp",
+          "sha256": "d5f57597be3cb3da27f030a69dd9139d9dedeea5913b705b776cdc1e2e7132a4"
+        },
+        {
+          "path": "include/semop/flows.hpp",
+          "sha256": "4db2c4c2f69db9982b92a80fd4bef66aaf06897f4e7cd63a440d51b7d09bc38c"
+        },
+        {
+          "path": "include/semop/images.hpp",
+          "sha256": "92de267e5687391eee2636b25cfb7fe246f6de73264783ef12c12dd19ea0e494"
+        },
+        {
+          "path": "include/semop/provider.hpp",
+          "sha256": "1dbd1563328bb18e8b25220cbf8493e0ec5ef0de1c3f5f7695cef636ac21bc11"
+        },
+        {
+          "path": "include/semop/questions.hpp",
+          "sha256": "4cf35a1c4c9a247efeb0444a93149cc95eaa1b3693bfd9713155656938129d19"
+        },
+        {
+          "path": "include/semop/rerank.hpp",
+          "sha256": "59c755dde058368e7245162c62a4c0f8ec9cee90f6bf70e2c4073319da108e54"
+        },
+        {
+          "path": "include/semop/result.hpp",
+          "sha256": "e8c8143ed3a461cdf7ea924e4adcd27fd828d48f5425371c11b9ae2d8d631102"
+        },
+        {
+          "path": "include/semop/semop.hpp",
+          "sha256": "26234b5ce3a287ddeb9d5df5807584eaf50ec020217418f8c9d7f6f364150995"
+        },
+        {
+          "path": "include/semop/typesafe.hpp",
+          "sha256": "0b07775ca209e77db58671f6a146b727d8f183c28c8c5b57474a7c74213e3927"
+        },
+        {
+          "path": "include/semop/wire.hpp",
+          "sha256": "91447266b39b4aa55dd722ef9902f8f4bee535e371d97903024e551b9935061f"
+        },
+        {
+          "path": "include/semop/wrappers.hpp",
+          "sha256": "04feccfb44a9ad94083a5e442b42f3fb27e6bb2d2fb82afd81b3f3ecacb2a903"
+        },
+        {
+          "path": "src/answers.cpp",
+          "sha256": "c23bf47a4bf052769abe25a53ffa4ef40415bcc7b4cde0ab632fc8bb1f9b3791"
+        },
+        {
+          "path": "src/bench.cpp",
+          "sha256": "8cf2bcb6165a786f8099d3daf4e2db051aa59064ac8bc8f987f4dfedc765b4d2"
+        },
+        {
+          "path": "src/filtering.cpp",
+          "sha256": "613c016684b20cf3d14b00b2158fd8d5f7b926d329afecb560cefe03297ebde7"
+        },
+        {
+          "path": "src/flows.cpp",
+          "sha256": "006bfe5f65fc0ac15247ebb7d5f3047146b618b91b0f9afacdac6faa2d00790f"
+        },
+        {
+          "path": "src/images.cpp",
+          "sha256": "85944f6b72293f235295e149027b19c78c3b2753e7cffafc8fa252521f7aae92"
+        },
+        {
+          "path": "src/provider.cpp",
+          "sha256": "b759e401144608cc350701234c391fe515f2086272ad7786437dcfe0a88ce02d"
+        },
+        {
+          "path": "src/rerank.cpp",
+          "sha256": "50b56c06245dd07518fe3d12f30b1dd5c3be37d75e03e94f3fb080d5d4e4fedd"
+        },
+        {
+          "path": "src/typesafe.cpp",
+          "sha256": "abf1e7c2b527326518f30b47f50fc4d0a6efef78ac7a2786c5c19531a4191763"
+        },
+        {
+          "path": "src/util.cpp",
+          "sha256": "bda235bd165adb553b2c98829ebdbf74ca5810acb70f59ca0d898e660bd401d0"
+        },
+        {
+          "path": "src/util.hpp",
+          "sha256": "127fcc40edc82edb59bb98caaf5666b6d3aa36445b4a9dbf779bc442808c4b31"
+        },
+        {
+          "path": "src/wire.cpp",
+          "sha256": "1f8c1b7f7cd0548eeeabe858a904a611d021eab3033f0b54ab903843f4760ccb"
+        },
+        {
+          "path": "src/wrappers.cpp",
+          "sha256": "ee218a45a56224f3f77111ed68f439e1655be735297d7471262a10bda7fed588"
+        },
+        {
+          "path": "tests/CMakeLists.txt",
+          "sha256": "84f8aef5239da07426c5a0dc792310737ccff5820d70dc827f270282cec1ce19"
+        },
+        {
+          "path": "tests/consumer/CMakeLists.txt",
+          "sha256": "5542e3d0a234502ee5cc99d13b15f9ab99011e9e3814e54284441f9436ffc366"
+        },
+        {
+          "path": "tests/consumer/main.cpp",
+          "sha256": "350a92e772e8aa758ec933f667dd6754367da89ef7aeae5c32761032cd777dc3"
+        },
+        {
+          "path": "tests/consumer/run.cmake",
+          "sha256": "23376d60ef30ee2ad8e39aa4ef6c68849dc80f1e69e7cbed44bdc8a88f9c6111"
+        },
+        {
+          "path": "tests/imagekit.hpp",
+          "sha256": "5c17f07d664bf1ca424003af4b679b5f1850210664d25cf2c054e2620cbf82d8"
+        },
+        {
+          "path": "tests/scripted.hpp",
+          "sha256": "0f64c5969c722f02daea08272cd3e2cca6e1ecbc021208b23467b812f90121b9"
+        },
+        {
+          "path": "tests/test_answers.cpp",
+          "sha256": "608ec9a541757d733ac7383f9377f9c537162bb11be1ad32c874ecfc2425c9de"
+        },
+        {
+          "path": "tests/test_bench.cpp",
+          "sha256": "ed7d32db05d2d41c9375f794b15016041df98c52289f161f1eb6cf97b6d80325"
+        },
+        {
+          "path": "tests/test_filter_rerank.cpp",
+          "sha256": "ffa0f427db5c21e228d4513e684483f10e3e85800b3465d60b7c20bdf698e191"
+        },
+        {
+          "path": "tests/test_flows.cpp",
+          "sha256": "3b361eda59fc57539f1d49370e018d17c8c56d3041239bd2add53eac52cc699b"
+        },
+        {
+          "path": "tests/test_images.cpp",
+          "sha256": "c34e9d762d623b3ba8d13139a5376d884229c8214a4610d9a8177ee5ee83eb78"
+        },
+        {
+          "path": "tests/test_live.cpp",
+          "sha256": "89b477b3678cc5a2ba0eae92f3f047053f918f2b974ce491b402c5947ae9e57e"
+        },
+        {
+          "path": "tests/test_provider.cpp",
+          "sha256": "0fd077a35399e29a28a2b929c157258d4863929d06c82fe385f48809a6558c0b"
+        },
+        {
+          "path": "tests/test_typesafe.cpp",
+          "sha256": "bf8bf48e25a01ff4d0d58622c6cb4489f455188b27f1a15bac9f920d606df9a2"
+        },
+        {
+          "path": "tests/test_wire.cpp",
+          "sha256": "d3f30c61e4e167dcbcd90632d5c1ced83071894f659b8b2129b6758f753ccbd8"
+        },
+        {
+          "path": "tests/test_wrappers.cpp",
+          "sha256": "89f5cf1577e91607e9b53ee0008f17b939176f2e9c98fff112a1d0da0695eb72"
+        }
+      ]
+    }
+  ]
+}
