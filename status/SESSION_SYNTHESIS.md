@@ -79,3 +79,23 @@ its synthetic traffic local. The final harness passes 32 Unix scenarios (31 Wind
 passed at feb00f2 in run 39074395130. M7 is complete. Library source/API and package
 surface are unchanged. Closing handoff keeps portfolio active and marks this phase
 complete; next work needs a selected existing application or bounded live brief.
+
+## 2026-10-17 — bounded live-check preparation
+
+On continuation after M7, prepared the next explicit qualification path. Built a
+12-ticket synthetic packet, runner and strict offline scorer. Asked for exact model
+and call ceiling as required by AGENTS.md; no answer or live scope has been received.
+The packet separates 10 author-labeled clear cases from 2 exploratory review probes.
+No quality acceptance threshold is invented. Coverage, abstentions, incorrect
+joint labels, missing output and observed usage remain distinct.
+
+Subagent scoring and independent review caught source/dataset read races and a
+premature process-start claim. The runner now validates one dataset snapshot,
+compares source hashes before/after its offline build, hashes runner/scorer, kills
+and reaps interrupted/timed-out children, and preserves malformed output without
+silently dropping rows. Input serialization respects the consumer's total byte cap.
+Nineteen offline tests pass, and the workflow includes them across supported OSs.
+
+Library and consumer Rust code are unchanged. No hosted request, real-document
+transmission, paid inference or publication occurred. Preparation is complete;
+portfolio remains active and execution is blocked only on model/call scope.

@@ -3,9 +3,9 @@
   "project_id": "semantic-operators-rs",
   "name": "Semantic Operators for Rust",
   "portfolio_status": "active",
-  "execution_status": "complete",
-  "phase": "M7: standalone consumer integration complete",
-  "summary": "Native Rust alpha and standalone JSONL consumer verified across Linux/macOS/Windows, stable and MSRV.",
+  "execution_status": "blocked",
+  "phase": "Bounded live check: preparation complete, model and budget pending",
+  "summary": "Native Rust alpha and consumer complete; 12-case synthetic provider-check packet prepared and verified offline.",
   "repository": {
     "remote": "https://github.com/jasonduncan/semantic-operators-rs.git",
     "default_branch": "main"
@@ -18,10 +18,16 @@
     "validation": "VALIDATION.md",
     "local_state": "LOCAL_STATE.md"
   },
-  "next_action": "Select an existing application to integrate, or provide a bounded dataset/model/call-budget brief for live qualification.",
-  "blockers": [],
-  "updated_at": "2026-10-17T22:20:51Z",
-  "handoff_version": 6,
+  "next_action": "Jason selects the exact TypeSafe model and authorizes a call ceiling for one 12-ticket run; then execute once and retain evidence.",
+  "blockers": [
+    {
+      "id": "live-model-budget",
+      "summary": "Live provider model and call ceiling have not been specified.",
+      "needs": "Jason supplies the exact TypeSafe model and call ceiling for the documented 12-ticket run, as required by AGENTS.md."
+    }
+  ],
+  "updated_at": "2026-10-17T22:40:14Z",
+  "handoff_version": 7,
   "tags": [
     "rust",
     "semantic-operators"

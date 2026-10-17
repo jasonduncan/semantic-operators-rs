@@ -69,3 +69,11 @@ CI compiles/lints and exercises this consumer on all supported OS/toolchain pair
 The script strips proxy environment settings and uses only a synthetic bearer token.
 For app input/output and failure semantics, see
 [its README](../integrations/triage-app/README.md).
+
+## Bounded provider-check tooling
+
+Run `python3 -m unittest discover -s tests -p 'test_triage_*.py'` for the offline
+runner/scorer tests. Child processes are mocked; the scorer uses synthetic outputs.
+CI runs these on all supported OS/toolchain pairs. The
+[qualification packet](../qualification/README.md) documents planning, explicit
+execution and evidence interpretation. Ordinary tests never run hosted inference.

@@ -1,27 +1,25 @@
 # Current state
 
-2026-10-17 · portfolio active · execution complete · M7 consumer integration.
+2026-10-17 · portfolio active · execution blocked on live model/budget selection.
 
-The native Rust `semantic-operators` 0.1.0-alpha.1 library and a standalone JSONL
-triage consumer are implemented, privately pushed and verified. Main remains private
-and Cargo publication disabled. The alpha API remains unstable.
+The native Rust `semantic-operators` 0.1.0-alpha.1 library (M1–M6) and standalone
+JSONL triage consumer (M7) are implemented and verified. The repository stays private,
+publication disabled, and the alpha API unstable. Core has no default networking
+or runtime dependencies. Prior platform acceptance remains in [VALIDATION](VALIDATION.md).
 
-M1–M6 cover validated questions/answers, providers/operators, batching, cascade/
-deadlines, traced flows, recipes/evaluation, wire v1, images/localization, TypeSafe
-HTTP/multipart and blocking. Core has no default network/runtime dependencies.
+The [bounded provider-check packet](../qualification/README.md) is now prepared:
+12 synthetic tickets, 10 assistant-authored clear labels and 2 exploratory review
+probes; default-off runner; offline strict scorer; private ignored run receipts.
+It records coverage, joint label agreement, abstentions, missing results and known/
+unknown usage without a pass grade. Nineteen offline tests pass; no live check ran.
 
-M7 adds integrations/triage-app, an independent Cargo consumer using public APIs.
-It validates the full input batch and explicit call limit before dispatch; batches
-department and urgency once per ticket; emits decisions and probability/call evidence;
-routes uncertainty to review; stops on failures while preserving completed rows.
-See [its usage and input/output contract](../integrations/triage-app/README.md).
+The next action is one 12-request run, two questions per request, no retries or
+warm-up, 30 seconds per request. Jason still needs to select the exact TypeSafe
+model and call ceiling. This is the sole execution blocker; the dataset and
+retention/evaluation protocol are concrete and ready for review. Do not infer
+approval from a generic continuation or from a credential being present.
 
-Local end-to-end checks passed 32 scenarios (31 on Windows, excluding Unix argv).
-All eight hosted jobs passed on feb00f2, including the consumer on Linux/macOS/
-Windows, stable and Rust 1.85.0. [Validation](VALIDATION.md) records exact receipts.
-The library source, fixtures and package surface are unchanged by M7.
-
-Next: select an existing application to integrate or a bounded live-provider brief
-with dataset, exact model and call/cost limits. No hosted inference, private corpus
-upload, paid calls, deployment, crate reservation or publication occurred. Generic
-CLI/MCP, local inference and other explicitly deferred surfaces remain deferred.
+No hosted inference, private corpus upload, paid evaluation, deployment, crate
+reservation or publication has occurred. Generic CLI/MCP, local inference and other
+explicitly deferred surfaces remain deferred. Library and consumer Rust code are
+unchanged by this preparation phase.

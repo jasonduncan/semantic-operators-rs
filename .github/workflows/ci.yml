@@ -32,6 +32,7 @@ jobs:
         with:
           python-version: '3.12'
       - run: python tools/check_triage_app.py --skip-build
+      - run: python -m unittest discover -s tests -p "test_triage_*.py"
   documentation:
     runs-on: ubuntu-latest
     steps:

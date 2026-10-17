@@ -170,3 +170,25 @@ reference source checkouts remained clean.
   later documentation commit before its actual result is observed.
 - Official crates.io Git index cross-check: both hyphen/underscore entries absent,
   known serde entry accessible. Name appears unregistered; not reserved.
+
+## Bounded live-check preparation — 2026-10-17
+
+- `python3 -m unittest discover -s tests -p 'test_triage_*.py'`: 19 passed locally.
+  Ten scorer tests cover metric partitions, null denominators, strict malformed
+  evidence, policy consistency, shared usage and exact file hashes. Nine runner
+  tests cover planning, budgets/bytes, source/dataset drift, key omission, complete/
+  partial/malformed runs, process launch failure and timeout/interruption cleanup.
+  Subprocesses are mocked; these are tool correctness checks, not provider outcomes.
+- Default `python3 tools/run_triage_check.py`: plan only; 12 cases, 1722 input bytes,
+  requested_model/max_calls null, ready_to_invoke false; no live artifacts or calls.
+- Frozen dataset SHA-256:
+  cf7d47ba462d56c647431f1a7881fcf316500cb509d354259506847004650fea.
+- Documentation/file-link/provenance checker and git diff whitespace check passed.
+- Existing closing HEAD 4735d9923d8b7b924af1ce046a64c701f99ba365 was verified clean,
+  matching remote main, with all eight jobs passed in
+  [CI 39074703366](https://github.com/jasonduncan/semantic-operators-rs/actions/runs/39074703366).
+- New workflow adds the Python tests to each OS/toolchain job. Hosted results for
+  this preparation change will be recorded separately after push.
+
+No hosted inference occurred. The model and call ceiling remain unset. Synthetic
+labels are assistant-authored and unreviewed; ambiguity probes are exploratory.

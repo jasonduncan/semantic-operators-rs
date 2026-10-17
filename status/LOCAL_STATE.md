@@ -24,3 +24,11 @@ to integrations/triage-app/target (also ignored). It starts an ephemeral loopbac
 fixture server and terminates it on completion. No real credentials are read by
 the harness; it overrides the child token with a fixed synthetic value and strips
 proxies. The app itself reads TYPESAFE_API_KEY only when explicitly invoked.
+
+The qualification runner/scorer are standard-library Python tools. Default planning
+reads no credentials and makes no calls. The execution path checks the environment
+key only after explicit --execute; no secret value was retained during preparation.
+Run artifacts belong in ignored var/triage-check-* with owner-only POSIX permissions.
+The runner builds with cached locked dependencies and records source/tool/binary
+hashes. New tests mock processes and use temporary synthetic files, cleaned at exit.
+No live run directory was created during preparation; model and call cap are unset.

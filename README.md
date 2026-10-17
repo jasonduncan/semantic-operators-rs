@@ -59,6 +59,10 @@ Its end-to-end verification uses a local fixture server:
 python3 tools/check_triage_app.py
 ```
 
+The [bounded provider-check packet](qualification/README.md) supplies 12 synthetic
+tickets, a default-off runner, and an offline report scorer. Execution needs an
+explicit model and call limit; preparing this packet makes no provider requests.
+
 These examples make no hosted calls. Their answers demonstrate control flow, not
 model accuracy. `Answer::raw()` is opt-in for the TypeSafe adapter and is never
 included in ordinary Debug or wire output.

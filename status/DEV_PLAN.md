@@ -111,3 +111,17 @@ and explicit publication direction.
 M7 acceptance: 32 local scenarios passed; hosted run 39074395130 passed all eight
 jobs at feb00f2, including independent app lint/build/HTTP checks on all six
 OS/toolchain pairs. Windows runs 31 cases, excluding Unix non-UTF8 argv.
+
+## Bounded live-check preparation (complete; execution scope pending)
+
+On continuation, prepared qualification/triage-v1.json (12 synthetic tickets),
+explicit runner, strict offline scorer and reproducible artifact retention. The
+10 clear labels are assistant-authored; 2 ambiguity probes are exploratory. Freeze
+confidence thresholds and route policy before outcomes. Local runner/scorer tests
+pass 19 cases, covering partial/error/timeout/interruption evidence and metric
+partitioning. CI includes those checks on all six OS/toolchain combinations.
+
+Execution is blocked on Jason specifying the exact TypeSafe model and call ceiling.
+Proposed complete run: 12 requests, no retries/warm-up, 30-second per-request timeout.
+Once scoped, invoke once, retain outputs/hashes/receipts, report descriptive outcomes
+and actual unknowns. No model acceptance, cost prediction or publication is implied.

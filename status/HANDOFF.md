@@ -1,33 +1,31 @@
 # Development handoff
 
-2026-10-17 · M1–M6 complete; M7 standalone consumer integration complete.
+2026-10-17 · M1–M7 complete; live-check preparation complete; execution blocked.
 
-Read CURRENT.md, VALIDATION.md and the
-[consumer README](../integrations/triage-app/README.md). The library source is
-unchanged from the verified alpha; this phase adds an independent application,
-localhost subprocess harness and CI coverage.
+Read [CURRENT](CURRENT.md), [VALIDATION](VALIDATION.md), and the
+[qualification packet](../qualification/README.md). The 12 tickets and author labels
+are frozen in qualification/triage-v1.json; do not tune policy or labels on outcomes.
 
-1. Inspect Git state and remote main; preserve unrelated changes.
-2. Run `python3 tools/check_triage_app.py` from the repository root to build and
-   exercise the consumer. It uses synthetic responses, a fake token and a local
-   ephemeral server with proxy settings removed. No provider keys are needed.
-3. Verified implementation: feb00f2ae3d58f9b75b4c98ef8e2a21aa1a5995c.
-   [CI 39074395130](https://github.com/jasonduncan/semantic-operators-rs/actions/runs/39074395130)
-   passed all eight jobs, including the consumer on Linux/macOS/Windows and both
-   toolchains. The final closing commit changes status/docs only. Repeat relevant
-   checks after implementation changes.
-4. Next select an existing application integration or separately bounded live
-   qualification with a dataset, exact model and call/cost limit. No existing
-   product was selected in this turn; this consumer provides a concrete template.
-5. Publication follows RELEASE.md under explicit publication direction. The crate
-   name needs rechecking and the alpha API remains unstable.
+1. Inspect Git state and remote main; preserve unrelated changes. The latest prior
+   closing commit 4735d9923d8b7b924af1ce046a64c701f99ba365 passed all eight CI jobs in
+   [run 39074703366](https://github.com/jasonduncan/semantic-operators-rs/actions/runs/39074703366).
+2. Verify the prep tools with `python3 -m unittest discover -s tests -p 'test_triage_*.py'`.
+   Nineteen tests mock subprocesses and use synthetic output; no provider access.
+   `python3 tools/run_triage_check.py` prints an offline plan with unset model/cap.
+3. Obtain Jason's exact TypeSafe model and call ceiling for the documented 12-ticket
+   run. The earlier model/cap question remains unanswered. Credentials were observed
+   present in the environment (value not read into artifacts); presence does not
+   establish authentication, funding, model access or authorization. Recheck presence
+   at invocation. Do not load sibling private environment files unnecessarily.
+4. Only after that scope is supplied, use the packet's explicit `--execute` command
+   once. It builds offline, freezes inputs, writes unique ignored var/ artifacts,
+   and stops on error. Do not retry failed/unknown requests without new scope.
+5. Review receipt and report separately: completion is execution evidence; small-set
+   author-label agreement is descriptive, not quality acceptance. Keep live evidence
+   local and retain unknown usage. Update status with actual outcomes and limits.
+6. Publication follows [RELEASE](../docs/RELEASE.md) under explicit release direction.
 
-The app takes JSON Lines, validates the full batch before I/O, performs one batched
-request per ticket, and emits confidence/probabilities/call metadata. Uncertainty
-routes to review. Execution errors stop further calls, preserve earlier output and
-exit 1. Input/configuration errors exit 2 before dispatch. No retries/warmup.
-
-No hosted model requests, private-document transfer, paid inference, deployment,
-crate publication or credentials were introduced. No service remains running after
-verification. Source siblings and frozen reference fixtures are unchanged. Update
+No hosted requests or private-document transfer occurred. No service remains
+running. Library, consumer Rust code and frozen Python parity fixtures are unchanged.
+The live check is blocked solely on model/call scope, not on implementation. Update
 status, validate, commit/push and refresh the registry after material work.

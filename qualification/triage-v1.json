@@ -1,0 +1,96 @@
+{
+  "schema": "semops.triage-check/1",
+  "label_authority": "assistant-authored-synthetic",
+  "cases": [
+    {
+      "id": "billing-duplicate",
+      "text": "My invoice lists the same charge twice. Please correct it during normal business hours; nothing is blocked.",
+      "expected": {
+        "route": "billing",
+        "priority": "routine"
+      }
+    },
+    {
+      "id": "billing-receipt",
+      "text": "Please send a receipt for last month's payment. There is no deadline and the software works normally.",
+      "expected": {
+        "route": "billing",
+        "priority": "routine"
+      }
+    },
+    {
+      "id": "billing-refund",
+      "text": "I cancelled an unused subscription and want to ask about a refund. This can wait until next week.",
+      "expected": {
+        "route": "billing",
+        "priority": "routine"
+      }
+    },
+    {
+      "id": "billing-plan",
+      "text": "The invoice shows the premium plan, but I selected the basic plan. Please check the charge when convenient.",
+      "expected": {
+        "route": "billing",
+        "priority": "routine"
+      }
+    },
+    {
+      "id": "technical-login",
+      "text": "Every employee is locked out of our production account right now. Business operations have stopped. We need immediate technical help.",
+      "expected": {
+        "route": "technical",
+        "priority": "urgent"
+      }
+    },
+    {
+      "id": "technical-leak",
+      "text": "The app is currently showing one customer another customer's private records. This is an active security incident and needs immediate technical response.",
+      "expected": {
+        "route": "technical",
+        "priority": "urgent"
+      }
+    },
+    {
+      "id": "technical-font",
+      "text": "How can I increase the font size in the desktop app? Everything works; this is a nonurgent usability question.",
+      "expected": {
+        "route": "technical",
+        "priority": "routine"
+      }
+    },
+    {
+      "id": "technical-icon",
+      "text": "A toolbar icon disappeared after the app update, but all functions still work. It can be investigated next week.",
+      "expected": {
+        "route": "technical",
+        "priority": "routine"
+      }
+    },
+    {
+      "id": "technical-export",
+      "text": "Where is the button for exporting a report? I am learning the software and do not need an immediate response.",
+      "expected": {
+        "route": "technical",
+        "priority": "routine"
+      }
+    },
+    {
+      "id": "billing-cutoff",
+      "text": "Our payment was received but has not been credited. The account will be suspended in ten minutes unless billing fixes the payment record immediately.",
+      "expected": {
+        "route": "billing",
+        "priority": "urgent"
+      }
+    },
+    {
+      "id": "review-unspecified",
+      "text": "Could someone take a look at my account?",
+      "expect_review": true
+    },
+    {
+      "id": "review-no-detail",
+      "text": "I need help but have not described the issue yet.",
+      "expect_review": true
+    }
+  ]
+}
