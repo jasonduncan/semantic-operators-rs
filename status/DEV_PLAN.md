@@ -1,5 +1,11 @@
 # Development plan
 
+Implementation candidate: 0.1.0-alpha.1. M1–M5 are implemented and verified offline;
+M6 awaits hosted platform CI. Requirement evidence is mapped in
+[IMPLEMENTATION](../docs/IMPLEMENTATION.md).
+
+Original milestone scope and acceptance criteria follow.
+
 Working scope: native Rust counterpart to the current Python library, including
 images and Box, with optional TypeSafe transport. No deadline or effort estimate
 is promised. Each phase has an offline exit before any optional live qualification.
@@ -11,7 +17,7 @@ Cargo skeleton, license, contributor guidance, reference fixture generator, CI,
 private repository, and resumable status. Verify bootstrap build/docs and push.
 No semantic implementation claim.
 
-## M1 — core values and normalization (next)
+## M1 — core values and normalization (complete)
 
 Implement error types, ordered collections, State, validated Boolean/Choice/Score/
 Box and Region, Answer/Call, complement and central normalization. Select minimal
@@ -23,7 +29,7 @@ match; private fields and deserialization cannot bypass validation; no provider,
 network or runtime dependency in default cargo tree. Region valid inputs match
 Python, with documented Rust convenience validation. Compile basic API examples.
 
-## M2 — operators and provider execution
+## M2 — operators and provider execution (complete)
 
 Implement Request/Answers validation, dyn-safe Provider, typed Operator and dynamic
 apply, scripted provider, cascade, and optional Tokio timeout wrapper. Add Send/Sync
@@ -33,7 +39,7 @@ Exit: independent questions use one call; every requested name exactly once; bad
 outputs fail; typed/dynamic decisions match; uncertain-only escalation; no failover
 on errors; all deadline compositions and metadata preservation verified offline.
 
-## M3 — flows, per-item recipes, evaluation
+## M3 — flows, per-item recipes, evaluation (complete)
 
 Implement FlowContext and explicit require/peek/finish, trace retention and latched
 errors. Add ask_each, filter_items, rerank/top/reweighted with bounded concurrency.
@@ -45,7 +51,7 @@ completion order preserves output order; no dropped/duplicated items; exact ties
 stable; no rerun for reweighting or threshold changes; complete fixed reports match
 Python. Trace/error and unused/handled/read uncertainty cases pass.
 
-## M4 — text transport and wire compatibility
+## M4 — text transport and wire compatibility (complete)
 
 Inspect current official TypeSafe contract and available Rust SDKs; record the
 SDK-versus-HTTP decision. Implement optional TypeSafe text adapter with injectable
@@ -57,7 +63,7 @@ mapping, usage validation, malformed/partial responses, auth/rate-limit/timeout
 handling, text wire decode/encode parity, and no secrets in diagnostics. No live
 calls required for this exit. A separately authorized bounded smoke is optional.
 
-## M5 — image parity and localization
+## M5 — image parity and localization (complete)
 
 Implement image validation/diagnostics, explicit asset registry, frames, multipart,
 Box adapter, Region helpers and locate. Refresh provider capability/limit evidence.
@@ -68,7 +74,7 @@ first-use ordering, stale/missing handles, malformed images, JPEG warnings,
 frames shape and all locate outcomes pass offline. Wire v1 still rejects Box.
 Live image behavior remains separately qualified with synthetic public-safe assets.
 
-## M6 — package and release candidate
+## M6 — package and release candidate (local gates complete; hosted CI pending)
 
 Add explicit blocking facade only if the preceding API warrants it; reject nested
 runtime misuse. Complete feature matrix, downstream-consumer checks, cargo package
@@ -85,3 +91,10 @@ CLI/MCP (separate binary package if selected), Laya local Python/torch inference
 call-time Choice convenience API, native Rank, caching, server-side multi-state
 batching, graph language, no_std/WASM and C ABI. Do not turn the deferred list into
 implicit implementation authorization or reduce R1–R10 to the bootstrap surface.
+
+## Next selected work
+
+Finish hosted CI for this implementation commit and record the receipt. After
+that, application integration and separately scoped live qualification are ready
+to be selected. Publication requires a crate-name recheck, API/release review and
+explicit publication direction. These are not blockers to using the local library.

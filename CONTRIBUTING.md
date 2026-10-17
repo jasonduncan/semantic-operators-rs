@@ -7,5 +7,5 @@ and update any changed compatibility or API contract.
 
 Use synthetic fixtures. Preserve upstream attribution and licenses when porting
 code. Explain deliberate behavior changes rather than silently correcting the
-baseline. This private repository is pre-implementation; its API is not stable.
+baseline. This private repository is an implemented alpha; its API is not stable.
 

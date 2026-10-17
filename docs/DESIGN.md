@@ -1,8 +1,9 @@
 # Rust library design
 
-Working design v0.1 · 2026-10-17 · implementation pending.
-The project and specification were requested by Jason. Engineering choices below
-are the initial working design, not claims of user review or API stability.
+Implemented architecture v0.1 · 2026-10-17 · unpublished implementation candidate.
+Jason requested implementation after the specification. Engineering choices below
+are implemented and tested offline; API stability and model quality are not implied.
+See [implementation mapping](IMPLEMENTATION.md) and [validation](../status/VALIDATION.md).
 
 ## 1. Product contract
 
@@ -40,10 +41,11 @@ deferred. Reranking is independent Score calls, not a native Rank question.
 ## 2. Architecture
 
 One Cargo library initially; split packages only if dependency pressure warrants it.
-No native linkage to libsemop or embedding Python. Planned core dependencies:
+No native linkage to libsemop or embedding Python. Core dependencies:
 `serde` and `serde_json` with order preservation; an ordered-map implementation
-if needed by the public collections. Exact versions are selected and locked in M1.
-The bootstrap deliberately installs none of these yet.
+if needed by the public collections. Resolved versions are pinned in Cargo.lock, with Rust 1.85 compatibility.
+`futures-util` supplies runtime-neutral bounded polling; no Tokio or HTTP dependency
+is enabled in the default normal dependency graph.
 
 | Module | Responsibility | Must not own |
 |---|---|---|
@@ -60,15 +62,14 @@ The bootstrap deliberately installs none of these yet.
 | `image`, `locate` | Explicit image handles, Region helpers, presence + box | Automatic upload or image correction |
 | `providers::typesafe` | Optional request translation and transport | Answer decision rules |
 
-Proposed features: default empty; `tokio` for timeout helpers, `typesafe` for the
+Features: default empty; `tokio` for timeout helpers, `typesafe` for the
 HTTP adapter (implies Tokio and a selected HTTP client), `images` for asset parsing,
-`blocking` for an explicit owned-runtime facade (implies Tokio). Features are not
-declared until implementation exists. Recipes use a runtime-neutral futures
-combinator library if needed; they must not spawn a Tokio task just to poll work.
+`blocking` for an explicit owned-runtime facade (implies Tokio). These features contain implemented code. Recipes poll with futures-util and do
+not spawn background tasks.
 
 ## 3. Data and invariants
 
-Question builders return `Result`; validated fields are private. Deserialization
+Question constructors return `Result`; validated fields are private. Deserialization
 must use those validators. Ordered unique question names, choices, score levels,
 and response entries are part of the contract. JSON object insertion order is
 retained when constructing provider state; never sort semantic inputs silently.
@@ -104,18 +105,18 @@ not prove remote cancellation or non-billing. No detached retries/tasks. Timeout
 and cascade compose as providers. A whole-cascade deadline differs from per-hop
 deadlines and is documented/tested. Wrappers propagate transport failures.
 
-Blocking support is a later explicit facade for sync callers. It owns a runtime
+Blocking support is an explicit facade for sync callers. It owns a runtime
 and rejects calls from an active Tokio runtime before blocking. Do not try to
 reproduce C++ `start/pump/cancel` as the Rust public model.
 
 ## 5. Composition and evaluation
 
 Ask independent questions together in one request. A second flow call is useful
-when its state/question/provider depends on an earlier answer. A flow returns
-`Result<FlowOutcome<T>, Error>`; reading an undecided answer through `require`
+when its state/question/provider depends on an earlier answer. A flow finishes with
+`Result<FlowOutcome<T>, FlowFailure>`; reading an undecided answer through `require`
 produces a structured stop containing the operator and answer, while `peek`
 permits explicit handling. An unread undecided result does not stop execution.
-Provider failures propagate separately; traces survive failed execution for
+Provider failures propagate separately; FlowFailure retains traces through failed execution for
 inspection and are never logged automatically.
 
 Filtering classifies each item as match/no/unsure/failed. Reranking collects
@@ -128,17 +129,18 @@ Report coverage with accuracy, and failures separately from uncertainty. Keep
 offline conformance, live transport smoke, model quality, and release acceptance
 as distinct evidence. No performance or quality claims in 0.1 without measurements.
 
-## 6. Main risks and decisions still to test
+## 6. Resolved choices and remaining limits
 
-- Numeric parity: Python fsum, ties-to-even rounding, and significant digits need
-  differential tests rather than naive Rust round substitutions.
-- SDK choice: no Rust TypeSafe SDK was verified in this setup. First implement a
-  scripted transport; select SDK reuse versus narrow HTTP adapter during M4.
-- Image limits and model capability are a dated sibling-source contract, not a
-  verified current service promise. Refresh official provider documentation in M5.
-- Box support exceeds Python's text wire schema. Keep wire v1 text-only.
-- A two-crate core/provider split may become useful later; a single feature-gated
-  crate is the smallest initial implementation.
-- Async flow lifetime ergonomics need a compiling prototype in M3 before freezing
-  convenience functions or macros. The explicit context API is the fallback.
-
+- Numerical parity uses precise JSON float parsing, decimal rounding, accurate
+  distribution sums and CPython 3.12+ compensated Score summation. Golden outputs
+  were generated with the pinned source under CPython 3.13.13. See compatibility.
+- TypeSafe uses a narrow optional reqwest transport with explicit config, no retries,
+  bounded bodies, redacted diagnostics and scripted/localhost verification. The
+  SDK comparison and official contract links are in [transport](TYPE_SAFE_TRANSPORT.md).
+- Image validators preserve Python limits while the adapter applies current service
+  restrictions (280px minimum sides and no image substitution in object keys).
+  Header inspection does not establish full image renderability or hosted compliance.
+- Wire v1 remains text-only, with its historical first-answer call projection.
+- FlowContext provides a compiling explicit API; no async closure DSL is needed.
+- No paid/hosted inference, model calibration, performance claim, publication or
+  deployment follows from offline conformance. These remain separate activities.

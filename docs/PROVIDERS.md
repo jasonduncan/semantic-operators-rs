@@ -1,6 +1,6 @@
 # Providers, transport, and image contract
 
-Proposed implementation contract, 2026-10-17. No provider is implemented yet.
+Implemented contract, 2026-10-17. See [transport details](TYPE_SAFE_TRANSPORT.md) for current service evidence and adapter tests.
 
 ## Provider boundary
 
@@ -16,14 +16,13 @@ Adapters receive explicit configuration and a reusable client. Examples may read
 `TYPESAFE_API_KEY` at their boundary. Errors and Debug redact credentials and omit
 input/response bodies by default. Traces are in-memory opt-in inspection artifacts.
 
-## TypeSafe adapter selection gate (M4)
+## TypeSafe adapter
 
 Existing references use Python typesafe-sdk >=0.7.5 and C++ libtypesafe >=0.2.
-There is no verified Rust SDK dependency in this specification. Before selecting
-one, inspect its source, maintenance, licensing, request shape, retry behavior,
-timeouts, multipart implementation, and MSRV. Otherwise implement a narrow HTTP
-adapter using an optional established Rust HTTP client. Do not port C++ networking
-or add FFI merely to reuse semantic question serialization.
+The adapter uses optional reqwest with rustls through an injectable transport.
+A narrow adapter gives direct control over frozen semantics, response caps, explicit
+credentials, cancellation and retry policy. No FFI or provider SDK is required.
+The SDK investigation and official references are retained in the transport document.
 
 Expose an injectable transport at the adapter boundary so integration tests can
 run without API keys. Keep endpoint/model/timeouts configurable; pin model IDs
@@ -42,7 +41,7 @@ Reference request semantics:
 - Malformed usage counts become absent. Unsigned Rust storage must not coerce
   negative/fractional/bool values to a token count.
 - Reuse a Call record across answers in that provider invocation. Retries are
-  explicit client policy, default disabled in the proposed adapter.
+  explicit client policy, disabled in the built-in adapter.
 
 Test malformed JSON, authentication failures, rate limits, non-2xx, service timeouts,
 partial responses, extra names, and cancellation using local/scripted transport.
@@ -61,10 +60,10 @@ try the next provider. After a successful hop, re-ask only answers undecided or
 below escalate_below. Final-hop answers stand even if still undecided. Preserve
 original order and the actual answering call for every result.
 
-## Images (M5)
+## Images
 
 The following limits are frozen **local Python 0.12 reference behavior**, not a
-current hosted-service guarantee. Refresh official documentation before live use:
+current hosted-service guarantee. Current-service differences are documented in [IMAGES](IMAGES.md):
 
 | Rule | Frozen value |
 |---|---|

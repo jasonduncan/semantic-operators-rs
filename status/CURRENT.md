@@ -1,25 +1,22 @@
 # Current state
 
-2026-10-17 · portfolio active · execution ready · next phase M1.
+2026-10-17 · portfolio active · execution active · phase M6 verification.
 
-The requested specification and repository bootstrap are complete. The crate is
-`semantic-operators` 0.1.0-dev.0, import `semantic_operators`, with publication
-disabled. The GitHub repository is private, default branch main.
+The Rust library is implemented as `semantic-operators` 0.1.0-alpha.1, import
+`semantic_operators`. The repository is private, branch main, publication disabled.
 
-Available: design/API/compatibility/provider/development/testing/release documents,
-source revisions and hashes, 38 Python-generated synthetic reference cases, a
-buildable empty Rust library, platform/MSRV CI configuration, and this handoff.
+Implemented: validated Boolean/Choice/Score/Box questions, typed answers, confidence
+normalization, providers/operators, batched asks, cascade and deadlines, traced
+flows, bounded filtering/reranking/reweighting, benchmark reports/runners, text wire
+v1, image assets/frames/localization, TypeSafe HTTP/multipart, and blocking facade.
+Core has no default runtime/network dependencies. Five offline examples are runnable.
 
-Not implemented: questions/answers, providers, operators, wrappers, recipes,
-benchmarks, images, wire codecs, CLI, or MCP. No Rust semantic tests exist yet.
-Build success is bootstrap evidence only. See [validation](VALIDATION.md).
+Local tests, Python differential cases, package consumers, and documentation checks
+provide implementation evidence. Hosted Linux/macOS/Windows stable/MSRV CI is the
+remaining M6 gate. See [VALIDATION](VALIDATION.md) and the
+[requirement map](../docs/IMPLEMENTATION.md).
 
-No blocker prevents M1. Crate name availability could not be verified (HTTP 403);
-both hyphen/underscore names are absent from the accessible official Git index,
-so the name appears unregistered. Guaranteed availability/reservation remains a
-future release concern, not a development blocker. TypeSafe Rust SDK
-selection and current service image capabilities remain M4/M5 investigations.
-
-Next: implement validated questions and answer normalization with frozen reference
-fixtures, then expand the numeric boundary corpus. Full scope and exits are in
-[DEV_PLAN](DEV_PLAN.md).
+No hosted model qualification, real-document transmission, paid inference,
+crates.io publication, reservation or public release occurred. CLI/MCP, local
+inference and other explicitly deferred surfaces remain outside this candidate.
+There is no implementation blocker; crate availability remains a release-time check.

@@ -1,14 +1,14 @@
 [package]
 name = "semantic-operators"
-version = "0.1.0-dev.0"
+version = "0.1.0-alpha.1"
 edition = "2024"
 rust-version = "1.85"
 description = "Provider-neutral semantic operators with typed, confidence-aware answers"
 license = "MIT"
 repository = "https://github.com/jasonduncan/semantic-operators-rs"
-readme = "README.md"
+readme = "CRATE.md"
 publish = false
-include = ["/src/**", "/Cargo.toml", "/Cargo.lock", "/README.md", "/LICENSE"]
+include = ["/src/**", "/Cargo.toml", "/Cargo.lock", "/CRATE.md", "/LICENSE", "/examples/**"]
 
 [lib]
 name = "semantic_operators"
@@ -16,6 +16,23 @@ path = "src/lib.rs"
 
 [features]
 default = []
+tokio = ["dep:tokio"]
+blocking = ["tokio"]
+typesafe = ["tokio", "dep:reqwest"]
+images = ["dep:base64"]
+
+[dependencies]
+serde = { version = "1.0.228", features = ["derive", "rc"] }
+serde_json = { version = "1.0.149", features = ["preserve_order", "float_roundtrip"] }
+indexmap = { version = "2.14", features = ["serde"] }
+futures-util = "0.3.32"
+tokio = { version = "1.52", features = ["rt-multi-thread", "time"], optional = true }
+reqwest = { version = "0.12", default-features = false, features = ["rustls-tls"], optional = true }
+base64 = { version = "0.22", optional = true }
+
+[dev-dependencies]
+futures-executor = "0.3.32"
+tokio = { version = "1.52", features = ["macros", "rt-multi-thread", "time", "test-util"] }
 
 [lints.rust]
 unsafe_code = "forbid"

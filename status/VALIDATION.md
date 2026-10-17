@@ -1,5 +1,55 @@
 # Validation evidence
 
+## Implementation candidate — 2026-10-17
+
+0.1.0-alpha.1, macOS aarch64. Rust 1.98.1 and Rust 1.85.0 minimum toolchain.
+These checks exercise implemented library behavior; they do not qualify model quality.
+
+| Check | Observed result |
+|---|---|
+| cargo fmt --all -- --check | pass |
+| cargo clippy --locked --offline --all-features --all-targets -- -D warnings | pass |
+| cargo test --locked --offline --all-targets | pass, default core and examples compile |
+| cargo test --locked --offline --all-features --all-targets | pass, 86 Rust tests |
+| cargo +1.85.0 test --locked --offline --all-features --all-targets | pass, 86 Rust tests on final implementation |
+| cargo test --locked --offline --all-features --doc | pass, 1 compiled package example |
+| RUSTDOCFLAGS=-Dwarnings cargo doc --locked --offline --all-features --no-deps | pass |
+| python3 tools/check_package.py | pass: 31-file actual archive, default graph isolation, independent default/all-feature consumers |
+| python3 tools/check_docs.py | pass: local file links and all 4 generator/revision provenance records |
+| Five offline examples | pass; actual image example run with images feature |
+
+The differential fixtures contain 213 expected scenarios: 172 core/wire, 25 recipe, 
+16 benchmark reports/scenarios. CPython 3.13.13 generated expectations from pinned
+Python source; Rust consumes them. This is finite differential evidence, not a
+claim of exhaustive equivalence. Full sibling Python/C++ suites were not rerun.
+
+Review regressions cover never-restored abstentions, Python special whitespace,
+redacted Debug, float roundtrip and compensated sums, extreme-weight overflow,
+disabled Tokio drivers, cancellation, bounded multipart collision search, and
+per-case flow validation retaining failure traces. TypeSafe evidence comprises
+13 integration tests plus 2 internal multipart tests; requests use synthetic
+scripted transports and an ephemeral localhost HTTP server. Initial sandbox
+socket denials required running those tests outside the sandbox; that rerun passed.
+Lint found two test MutexGuard lifetimes across awaits; lexical scopes fixed them.
+Rustdoc found one numeric interval mistaken for a link; code formatting fixed it.
+
+The package intentionally excludes private status, source manifests, fixtures and
+development docs; it includes the standalone CRATE.md, source, license, Cargo
+metadata and examples. Cargo warns about excluded integration tests during archive
+creation; consumers build the extracted package successfully. No crate published.
+
+Hosted CI for this implementation is pending the first implementation push.
+It covers 6 OS/toolchain jobs (Linux/macOS/Windows, stable/1.85.0), documentation,
+and individual-feature/package verification. Results will be appended with exact
+commit/run links before closing the candidate handoff.
+
+No live model calls, paid evaluation, real-document upload, public visibility,
+release tag, registry publication or name reservation. Image tests parse headers;
+full decoding and service acceptance remain unqualified. Performance unmeasured.
+
+## Earlier setup evidence (historical)
+
+
 2026-10-17, macOS aarch64, rustc 1.98.1 / cargo 1.98.1.
 Implementation snapshot: bootstrap source from initial commit 4cf2497; subsequent
 handoff documentation does not add semantic runtime code.

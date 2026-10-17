@@ -32,3 +32,25 @@ Completion evidence: hosted CI passed seven jobs twice, including the refreshed
 workflow on Linux/macOS/Windows and Rust stable/1.85.0. Official package Git index
 checks support an apparently unused name; direct registry access stayed blocked.
 The final commit records this evidence without extending implementation scope.
+
+## 2026-10-17 — native Rust implementation
+
+Jason explicitly said “BUILD IT!” and allowed subagents. Built M1–M6's native
+library surface with core/wire, image/recipe and transport agents, integrating
+execution/flows, packaging and documentation centrally. API is now actual Rust
+rather than proposal. Version 0.1.0-alpha.1 remains private and unpublished.
+
+Expanded frozen evidence to 213 Python expected scenarios: 172 core/wire, 25 recipes, 
+16 benchmark scenarios. Independent review caught numeric parsing/summation,
+Python whitespace, Debug leakage, abstention restoration, extreme-weight overflow,
+disabled-runtime handling, adversarial multipart boundaries, and delayed flow
+validation/trace loss. Fixes have regressions. Default core remains executor-neutral;
+Tokio, blocking, images and TypeSafe are opt-in. Direct HTTP was chosen after
+inspecting SDK/source contracts; official current image preflight is kept separate
+from frozen Python core limits.
+
+All five examples use explicitly synthetic providers. The actual Cargo archive
+was extracted and consumed independently with default and optional features.
+No hosted inference, private corpus upload, public release, tag or crates.io
+publication occurred. Localhost test servers terminate inside tests. Hosted CI
+receipts and exact acceptance limits are maintained in VALIDATION.md.

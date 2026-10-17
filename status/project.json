@@ -3,9 +3,9 @@
   "project_id": "semantic-operators-rs",
   "name": "Semantic Operators for Rust",
   "portfolio_status": "active",
-  "execution_status": "ready",
-  "phase": "M1: core contracts and parity",
-  "summary": "Design and Cargo bootstrap complete; semantic runtime not implemented.",
+  "execution_status": "active",
+  "phase": "M6: candidate verification",
+  "summary": "Native Rust alpha library implemented; local verification complete, hosted CI gate pending.",
   "repository": {
     "remote": "https://github.com/jasonduncan/semantic-operators-rs.git",
     "default_branch": "main"
@@ -18,10 +18,10 @@
     "validation": "VALIDATION.md",
     "local_state": "LOCAL_STATE.md"
   },
-  "next_action": "Implement validated questions and answer normalization against the frozen Python fixtures in M1.",
+  "next_action": "Verify hosted platform CI, record candidate handoff; select integration or bounded live qualification next.",
   "blockers": [],
-  "updated_at": "2026-10-17T19:59:58Z",
-  "handoff_version": 2,
+  "updated_at": "2026-10-17T20:42:06Z",
+  "handoff_version": 3,
   "tags": [
     "rust",
     "semantic-operators"

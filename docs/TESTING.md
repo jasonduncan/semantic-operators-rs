@@ -41,22 +41,25 @@
   presence false/unknown/true with/without usable Box. Use synthetic tiny fixtures
   with dimensions at the reference limits, not private photos.
 
-## Fixture scope at bootstrap
+## Implemented evidence
 
-The checked-in JSON contains normalization, complement, and wire decode cases
-computed by the pinned Python implementation, with revision and generator hash.
-It is a seed corpus, not an exhaustive parity suite. There is no Rust consumer
-yet. Add wire encode, TypeSafe payload, concurrency, recipes, and metrics fixtures
-at their respective milestones. Keep expected numeric values literal and record
-the rule for comparisons per case family; never apply one broad epsilon to all
-assertions because it can hide different decided/undecided results.
+The Rust fixture readers consume Python-generated core, wire, recipe and benchmark
+cases. Each JSON records the reference revision, interpreter and generator hash.
+See [implementation mapping](IMPLEMENTATION.md) for test files and exact scope,
+and [validation](../status/VALIDATION.md) for executed results. Frozen cases are a
+bounded differential corpus, not proof of complete semantic equivalence.
+
+Transport tests use scripted responses and localhost HTTP, including multipart,
+status failures, size caps and cancellation. No live provider request is part of
+ordinary tests. Image tests validate headers and documented limits; they do not
+claim full image decoding or hosted image-model support.
 
 ## Release gates
 
 Linux/macOS/Windows on stable and MSRV; all supported features; docs compile;
 downstream example compiles; package contents reviewed; default dependency tree
 has no transport/runtime; no unexpected network activity in ordinary tests.
-M6 requires a complete requirement/fixture mapping. Optional live verification
+The requirement/fixture mapping is maintained in IMPLEMENTATION.md. Optional live verification
 must state model, synthetic dataset, invocation limit, retry policy, observed
 outcomes and cost if reported. Do not infer quality from transport success.
 

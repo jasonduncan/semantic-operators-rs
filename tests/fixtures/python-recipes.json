@@ -1,0 +1,1938 @@
+{
+  "fixture_version": 1,
+  "reference_revision": "07fb1f3109dac2e69a7dafe9fa349d0daa52012d",
+  "python_version": "3.13.13",
+  "python_implementation": "CPython",
+  "generator_sha256": "09ebc428b14b955151e671511571d24f239eb7f0faf80ae550217b310404edc3",
+  "reference_files": [
+    {
+      "path": "src/semantic_operators/_each.py",
+      "sha256": "7c96e03c83e3664646e90ee0d1f0e42bd562ee9530f97a15c62ecbd29d1668d9"
+    },
+    {
+      "path": "src/semantic_operators/filtering.py",
+      "sha256": "6ff115e05bb6e65134184b0d7d74a5085c82fc6deb9ec7f4b3f7a0bcd1913616"
+    },
+    {
+      "path": "src/semantic_operators/images.py",
+      "sha256": "483cab4fead95899f07d67eb85964d2afd7cc457d31c878dd62383c31937c9c3"
+    },
+    {
+      "path": "src/semantic_operators/rerank.py",
+      "sha256": "097fd862c48f7c9b52e9cd30d9dcecc44e7fce80562907c08d55eb7da97b333e"
+    },
+    {
+      "path": "src/semantic_operators/types.py",
+      "sha256": "0610405796747e8de7221fe2b63849e3604848c5089498eec6894127936e950a"
+    },
+    {
+      "path": "tests/imagekit.py",
+      "sha256": "09086aa3cba0afa70a53e3a3325500e3e0a49be89906156a45e51f1c9ece33f6"
+    }
+  ],
+  "scope": "Synthetic offline reference execution; no SDK, network, credentials, or model calls.",
+  "filter_cases": [
+    {
+      "id": "all_outcomes",
+      "threshold": 0.8,
+      "context": null,
+      "items": [
+        [
+          "yes",
+          {
+            "p": 0.95
+          }
+        ],
+        [
+          "no",
+          {
+            "p": 0.05
+          }
+        ],
+        [
+          "tie",
+          {
+            "p": 0.5
+          }
+        ],
+        [
+          "low",
+          {
+            "p": 0.6
+          }
+        ],
+        [
+          "bad",
+          {
+            "error": "provider"
+          }
+        ],
+        [
+          "late",
+          {
+            "error": "timeout"
+          }
+        ]
+      ],
+      "expected": {
+        "models": [
+          "model-a"
+        ],
+        "verdicts": [
+          {
+            "id": "yes",
+            "outcome": "match",
+            "result": {
+              "value": true,
+              "confidence": 0.95,
+              "probabilities": {
+                "true": 0.95,
+                "false": 0.05
+              },
+              "model": "model-a"
+            }
+          },
+          {
+            "id": "no",
+            "outcome": "no",
+            "result": {
+              "value": false,
+              "confidence": 0.95,
+              "probabilities": {
+                "true": 0.05,
+                "false": 0.95
+              },
+              "model": "model-a"
+            }
+          },
+          {
+            "id": "tie",
+            "outcome": "unsure",
+            "result": {
+              "value": null,
+              "confidence": 0.5,
+              "probabilities": {
+                "true": 0.5,
+                "false": 0.5
+              },
+              "model": "model-a"
+            }
+          },
+          {
+            "id": "low",
+            "outcome": "unsure",
+            "result": {
+              "value": null,
+              "confidence": 0.6,
+              "probabilities": {
+                "true": 0.6,
+                "false": 0.4
+              },
+              "model": "model-a"
+            }
+          },
+          {
+            "id": "bad",
+            "outcome": "failed",
+            "result": {
+              "error": "provider"
+            }
+          },
+          {
+            "id": "late",
+            "outcome": "failed",
+            "result": {
+              "error": "timeout"
+            }
+          }
+        ]
+      },
+      "expected_states": [
+        {
+          "p": 0.95
+        },
+        {
+          "p": 0.05
+        },
+        {
+          "p": 0.5
+        },
+        {
+          "p": 0.6
+        },
+        {
+          "error": "provider"
+        },
+        {
+          "error": "timeout"
+        }
+      ]
+    },
+    {
+      "id": "threshold_equality",
+      "threshold": 0.93,
+      "context": null,
+      "items": [
+        [
+          "equal",
+          {
+            "p": 0.07
+          }
+        ],
+        [
+          "below",
+          {
+            "p": 0.08
+          }
+        ]
+      ],
+      "expected": {
+        "models": [
+          "model-a"
+        ],
+        "verdicts": [
+          {
+            "id": "equal",
+            "outcome": "no",
+            "result": {
+              "value": false,
+              "confidence": 0.93,
+              "probabilities": {
+                "true": 0.07,
+                "false": 0.93
+              },
+              "model": "model-a"
+            }
+          },
+          {
+            "id": "below",
+            "outcome": "unsure",
+            "result": {
+              "value": null,
+              "confidence": 0.92,
+              "probabilities": {
+                "true": 0.08,
+                "false": 0.92
+              },
+              "model": "model-a"
+            }
+          }
+        ]
+      },
+      "expected_states": [
+        {
+          "p": 0.07
+        },
+        {
+          "p": 0.08
+        }
+      ]
+    },
+    {
+      "id": "ties_and_false_at_zero_threshold",
+      "threshold": 0.0,
+      "context": null,
+      "items": [
+        [
+          "tie",
+          {
+            "p": 0.5
+          }
+        ],
+        [
+          "false",
+          {
+            "p": 0.0
+          }
+        ]
+      ],
+      "expected": {
+        "models": [
+          "model-a"
+        ],
+        "verdicts": [
+          {
+            "id": "tie",
+            "outcome": "unsure",
+            "result": {
+              "value": null,
+              "confidence": 0.5,
+              "probabilities": {
+                "true": 0.5,
+                "false": 0.5
+              },
+              "model": "model-a"
+            }
+          },
+          {
+            "id": "false",
+            "outcome": "no",
+            "result": {
+              "value": false,
+              "confidence": 1.0,
+              "probabilities": {
+                "true": 0.0,
+                "false": 1.0
+              },
+              "model": "model-a"
+            }
+          }
+        ]
+      },
+      "expected_states": [
+        {
+          "p": 0.5
+        },
+        {
+          "p": 0.0
+        }
+      ]
+    },
+    {
+      "id": "context_wrapper",
+      "threshold": 0.0,
+      "context": {
+        "policy": [
+          "one",
+          "two"
+        ]
+      },
+      "items": [
+        [
+          "local-id",
+          {
+            "p": 0.9
+          }
+        ]
+      ],
+      "expected": {
+        "models": [
+          "model-a"
+        ],
+        "verdicts": [
+          {
+            "id": "local-id",
+            "outcome": "match",
+            "result": {
+              "value": true,
+              "confidence": 0.9,
+              "probabilities": {
+                "true": 0.9,
+                "false": 0.1
+              },
+              "model": "model-a"
+            }
+          }
+        ]
+      },
+      "expected_states": [
+        {
+          "context": {
+            "policy": [
+              "one",
+              "two"
+            ]
+          },
+          "item": {
+            "p": 0.9
+          }
+        }
+      ]
+    },
+    {
+      "id": "empty",
+      "threshold": 0.8,
+      "context": null,
+      "items": [],
+      "expected": {
+        "models": [],
+        "verdicts": []
+      },
+      "expected_states": []
+    },
+    {
+      "id": "reported_models_include_undecided",
+      "threshold": 0.8,
+      "context": null,
+      "items": [
+        [
+          "a",
+          {
+            "p": 0.9
+          }
+        ],
+        [
+          "b",
+          {
+            "p": 0.5,
+            "model": "model-b"
+          }
+        ],
+        [
+          "c",
+          {
+            "p": 0.1,
+            "model": null
+          }
+        ]
+      ],
+      "expected": {
+        "models": [
+          "model-a",
+          "model-b"
+        ],
+        "verdicts": [
+          {
+            "id": "a",
+            "outcome": "match",
+            "result": {
+              "value": true,
+              "confidence": 0.9,
+              "probabilities": {
+                "true": 0.9,
+                "false": 0.1
+              },
+              "model": "model-a"
+            }
+          },
+          {
+            "id": "b",
+            "outcome": "unsure",
+            "result": {
+              "value": null,
+              "confidence": 0.5,
+              "probabilities": {
+                "true": 0.5,
+                "false": 0.5
+              },
+              "model": "model-b"
+            }
+          },
+          {
+            "id": "c",
+            "outcome": "no",
+            "result": {
+              "value": false,
+              "confidence": 0.9,
+              "probabilities": {
+                "true": 0.1,
+                "false": 0.9
+              },
+              "model": null
+            }
+          }
+        ]
+      },
+      "expected_states": [
+        {
+          "p": 0.9
+        },
+        {
+          "p": 0.5,
+          "model": "model-b"
+        },
+        {
+          "p": 0.1,
+          "model": null
+        }
+      ]
+    }
+  ],
+  "ranking_cases": [
+    {
+      "id": "descending_exact_ties",
+      "threshold": 0.0,
+      "context": null,
+      "items": [
+        [
+          "a",
+          {
+            "p": [
+              0.6,
+              0.4,
+              0.0
+            ]
+          }
+        ],
+        [
+          "b",
+          {
+            "p": [
+              0.0,
+              0.2,
+              0.8
+            ]
+          }
+        ],
+        [
+          "c",
+          {
+            "p": [
+              0.6,
+              0.4,
+              0.0
+            ]
+          }
+        ]
+      ],
+      "expected": {
+        "complete": true,
+        "models": [
+          "model-a"
+        ],
+        "ranked": [
+          {
+            "id": "b",
+            "position": 1,
+            "score": 1.8,
+            "answer": {
+              "value": 1.8,
+              "confidence": 0.8,
+              "probabilities": {
+                "none": 0.0,
+                "some": 0.2,
+                "full": 0.8
+              },
+              "model": "model-a"
+            }
+          },
+          {
+            "id": "a",
+            "position": 0,
+            "score": 0.4,
+            "answer": {
+              "value": 0.4,
+              "confidence": 0.6,
+              "probabilities": {
+                "none": 0.6,
+                "some": 0.4,
+                "full": 0.0
+              },
+              "model": "model-a"
+            }
+          },
+          {
+            "id": "c",
+            "position": 2,
+            "score": 0.4,
+            "answer": {
+              "value": 0.4,
+              "confidence": 0.6,
+              "probabilities": {
+                "none": 0.6,
+                "some": 0.4,
+                "full": 0.0
+              },
+              "model": "model-a"
+            }
+          }
+        ],
+        "unscored": [],
+        "top": [
+          {
+            "k": 0,
+            "allow_partial": false,
+            "ids": []
+          },
+          {
+            "k": 1,
+            "allow_partial": false,
+            "ids": [
+              "b"
+            ]
+          },
+          {
+            "k": 10,
+            "allow_partial": false,
+            "ids": [
+              "b",
+              "a",
+              "c"
+            ]
+          },
+          {
+            "k": 10,
+            "allow_partial": true,
+            "ids": [
+              "b",
+              "a",
+              "c"
+            ]
+          }
+        ]
+      },
+      "expected_states": [
+        {
+          "query": "synthetic query",
+          "document": {
+            "p": [
+              0.6,
+              0.4,
+              0.0
+            ]
+          }
+        },
+        {
+          "query": "synthetic query",
+          "document": {
+            "p": [
+              0.0,
+              0.2,
+              0.8
+            ]
+          }
+        },
+        {
+          "query": "synthetic query",
+          "document": {
+            "p": [
+              0.6,
+              0.4,
+              0.0
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "partial_and_provider_abstention",
+      "threshold": 0.0,
+      "context": null,
+      "items": [
+        [
+          "a",
+          {
+            "p": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          }
+        ],
+        [
+          "b",
+          {
+            "error": "provider"
+          }
+        ],
+        [
+          "c",
+          {
+            "p": [
+              0.2,
+              0.5,
+              0.3
+            ],
+            "provider_threshold": 0.9
+          }
+        ]
+      ],
+      "expected": {
+        "complete": false,
+        "models": [
+          "model-a"
+        ],
+        "ranked": [
+          {
+            "id": "a",
+            "position": 0,
+            "score": 2.0,
+            "answer": {
+              "value": 2.0,
+              "confidence": 1.0,
+              "probabilities": {
+                "none": 0.0,
+                "some": 0.0,
+                "full": 1.0
+              },
+              "model": "model-a"
+            }
+          }
+        ],
+        "unscored": [
+          {
+            "id": "b",
+            "result": {
+              "error": "provider"
+            }
+          },
+          {
+            "id": "c",
+            "result": {
+              "value": null,
+              "confidence": 0.5,
+              "probabilities": {
+                "none": 0.2,
+                "some": 0.5,
+                "full": 0.3
+              },
+              "model": "model-a"
+            }
+          }
+        ],
+        "top": [
+          {
+            "k": 0,
+            "allow_partial": false,
+            "error": true
+          },
+          {
+            "k": 1,
+            "allow_partial": false,
+            "error": true
+          },
+          {
+            "k": 10,
+            "allow_partial": false,
+            "error": true
+          },
+          {
+            "k": 10,
+            "allow_partial": true,
+            "ids": [
+              "a"
+            ]
+          }
+        ]
+      },
+      "expected_states": [
+        {
+          "query": "synthetic query",
+          "document": {
+            "p": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          }
+        },
+        {
+          "query": "synthetic query",
+          "document": {
+            "error": "provider"
+          }
+        },
+        {
+          "query": "synthetic query",
+          "document": {
+            "p": [
+              0.2,
+              0.5,
+              0.3
+            ],
+            "provider_threshold": 0.9
+          }
+        }
+      ]
+    },
+    {
+      "id": "mixed_models_decided",
+      "threshold": 0.0,
+      "context": null,
+      "items": [
+        [
+          "a",
+          {
+            "p": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          }
+        ],
+        [
+          "b",
+          {
+            "p": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "model": "model-b"
+          }
+        ]
+      ],
+      "expected": {
+        "complete": true,
+        "models": [
+          "model-a",
+          "model-b"
+        ],
+        "ranked": [
+          {
+            "id": "a",
+            "position": 0,
+            "score": 2.0,
+            "answer": {
+              "value": 2.0,
+              "confidence": 1.0,
+              "probabilities": {
+                "none": 0.0,
+                "some": 0.0,
+                "full": 1.0
+              },
+              "model": "model-a"
+            }
+          },
+          {
+            "id": "b",
+            "position": 1,
+            "score": 0.0,
+            "answer": {
+              "value": 0.0,
+              "confidence": 1.0,
+              "probabilities": {
+                "none": 1.0,
+                "some": 0.0,
+                "full": 0.0
+              },
+              "model": "model-b"
+            }
+          }
+        ],
+        "unscored": [],
+        "top": [
+          {
+            "k": 0,
+            "allow_partial": false,
+            "error": true
+          },
+          {
+            "k": 1,
+            "allow_partial": false,
+            "error": true
+          },
+          {
+            "k": 10,
+            "allow_partial": false,
+            "error": true
+          },
+          {
+            "k": 10,
+            "allow_partial": true,
+            "error": true
+          }
+        ]
+      },
+      "expected_states": [
+        {
+          "query": "synthetic query",
+          "document": {
+            "p": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          }
+        },
+        {
+          "query": "synthetic query",
+          "document": {
+            "p": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "model": "model-b"
+          }
+        }
+      ]
+    },
+    {
+      "id": "mixed_models_undecided",
+      "threshold": 0.8,
+      "context": null,
+      "items": [
+        [
+          "a",
+          {
+            "p": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          }
+        ],
+        [
+          "b",
+          {
+            "p": [
+              0.4,
+              0.3,
+              0.3
+            ],
+            "model": "model-b"
+          }
+        ]
+      ],
+      "expected": {
+        "complete": false,
+        "models": [
+          "model-a",
+          "model-b"
+        ],
+        "ranked": [
+          {
+            "id": "a",
+            "position": 0,
+            "score": 2.0,
+            "answer": {
+              "value": 2.0,
+              "confidence": 1.0,
+              "probabilities": {
+                "none": 0.0,
+                "some": 0.0,
+                "full": 1.0
+              },
+              "model": "model-a"
+            }
+          }
+        ],
+        "unscored": [
+          {
+            "id": "b",
+            "result": {
+              "value": null,
+              "confidence": 0.3,
+              "probabilities": {
+                "none": 0.4,
+                "some": 0.3,
+                "full": 0.3
+              },
+              "model": "model-b"
+            }
+          }
+        ],
+        "top": [
+          {
+            "k": 0,
+            "allow_partial": false,
+            "error": true
+          },
+          {
+            "k": 1,
+            "allow_partial": false,
+            "error": true
+          },
+          {
+            "k": 10,
+            "allow_partial": false,
+            "error": true
+          },
+          {
+            "k": 10,
+            "allow_partial": true,
+            "error": true
+          }
+        ]
+      },
+      "expected_states": [
+        {
+          "query": "synthetic query",
+          "document": {
+            "p": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          }
+        },
+        {
+          "query": "synthetic query",
+          "document": {
+            "p": [
+              0.4,
+              0.3,
+              0.3
+            ],
+            "model": "model-b"
+          }
+        }
+      ]
+    },
+    {
+      "id": "arbitrary_document_and_context",
+      "threshold": 0.0,
+      "context": [
+        "background"
+      ],
+      "items": [
+        [
+          "null",
+          null
+        ],
+        [
+          "array",
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          "bool",
+          false
+        ]
+      ],
+      "expected": {
+        "complete": true,
+        "models": [
+          "model-a"
+        ],
+        "ranked": [
+          {
+            "id": "null",
+            "position": 0,
+            "score": 2.0,
+            "answer": {
+              "value": 2.0,
+              "confidence": 1.0,
+              "probabilities": {
+                "none": 0.0,
+                "some": 0.0,
+                "full": 1.0
+              },
+              "model": "model-a"
+            }
+          },
+          {
+            "id": "array",
+            "position": 1,
+            "score": 2.0,
+            "answer": {
+              "value": 2.0,
+              "confidence": 1.0,
+              "probabilities": {
+                "none": 0.0,
+                "some": 0.0,
+                "full": 1.0
+              },
+              "model": "model-a"
+            }
+          },
+          {
+            "id": "bool",
+            "position": 2,
+            "score": 2.0,
+            "answer": {
+              "value": 2.0,
+              "confidence": 1.0,
+              "probabilities": {
+                "none": 0.0,
+                "some": 0.0,
+                "full": 1.0
+              },
+              "model": "model-a"
+            }
+          }
+        ],
+        "unscored": [],
+        "top": [
+          {
+            "k": 0,
+            "allow_partial": false,
+            "ids": []
+          },
+          {
+            "k": 1,
+            "allow_partial": false,
+            "ids": [
+              "null"
+            ]
+          },
+          {
+            "k": 10,
+            "allow_partial": false,
+            "ids": [
+              "null",
+              "array",
+              "bool"
+            ]
+          },
+          {
+            "k": 10,
+            "allow_partial": true,
+            "ids": [
+              "null",
+              "array",
+              "bool"
+            ]
+          }
+        ]
+      },
+      "expected_states": [
+        {
+          "query": "synthetic query",
+          "document": null,
+          "context": [
+            "background"
+          ]
+        },
+        {
+          "query": "synthetic query",
+          "document": [
+            1,
+            2
+          ],
+          "context": [
+            "background"
+          ]
+        },
+        {
+          "query": "synthetic query",
+          "document": false,
+          "context": [
+            "background"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "empty",
+      "threshold": 0.0,
+      "context": null,
+      "items": [],
+      "expected": {
+        "complete": true,
+        "models": [],
+        "ranked": [],
+        "unscored": [],
+        "top": [
+          {
+            "k": 0,
+            "allow_partial": false,
+            "ids": []
+          },
+          {
+            "k": 1,
+            "allow_partial": false,
+            "ids": []
+          },
+          {
+            "k": 10,
+            "allow_partial": false,
+            "ids": []
+          },
+          {
+            "k": 10,
+            "allow_partial": true,
+            "ids": []
+          }
+        ]
+      },
+      "expected_states": []
+    },
+    {
+      "id": "weighted_order_changes",
+      "threshold": 0.0,
+      "context": null,
+      "items": [
+        [
+          "a",
+          {
+            "p": [
+              0.0,
+              0.8,
+              0.2
+            ]
+          }
+        ],
+        [
+          "b",
+          {
+            "p": [
+              0.5,
+              0.0,
+              0.5
+            ]
+          }
+        ]
+      ],
+      "expected": {
+        "complete": true,
+        "models": [
+          "model-a"
+        ],
+        "ranked": [
+          {
+            "id": "a",
+            "position": 0,
+            "score": 1.2000000000000002,
+            "answer": {
+              "value": 1.2000000000000002,
+              "confidence": 0.8,
+              "probabilities": {
+                "none": 0.0,
+                "some": 0.8,
+                "full": 0.2
+              },
+              "model": "model-a"
+            }
+          },
+          {
+            "id": "b",
+            "position": 1,
+            "score": 1.0,
+            "answer": {
+              "value": 1.0,
+              "confidence": 0.0,
+              "probabilities": {
+                "none": 0.5,
+                "some": 0.0,
+                "full": 0.5
+              },
+              "model": "model-a"
+            }
+          }
+        ],
+        "unscored": [],
+        "top": [
+          {
+            "k": 0,
+            "allow_partial": false,
+            "ids": []
+          },
+          {
+            "k": 1,
+            "allow_partial": false,
+            "ids": [
+              "a"
+            ]
+          },
+          {
+            "k": 10,
+            "allow_partial": false,
+            "ids": [
+              "a",
+              "b"
+            ]
+          },
+          {
+            "k": 10,
+            "allow_partial": true,
+            "ids": [
+              "a",
+              "b"
+            ]
+          }
+        ]
+      },
+      "expected_states": [
+        {
+          "query": "synthetic query",
+          "document": {
+            "p": [
+              0.0,
+              0.8,
+              0.2
+            ]
+          }
+        },
+        {
+          "query": "synthetic query",
+          "document": {
+            "p": [
+              0.5,
+              0.0,
+              0.5
+            ]
+          }
+        }
+      ],
+      "weights": [
+        0.0,
+        1.0,
+        100.0
+      ],
+      "expected_reweighted": {
+        "complete": true,
+        "models": [
+          "model-a"
+        ],
+        "ranked": [
+          {
+            "id": "b",
+            "position": 1,
+            "score": 50.0,
+            "answer": {
+              "value": 1.0,
+              "confidence": 0.0,
+              "probabilities": {
+                "none": 0.5,
+                "some": 0.0,
+                "full": 0.5
+              },
+              "model": "model-a"
+            }
+          },
+          {
+            "id": "a",
+            "position": 0,
+            "score": 20.8,
+            "answer": {
+              "value": 1.2000000000000002,
+              "confidence": 0.8,
+              "probabilities": {
+                "none": 0.0,
+                "some": 0.8,
+                "full": 0.2
+              },
+              "model": "model-a"
+            }
+          }
+        ],
+        "unscored": [],
+        "top": [
+          {
+            "k": 0,
+            "allow_partial": false,
+            "ids": []
+          },
+          {
+            "k": 1,
+            "allow_partial": false,
+            "ids": [
+              "b"
+            ]
+          },
+          {
+            "k": 10,
+            "allow_partial": false,
+            "ids": [
+              "b",
+              "a"
+            ]
+          },
+          {
+            "k": 10,
+            "allow_partial": true,
+            "ids": [
+              "b",
+              "a"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "weighted_mass_normalization",
+      "threshold": 0.0,
+      "context": null,
+      "items": [
+        [
+          "rounded",
+          {
+            "p": [
+              0.2,
+              0.8,
+              0.002
+            ]
+          }
+        ]
+      ],
+      "expected": {
+        "complete": true,
+        "models": [
+          "model-a"
+        ],
+        "ranked": [
+          {
+            "id": "rounded",
+            "position": 0,
+            "score": 0.804,
+            "answer": {
+              "value": 0.804,
+              "confidence": 0.8,
+              "probabilities": {
+                "none": 0.2,
+                "some": 0.8,
+                "full": 0.002
+              },
+              "model": "model-a"
+            }
+          }
+        ],
+        "unscored": [],
+        "top": [
+          {
+            "k": 0,
+            "allow_partial": false,
+            "ids": []
+          },
+          {
+            "k": 1,
+            "allow_partial": false,
+            "ids": [
+              "rounded"
+            ]
+          },
+          {
+            "k": 10,
+            "allow_partial": false,
+            "ids": [
+              "rounded"
+            ]
+          },
+          {
+            "k": 10,
+            "allow_partial": true,
+            "ids": [
+              "rounded"
+            ]
+          }
+        ]
+      },
+      "expected_states": [
+        {
+          "query": "synthetic query",
+          "document": {
+            "p": [
+              0.2,
+              0.8,
+              0.002
+            ]
+          }
+        }
+      ],
+      "weights": [
+        0.0,
+        1.0,
+        2.0
+      ],
+      "expected_reweighted": {
+        "complete": true,
+        "models": [
+          "model-a"
+        ],
+        "ranked": [
+          {
+            "id": "rounded",
+            "position": 0,
+            "score": 0.8023952095808383,
+            "answer": {
+              "value": 0.804,
+              "confidence": 0.8,
+              "probabilities": {
+                "none": 0.2,
+                "some": 0.8,
+                "full": 0.002
+              },
+              "model": "model-a"
+            }
+          }
+        ],
+        "unscored": [],
+        "top": [
+          {
+            "k": 0,
+            "allow_partial": false,
+            "ids": []
+          },
+          {
+            "k": 1,
+            "allow_partial": false,
+            "ids": [
+              "rounded"
+            ]
+          },
+          {
+            "k": 10,
+            "allow_partial": false,
+            "ids": [
+              "rounded"
+            ]
+          },
+          {
+            "k": 10,
+            "allow_partial": true,
+            "ids": [
+              "rounded"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "negative_weights",
+      "threshold": 0.0,
+      "context": null,
+      "items": [
+        [
+          "a",
+          {
+            "p": [
+              0.0,
+              0.8,
+              0.2
+            ]
+          }
+        ],
+        [
+          "b",
+          {
+            "p": [
+              0.5,
+              0.0,
+              0.5
+            ]
+          }
+        ]
+      ],
+      "expected": {
+        "complete": true,
+        "models": [
+          "model-a"
+        ],
+        "ranked": [
+          {
+            "id": "a",
+            "position": 0,
+            "score": 1.2000000000000002,
+            "answer": {
+              "value": 1.2000000000000002,
+              "confidence": 0.8,
+              "probabilities": {
+                "none": 0.0,
+                "some": 0.8,
+                "full": 0.2
+              },
+              "model": "model-a"
+            }
+          },
+          {
+            "id": "b",
+            "position": 1,
+            "score": 1.0,
+            "answer": {
+              "value": 1.0,
+              "confidence": 0.0,
+              "probabilities": {
+                "none": 0.5,
+                "some": 0.0,
+                "full": 0.5
+              },
+              "model": "model-a"
+            }
+          }
+        ],
+        "unscored": [],
+        "top": [
+          {
+            "k": 0,
+            "allow_partial": false,
+            "ids": []
+          },
+          {
+            "k": 1,
+            "allow_partial": false,
+            "ids": [
+              "a"
+            ]
+          },
+          {
+            "k": 10,
+            "allow_partial": false,
+            "ids": [
+              "a",
+              "b"
+            ]
+          },
+          {
+            "k": 10,
+            "allow_partial": true,
+            "ids": [
+              "a",
+              "b"
+            ]
+          }
+        ]
+      },
+      "expected_states": [
+        {
+          "query": "synthetic query",
+          "document": {
+            "p": [
+              0.0,
+              0.8,
+              0.2
+            ]
+          }
+        },
+        {
+          "query": "synthetic query",
+          "document": {
+            "p": [
+              0.5,
+              0.0,
+              0.5
+            ]
+          }
+        }
+      ],
+      "weights": [
+        -10.0,
+        -1.0,
+        2.0
+      ],
+      "expected_reweighted": {
+        "complete": true,
+        "models": [
+          "model-a"
+        ],
+        "ranked": [
+          {
+            "id": "a",
+            "position": 0,
+            "score": -0.4,
+            "answer": {
+              "value": 1.2000000000000002,
+              "confidence": 0.8,
+              "probabilities": {
+                "none": 0.0,
+                "some": 0.8,
+                "full": 0.2
+              },
+              "model": "model-a"
+            }
+          },
+          {
+            "id": "b",
+            "position": 1,
+            "score": -4.0,
+            "answer": {
+              "value": 1.0,
+              "confidence": 0.0,
+              "probabilities": {
+                "none": 0.5,
+                "some": 0.0,
+                "full": 0.5
+              },
+              "model": "model-a"
+            }
+          }
+        ],
+        "unscored": [],
+        "top": [
+          {
+            "k": 0,
+            "allow_partial": false,
+            "ids": []
+          },
+          {
+            "k": 1,
+            "allow_partial": false,
+            "ids": [
+              "a"
+            ]
+          },
+          {
+            "k": 10,
+            "allow_partial": false,
+            "ids": [
+              "a",
+              "b"
+            ]
+          },
+          {
+            "k": 10,
+            "allow_partial": true,
+            "ids": [
+              "a",
+              "b"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "duplicate_weights_invalid",
+      "threshold": 0.0,
+      "context": null,
+      "items": [
+        [
+          "a",
+          {
+            "p": [
+              0.0,
+              0.8,
+              0.2
+            ]
+          }
+        ]
+      ],
+      "expected": {
+        "complete": true,
+        "models": [
+          "model-a"
+        ],
+        "ranked": [
+          {
+            "id": "a",
+            "position": 0,
+            "score": 1.2000000000000002,
+            "answer": {
+              "value": 1.2000000000000002,
+              "confidence": 0.8,
+              "probabilities": {
+                "none": 0.0,
+                "some": 0.8,
+                "full": 0.2
+              },
+              "model": "model-a"
+            }
+          }
+        ],
+        "unscored": [],
+        "top": [
+          {
+            "k": 0,
+            "allow_partial": false,
+            "ids": []
+          },
+          {
+            "k": 1,
+            "allow_partial": false,
+            "ids": [
+              "a"
+            ]
+          },
+          {
+            "k": 10,
+            "allow_partial": false,
+            "ids": [
+              "a"
+            ]
+          },
+          {
+            "k": 10,
+            "allow_partial": true,
+            "ids": [
+              "a"
+            ]
+          }
+        ]
+      },
+      "expected_states": [
+        {
+          "query": "synthetic query",
+          "document": {
+            "p": [
+              0.0,
+              0.8,
+              0.2
+            ]
+          }
+        }
+      ],
+      "weights": [
+        0.0,
+        1.0,
+        1.0
+      ],
+      "expected_reweight_error": true
+    }
+  ],
+  "image_base64": "iVBORw0KGgoAAAANSUhEUgAAASwAAAGQCAAAAAAxHgKnAAAEl0lEQVR4nO3OMQ0AAAjAsElHOhb4liVUQZl3hh0owQ6UYAdKsAMl2IES7EAJdqAEO1CCHSjBDpRgB0qwAyXYgRLsQAl2oAQ7UIIdKMEOlGAHSrADJdiBEuxACXagBDtQgh0owQ6UYAdKsAMl2IES7EAJdqAEO1CCHSjBDpRgB0qwAyXYgRLsQAl2oAQ7UIIdKMEOlGAHSrADJdiBEuxACXagBDtQgh0owQ6UYAdKsAMl2IES7EAJdqAEO1CCHSjBDpRgB0qwAyXYgRLsQAl2oAQ7UIIdKMEOlGAHSrADJdiBEuxACXagBDtQgh0owQ6UYAdKsAMl2IES7EAJdqAEO1CCHSjBDpRgB0qwAyXYgRLsQAl2oAQ7UIIdKMEOlGAHSrADJdiBEuxACXagBDtQgh0owQ6UYAdKsAMl2IES7EAJdqAEO1CCHSjBDpRgB0qwAyXYgRLsQAl2oAQ7UIIdKMEOlGAHSrADJdiBEuxACXagBDtQgh0owQ6UYAdKsAMl2IES7EAJdqAEO1CCHSjBDpRgB0qwAyXYgRLsQAl2oAQ7UIIdKMEOlGAHSrADJdiBEuxACXagBDtQgh0owQ6UYAdKsAMl2IES7EAJdqAEO1CCHSjBDpRgB0qwAyXYgRLsQAl2oAQ7UIIdKMEOlGAHSrADJdiBEuxACXagBDtQgh0owQ6UYAdKsAMl2IES7EAJdqAEO1CCHSjBDpRgB0qwAyXYgRLsQAl2oAQ7UIIdKMEOlGAHSrADJdiBEuxACXagBDtQgh0owQ6UYAdKsAMl2IES7EAJdqAEO1CCHSjBDpRgB0qwAyXYgRLsQAl2oAQ7UIIdKMEOlGAHSrADJdiBEuxACXagBDtQgh0owQ6UYAdKsAMl2IES7EAJdqAEO1CCHSjBDpRgB0qwAyXYgRLsQAl2oAQ7UIIdKMEOlGAHSrADJdiBEuxACXagBDtQgh0owQ6UYAdKsAMl2IES7EAJdqAEO1CCHSjBDpRgB0qwAyXYgRLsQAl2oAQ7UIIdKMEOlGAHSrADJdiBEuxACXagBDtQgh0owQ6UYAdKsAMl2IES7EAJdqAEO1CCHSjBDpRgB0qwAyXYgRLsQAl2oAQ7UIIdKMEOlGAHSrADJdiBEuxACXagBDtQgh0owQ6UYAdKsAMl2IES7EAJdqAEO1CCHSjBDpRgB0qwAyXYgRLsQAl2oAQ7UIIdKMEOlGAHSrADJdiBEuxACXagBDtQgh0owQ6UYAdKsAMl2IES7EAJdqAEO1CCHSjBDpRgB0qwAyXYgRLsQAl2oAQ7UIIdKMEOlGAHSrADJdiBEuxACXagBDtQgh0owQ6UYAdKsAMl2IES7EAJdqAEO1CCHSjBDpRgB0qwAyXYgRLsQAl2oAQ7UIIdKMEOlGAHSrADJdiBEuxACXagBDtQgh0owQ6UYAdKsAMl2IES7EAJdqAEO1CCHSjBDpRgB0qwAyXYgRLsQAl2oAQ7UIIdKMEOlGAHSrADJdiBEuxACXagBDtQgh0owQ6UYAdKsAMl2IES7EAJdqAEO1CCHSjBDpRgB0qwAyXYgRLsQAl2oGQB9NJtt/6oN2EAAAAASUVORK5CYII=",
+  "frame_cases": [
+    {
+      "id": "plain",
+      "images": [
+        0,
+        1
+      ],
+      "times": null,
+      "expected": [
+        {
+          "frame": "frame-0"
+        },
+        {
+          "frame": "frame-1"
+        }
+      ]
+    },
+    {
+      "id": "timestamps_preserved",
+      "images": [
+        1,
+        0
+      ],
+      "times": [
+        -1.0,
+        2.0
+      ],
+      "expected": [
+        {
+          "seconds_ago": -1.0,
+          "frame": "frame-1"
+        },
+        {
+          "seconds_ago": 2.0,
+          "frame": "frame-0"
+        }
+      ]
+    },
+    {
+      "id": "empty_invalid",
+      "images": [],
+      "times": null,
+      "expected_error": true
+    },
+    {
+      "id": "length_invalid",
+      "images": [
+        0
+      ],
+      "times": [
+        1,
+        2
+      ],
+      "expected_error": true
+    }
+  ],
+  "region_cases": [
+    {
+      "id": "ordinary",
+      "edges": [
+        0.2,
+        0.6,
+        0.1,
+        0.5
+      ],
+      "padding": 0.0,
+      "size": [
+        1000,
+        500
+      ],
+      "expected_pixels": [
+        100,
+        100,
+        500,
+        300
+      ],
+      "expected_center": [
+        0.3,
+        0.4
+      ],
+      "expected_padded": {
+        "top": 0.2,
+        "bottom": 0.6,
+        "left": 0.1,
+        "right": 0.5
+      }
+    },
+    {
+      "id": "padding_clips",
+      "edges": [
+        0.2,
+        0.6,
+        0.1,
+        0.5
+      ],
+      "padding": 1.0,
+      "size": [
+        1000,
+        500
+      ],
+      "expected_pixels": [
+        100,
+        100,
+        500,
+        300
+      ],
+      "expected_center": [
+        0.3,
+        0.4
+      ],
+      "expected_padded": {
+        "top": 0.0,
+        "bottom": 1.0,
+        "left": 0.0,
+        "right": 0.9
+      }
+    },
+    {
+      "id": "pixel_ties_even",
+      "edges": [
+        0.125,
+        0.625,
+        0.375,
+        0.875
+      ],
+      "padding": 0.0,
+      "size": [
+        4,
+        4
+      ],
+      "expected_pixels": [
+        2,
+        0,
+        4,
+        2
+      ],
+      "expected_center": [
+        0.625,
+        0.375
+      ],
+      "expected_padded": {
+        "top": 0.125,
+        "bottom": 0.625,
+        "left": 0.375,
+        "right": 0.875
+      }
+    },
+    {
+      "id": "negative_padding_shrinks",
+      "edges": [
+        0.2,
+        0.6,
+        0.1,
+        0.5
+      ],
+      "padding": -0.25,
+      "size": [
+        1000,
+        500
+      ],
+      "expected_pixels": [
+        100,
+        100,
+        500,
+        300
+      ],
+      "expected_center": [
+        0.3,
+        0.4
+      ],
+      "expected_padded": {
+        "top": 0.3,
+        "bottom": 0.5,
+        "left": 0.2,
+        "right": 0.4
+      }
+    },
+    {
+      "id": "over_shrinking_invalid",
+      "edges": [
+        0.2,
+        0.6,
+        0.1,
+        0.5
+      ],
+      "padding": -1.0,
+      "size": [
+        1000,
+        500
+      ],
+      "expected_pixels": [
+        100,
+        100,
+        500,
+        300
+      ],
+      "expected_center": [
+        0.3,
+        0.4
+      ],
+      "expected_padding_error": true
+    }
+  ]
+}

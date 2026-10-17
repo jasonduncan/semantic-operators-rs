@@ -1,26 +1,25 @@
 # Development handoff
 
-2026-10-17 · M0 complete; M1 ready; no implementation blocker.
+2026-10-17 · M1–M5 complete; M6 local gates complete, hosted CI pending.
 
-1. Read [CURRENT](CURRENT.md), [plan](DEV_PLAN.md), [design](../docs/DESIGN.md),
-   [compatibility](../docs/COMPATIBILITY.md), and [source inventory](../docs/SOURCE_BASELINE.md).
-2. Inspect `git status --short --branch`, `git log -3 --oneline`, and origin.
-   Preserve unrelated changes; inspect divergence before updating the baseline.
-3. Run the local checks in [development](../docs/DEVELOPMENT.md). Zero Rust tests
-   at bootstrap is expected, not evidence that semantic behavior works.
-4. Implement M1: fallible questions and checked answers, with a Rust fixture reader.
-   Keep the frozen Python expectations and add targeted boundary cases before
-   claiming normalizer parity. Do not start HTTP integration as the first slice.
-5. Once the API exists, compile its examples, expand feature checks, and record
-   actual results and deviations. Update status and handoff_version, then validate
-   the manifest, commit/push authorized work, and refresh the project registry.
+1. Read [CURRENT](CURRENT.md), [VALIDATION](VALIDATION.md),
+   [implementation mapping](../docs/IMPLEMENTATION.md) and
+   [compatibility](../docs/COMPATIBILITY.md).
+2. Inspect Git state and remote main before continuing; preserve unrelated edits.
+3. Finish/verify the implementation CI run and record the exact revision and jobs.
+   Repeat relevant local checks from [DEVELOPMENT](../docs/DEVELOPMENT.md) for fixes.
+4. Select the next application integration or scoped provider qualification. Do not
+   restart M1 or replace the frozen fixtures. Public API remains alpha/unstable.
+5. Publication is separate: recheck crate availability, inspect package/API and use
+   [RELEASE](../docs/RELEASE.md) under explicit publication direction.
 
-Python reference local path and hashes are in source-baseline.json; fixture
-regeneration requires that exact clean snapshot. The Rust repo builds independently
-of sibling paths. There are no running services, remote jobs, provider reservations,
-keys, paid requests, or outstanding releases to recover.
+Jason's “BUILD IT!” authorized the full implementation and subagent work. Offline
+and loopback verification use only synthetic inputs. No credentials, running
+services, paid requests, reservations or deployment need recovery. Ordinary builds
+do not require Python or sibling checkouts; pinned sources are needed only to
+regenerate golden fixtures. Benchmark runners invoke their supplied providers and
+may add warmup calls, so select inputs/provider deliberately.
 
-Owner request authorized specification, folder/setup and repository creation.
-This handoff identifies the next development task; new implementation work follows
-subsequent task direction. Live qualification, public visibility and crates.io
-publication require their own scope. Do not treat name availability as confirmed.
+Known evidence limits: header-only image validation, documented core/service image
+differences, text-only wire v1, bounded parity corpus, no measured model quality or
+performance claim. The complete next-phase scope is retained in DEV_PLAN.md.

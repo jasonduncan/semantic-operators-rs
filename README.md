@@ -1,46 +1,93 @@
 # Semantic Operators for Rust
 
-A native Rust counterpart to Python **semantic-operators** and C++ **libsemop**:
-define a semantic question once, ask interchangeable providers, and retain an
-explicit undecided answer when confidence is insufficient.
+Define semantic questions once, ask interchangeable providers, and retain an
+explicit undecided answer when confidence is insufficient. Native Rust counterpart
+to Python semantic-operators 0.12 and C++ libsemop.
 
-**Status: design and project bootstrap, 2026-10-17.** The Cargo crate builds but
-exports no semantic API yet. Examples in the design documents are proposed APIs.
-No inference provider, CLI, or Rust parity suite is implemented. Nothing has been
-published to crates.io, and the crate name is not reserved.
+**Implementation candidate; not published.** Boolean, Choice, Score, Box, typed
+operators, async providers, cascade, deadlines, flows, filtering, reranking,
+evaluation, JSON wire translation, images, and TypeSafe transport are implemented.
+Verification uses frozen Python outputs, scripted providers and localhost HTTP;
+no hosted inference or model-quality qualification has been performed.
 
-| Identity | Value |
+- Cargo package: `semantic-operators`; import: `semantic_operators`.
+- Edition 2024, MSRV Rust 1.85, MIT license.
+- Default features have no network or Tokio dependency.
+- Private repository: [jasonduncan/semantic-operators-rs](https://github.com/jasonduncan/semantic-operators-rs).
+- Release publication remains disabled. Crate name appears unregistered, not reserved.
+
+## Use it locally
+
+```toml
+[dependencies]
+semantic-operators = { path = "../semantic-operators-rs" }
+```
+
+Define a typed operation and ask a provider supplied by your application:
+
+```rust,ignore
+use semantic_operators::{Boolean, Operator, State};
+
+let complaint = Operator::new(
+    "complaint",
+    Boolean::new("Is the customer reporting a problem?")?.with_min_confidence(0.8)?,
+)?;
+let answer = complaint.ask(&provider, &State::text(message)).await?;
+match answer.value() {
+    Some(true) => { /* triage */ }
+    Some(false) => { /* ordinary message */ }
+    None => { /* ask a person */ }
+}
+```
+
+The snippet assumes an application provider, message and async Result context.
+For complete runnable programs, use the explicit synthetic examples:
+
+```sh
+cargo run --example hello
+cargo run --example triage
+cargo run --example filter
+cargo run --example rerank
+cargo run --features images --example images
+```
+
+These examples make no hosted calls. Their answers demonstrate control flow, not
+model accuracy. `Answer::raw()` is opt-in for the TypeSafe adapter and is never
+included in ordinary Debug or wire output.
+
+## Features
+
+| Feature | Adds |
 |---|---|
-| Cargo package | `semantic-operators` |
-| Rust import | `semantic_operators` (consumers may alias it to `semops`) |
-| Repository | [jasonduncan/semantic-operators-rs](https://github.com/jasonduncan/semantic-operators-rs), private |
-| Working version | `0.1.0-dev.0`, publication disabled |
-| Rust | Edition 2024; proposed MSRV 1.85; see validation for tested toolchains |
-| License | MIT, matching the sibling libraries |
+| default (empty) | Validated types, async provider trait, operators, cascade, flows, recipes, evaluation, text wire |
+| `tokio` | `TimeLimited` deadlines using a caller-owned time-enabled Tokio runtime |
+| `typesafe` | Explicit-config TypeSafe HTTP provider using rustls; includes `tokio` |
+| `images` | Image inspection, request-owned assets, frames and locate |
+| `blocking` | Explicit synchronous facade with its own runtime; includes `tokio` |
 
-## Start here
+Enable `typesafe` and `images` together for hosted image requests. Core image
+validation follows the pinned Python behavior; the adapter additionally checks
+current service restrictions. See [image boundaries](docs/IMAGES.md).
 
-- [Design](docs/DESIGN.md): scope, architecture, invariants, and module boundaries.
-- [Proposed API](docs/API.md): typed operators, provider contract, async execution, flows.
-- [Compatibility](docs/COMPATIBILITY.md): exact Python behavior, C++ differences, parity gates.
-- [Providers and images](docs/PROVIDERS.md): transport ownership, cancellation, images.
-- [Development guide](docs/DEVELOPMENT.md) and [test strategy](docs/TESTING.md).
-- [Decisions](docs/DECISIONS.md), [source baseline](docs/SOURCE_BASELINE.md), [release guide](docs/RELEASE.md).
-- [Current state](status/CURRENT.md), [development plan](status/DEV_PLAN.md), [handoff](status/HANDOFF.md).
+## Read and develop
 
-## Check the bootstrap
+- [API guide](docs/API.md): actual API, async ownership, uncertainty, recipes.
+- [Design](docs/DESIGN.md) and [compatibility](docs/COMPATIBILITY.md): requirements and exact parity rules.
+- [TypeSafe transport](docs/TYPE_SAFE_TRANSPORT.md): explicit credentials, endpoint, retries, HTTP limits.
+- [Development](docs/DEVELOPMENT.md), [test strategy](docs/TESTING.md), [source baseline](docs/SOURCE_BASELINE.md).
+- [Current evidence](status/VALIDATION.md), [handoff](status/HANDOFF.md), [release procedure](docs/RELEASE.md).
 
 ```sh
 cargo fmt --all -- --check
-cargo check --locked --all-targets
-cargo clippy --locked --all-targets -- -D warnings
+cargo clippy --locked --all-features --all-targets -- -D warnings
 cargo test --locked --all-targets
-cargo test --locked --doc
-cargo doc --locked --no-deps
+cargo test --locked --all-features --all-targets
+cargo test --locked --all-features --doc
+cargo doc --locked --all-features --no-deps
 python3 tools/check_docs.py
+python3 tools/check_package.py
 ```
 
-These checks currently establish build and documentation hygiene only. There are
-no semantic implementation tests yet. Start M1 with the frozen Python-generated
-[parity cases](tests/fixtures/python-parity.json) and the development plan.
-
+Default and optional-feature suites are offline except localhost HTTP tests. No
+CLI/MCP server, Laya runtime, native Rank, caching, or agent framework is included.
+Provider confidence is not a guarantee of correctness; measure it on your task.

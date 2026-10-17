@@ -1,6 +1,6 @@
 # Release procedure
 
-Nothing is released. Version `0.1.0-dev.0` denotes the bootstrap and
+Nothing is released. Version `0.1.0-alpha.1` denotes the implemented alpha candidate and
 `publish = false` prevents accidental crates.io publication.
 
 On 2026-10-17 the crates.io API lookup for `semantic-operators` returned HTTP 403;
@@ -28,6 +28,6 @@ Before a release candidate:
    checks and `cargo publish --dry-run`, then publish and verify registry/docs.rs.
 7. Tag the exact verified revision and record receipts and final compatibility scope.
 
-Repo creation/push is complete setup work, not release acceptance. There are no
-release workflows, registry credentials, or automatic publishing in this bootstrap.
+The private implementation and CI are development evidence, not release acceptance. There are no
+release workflows, registry credentials, or automatic publishing in this project.
 

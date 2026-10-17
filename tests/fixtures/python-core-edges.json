@@ -1,0 +1,4176 @@
+{
+  "normalization_cases": [
+    {
+      "question": {
+        "type": "choice",
+        "instructions": "q",
+        "options": [
+          [
+            "level-0",
+            null
+          ],
+          [
+            "level-1",
+            null
+          ],
+          [
+            "level-2",
+            null
+          ]
+        ]
+      },
+      "value": "level-2",
+      "probabilities": {
+        "level-0": 0.03125,
+        "level-1": 0.03125,
+        "level-2": 0.9525000009999999
+      },
+      "expected": {
+        "value": "level-2",
+        "confidence": 0.9525000009999999,
+        "decided": true,
+        "probabilities": {
+          "level-0": 0.03125,
+          "level-1": 0.03125,
+          "level-2": 0.9525000009999999
+        }
+      }
+    },
+    {
+      "question": {
+        "type": "choice",
+        "instructions": "q",
+        "options": [
+          [
+            "level-0",
+            null
+          ],
+          [
+            "level-1",
+            null
+          ],
+          [
+            "level-2",
+            null
+          ]
+        ]
+      },
+      "value": "level-2",
+      "probabilities": {
+        "level-0": 0.03125,
+        "level-1": 0.03125,
+        "level-2": 0.952500001
+      },
+      "expected": {
+        "value": "level-2",
+        "confidence": 0.952500001,
+        "decided": true,
+        "probabilities": {
+          "level-0": 0.03125,
+          "level-1": 0.03125,
+          "level-2": 0.952500001
+        }
+      }
+    },
+    {
+      "question": {
+        "type": "choice",
+        "instructions": "q",
+        "options": [
+          [
+            "level-0",
+            null
+          ],
+          [
+            "level-1",
+            null
+          ],
+          [
+            "level-2",
+            null
+          ]
+        ]
+      },
+      "value": "level-2",
+      "probabilities": {
+        "level-0": 0.03125,
+        "level-1": 0.03125,
+        "level-2": 0.9525000010000001
+      },
+      "expected_error": true
+    },
+    {
+      "question": {
+        "type": "choice",
+        "instructions": "q",
+        "options": [
+          [
+            "level-0",
+            null
+          ],
+          [
+            "level-1",
+            null
+          ],
+          [
+            "level-2",
+            null
+          ],
+          [
+            "level-3",
+            null
+          ],
+          [
+            "level-4",
+            null
+          ],
+          [
+            "level-5",
+            null
+          ],
+          [
+            "level-6",
+            null
+          ]
+        ]
+      },
+      "value": "level-6",
+      "probabilities": {
+        "level-0": 0.03125,
+        "level-1": 0.03125,
+        "level-2": 0.03125,
+        "level-3": 0.03125,
+        "level-4": 0.03125,
+        "level-5": 0.03125,
+        "level-6": 0.8475000009999999
+      },
+      "expected": {
+        "value": "level-6",
+        "confidence": 0.8475000009999999,
+        "decided": true,
+        "probabilities": {
+          "level-0": 0.03125,
+          "level-1": 0.03125,
+          "level-2": 0.03125,
+          "level-3": 0.03125,
+          "level-4": 0.03125,
+          "level-5": 0.03125,
+          "level-6": 0.8475000009999999
+        }
+      }
+    },
+    {
+      "question": {
+        "type": "choice",
+        "instructions": "q",
+        "options": [
+          [
+            "level-0",
+            null
+          ],
+          [
+            "level-1",
+            null
+          ],
+          [
+            "level-2",
+            null
+          ],
+          [
+            "level-3",
+            null
+          ],
+          [
+            "level-4",
+            null
+          ],
+          [
+            "level-5",
+            null
+          ],
+          [
+            "level-6",
+            null
+          ]
+        ]
+      },
+      "value": "level-6",
+      "probabilities": {
+        "level-0": 0.03125,
+        "level-1": 0.03125,
+        "level-2": 0.03125,
+        "level-3": 0.03125,
+        "level-4": 0.03125,
+        "level-5": 0.03125,
+        "level-6": 0.847500001
+      },
+      "expected": {
+        "value": "level-6",
+        "confidence": 0.847500001,
+        "decided": true,
+        "probabilities": {
+          "level-0": 0.03125,
+          "level-1": 0.03125,
+          "level-2": 0.03125,
+          "level-3": 0.03125,
+          "level-4": 0.03125,
+          "level-5": 0.03125,
+          "level-6": 0.847500001
+        }
+      }
+    },
+    {
+      "question": {
+        "type": "choice",
+        "instructions": "q",
+        "options": [
+          [
+            "level-0",
+            null
+          ],
+          [
+            "level-1",
+            null
+          ],
+          [
+            "level-2",
+            null
+          ],
+          [
+            "level-3",
+            null
+          ],
+          [
+            "level-4",
+            null
+          ],
+          [
+            "level-5",
+            null
+          ],
+          [
+            "level-6",
+            null
+          ]
+        ]
+      },
+      "value": "level-6",
+      "probabilities": {
+        "level-0": 0.03125,
+        "level-1": 0.03125,
+        "level-2": 0.03125,
+        "level-3": 0.03125,
+        "level-4": 0.03125,
+        "level-5": 0.03125,
+        "level-6": 0.8475000010000001
+      },
+      "expected_error": true
+    },
+    {
+      "question": {
+        "type": "choice",
+        "instructions": "q",
+        "options": [
+          [
+            "level-0",
+            null
+          ],
+          [
+            "level-1",
+            null
+          ],
+          [
+            "level-2",
+            null
+          ],
+          [
+            "level-3",
+            null
+          ],
+          [
+            "level-4",
+            null
+          ],
+          [
+            "level-5",
+            null
+          ],
+          [
+            "level-6",
+            null
+          ],
+          [
+            "level-7",
+            null
+          ],
+          [
+            "level-8",
+            null
+          ],
+          [
+            "level-9",
+            null
+          ],
+          [
+            "level-10",
+            null
+          ],
+          [
+            "level-11",
+            null
+          ],
+          [
+            "level-12",
+            null
+          ],
+          [
+            "level-13",
+            null
+          ],
+          [
+            "level-14",
+            null
+          ],
+          [
+            "level-15",
+            null
+          ],
+          [
+            "level-16",
+            null
+          ]
+        ]
+      },
+      "value": "level-16",
+      "probabilities": {
+        "level-0": 0.03125,
+        "level-1": 0.03125,
+        "level-2": 0.03125,
+        "level-3": 0.03125,
+        "level-4": 0.03125,
+        "level-5": 0.03125,
+        "level-6": 0.03125,
+        "level-7": 0.03125,
+        "level-8": 0.03125,
+        "level-9": 0.03125,
+        "level-10": 0.03125,
+        "level-11": 0.03125,
+        "level-12": 0.03125,
+        "level-13": 0.03125,
+        "level-14": 0.03125,
+        "level-15": 0.03125,
+        "level-16": 0.5850000009999999
+      },
+      "expected_error": true
+    },
+    {
+      "question": {
+        "type": "choice",
+        "instructions": "q",
+        "options": [
+          [
+            "level-0",
+            null
+          ],
+          [
+            "level-1",
+            null
+          ],
+          [
+            "level-2",
+            null
+          ],
+          [
+            "level-3",
+            null
+          ],
+          [
+            "level-4",
+            null
+          ],
+          [
+            "level-5",
+            null
+          ],
+          [
+            "level-6",
+            null
+          ],
+          [
+            "level-7",
+            null
+          ],
+          [
+            "level-8",
+            null
+          ],
+          [
+            "level-9",
+            null
+          ],
+          [
+            "level-10",
+            null
+          ],
+          [
+            "level-11",
+            null
+          ],
+          [
+            "level-12",
+            null
+          ],
+          [
+            "level-13",
+            null
+          ],
+          [
+            "level-14",
+            null
+          ],
+          [
+            "level-15",
+            null
+          ],
+          [
+            "level-16",
+            null
+          ]
+        ]
+      },
+      "value": "level-16",
+      "probabilities": {
+        "level-0": 0.03125,
+        "level-1": 0.03125,
+        "level-2": 0.03125,
+        "level-3": 0.03125,
+        "level-4": 0.03125,
+        "level-5": 0.03125,
+        "level-6": 0.03125,
+        "level-7": 0.03125,
+        "level-8": 0.03125,
+        "level-9": 0.03125,
+        "level-10": 0.03125,
+        "level-11": 0.03125,
+        "level-12": 0.03125,
+        "level-13": 0.03125,
+        "level-14": 0.03125,
+        "level-15": 0.03125,
+        "level-16": 0.585000001
+      },
+      "expected_error": true
+    },
+    {
+      "question": {
+        "type": "choice",
+        "instructions": "q",
+        "options": [
+          [
+            "level-0",
+            null
+          ],
+          [
+            "level-1",
+            null
+          ],
+          [
+            "level-2",
+            null
+          ],
+          [
+            "level-3",
+            null
+          ],
+          [
+            "level-4",
+            null
+          ],
+          [
+            "level-5",
+            null
+          ],
+          [
+            "level-6",
+            null
+          ],
+          [
+            "level-7",
+            null
+          ],
+          [
+            "level-8",
+            null
+          ],
+          [
+            "level-9",
+            null
+          ],
+          [
+            "level-10",
+            null
+          ],
+          [
+            "level-11",
+            null
+          ],
+          [
+            "level-12",
+            null
+          ],
+          [
+            "level-13",
+            null
+          ],
+          [
+            "level-14",
+            null
+          ],
+          [
+            "level-15",
+            null
+          ],
+          [
+            "level-16",
+            null
+          ]
+        ]
+      },
+      "value": "level-16",
+      "probabilities": {
+        "level-0": 0.03125,
+        "level-1": 0.03125,
+        "level-2": 0.03125,
+        "level-3": 0.03125,
+        "level-4": 0.03125,
+        "level-5": 0.03125,
+        "level-6": 0.03125,
+        "level-7": 0.03125,
+        "level-8": 0.03125,
+        "level-9": 0.03125,
+        "level-10": 0.03125,
+        "level-11": 0.03125,
+        "level-12": 0.03125,
+        "level-13": 0.03125,
+        "level-14": 0.03125,
+        "level-15": 0.03125,
+        "level-16": 0.5850000010000002
+      },
+      "expected_error": true
+    },
+    {
+      "question": {
+        "type": "score",
+        "instructions": "q",
+        "levels": [
+          "low",
+          "medium",
+          "high"
+        ]
+      },
+      "value": 1.2799999999999998,
+      "probabilities": {
+        "low": 0.2,
+        "medium": 0.3,
+        "high": 0.5
+      },
+      "expected_error": true
+    },
+    {
+      "question": {
+        "type": "score",
+        "instructions": "q",
+        "levels": [
+          "low",
+          "medium",
+          "high"
+        ]
+      },
+      "value": 1.28,
+      "probabilities": {
+        "low": 0.2,
+        "medium": 0.3,
+        "high": 0.5
+      },
+      "expected_error": true
+    },
+    {
+      "question": {
+        "type": "score",
+        "instructions": "q",
+        "levels": [
+          "low",
+          "medium",
+          "high"
+        ]
+      },
+      "value": 1.2800000000000002,
+      "probabilities": {
+        "low": 0.2,
+        "medium": 0.3,
+        "high": 0.5
+      },
+      "expected": {
+        "value": 1.2800000000000002,
+        "confidence": 0.3,
+        "decided": true,
+        "probabilities": {
+          "low": 0.2,
+          "medium": 0.3,
+          "high": 0.5
+        }
+      }
+    },
+    {
+      "question": {
+        "type": "score",
+        "instructions": "q",
+        "levels": [
+          "low",
+          "medium",
+          "high"
+        ]
+      },
+      "value": 1.3199999999999998,
+      "probabilities": {
+        "low": 0.2,
+        "medium": 0.3,
+        "high": 0.5
+      },
+      "expected": {
+        "value": 1.3199999999999998,
+        "confidence": 0.3,
+        "decided": true,
+        "probabilities": {
+          "low": 0.2,
+          "medium": 0.3,
+          "high": 0.5
+        }
+      }
+    },
+    {
+      "question": {
+        "type": "score",
+        "instructions": "q",
+        "levels": [
+          "low",
+          "medium",
+          "high"
+        ]
+      },
+      "value": 1.32,
+      "probabilities": {
+        "low": 0.2,
+        "medium": 0.3,
+        "high": 0.5
+      },
+      "expected_error": true
+    },
+    {
+      "question": {
+        "type": "score",
+        "instructions": "q",
+        "levels": [
+          "low",
+          "medium",
+          "high"
+        ]
+      },
+      "value": 1.3200000000000003,
+      "probabilities": {
+        "low": 0.2,
+        "medium": 0.3,
+        "high": 0.5
+      },
+      "expected_error": true
+    },
+    {
+      "question": {
+        "type": "score",
+        "instructions": "q",
+        "levels": [
+          "low",
+          "medium",
+          "high"
+        ]
+      },
+      "value": 1.4999999999999998,
+      "probabilities": {
+        "low": 0.2,
+        "medium": 0.3,
+        "high": 0.5
+      },
+      "expected_error": true
+    },
+    {
+      "question": {
+        "type": "score",
+        "instructions": "q",
+        "levels": [
+          "low",
+          "medium",
+          "high"
+        ]
+      },
+      "value": 1.5,
+      "probabilities": {
+        "low": 0.2,
+        "medium": 0.3,
+        "high": 0.5
+      },
+      "expected_error": true
+    },
+    {
+      "question": {
+        "type": "score",
+        "instructions": "q",
+        "levels": [
+          "low",
+          "medium",
+          "high"
+        ]
+      },
+      "value": 1.5000000000000002,
+      "probabilities": {
+        "low": 0.2,
+        "medium": 0.3,
+        "high": 0.5
+      },
+      "expected_error": true
+    },
+    {
+      "question": {
+        "type": "score",
+        "instructions": "q",
+        "levels": [
+          "level-0",
+          "level-1",
+          "level-2"
+        ]
+      },
+      "value": 1.1715589352612292,
+      "probabilities": {
+        "level-0": 0.2280232715707797,
+        "level-1": 0.35239452159721113,
+        "level-2": 0.41958220683200914
+      },
+      "expected_error": true
+    },
+    {
+      "question": {
+        "type": "score",
+        "instructions": "q",
+        "levels": [
+          "level-0",
+          "level-1",
+          "level-2"
+        ]
+      },
+      "value": 1.1715589352612295,
+      "probabilities": {
+        "level-0": 0.2280232715707797,
+        "level-1": 0.35239452159721113,
+        "level-2": 0.41958220683200914
+      },
+      "expected_error": true
+    },
+    {
+      "question": {
+        "type": "score",
+        "instructions": "q",
+        "levels": [
+          "level-0",
+          "level-1",
+          "level-2"
+        ]
+      },
+      "value": 1.1715589352612297,
+      "probabilities": {
+        "level-0": 0.2280232715707797,
+        "level-1": 0.35239452159721113,
+        "level-2": 0.41958220683200914
+      },
+      "expected": {
+        "value": 1.1715589352612297,
+        "confidence": 0.35239452159721113,
+        "decided": true,
+        "probabilities": {
+          "level-0": 0.2280232715707797,
+          "level-1": 0.35239452159721113,
+          "level-2": 0.41958220683200914
+        }
+      }
+    },
+    {
+      "question": {
+        "type": "score",
+        "instructions": "q",
+        "levels": [
+          "level-0",
+          "level-1",
+          "level-2"
+        ]
+      },
+      "value": 1.2115589352612293,
+      "probabilities": {
+        "level-0": 0.2280232715707797,
+        "level-1": 0.35239452159721113,
+        "level-2": 0.41958220683200914
+      },
+      "expected": {
+        "value": 1.2115589352612293,
+        "confidence": 0.35239452159721113,
+        "decided": true,
+        "probabilities": {
+          "level-0": 0.2280232715707797,
+          "level-1": 0.35239452159721113,
+          "level-2": 0.41958220683200914
+        }
+      }
+    },
+    {
+      "question": {
+        "type": "score",
+        "instructions": "q",
+        "levels": [
+          "level-0",
+          "level-1",
+          "level-2"
+        ]
+      },
+      "value": 1.2115589352612295,
+      "probabilities": {
+        "level-0": 0.2280232715707797,
+        "level-1": 0.35239452159721113,
+        "level-2": 0.41958220683200914
+      },
+      "expected_error": true
+    },
+    {
+      "question": {
+        "type": "score",
+        "instructions": "q",
+        "levels": [
+          "level-0",
+          "level-1",
+          "level-2"
+        ]
+      },
+      "value": 1.2115589352612297,
+      "probabilities": {
+        "level-0": 0.2280232715707797,
+        "level-1": 0.35239452159721113,
+        "level-2": 0.41958220683200914
+      },
+      "expected_error": true
+    },
+    {
+      "question": {
+        "type": "score",
+        "instructions": "q",
+        "levels": [
+          "level-0",
+          "level-1",
+          "level-2"
+        ]
+      },
+      "value": 1.2155713839489148,
+      "probabilities": {
+        "level-0": 0.16456429804041758,
+        "level-1": 0.4353000199702497,
+        "level-2": 0.40013568198933275
+      },
+      "expected_error": true
+    },
+    {
+      "question": {
+        "type": "score",
+        "instructions": "q",
+        "levels": [
+          "level-0",
+          "level-1",
+          "level-2"
+        ]
+      },
+      "value": 1.215571383948915,
+      "probabilities": {
+        "level-0": 0.16456429804041758,
+        "level-1": 0.4353000199702497,
+        "level-2": 0.40013568198933275
+      },
+      "expected_error": true
+    },
+    {
+      "question": {
+        "type": "score",
+        "instructions": "q",
+        "levels": [
+          "level-0",
+          "level-1",
+          "level-2"
+        ]
+      },
+      "value": 1.2155713839489153,
+      "probabilities": {
+        "level-0": 0.16456429804041758,
+        "level-1": 0.4353000199702497,
+        "level-2": 0.40013568198933275
+      },
+      "expected": {
+        "value": 1.2155713839489153,
+        "confidence": 0.4353000199702497,
+        "decided": true,
+        "probabilities": {
+          "level-0": 0.16456429804041758,
+          "level-1": 0.4353000199702497,
+          "level-2": 0.40013568198933275
+        }
+      }
+    },
+    {
+      "question": {
+        "type": "score",
+        "instructions": "q",
+        "levels": [
+          "level-0",
+          "level-1",
+          "level-2"
+        ]
+      },
+      "value": 1.2555713839489149,
+      "probabilities": {
+        "level-0": 0.16456429804041758,
+        "level-1": 0.4353000199702497,
+        "level-2": 0.40013568198933275
+      },
+      "expected": {
+        "value": 1.2555713839489149,
+        "confidence": 0.4353000199702497,
+        "decided": true,
+        "probabilities": {
+          "level-0": 0.16456429804041758,
+          "level-1": 0.4353000199702497,
+          "level-2": 0.40013568198933275
+        }
+      }
+    },
+    {
+      "question": {
+        "type": "score",
+        "instructions": "q",
+        "levels": [
+          "level-0",
+          "level-1",
+          "level-2"
+        ]
+      },
+      "value": 1.255571383948915,
+      "probabilities": {
+        "level-0": 0.16456429804041758,
+        "level-1": 0.4353000199702497,
+        "level-2": 0.40013568198933275
+      },
+      "expected_error": true
+    },
+    {
+      "question": {
+        "type": "score",
+        "instructions": "q",
+        "levels": [
+          "level-0",
+          "level-1",
+          "level-2"
+        ]
+      },
+      "value": 1.2555713839489153,
+      "probabilities": {
+        "level-0": 0.16456429804041758,
+        "level-1": 0.4353000199702497,
+        "level-2": 0.40013568198933275
+      },
+      "expected_error": true
+    },
+    {
+      "question": {
+        "type": "score",
+        "instructions": "q",
+        "levels": [
+          "level-0",
+          "level-1",
+          "level-2"
+        ]
+      },
+      "value": 0.18543434934948272,
+      "probabilities": {
+        "level-0": 0.8283006411354114,
+        "level-1": 0.1379643683796945,
+        "level-2": 0.033734990484894124
+      },
+      "expected_error": true
+    },
+    {
+      "question": {
+        "type": "score",
+        "instructions": "q",
+        "levels": [
+          "level-0",
+          "level-1",
+          "level-2"
+        ]
+      },
+      "value": 0.18543434934948275,
+      "probabilities": {
+        "level-0": 0.8283006411354114,
+        "level-1": 0.1379643683796945,
+        "level-2": 0.033734990484894124
+      },
+      "expected": {
+        "value": 0.18543434934948275,
+        "confidence": 0.8283006411354114,
+        "decided": true,
+        "probabilities": {
+          "level-0": 0.8283006411354114,
+          "level-1": 0.1379643683796945,
+          "level-2": 0.033734990484894124
+        }
+      }
+    },
+    {
+      "question": {
+        "type": "score",
+        "instructions": "q",
+        "levels": [
+          "level-0",
+          "level-1",
+          "level-2"
+        ]
+      },
+      "value": 0.18543434934948277,
+      "probabilities": {
+        "level-0": 0.8283006411354114,
+        "level-1": 0.1379643683796945,
+        "level-2": 0.033734990484894124
+      },
+      "expected": {
+        "value": 0.18543434934948277,
+        "confidence": 0.8283006411354114,
+        "decided": true,
+        "probabilities": {
+          "level-0": 0.8283006411354114,
+          "level-1": 0.1379643683796945,
+          "level-2": 0.033734990484894124
+        }
+      }
+    },
+    {
+      "question": {
+        "type": "score",
+        "instructions": "q",
+        "levels": [
+          "level-0",
+          "level-1",
+          "level-2"
+        ]
+      },
+      "value": 0.2254343493494827,
+      "probabilities": {
+        "level-0": 0.8283006411354114,
+        "level-1": 0.1379643683796945,
+        "level-2": 0.033734990484894124
+      },
+      "expected": {
+        "value": 0.2254343493494827,
+        "confidence": 0.8283006411354114,
+        "decided": true,
+        "probabilities": {
+          "level-0": 0.8283006411354114,
+          "level-1": 0.1379643683796945,
+          "level-2": 0.033734990484894124
+        }
+      }
+    },
+    {
+      "question": {
+        "type": "score",
+        "instructions": "q",
+        "levels": [
+          "level-0",
+          "level-1",
+          "level-2"
+        ]
+      },
+      "value": 0.22543434934948273,
+      "probabilities": {
+        "level-0": 0.8283006411354114,
+        "level-1": 0.1379643683796945,
+        "level-2": 0.033734990484894124
+      },
+      "expected": {
+        "value": 0.22543434934948273,
+        "confidence": 0.8283006411354114,
+        "decided": true,
+        "probabilities": {
+          "level-0": 0.8283006411354114,
+          "level-1": 0.1379643683796945,
+          "level-2": 0.033734990484894124
+        }
+      }
+    },
+    {
+      "question": {
+        "type": "score",
+        "instructions": "q",
+        "levels": [
+          "level-0",
+          "level-1",
+          "level-2"
+        ]
+      },
+      "value": 0.22543434934948275,
+      "probabilities": {
+        "level-0": 0.8283006411354114,
+        "level-1": 0.1379643683796945,
+        "level-2": 0.033734990484894124
+      },
+      "expected_error": true
+    },
+    {
+      "question": {
+        "type": "score",
+        "instructions": "q",
+        "levels": [
+          "level-0",
+          "level-1",
+          "level-2",
+          "level-3",
+          "level-4"
+        ]
+      },
+      "value": 1.7732167827833905,
+      "probabilities": {
+        "level-0": 0.17446558942146753,
+        "level-1": 0.3389642695667781,
+        "level-2": 0.11461633173019574,
+        "level-3": 0.22779538737001354,
+        "level-4": 0.1441584219115451
+      },
+      "expected_error": true
+    },
+    {
+      "question": {
+        "type": "score",
+        "instructions": "q",
+        "levels": [
+          "level-0",
+          "level-1",
+          "level-2",
+          "level-3",
+          "level-4"
+        ]
+      },
+      "value": 1.7732167827833907,
+      "probabilities": {
+        "level-0": 0.17446558942146753,
+        "level-1": 0.3389642695667781,
+        "level-2": 0.11461633173019574,
+        "level-3": 0.22779538737001354,
+        "level-4": 0.1441584219115451
+      },
+      "expected": {
+        "value": 1.7732167827833907,
+        "confidence": 0.11461633173019574,
+        "decided": true,
+        "probabilities": {
+          "level-0": 0.17446558942146753,
+          "level-1": 0.3389642695667781,
+          "level-2": 0.11461633173019574,
+          "level-3": 0.22779538737001354,
+          "level-4": 0.1441584219115451
+        }
+      }
+    },
+    {
+      "question": {
+        "type": "score",
+        "instructions": "q",
+        "levels": [
+          "level-0",
+          "level-1",
+          "level-2",
+          "level-3",
+          "level-4"
+        ]
+      },
+      "value": 1.773216782783391,
+      "probabilities": {
+        "level-0": 0.17446558942146753,
+        "level-1": 0.3389642695667781,
+        "level-2": 0.11461633173019574,
+        "level-3": 0.22779538737001354,
+        "level-4": 0.1441584219115451
+      },
+      "expected": {
+        "value": 1.773216782783391,
+        "confidence": 0.11461633173019574,
+        "decided": true,
+        "probabilities": {
+          "level-0": 0.17446558942146753,
+          "level-1": 0.3389642695667781,
+          "level-2": 0.11461633173019574,
+          "level-3": 0.22779538737001354,
+          "level-4": 0.1441584219115451
+        }
+      }
+    },
+    {
+      "question": {
+        "type": "score",
+        "instructions": "q",
+        "levels": [
+          "level-0",
+          "level-1",
+          "level-2",
+          "level-3",
+          "level-4"
+        ]
+      },
+      "value": 1.8832167827833903,
+      "probabilities": {
+        "level-0": 0.17446558942146753,
+        "level-1": 0.3389642695667781,
+        "level-2": 0.11461633173019574,
+        "level-3": 0.22779538737001354,
+        "level-4": 0.1441584219115451
+      },
+      "expected": {
+        "value": 1.8832167827833903,
+        "confidence": 0.11461633173019574,
+        "decided": true,
+        "probabilities": {
+          "level-0": 0.17446558942146753,
+          "level-1": 0.3389642695667781,
+          "level-2": 0.11461633173019574,
+          "level-3": 0.22779538737001354,
+          "level-4": 0.1441584219115451
+        }
+      }
+    },
+    {
+      "question": {
+        "type": "score",
+        "instructions": "q",
+        "levels": [
+          "level-0",
+          "level-1",
+          "level-2",
+          "level-3",
+          "level-4"
+        ]
+      },
+      "value": 1.8832167827833906,
+      "probabilities": {
+        "level-0": 0.17446558942146753,
+        "level-1": 0.3389642695667781,
+        "level-2": 0.11461633173019574,
+        "level-3": 0.22779538737001354,
+        "level-4": 0.1441584219115451
+      },
+      "expected": {
+        "value": 1.8832167827833906,
+        "confidence": 0.11461633173019574,
+        "decided": true,
+        "probabilities": {
+          "level-0": 0.17446558942146753,
+          "level-1": 0.3389642695667781,
+          "level-2": 0.11461633173019574,
+          "level-3": 0.22779538737001354,
+          "level-4": 0.1441584219115451
+        }
+      }
+    },
+    {
+      "question": {
+        "type": "score",
+        "instructions": "q",
+        "levels": [
+          "level-0",
+          "level-1",
+          "level-2",
+          "level-3",
+          "level-4"
+        ]
+      },
+      "value": 1.8832167827833908,
+      "probabilities": {
+        "level-0": 0.17446558942146753,
+        "level-1": 0.3389642695667781,
+        "level-2": 0.11461633173019574,
+        "level-3": 0.22779538737001354,
+        "level-4": 0.1441584219115451
+      },
+      "expected_error": true
+    },
+    {
+      "question": {
+        "type": "score",
+        "instructions": "q",
+        "levels": [
+          "level-0",
+          "level-1",
+          "level-2",
+          "level-3",
+          "level-4"
+        ]
+      },
+      "value": 1.479378547463025,
+      "probabilities": {
+        "level-0": 0.26010823513570674,
+        "level-1": 0.2904934923691849,
+        "level-2": 0.12342393658776558,
+        "level-3": 0.306860161711062,
+        "level-4": 0.019114174196280736
+      },
+      "expected_error": true
+    },
+    {
+      "question": {
+        "type": "score",
+        "instructions": "q",
+        "levels": [
+          "level-0",
+          "level-1",
+          "level-2",
+          "level-3",
+          "level-4"
+        ]
+      },
+      "value": 1.4793785474630252,
+      "probabilities": {
+        "level-0": 0.26010823513570674,
+        "level-1": 0.2904934923691849,
+        "level-2": 0.12342393658776558,
+        "level-3": 0.306860161711062,
+        "level-4": 0.019114174196280736
+      },
+      "expected": {
+        "value": 1.4793785474630252,
+        "confidence": 0.2904934923691849,
+        "decided": true,
+        "probabilities": {
+          "level-0": 0.26010823513570674,
+          "level-1": 0.2904934923691849,
+          "level-2": 0.12342393658776558,
+          "level-3": 0.306860161711062,
+          "level-4": 0.019114174196280736
+        }
+      }
+    },
+    {
+      "question": {
+        "type": "score",
+        "instructions": "q",
+        "levels": [
+          "level-0",
+          "level-1",
+          "level-2",
+          "level-3",
+          "level-4"
+        ]
+      },
+      "value": 1.4793785474630254,
+      "probabilities": {
+        "level-0": 0.26010823513570674,
+        "level-1": 0.2904934923691849,
+        "level-2": 0.12342393658776558,
+        "level-3": 0.306860161711062,
+        "level-4": 0.019114174196280736
+      },
+      "expected": {
+        "value": 1.4793785474630254,
+        "confidence": 0.2904934923691849,
+        "decided": true,
+        "probabilities": {
+          "level-0": 0.26010823513570674,
+          "level-1": 0.2904934923691849,
+          "level-2": 0.12342393658776558,
+          "level-3": 0.306860161711062,
+          "level-4": 0.019114174196280736
+        }
+      }
+    },
+    {
+      "question": {
+        "type": "score",
+        "instructions": "q",
+        "levels": [
+          "level-0",
+          "level-1",
+          "level-2",
+          "level-3",
+          "level-4"
+        ]
+      },
+      "value": 1.5893785474630249,
+      "probabilities": {
+        "level-0": 0.26010823513570674,
+        "level-1": 0.2904934923691849,
+        "level-2": 0.12342393658776558,
+        "level-3": 0.306860161711062,
+        "level-4": 0.019114174196280736
+      },
+      "expected": {
+        "value": 1.5893785474630249,
+        "confidence": 0.12342393658776558,
+        "decided": true,
+        "probabilities": {
+          "level-0": 0.26010823513570674,
+          "level-1": 0.2904934923691849,
+          "level-2": 0.12342393658776558,
+          "level-3": 0.306860161711062,
+          "level-4": 0.019114174196280736
+        }
+      }
+    },
+    {
+      "question": {
+        "type": "score",
+        "instructions": "q",
+        "levels": [
+          "level-0",
+          "level-1",
+          "level-2",
+          "level-3",
+          "level-4"
+        ]
+      },
+      "value": 1.589378547463025,
+      "probabilities": {
+        "level-0": 0.26010823513570674,
+        "level-1": 0.2904934923691849,
+        "level-2": 0.12342393658776558,
+        "level-3": 0.306860161711062,
+        "level-4": 0.019114174196280736
+      },
+      "expected": {
+        "value": 1.589378547463025,
+        "confidence": 0.12342393658776558,
+        "decided": true,
+        "probabilities": {
+          "level-0": 0.26010823513570674,
+          "level-1": 0.2904934923691849,
+          "level-2": 0.12342393658776558,
+          "level-3": 0.306860161711062,
+          "level-4": 0.019114174196280736
+        }
+      }
+    },
+    {
+      "question": {
+        "type": "score",
+        "instructions": "q",
+        "levels": [
+          "level-0",
+          "level-1",
+          "level-2",
+          "level-3",
+          "level-4"
+        ]
+      },
+      "value": 1.5893785474630253,
+      "probabilities": {
+        "level-0": 0.26010823513570674,
+        "level-1": 0.2904934923691849,
+        "level-2": 0.12342393658776558,
+        "level-3": 0.306860161711062,
+        "level-4": 0.019114174196280736
+      },
+      "expected_error": true
+    },
+    {
+      "question": {
+        "type": "score",
+        "instructions": "q",
+        "levels": [
+          "level-0",
+          "level-1",
+          "level-2",
+          "level-3",
+          "level-4"
+        ]
+      },
+      "value": 1.7267865401084093,
+      "probabilities": {
+        "level-0": 0.2618530648960069,
+        "level-1": 0.2820597713190236,
+        "level-2": 0.04863062189725204,
+        "level-3": 0.22736064255598798,
+        "level-4": 0.18009589933172943
+      },
+      "expected_error": true
+    },
+    {
+      "question": {
+        "type": "score",
+        "instructions": "q",
+        "levels": [
+          "level-0",
+          "level-1",
+          "level-2",
+          "level-3",
+          "level-4"
+        ]
+      },
+      "value": 1.7267865401084095,
+      "probabilities": {
+        "level-0": 0.2618530648960069,
+        "level-1": 0.2820597713190236,
+        "level-2": 0.04863062189725204,
+        "level-3": 0.22736064255598798,
+        "level-4": 0.18009589933172943
+      },
+      "expected": {
+        "value": 1.7267865401084095,
+        "confidence": 0.04863062189725204,
+        "decided": true,
+        "probabilities": {
+          "level-0": 0.2618530648960069,
+          "level-1": 0.2820597713190236,
+          "level-2": 0.04863062189725204,
+          "level-3": 0.22736064255598798,
+          "level-4": 0.18009589933172943
+        }
+      }
+    },
+    {
+      "question": {
+        "type": "score",
+        "instructions": "q",
+        "levels": [
+          "level-0",
+          "level-1",
+          "level-2",
+          "level-3",
+          "level-4"
+        ]
+      },
+      "value": 1.7267865401084097,
+      "probabilities": {
+        "level-0": 0.2618530648960069,
+        "level-1": 0.2820597713190236,
+        "level-2": 0.04863062189725204,
+        "level-3": 0.22736064255598798,
+        "level-4": 0.18009589933172943
+      },
+      "expected": {
+        "value": 1.7267865401084097,
+        "confidence": 0.04863062189725204,
+        "decided": true,
+        "probabilities": {
+          "level-0": 0.2618530648960069,
+          "level-1": 0.2820597713190236,
+          "level-2": 0.04863062189725204,
+          "level-3": 0.22736064255598798,
+          "level-4": 0.18009589933172943
+        }
+      }
+    },
+    {
+      "question": {
+        "type": "score",
+        "instructions": "q",
+        "levels": [
+          "level-0",
+          "level-1",
+          "level-2",
+          "level-3",
+          "level-4"
+        ]
+      },
+      "value": 1.8367865401084091,
+      "probabilities": {
+        "level-0": 0.2618530648960069,
+        "level-1": 0.2820597713190236,
+        "level-2": 0.04863062189725204,
+        "level-3": 0.22736064255598798,
+        "level-4": 0.18009589933172943
+      },
+      "expected": {
+        "value": 1.8367865401084091,
+        "confidence": 0.04863062189725204,
+        "decided": true,
+        "probabilities": {
+          "level-0": 0.2618530648960069,
+          "level-1": 0.2820597713190236,
+          "level-2": 0.04863062189725204,
+          "level-3": 0.22736064255598798,
+          "level-4": 0.18009589933172943
+        }
+      }
+    },
+    {
+      "question": {
+        "type": "score",
+        "instructions": "q",
+        "levels": [
+          "level-0",
+          "level-1",
+          "level-2",
+          "level-3",
+          "level-4"
+        ]
+      },
+      "value": 1.8367865401084094,
+      "probabilities": {
+        "level-0": 0.2618530648960069,
+        "level-1": 0.2820597713190236,
+        "level-2": 0.04863062189725204,
+        "level-3": 0.22736064255598798,
+        "level-4": 0.18009589933172943
+      },
+      "expected": {
+        "value": 1.8367865401084094,
+        "confidence": 0.04863062189725204,
+        "decided": true,
+        "probabilities": {
+          "level-0": 0.2618530648960069,
+          "level-1": 0.2820597713190236,
+          "level-2": 0.04863062189725204,
+          "level-3": 0.22736064255598798,
+          "level-4": 0.18009589933172943
+        }
+      }
+    },
+    {
+      "question": {
+        "type": "score",
+        "instructions": "q",
+        "levels": [
+          "level-0",
+          "level-1",
+          "level-2",
+          "level-3",
+          "level-4"
+        ]
+      },
+      "value": 1.8367865401084096,
+      "probabilities": {
+        "level-0": 0.2618530648960069,
+        "level-1": 0.2820597713190236,
+        "level-2": 0.04863062189725204,
+        "level-3": 0.22736064255598798,
+        "level-4": 0.18009589933172943
+      },
+      "expected_error": true
+    },
+    {
+      "question": {
+        "type": "score",
+        "instructions": "q",
+        "levels": [
+          "level-0",
+          "level-1",
+          "level-2",
+          "level-3",
+          "level-4",
+          "level-5",
+          "level-6",
+          "level-7",
+          "level-8",
+          "level-9",
+          "level-10"
+        ]
+      },
+      "value": 4.4667277176756475,
+      "probabilities": {
+        "level-0": 0.15483017306750055,
+        "level-1": 0.03404135186382658,
+        "level-2": 0.08752479206419056,
+        "level-3": 0.14304079557529903,
+        "level-4": 0.1035412677253592,
+        "level-5": 0.05011937298127301,
+        "level-6": 0.013269635434493394,
+        "level-7": 0.1523320110654596,
+        "level-8": 0.07684849361328544,
+        "level-9": 0.1614984459148455,
+        "level-10": 0.02295366069446719
+      },
+      "expected_error": true
+    },
+    {
+      "question": {
+        "type": "score",
+        "instructions": "q",
+        "levels": [
+          "level-0",
+          "level-1",
+          "level-2",
+          "level-3",
+          "level-4",
+          "level-5",
+          "level-6",
+          "level-7",
+          "level-8",
+          "level-9",
+          "level-10"
+        ]
+      },
+      "value": 4.466727717675648,
+      "probabilities": {
+        "level-0": 0.15483017306750055,
+        "level-1": 0.03404135186382658,
+        "level-2": 0.08752479206419056,
+        "level-3": 0.14304079557529903,
+        "level-4": 0.1035412677253592,
+        "level-5": 0.05011937298127301,
+        "level-6": 0.013269635434493394,
+        "level-7": 0.1523320110654596,
+        "level-8": 0.07684849361328544,
+        "level-9": 0.1614984459148455,
+        "level-10": 0.02295366069446719
+      },
+      "expected_error": true
+    },
+    {
+      "question": {
+        "type": "score",
+        "instructions": "q",
+        "levels": [
+          "level-0",
+          "level-1",
+          "level-2",
+          "level-3",
+          "level-4",
+          "level-5",
+          "level-6",
+          "level-7",
+          "level-8",
+          "level-9",
+          "level-10"
+        ]
+      },
+      "value": 4.466727717675649,
+      "probabilities": {
+        "level-0": 0.15483017306750055,
+        "level-1": 0.03404135186382658,
+        "level-2": 0.08752479206419056,
+        "level-3": 0.14304079557529903,
+        "level-4": 0.1035412677253592,
+        "level-5": 0.05011937298127301,
+        "level-6": 0.013269635434493394,
+        "level-7": 0.1523320110654596,
+        "level-8": 0.07684849361328544,
+        "level-9": 0.1614984459148455,
+        "level-10": 0.02295366069446719
+      },
+      "expected": {
+        "value": 4.466727717675649,
+        "confidence": 0.1035412677253592,
+        "decided": true,
+        "probabilities": {
+          "level-0": 0.15483017306750055,
+          "level-1": 0.03404135186382658,
+          "level-2": 0.08752479206419056,
+          "level-3": 0.14304079557529903,
+          "level-4": 0.1035412677253592,
+          "level-5": 0.05011937298127301,
+          "level-6": 0.013269635434493394,
+          "level-7": 0.1523320110654596,
+          "level-8": 0.07684849361328544,
+          "level-9": 0.1614984459148455,
+          "level-10": 0.02295366069446719
+        }
+      }
+    },
+    {
+      "question": {
+        "type": "score",
+        "instructions": "q",
+        "levels": [
+          "level-0",
+          "level-1",
+          "level-2",
+          "level-3",
+          "level-4",
+          "level-5",
+          "level-6",
+          "level-7",
+          "level-8",
+          "level-9",
+          "level-10"
+        ]
+      },
+      "value": 5.026727717675648,
+      "probabilities": {
+        "level-0": 0.15483017306750055,
+        "level-1": 0.03404135186382658,
+        "level-2": 0.08752479206419056,
+        "level-3": 0.14304079557529903,
+        "level-4": 0.1035412677253592,
+        "level-5": 0.05011937298127301,
+        "level-6": 0.013269635434493394,
+        "level-7": 0.1523320110654596,
+        "level-8": 0.07684849361328544,
+        "level-9": 0.1614984459148455,
+        "level-10": 0.02295366069446719
+      },
+      "expected": {
+        "value": 5.026727717675648,
+        "confidence": 0.05011937298127301,
+        "decided": true,
+        "probabilities": {
+          "level-0": 0.15483017306750055,
+          "level-1": 0.03404135186382658,
+          "level-2": 0.08752479206419056,
+          "level-3": 0.14304079557529903,
+          "level-4": 0.1035412677253592,
+          "level-5": 0.05011937298127301,
+          "level-6": 0.013269635434493394,
+          "level-7": 0.1523320110654596,
+          "level-8": 0.07684849361328544,
+          "level-9": 0.1614984459148455,
+          "level-10": 0.02295366069446719
+        }
+      }
+    },
+    {
+      "question": {
+        "type": "score",
+        "instructions": "q",
+        "levels": [
+          "level-0",
+          "level-1",
+          "level-2",
+          "level-3",
+          "level-4",
+          "level-5",
+          "level-6",
+          "level-7",
+          "level-8",
+          "level-9",
+          "level-10"
+        ]
+      },
+      "value": 5.026727717675649,
+      "probabilities": {
+        "level-0": 0.15483017306750055,
+        "level-1": 0.03404135186382658,
+        "level-2": 0.08752479206419056,
+        "level-3": 0.14304079557529903,
+        "level-4": 0.1035412677253592,
+        "level-5": 0.05011937298127301,
+        "level-6": 0.013269635434493394,
+        "level-7": 0.1523320110654596,
+        "level-8": 0.07684849361328544,
+        "level-9": 0.1614984459148455,
+        "level-10": 0.02295366069446719
+      },
+      "expected_error": true
+    },
+    {
+      "question": {
+        "type": "score",
+        "instructions": "q",
+        "levels": [
+          "level-0",
+          "level-1",
+          "level-2",
+          "level-3",
+          "level-4",
+          "level-5",
+          "level-6",
+          "level-7",
+          "level-8",
+          "level-9",
+          "level-10"
+        ]
+      },
+      "value": 5.02672771767565,
+      "probabilities": {
+        "level-0": 0.15483017306750055,
+        "level-1": 0.03404135186382658,
+        "level-2": 0.08752479206419056,
+        "level-3": 0.14304079557529903,
+        "level-4": 0.1035412677253592,
+        "level-5": 0.05011937298127301,
+        "level-6": 0.013269635434493394,
+        "level-7": 0.1523320110654596,
+        "level-8": 0.07684849361328544,
+        "level-9": 0.1614984459148455,
+        "level-10": 0.02295366069446719
+      },
+      "expected_error": true
+    },
+    {
+      "question": {
+        "type": "score",
+        "instructions": "q",
+        "levels": [
+          "level-0",
+          "level-1",
+          "level-2",
+          "level-3",
+          "level-4",
+          "level-5",
+          "level-6",
+          "level-7",
+          "level-8",
+          "level-9",
+          "level-10"
+        ]
+      },
+      "value": 4.595650409944608,
+      "probabilities": {
+        "level-0": 0.13094494397077333,
+        "level-1": 0.13113419719816682,
+        "level-2": 0.14831992992160745,
+        "level-3": 0.0028752786756616844,
+        "level-4": 0.060005559745796556,
+        "level-5": 0.008330162544552716,
+        "level-6": 0.12124432847228471,
+        "level-7": 0.05717594079607014,
+        "level-8": 0.1546930550699394,
+        "level-9": 0.060430567846893934,
+        "level-10": 0.12484603575825329
+      },
+      "expected_error": true
+    },
+    {
+      "question": {
+        "type": "score",
+        "instructions": "q",
+        "levels": [
+          "level-0",
+          "level-1",
+          "level-2",
+          "level-3",
+          "level-4",
+          "level-5",
+          "level-6",
+          "level-7",
+          "level-8",
+          "level-9",
+          "level-10"
+        ]
+      },
+      "value": 4.595650409944609,
+      "probabilities": {
+        "level-0": 0.13094494397077333,
+        "level-1": 0.13113419719816682,
+        "level-2": 0.14831992992160745,
+        "level-3": 0.0028752786756616844,
+        "level-4": 0.060005559745796556,
+        "level-5": 0.008330162544552716,
+        "level-6": 0.12124432847228471,
+        "level-7": 0.05717594079607014,
+        "level-8": 0.1546930550699394,
+        "level-9": 0.060430567846893934,
+        "level-10": 0.12484603575825329
+      },
+      "expected_error": true
+    },
+    {
+      "question": {
+        "type": "score",
+        "instructions": "q",
+        "levels": [
+          "level-0",
+          "level-1",
+          "level-2",
+          "level-3",
+          "level-4",
+          "level-5",
+          "level-6",
+          "level-7",
+          "level-8",
+          "level-9",
+          "level-10"
+        ]
+      },
+      "value": 4.59565040994461,
+      "probabilities": {
+        "level-0": 0.13094494397077333,
+        "level-1": 0.13113419719816682,
+        "level-2": 0.14831992992160745,
+        "level-3": 0.0028752786756616844,
+        "level-4": 0.060005559745796556,
+        "level-5": 0.008330162544552716,
+        "level-6": 0.12124432847228471,
+        "level-7": 0.05717594079607014,
+        "level-8": 0.1546930550699394,
+        "level-9": 0.060430567846893934,
+        "level-10": 0.12484603575825329
+      },
+      "expected": {
+        "value": 4.59565040994461,
+        "confidence": 0.008330162544552716,
+        "decided": true,
+        "probabilities": {
+          "level-0": 0.13094494397077333,
+          "level-1": 0.13113419719816682,
+          "level-2": 0.14831992992160745,
+          "level-3": 0.0028752786756616844,
+          "level-4": 0.060005559745796556,
+          "level-5": 0.008330162544552716,
+          "level-6": 0.12124432847228471,
+          "level-7": 0.05717594079607014,
+          "level-8": 0.1546930550699394,
+          "level-9": 0.060430567846893934,
+          "level-10": 0.12484603575825329
+        }
+      }
+    },
+    {
+      "question": {
+        "type": "score",
+        "instructions": "q",
+        "levels": [
+          "level-0",
+          "level-1",
+          "level-2",
+          "level-3",
+          "level-4",
+          "level-5",
+          "level-6",
+          "level-7",
+          "level-8",
+          "level-9",
+          "level-10"
+        ]
+      },
+      "value": 5.1556504099446085,
+      "probabilities": {
+        "level-0": 0.13094494397077333,
+        "level-1": 0.13113419719816682,
+        "level-2": 0.14831992992160745,
+        "level-3": 0.0028752786756616844,
+        "level-4": 0.060005559745796556,
+        "level-5": 0.008330162544552716,
+        "level-6": 0.12124432847228471,
+        "level-7": 0.05717594079607014,
+        "level-8": 0.1546930550699394,
+        "level-9": 0.060430567846893934,
+        "level-10": 0.12484603575825329
+      },
+      "expected": {
+        "value": 5.1556504099446085,
+        "confidence": 0.008330162544552716,
+        "decided": true,
+        "probabilities": {
+          "level-0": 0.13094494397077333,
+          "level-1": 0.13113419719816682,
+          "level-2": 0.14831992992160745,
+          "level-3": 0.0028752786756616844,
+          "level-4": 0.060005559745796556,
+          "level-5": 0.008330162544552716,
+          "level-6": 0.12124432847228471,
+          "level-7": 0.05717594079607014,
+          "level-8": 0.1546930550699394,
+          "level-9": 0.060430567846893934,
+          "level-10": 0.12484603575825329
+        }
+      }
+    },
+    {
+      "question": {
+        "type": "score",
+        "instructions": "q",
+        "levels": [
+          "level-0",
+          "level-1",
+          "level-2",
+          "level-3",
+          "level-4",
+          "level-5",
+          "level-6",
+          "level-7",
+          "level-8",
+          "level-9",
+          "level-10"
+        ]
+      },
+      "value": 5.155650409944609,
+      "probabilities": {
+        "level-0": 0.13094494397077333,
+        "level-1": 0.13113419719816682,
+        "level-2": 0.14831992992160745,
+        "level-3": 0.0028752786756616844,
+        "level-4": 0.060005559745796556,
+        "level-5": 0.008330162544552716,
+        "level-6": 0.12124432847228471,
+        "level-7": 0.05717594079607014,
+        "level-8": 0.1546930550699394,
+        "level-9": 0.060430567846893934,
+        "level-10": 0.12484603575825329
+      },
+      "expected_error": true
+    },
+    {
+      "question": {
+        "type": "score",
+        "instructions": "q",
+        "levels": [
+          "level-0",
+          "level-1",
+          "level-2",
+          "level-3",
+          "level-4",
+          "level-5",
+          "level-6",
+          "level-7",
+          "level-8",
+          "level-9",
+          "level-10"
+        ]
+      },
+      "value": 5.15565040994461,
+      "probabilities": {
+        "level-0": 0.13094494397077333,
+        "level-1": 0.13113419719816682,
+        "level-2": 0.14831992992160745,
+        "level-3": 0.0028752786756616844,
+        "level-4": 0.060005559745796556,
+        "level-5": 0.008330162544552716,
+        "level-6": 0.12124432847228471,
+        "level-7": 0.05717594079607014,
+        "level-8": 0.1546930550699394,
+        "level-9": 0.060430567846893934,
+        "level-10": 0.12484603575825329
+      },
+      "expected_error": true
+    },
+    {
+      "question": {
+        "type": "score",
+        "instructions": "q",
+        "levels": [
+          "level-0",
+          "level-1",
+          "level-2",
+          "level-3",
+          "level-4",
+          "level-5",
+          "level-6",
+          "level-7",
+          "level-8",
+          "level-9",
+          "level-10"
+        ]
+      },
+      "value": 4.4164229707698945,
+      "probabilities": {
+        "level-0": 0.14674878517718726,
+        "level-1": 0.040407439254831326,
+        "level-2": 0.09416136149152496,
+        "level-3": 0.16190132848353167,
+        "level-4": 0.08910526819395201,
+        "level-5": 0.060828963068025724,
+        "level-6": 0.045185341944688984,
+        "level-7": 0.1329972091405205,
+        "level-8": 0.03259487305022766,
+        "level-9": 0.10212286704321494,
+        "level-10": 0.09394656315229497
+      },
+      "expected_error": true
+    },
+    {
+      "question": {
+        "type": "score",
+        "instructions": "q",
+        "levels": [
+          "level-0",
+          "level-1",
+          "level-2",
+          "level-3",
+          "level-4",
+          "level-5",
+          "level-6",
+          "level-7",
+          "level-8",
+          "level-9",
+          "level-10"
+        ]
+      },
+      "value": 4.416422970769895,
+      "probabilities": {
+        "level-0": 0.14674878517718726,
+        "level-1": 0.040407439254831326,
+        "level-2": 0.09416136149152496,
+        "level-3": 0.16190132848353167,
+        "level-4": 0.08910526819395201,
+        "level-5": 0.060828963068025724,
+        "level-6": 0.045185341944688984,
+        "level-7": 0.1329972091405205,
+        "level-8": 0.03259487305022766,
+        "level-9": 0.10212286704321494,
+        "level-10": 0.09394656315229497
+      },
+      "expected_error": true
+    },
+    {
+      "question": {
+        "type": "score",
+        "instructions": "q",
+        "levels": [
+          "level-0",
+          "level-1",
+          "level-2",
+          "level-3",
+          "level-4",
+          "level-5",
+          "level-6",
+          "level-7",
+          "level-8",
+          "level-9",
+          "level-10"
+        ]
+      },
+      "value": 4.416422970769896,
+      "probabilities": {
+        "level-0": 0.14674878517718726,
+        "level-1": 0.040407439254831326,
+        "level-2": 0.09416136149152496,
+        "level-3": 0.16190132848353167,
+        "level-4": 0.08910526819395201,
+        "level-5": 0.060828963068025724,
+        "level-6": 0.045185341944688984,
+        "level-7": 0.1329972091405205,
+        "level-8": 0.03259487305022766,
+        "level-9": 0.10212286704321494,
+        "level-10": 0.09394656315229497
+      },
+      "expected": {
+        "value": 4.416422970769896,
+        "confidence": 0.08910526819395201,
+        "decided": true,
+        "probabilities": {
+          "level-0": 0.14674878517718726,
+          "level-1": 0.040407439254831326,
+          "level-2": 0.09416136149152496,
+          "level-3": 0.16190132848353167,
+          "level-4": 0.08910526819395201,
+          "level-5": 0.060828963068025724,
+          "level-6": 0.045185341944688984,
+          "level-7": 0.1329972091405205,
+          "level-8": 0.03259487305022766,
+          "level-9": 0.10212286704321494,
+          "level-10": 0.09394656315229497
+        }
+      }
+    },
+    {
+      "question": {
+        "type": "score",
+        "instructions": "q",
+        "levels": [
+          "level-0",
+          "level-1",
+          "level-2",
+          "level-3",
+          "level-4",
+          "level-5",
+          "level-6",
+          "level-7",
+          "level-8",
+          "level-9",
+          "level-10"
+        ]
+      },
+      "value": 4.976422970769895,
+      "probabilities": {
+        "level-0": 0.14674878517718726,
+        "level-1": 0.040407439254831326,
+        "level-2": 0.09416136149152496,
+        "level-3": 0.16190132848353167,
+        "level-4": 0.08910526819395201,
+        "level-5": 0.060828963068025724,
+        "level-6": 0.045185341944688984,
+        "level-7": 0.1329972091405205,
+        "level-8": 0.03259487305022766,
+        "level-9": 0.10212286704321494,
+        "level-10": 0.09394656315229497
+      },
+      "expected": {
+        "value": 4.976422970769895,
+        "confidence": 0.060828963068025724,
+        "decided": true,
+        "probabilities": {
+          "level-0": 0.14674878517718726,
+          "level-1": 0.040407439254831326,
+          "level-2": 0.09416136149152496,
+          "level-3": 0.16190132848353167,
+          "level-4": 0.08910526819395201,
+          "level-5": 0.060828963068025724,
+          "level-6": 0.045185341944688984,
+          "level-7": 0.1329972091405205,
+          "level-8": 0.03259487305022766,
+          "level-9": 0.10212286704321494,
+          "level-10": 0.09394656315229497
+        }
+      }
+    },
+    {
+      "question": {
+        "type": "score",
+        "instructions": "q",
+        "levels": [
+          "level-0",
+          "level-1",
+          "level-2",
+          "level-3",
+          "level-4",
+          "level-5",
+          "level-6",
+          "level-7",
+          "level-8",
+          "level-9",
+          "level-10"
+        ]
+      },
+      "value": 4.976422970769896,
+      "probabilities": {
+        "level-0": 0.14674878517718726,
+        "level-1": 0.040407439254831326,
+        "level-2": 0.09416136149152496,
+        "level-3": 0.16190132848353167,
+        "level-4": 0.08910526819395201,
+        "level-5": 0.060828963068025724,
+        "level-6": 0.045185341944688984,
+        "level-7": 0.1329972091405205,
+        "level-8": 0.03259487305022766,
+        "level-9": 0.10212286704321494,
+        "level-10": 0.09394656315229497
+      },
+      "expected_error": true
+    },
+    {
+      "question": {
+        "type": "score",
+        "instructions": "q",
+        "levels": [
+          "level-0",
+          "level-1",
+          "level-2",
+          "level-3",
+          "level-4",
+          "level-5",
+          "level-6",
+          "level-7",
+          "level-8",
+          "level-9",
+          "level-10"
+        ]
+      },
+      "value": 4.976422970769897,
+      "probabilities": {
+        "level-0": 0.14674878517718726,
+        "level-1": 0.040407439254831326,
+        "level-2": 0.09416136149152496,
+        "level-3": 0.16190132848353167,
+        "level-4": 0.08910526819395201,
+        "level-5": 0.060828963068025724,
+        "level-6": 0.045185341944688984,
+        "level-7": 0.1329972091405205,
+        "level-8": 0.03259487305022766,
+        "level-9": 0.10212286704321494,
+        "level-10": 0.09394656315229497
+      },
+      "expected_error": true
+    },
+    {
+      "question": {
+        "type": "score",
+        "instructions": "q",
+        "levels": [
+          "level-0",
+          "level-1",
+          "level-2",
+          "level-3",
+          "level-4",
+          "level-5",
+          "level-6",
+          "level-7",
+          "level-8",
+          "level-9",
+          "level-10",
+          "level-11",
+          "level-12",
+          "level-13",
+          "level-14",
+          "level-15",
+          "level-16",
+          "level-17",
+          "level-18",
+          "level-19",
+          "level-20"
+        ]
+      },
+      "value": 8.853508307601839,
+      "probabilities": {
+        "level-0": 0.0543476879063718,
+        "level-1": 0.012714552985667467,
+        "level-2": 0.06466618323224957,
+        "level-3": 0.08999633234686999,
+        "level-4": 0.03131153832392896,
+        "level-5": 0.032607109874379994,
+        "level-6": 0.08926102093997876,
+        "level-7": 0.056789183273358156,
+        "level-8": 0.02676509788349407,
+        "level-9": 0.0009586884215734688,
+        "level-10": 0.07396544021151664,
+        "level-11": 0.034171396421730255,
+        "level-12": 0.04587151922468522,
+        "level-13": 0.02675776012291644,
+        "level-14": 0.0621658925154871,
+        "level-15": 0.07158083784842147,
+        "level-16": 0.030418879056274467,
+        "level-17": 0.007367368410328232,
+        "level-18": 0.09689546806285118,
+        "level-19": 0.08935924872915174,
+        "level-20": 0.0020287942087650647
+      },
+      "expected_error": true
+    },
+    {
+      "question": {
+        "type": "score",
+        "instructions": "q",
+        "levels": [
+          "level-0",
+          "level-1",
+          "level-2",
+          "level-3",
+          "level-4",
+          "level-5",
+          "level-6",
+          "level-7",
+          "level-8",
+          "level-9",
+          "level-10",
+          "level-11",
+          "level-12",
+          "level-13",
+          "level-14",
+          "level-15",
+          "level-16",
+          "level-17",
+          "level-18",
+          "level-19",
+          "level-20"
+        ]
+      },
+      "value": 8.85350830760184,
+      "probabilities": {
+        "level-0": 0.0543476879063718,
+        "level-1": 0.012714552985667467,
+        "level-2": 0.06466618323224957,
+        "level-3": 0.08999633234686999,
+        "level-4": 0.03131153832392896,
+        "level-5": 0.032607109874379994,
+        "level-6": 0.08926102093997876,
+        "level-7": 0.056789183273358156,
+        "level-8": 0.02676509788349407,
+        "level-9": 0.0009586884215734688,
+        "level-10": 0.07396544021151664,
+        "level-11": 0.034171396421730255,
+        "level-12": 0.04587151922468522,
+        "level-13": 0.02675776012291644,
+        "level-14": 0.0621658925154871,
+        "level-15": 0.07158083784842147,
+        "level-16": 0.030418879056274467,
+        "level-17": 0.007367368410328232,
+        "level-18": 0.09689546806285118,
+        "level-19": 0.08935924872915174,
+        "level-20": 0.0020287942087650647
+      },
+      "expected": {
+        "value": 8.85350830760184,
+        "confidence": 0.0009586884215734688,
+        "decided": true,
+        "probabilities": {
+          "level-0": 0.0543476879063718,
+          "level-1": 0.012714552985667467,
+          "level-2": 0.06466618323224957,
+          "level-3": 0.08999633234686999,
+          "level-4": 0.03131153832392896,
+          "level-5": 0.032607109874379994,
+          "level-6": 0.08926102093997876,
+          "level-7": 0.056789183273358156,
+          "level-8": 0.02676509788349407,
+          "level-9": 0.0009586884215734688,
+          "level-10": 0.07396544021151664,
+          "level-11": 0.034171396421730255,
+          "level-12": 0.04587151922468522,
+          "level-13": 0.02675776012291644,
+          "level-14": 0.0621658925154871,
+          "level-15": 0.07158083784842147,
+          "level-16": 0.030418879056274467,
+          "level-17": 0.007367368410328232,
+          "level-18": 0.09689546806285118,
+          "level-19": 0.08935924872915174,
+          "level-20": 0.0020287942087650647
+        }
+      }
+    },
+    {
+      "question": {
+        "type": "score",
+        "instructions": "q",
+        "levels": [
+          "level-0",
+          "level-1",
+          "level-2",
+          "level-3",
+          "level-4",
+          "level-5",
+          "level-6",
+          "level-7",
+          "level-8",
+          "level-9",
+          "level-10",
+          "level-11",
+          "level-12",
+          "level-13",
+          "level-14",
+          "level-15",
+          "level-16",
+          "level-17",
+          "level-18",
+          "level-19",
+          "level-20"
+        ]
+      },
+      "value": 8.853508307601842,
+      "probabilities": {
+        "level-0": 0.0543476879063718,
+        "level-1": 0.012714552985667467,
+        "level-2": 0.06466618323224957,
+        "level-3": 0.08999633234686999,
+        "level-4": 0.03131153832392896,
+        "level-5": 0.032607109874379994,
+        "level-6": 0.08926102093997876,
+        "level-7": 0.056789183273358156,
+        "level-8": 0.02676509788349407,
+        "level-9": 0.0009586884215734688,
+        "level-10": 0.07396544021151664,
+        "level-11": 0.034171396421730255,
+        "level-12": 0.04587151922468522,
+        "level-13": 0.02675776012291644,
+        "level-14": 0.0621658925154871,
+        "level-15": 0.07158083784842147,
+        "level-16": 0.030418879056274467,
+        "level-17": 0.007367368410328232,
+        "level-18": 0.09689546806285118,
+        "level-19": 0.08935924872915174,
+        "level-20": 0.0020287942087650647
+      },
+      "expected": {
+        "value": 8.853508307601842,
+        "confidence": 0.0009586884215734688,
+        "decided": true,
+        "probabilities": {
+          "level-0": 0.0543476879063718,
+          "level-1": 0.012714552985667467,
+          "level-2": 0.06466618323224957,
+          "level-3": 0.08999633234686999,
+          "level-4": 0.03131153832392896,
+          "level-5": 0.032607109874379994,
+          "level-6": 0.08926102093997876,
+          "level-7": 0.056789183273358156,
+          "level-8": 0.02676509788349407,
+          "level-9": 0.0009586884215734688,
+          "level-10": 0.07396544021151664,
+          "level-11": 0.034171396421730255,
+          "level-12": 0.04587151922468522,
+          "level-13": 0.02675776012291644,
+          "level-14": 0.0621658925154871,
+          "level-15": 0.07158083784842147,
+          "level-16": 0.030418879056274467,
+          "level-17": 0.007367368410328232,
+          "level-18": 0.09689546806285118,
+          "level-19": 0.08935924872915174,
+          "level-20": 0.0020287942087650647
+        }
+      }
+    },
+    {
+      "question": {
+        "type": "score",
+        "instructions": "q",
+        "levels": [
+          "level-0",
+          "level-1",
+          "level-2",
+          "level-3",
+          "level-4",
+          "level-5",
+          "level-6",
+          "level-7",
+          "level-8",
+          "level-9",
+          "level-10",
+          "level-11",
+          "level-12",
+          "level-13",
+          "level-14",
+          "level-15",
+          "level-16",
+          "level-17",
+          "level-18",
+          "level-19",
+          "level-20"
+        ]
+      },
+      "value": 10.963508307601838,
+      "probabilities": {
+        "level-0": 0.0543476879063718,
+        "level-1": 0.012714552985667467,
+        "level-2": 0.06466618323224957,
+        "level-3": 0.08999633234686999,
+        "level-4": 0.03131153832392896,
+        "level-5": 0.032607109874379994,
+        "level-6": 0.08926102093997876,
+        "level-7": 0.056789183273358156,
+        "level-8": 0.02676509788349407,
+        "level-9": 0.0009586884215734688,
+        "level-10": 0.07396544021151664,
+        "level-11": 0.034171396421730255,
+        "level-12": 0.04587151922468522,
+        "level-13": 0.02675776012291644,
+        "level-14": 0.0621658925154871,
+        "level-15": 0.07158083784842147,
+        "level-16": 0.030418879056274467,
+        "level-17": 0.007367368410328232,
+        "level-18": 0.09689546806285118,
+        "level-19": 0.08935924872915174,
+        "level-20": 0.0020287942087650647
+      },
+      "expected": {
+        "value": 10.963508307601838,
+        "confidence": 0.034171396421730255,
+        "decided": true,
+        "probabilities": {
+          "level-0": 0.0543476879063718,
+          "level-1": 0.012714552985667467,
+          "level-2": 0.06466618323224957,
+          "level-3": 0.08999633234686999,
+          "level-4": 0.03131153832392896,
+          "level-5": 0.032607109874379994,
+          "level-6": 0.08926102093997876,
+          "level-7": 0.056789183273358156,
+          "level-8": 0.02676509788349407,
+          "level-9": 0.0009586884215734688,
+          "level-10": 0.07396544021151664,
+          "level-11": 0.034171396421730255,
+          "level-12": 0.04587151922468522,
+          "level-13": 0.02675776012291644,
+          "level-14": 0.0621658925154871,
+          "level-15": 0.07158083784842147,
+          "level-16": 0.030418879056274467,
+          "level-17": 0.007367368410328232,
+          "level-18": 0.09689546806285118,
+          "level-19": 0.08935924872915174,
+          "level-20": 0.0020287942087650647
+        }
+      }
+    },
+    {
+      "question": {
+        "type": "score",
+        "instructions": "q",
+        "levels": [
+          "level-0",
+          "level-1",
+          "level-2",
+          "level-3",
+          "level-4",
+          "level-5",
+          "level-6",
+          "level-7",
+          "level-8",
+          "level-9",
+          "level-10",
+          "level-11",
+          "level-12",
+          "level-13",
+          "level-14",
+          "level-15",
+          "level-16",
+          "level-17",
+          "level-18",
+          "level-19",
+          "level-20"
+        ]
+      },
+      "value": 10.96350830760184,
+      "probabilities": {
+        "level-0": 0.0543476879063718,
+        "level-1": 0.012714552985667467,
+        "level-2": 0.06466618323224957,
+        "level-3": 0.08999633234686999,
+        "level-4": 0.03131153832392896,
+        "level-5": 0.032607109874379994,
+        "level-6": 0.08926102093997876,
+        "level-7": 0.056789183273358156,
+        "level-8": 0.02676509788349407,
+        "level-9": 0.0009586884215734688,
+        "level-10": 0.07396544021151664,
+        "level-11": 0.034171396421730255,
+        "level-12": 0.04587151922468522,
+        "level-13": 0.02675776012291644,
+        "level-14": 0.0621658925154871,
+        "level-15": 0.07158083784842147,
+        "level-16": 0.030418879056274467,
+        "level-17": 0.007367368410328232,
+        "level-18": 0.09689546806285118,
+        "level-19": 0.08935924872915174,
+        "level-20": 0.0020287942087650647
+      },
+      "expected": {
+        "value": 10.96350830760184,
+        "confidence": 0.034171396421730255,
+        "decided": true,
+        "probabilities": {
+          "level-0": 0.0543476879063718,
+          "level-1": 0.012714552985667467,
+          "level-2": 0.06466618323224957,
+          "level-3": 0.08999633234686999,
+          "level-4": 0.03131153832392896,
+          "level-5": 0.032607109874379994,
+          "level-6": 0.08926102093997876,
+          "level-7": 0.056789183273358156,
+          "level-8": 0.02676509788349407,
+          "level-9": 0.0009586884215734688,
+          "level-10": 0.07396544021151664,
+          "level-11": 0.034171396421730255,
+          "level-12": 0.04587151922468522,
+          "level-13": 0.02675776012291644,
+          "level-14": 0.0621658925154871,
+          "level-15": 0.07158083784842147,
+          "level-16": 0.030418879056274467,
+          "level-17": 0.007367368410328232,
+          "level-18": 0.09689546806285118,
+          "level-19": 0.08935924872915174,
+          "level-20": 0.0020287942087650647
+        }
+      }
+    },
+    {
+      "question": {
+        "type": "score",
+        "instructions": "q",
+        "levels": [
+          "level-0",
+          "level-1",
+          "level-2",
+          "level-3",
+          "level-4",
+          "level-5",
+          "level-6",
+          "level-7",
+          "level-8",
+          "level-9",
+          "level-10",
+          "level-11",
+          "level-12",
+          "level-13",
+          "level-14",
+          "level-15",
+          "level-16",
+          "level-17",
+          "level-18",
+          "level-19",
+          "level-20"
+        ]
+      },
+      "value": 10.963508307601842,
+      "probabilities": {
+        "level-0": 0.0543476879063718,
+        "level-1": 0.012714552985667467,
+        "level-2": 0.06466618323224957,
+        "level-3": 0.08999633234686999,
+        "level-4": 0.03131153832392896,
+        "level-5": 0.032607109874379994,
+        "level-6": 0.08926102093997876,
+        "level-7": 0.056789183273358156,
+        "level-8": 0.02676509788349407,
+        "level-9": 0.0009586884215734688,
+        "level-10": 0.07396544021151664,
+        "level-11": 0.034171396421730255,
+        "level-12": 0.04587151922468522,
+        "level-13": 0.02675776012291644,
+        "level-14": 0.0621658925154871,
+        "level-15": 0.07158083784842147,
+        "level-16": 0.030418879056274467,
+        "level-17": 0.007367368410328232,
+        "level-18": 0.09689546806285118,
+        "level-19": 0.08935924872915174,
+        "level-20": 0.0020287942087650647
+      },
+      "expected_error": true
+    },
+    {
+      "question": {
+        "type": "score",
+        "instructions": "q",
+        "levels": [
+          "level-0",
+          "level-1",
+          "level-2",
+          "level-3",
+          "level-4",
+          "level-5",
+          "level-6",
+          "level-7",
+          "level-8",
+          "level-9",
+          "level-10",
+          "level-11",
+          "level-12",
+          "level-13",
+          "level-14",
+          "level-15",
+          "level-16",
+          "level-17",
+          "level-18",
+          "level-19",
+          "level-20"
+        ]
+      },
+      "value": 9.018937248345251,
+      "probabilities": {
+        "level-0": 0.05128437117312534,
+        "level-1": 0.06235721387063862,
+        "level-2": 0.03663383874034288,
+        "level-3": 0.06650608244433553,
+        "level-4": 0.08724716564715271,
+        "level-5": 0.05364429308182683,
+        "level-6": 0.03559404185686277,
+        "level-7": 0.017784407621349033,
+        "level-8": 0.02285392579139645,
+        "level-9": 0.013707847446221878,
+        "level-10": 0.010036062044789074,
+        "level-11": 0.019306214527708688,
+        "level-12": 0.07653996582957577,
+        "level-13": 0.04881127011868836,
+        "level-14": 0.07316862175849899,
+        "level-15": 0.08364483983680703,
+        "level-16": 0.07370028739569462,
+        "level-17": 0.00449436016112264,
+        "level-18": 0.084169633124395,
+        "level-19": 0.00843480799491026,
+        "level-20": 0.07008074953455751
+      },
+      "expected_error": true
+    },
+    {
+      "question": {
+        "type": "score",
+        "instructions": "q",
+        "levels": [
+          "level-0",
+          "level-1",
+          "level-2",
+          "level-3",
+          "level-4",
+          "level-5",
+          "level-6",
+          "level-7",
+          "level-8",
+          "level-9",
+          "level-10",
+          "level-11",
+          "level-12",
+          "level-13",
+          "level-14",
+          "level-15",
+          "level-16",
+          "level-17",
+          "level-18",
+          "level-19",
+          "level-20"
+        ]
+      },
+      "value": 9.018937248345253,
+      "probabilities": {
+        "level-0": 0.05128437117312534,
+        "level-1": 0.06235721387063862,
+        "level-2": 0.03663383874034288,
+        "level-3": 0.06650608244433553,
+        "level-4": 0.08724716564715271,
+        "level-5": 0.05364429308182683,
+        "level-6": 0.03559404185686277,
+        "level-7": 0.017784407621349033,
+        "level-8": 0.02285392579139645,
+        "level-9": 0.013707847446221878,
+        "level-10": 0.010036062044789074,
+        "level-11": 0.019306214527708688,
+        "level-12": 0.07653996582957577,
+        "level-13": 0.04881127011868836,
+        "level-14": 0.07316862175849899,
+        "level-15": 0.08364483983680703,
+        "level-16": 0.07370028739569462,
+        "level-17": 0.00449436016112264,
+        "level-18": 0.084169633124395,
+        "level-19": 0.00843480799491026,
+        "level-20": 0.07008074953455751
+      },
+      "expected": {
+        "value": 9.018937248345253,
+        "confidence": 0.013707847446221878,
+        "decided": true,
+        "probabilities": {
+          "level-0": 0.05128437117312534,
+          "level-1": 0.06235721387063862,
+          "level-2": 0.03663383874034288,
+          "level-3": 0.06650608244433553,
+          "level-4": 0.08724716564715271,
+          "level-5": 0.05364429308182683,
+          "level-6": 0.03559404185686277,
+          "level-7": 0.017784407621349033,
+          "level-8": 0.02285392579139645,
+          "level-9": 0.013707847446221878,
+          "level-10": 0.010036062044789074,
+          "level-11": 0.019306214527708688,
+          "level-12": 0.07653996582957577,
+          "level-13": 0.04881127011868836,
+          "level-14": 0.07316862175849899,
+          "level-15": 0.08364483983680703,
+          "level-16": 0.07370028739569462,
+          "level-17": 0.00449436016112264,
+          "level-18": 0.084169633124395,
+          "level-19": 0.00843480799491026,
+          "level-20": 0.07008074953455751
+        }
+      }
+    },
+    {
+      "question": {
+        "type": "score",
+        "instructions": "q",
+        "levels": [
+          "level-0",
+          "level-1",
+          "level-2",
+          "level-3",
+          "level-4",
+          "level-5",
+          "level-6",
+          "level-7",
+          "level-8",
+          "level-9",
+          "level-10",
+          "level-11",
+          "level-12",
+          "level-13",
+          "level-14",
+          "level-15",
+          "level-16",
+          "level-17",
+          "level-18",
+          "level-19",
+          "level-20"
+        ]
+      },
+      "value": 9.018937248345255,
+      "probabilities": {
+        "level-0": 0.05128437117312534,
+        "level-1": 0.06235721387063862,
+        "level-2": 0.03663383874034288,
+        "level-3": 0.06650608244433553,
+        "level-4": 0.08724716564715271,
+        "level-5": 0.05364429308182683,
+        "level-6": 0.03559404185686277,
+        "level-7": 0.017784407621349033,
+        "level-8": 0.02285392579139645,
+        "level-9": 0.013707847446221878,
+        "level-10": 0.010036062044789074,
+        "level-11": 0.019306214527708688,
+        "level-12": 0.07653996582957577,
+        "level-13": 0.04881127011868836,
+        "level-14": 0.07316862175849899,
+        "level-15": 0.08364483983680703,
+        "level-16": 0.07370028739569462,
+        "level-17": 0.00449436016112264,
+        "level-18": 0.084169633124395,
+        "level-19": 0.00843480799491026,
+        "level-20": 0.07008074953455751
+      },
+      "expected": {
+        "value": 9.018937248345255,
+        "confidence": 0.013707847446221878,
+        "decided": true,
+        "probabilities": {
+          "level-0": 0.05128437117312534,
+          "level-1": 0.06235721387063862,
+          "level-2": 0.03663383874034288,
+          "level-3": 0.06650608244433553,
+          "level-4": 0.08724716564715271,
+          "level-5": 0.05364429308182683,
+          "level-6": 0.03559404185686277,
+          "level-7": 0.017784407621349033,
+          "level-8": 0.02285392579139645,
+          "level-9": 0.013707847446221878,
+          "level-10": 0.010036062044789074,
+          "level-11": 0.019306214527708688,
+          "level-12": 0.07653996582957577,
+          "level-13": 0.04881127011868836,
+          "level-14": 0.07316862175849899,
+          "level-15": 0.08364483983680703,
+          "level-16": 0.07370028739569462,
+          "level-17": 0.00449436016112264,
+          "level-18": 0.084169633124395,
+          "level-19": 0.00843480799491026,
+          "level-20": 0.07008074953455751
+        }
+      }
+    },
+    {
+      "question": {
+        "type": "score",
+        "instructions": "q",
+        "levels": [
+          "level-0",
+          "level-1",
+          "level-2",
+          "level-3",
+          "level-4",
+          "level-5",
+          "level-6",
+          "level-7",
+          "level-8",
+          "level-9",
+          "level-10",
+          "level-11",
+          "level-12",
+          "level-13",
+          "level-14",
+          "level-15",
+          "level-16",
+          "level-17",
+          "level-18",
+          "level-19",
+          "level-20"
+        ]
+      },
+      "value": 11.12893724834525,
+      "probabilities": {
+        "level-0": 0.05128437117312534,
+        "level-1": 0.06235721387063862,
+        "level-2": 0.03663383874034288,
+        "level-3": 0.06650608244433553,
+        "level-4": 0.08724716564715271,
+        "level-5": 0.05364429308182683,
+        "level-6": 0.03559404185686277,
+        "level-7": 0.017784407621349033,
+        "level-8": 0.02285392579139645,
+        "level-9": 0.013707847446221878,
+        "level-10": 0.010036062044789074,
+        "level-11": 0.019306214527708688,
+        "level-12": 0.07653996582957577,
+        "level-13": 0.04881127011868836,
+        "level-14": 0.07316862175849899,
+        "level-15": 0.08364483983680703,
+        "level-16": 0.07370028739569462,
+        "level-17": 0.00449436016112264,
+        "level-18": 0.084169633124395,
+        "level-19": 0.00843480799491026,
+        "level-20": 0.07008074953455751
+      },
+      "expected": {
+        "value": 11.12893724834525,
+        "confidence": 0.019306214527708688,
+        "decided": true,
+        "probabilities": {
+          "level-0": 0.05128437117312534,
+          "level-1": 0.06235721387063862,
+          "level-2": 0.03663383874034288,
+          "level-3": 0.06650608244433553,
+          "level-4": 0.08724716564715271,
+          "level-5": 0.05364429308182683,
+          "level-6": 0.03559404185686277,
+          "level-7": 0.017784407621349033,
+          "level-8": 0.02285392579139645,
+          "level-9": 0.013707847446221878,
+          "level-10": 0.010036062044789074,
+          "level-11": 0.019306214527708688,
+          "level-12": 0.07653996582957577,
+          "level-13": 0.04881127011868836,
+          "level-14": 0.07316862175849899,
+          "level-15": 0.08364483983680703,
+          "level-16": 0.07370028739569462,
+          "level-17": 0.00449436016112264,
+          "level-18": 0.084169633124395,
+          "level-19": 0.00843480799491026,
+          "level-20": 0.07008074953455751
+        }
+      }
+    },
+    {
+      "question": {
+        "type": "score",
+        "instructions": "q",
+        "levels": [
+          "level-0",
+          "level-1",
+          "level-2",
+          "level-3",
+          "level-4",
+          "level-5",
+          "level-6",
+          "level-7",
+          "level-8",
+          "level-9",
+          "level-10",
+          "level-11",
+          "level-12",
+          "level-13",
+          "level-14",
+          "level-15",
+          "level-16",
+          "level-17",
+          "level-18",
+          "level-19",
+          "level-20"
+        ]
+      },
+      "value": 11.128937248345252,
+      "probabilities": {
+        "level-0": 0.05128437117312534,
+        "level-1": 0.06235721387063862,
+        "level-2": 0.03663383874034288,
+        "level-3": 0.06650608244433553,
+        "level-4": 0.08724716564715271,
+        "level-5": 0.05364429308182683,
+        "level-6": 0.03559404185686277,
+        "level-7": 0.017784407621349033,
+        "level-8": 0.02285392579139645,
+        "level-9": 0.013707847446221878,
+        "level-10": 0.010036062044789074,
+        "level-11": 0.019306214527708688,
+        "level-12": 0.07653996582957577,
+        "level-13": 0.04881127011868836,
+        "level-14": 0.07316862175849899,
+        "level-15": 0.08364483983680703,
+        "level-16": 0.07370028739569462,
+        "level-17": 0.00449436016112264,
+        "level-18": 0.084169633124395,
+        "level-19": 0.00843480799491026,
+        "level-20": 0.07008074953455751
+      },
+      "expected": {
+        "value": 11.128937248345252,
+        "confidence": 0.019306214527708688,
+        "decided": true,
+        "probabilities": {
+          "level-0": 0.05128437117312534,
+          "level-1": 0.06235721387063862,
+          "level-2": 0.03663383874034288,
+          "level-3": 0.06650608244433553,
+          "level-4": 0.08724716564715271,
+          "level-5": 0.05364429308182683,
+          "level-6": 0.03559404185686277,
+          "level-7": 0.017784407621349033,
+          "level-8": 0.02285392579139645,
+          "level-9": 0.013707847446221878,
+          "level-10": 0.010036062044789074,
+          "level-11": 0.019306214527708688,
+          "level-12": 0.07653996582957577,
+          "level-13": 0.04881127011868836,
+          "level-14": 0.07316862175849899,
+          "level-15": 0.08364483983680703,
+          "level-16": 0.07370028739569462,
+          "level-17": 0.00449436016112264,
+          "level-18": 0.084169633124395,
+          "level-19": 0.00843480799491026,
+          "level-20": 0.07008074953455751
+        }
+      }
+    },
+    {
+      "question": {
+        "type": "score",
+        "instructions": "q",
+        "levels": [
+          "level-0",
+          "level-1",
+          "level-2",
+          "level-3",
+          "level-4",
+          "level-5",
+          "level-6",
+          "level-7",
+          "level-8",
+          "level-9",
+          "level-10",
+          "level-11",
+          "level-12",
+          "level-13",
+          "level-14",
+          "level-15",
+          "level-16",
+          "level-17",
+          "level-18",
+          "level-19",
+          "level-20"
+        ]
+      },
+      "value": 11.128937248345254,
+      "probabilities": {
+        "level-0": 0.05128437117312534,
+        "level-1": 0.06235721387063862,
+        "level-2": 0.03663383874034288,
+        "level-3": 0.06650608244433553,
+        "level-4": 0.08724716564715271,
+        "level-5": 0.05364429308182683,
+        "level-6": 0.03559404185686277,
+        "level-7": 0.017784407621349033,
+        "level-8": 0.02285392579139645,
+        "level-9": 0.013707847446221878,
+        "level-10": 0.010036062044789074,
+        "level-11": 0.019306214527708688,
+        "level-12": 0.07653996582957577,
+        "level-13": 0.04881127011868836,
+        "level-14": 0.07316862175849899,
+        "level-15": 0.08364483983680703,
+        "level-16": 0.07370028739569462,
+        "level-17": 0.00449436016112264,
+        "level-18": 0.084169633124395,
+        "level-19": 0.00843480799491026,
+        "level-20": 0.07008074953455751
+      },
+      "expected_error": true
+    },
+    {
+      "question": {
+        "type": "score",
+        "instructions": "q",
+        "levels": [
+          "level-0",
+          "level-1",
+          "level-2",
+          "level-3",
+          "level-4",
+          "level-5",
+          "level-6",
+          "level-7",
+          "level-8",
+          "level-9",
+          "level-10",
+          "level-11",
+          "level-12",
+          "level-13",
+          "level-14",
+          "level-15",
+          "level-16",
+          "level-17",
+          "level-18",
+          "level-19",
+          "level-20"
+        ]
+      },
+      "value": 9.517945093773475,
+      "probabilities": {
+        "level-0": 0.08605930944146428,
+        "level-1": 0.06744173880887476,
+        "level-2": 0.04141000129587157,
+        "level-3": 0.007695293984101679,
+        "level-4": 0.008735091273484383,
+        "level-5": 0.06529281288339897,
+        "level-6": 0.024794166014593787,
+        "level-7": 0.05460183763164537,
+        "level-8": 0.027207150312205983,
+        "level-9": 0.016762597493952116,
+        "level-10": 0.030285718265563297,
+        "level-11": 0.07435725158555606,
+        "level-12": 0.049937632467139066,
+        "level-13": 0.04029055126907266,
+        "level-14": 0.04990364979239663,
+        "level-15": 0.05682798187710235,
+        "level-16": 0.0528974867834914,
+        "level-17": 0.04565440331610701,
+        "level-18": 0.0992349832403696,
+        "level-19": 0.07711311850164257,
+        "level-20": 0.023497223761966463
+      },
+      "expected_error": true
+    },
+    {
+      "question": {
+        "type": "score",
+        "instructions": "q",
+        "levels": [
+          "level-0",
+          "level-1",
+          "level-2",
+          "level-3",
+          "level-4",
+          "level-5",
+          "level-6",
+          "level-7",
+          "level-8",
+          "level-9",
+          "level-10",
+          "level-11",
+          "level-12",
+          "level-13",
+          "level-14",
+          "level-15",
+          "level-16",
+          "level-17",
+          "level-18",
+          "level-19",
+          "level-20"
+        ]
+      },
+      "value": 9.517945093773477,
+      "probabilities": {
+        "level-0": 0.08605930944146428,
+        "level-1": 0.06744173880887476,
+        "level-2": 0.04141000129587157,
+        "level-3": 0.007695293984101679,
+        "level-4": 0.008735091273484383,
+        "level-5": 0.06529281288339897,
+        "level-6": 0.024794166014593787,
+        "level-7": 0.05460183763164537,
+        "level-8": 0.027207150312205983,
+        "level-9": 0.016762597493952116,
+        "level-10": 0.030285718265563297,
+        "level-11": 0.07435725158555606,
+        "level-12": 0.049937632467139066,
+        "level-13": 0.04029055126907266,
+        "level-14": 0.04990364979239663,
+        "level-15": 0.05682798187710235,
+        "level-16": 0.0528974867834914,
+        "level-17": 0.04565440331610701,
+        "level-18": 0.0992349832403696,
+        "level-19": 0.07711311850164257,
+        "level-20": 0.023497223761966463
+      },
+      "expected": {
+        "value": 9.517945093773477,
+        "confidence": 0.030285718265563297,
+        "decided": true,
+        "probabilities": {
+          "level-0": 0.08605930944146428,
+          "level-1": 0.06744173880887476,
+          "level-2": 0.04141000129587157,
+          "level-3": 0.007695293984101679,
+          "level-4": 0.008735091273484383,
+          "level-5": 0.06529281288339897,
+          "level-6": 0.024794166014593787,
+          "level-7": 0.05460183763164537,
+          "level-8": 0.027207150312205983,
+          "level-9": 0.016762597493952116,
+          "level-10": 0.030285718265563297,
+          "level-11": 0.07435725158555606,
+          "level-12": 0.049937632467139066,
+          "level-13": 0.04029055126907266,
+          "level-14": 0.04990364979239663,
+          "level-15": 0.05682798187710235,
+          "level-16": 0.0528974867834914,
+          "level-17": 0.04565440331610701,
+          "level-18": 0.0992349832403696,
+          "level-19": 0.07711311850164257,
+          "level-20": 0.023497223761966463
+        }
+      }
+    },
+    {
+      "question": {
+        "type": "score",
+        "instructions": "q",
+        "levels": [
+          "level-0",
+          "level-1",
+          "level-2",
+          "level-3",
+          "level-4",
+          "level-5",
+          "level-6",
+          "level-7",
+          "level-8",
+          "level-9",
+          "level-10",
+          "level-11",
+          "level-12",
+          "level-13",
+          "level-14",
+          "level-15",
+          "level-16",
+          "level-17",
+          "level-18",
+          "level-19",
+          "level-20"
+        ]
+      },
+      "value": 9.517945093773479,
+      "probabilities": {
+        "level-0": 0.08605930944146428,
+        "level-1": 0.06744173880887476,
+        "level-2": 0.04141000129587157,
+        "level-3": 0.007695293984101679,
+        "level-4": 0.008735091273484383,
+        "level-5": 0.06529281288339897,
+        "level-6": 0.024794166014593787,
+        "level-7": 0.05460183763164537,
+        "level-8": 0.027207150312205983,
+        "level-9": 0.016762597493952116,
+        "level-10": 0.030285718265563297,
+        "level-11": 0.07435725158555606,
+        "level-12": 0.049937632467139066,
+        "level-13": 0.04029055126907266,
+        "level-14": 0.04990364979239663,
+        "level-15": 0.05682798187710235,
+        "level-16": 0.0528974867834914,
+        "level-17": 0.04565440331610701,
+        "level-18": 0.0992349832403696,
+        "level-19": 0.07711311850164257,
+        "level-20": 0.023497223761966463
+      },
+      "expected": {
+        "value": 9.517945093773479,
+        "confidence": 0.030285718265563297,
+        "decided": true,
+        "probabilities": {
+          "level-0": 0.08605930944146428,
+          "level-1": 0.06744173880887476,
+          "level-2": 0.04141000129587157,
+          "level-3": 0.007695293984101679,
+          "level-4": 0.008735091273484383,
+          "level-5": 0.06529281288339897,
+          "level-6": 0.024794166014593787,
+          "level-7": 0.05460183763164537,
+          "level-8": 0.027207150312205983,
+          "level-9": 0.016762597493952116,
+          "level-10": 0.030285718265563297,
+          "level-11": 0.07435725158555606,
+          "level-12": 0.049937632467139066,
+          "level-13": 0.04029055126907266,
+          "level-14": 0.04990364979239663,
+          "level-15": 0.05682798187710235,
+          "level-16": 0.0528974867834914,
+          "level-17": 0.04565440331610701,
+          "level-18": 0.0992349832403696,
+          "level-19": 0.07711311850164257,
+          "level-20": 0.023497223761966463
+        }
+      }
+    },
+    {
+      "question": {
+        "type": "score",
+        "instructions": "q",
+        "levels": [
+          "level-0",
+          "level-1",
+          "level-2",
+          "level-3",
+          "level-4",
+          "level-5",
+          "level-6",
+          "level-7",
+          "level-8",
+          "level-9",
+          "level-10",
+          "level-11",
+          "level-12",
+          "level-13",
+          "level-14",
+          "level-15",
+          "level-16",
+          "level-17",
+          "level-18",
+          "level-19",
+          "level-20"
+        ]
+      },
+      "value": 11.627945093773475,
+      "probabilities": {
+        "level-0": 0.08605930944146428,
+        "level-1": 0.06744173880887476,
+        "level-2": 0.04141000129587157,
+        "level-3": 0.007695293984101679,
+        "level-4": 0.008735091273484383,
+        "level-5": 0.06529281288339897,
+        "level-6": 0.024794166014593787,
+        "level-7": 0.05460183763164537,
+        "level-8": 0.027207150312205983,
+        "level-9": 0.016762597493952116,
+        "level-10": 0.030285718265563297,
+        "level-11": 0.07435725158555606,
+        "level-12": 0.049937632467139066,
+        "level-13": 0.04029055126907266,
+        "level-14": 0.04990364979239663,
+        "level-15": 0.05682798187710235,
+        "level-16": 0.0528974867834914,
+        "level-17": 0.04565440331610701,
+        "level-18": 0.0992349832403696,
+        "level-19": 0.07711311850164257,
+        "level-20": 0.023497223761966463
+      },
+      "expected": {
+        "value": 11.627945093773475,
+        "confidence": 0.049937632467139066,
+        "decided": true,
+        "probabilities": {
+          "level-0": 0.08605930944146428,
+          "level-1": 0.06744173880887476,
+          "level-2": 0.04141000129587157,
+          "level-3": 0.007695293984101679,
+          "level-4": 0.008735091273484383,
+          "level-5": 0.06529281288339897,
+          "level-6": 0.024794166014593787,
+          "level-7": 0.05460183763164537,
+          "level-8": 0.027207150312205983,
+          "level-9": 0.016762597493952116,
+          "level-10": 0.030285718265563297,
+          "level-11": 0.07435725158555606,
+          "level-12": 0.049937632467139066,
+          "level-13": 0.04029055126907266,
+          "level-14": 0.04990364979239663,
+          "level-15": 0.05682798187710235,
+          "level-16": 0.0528974867834914,
+          "level-17": 0.04565440331610701,
+          "level-18": 0.0992349832403696,
+          "level-19": 0.07711311850164257,
+          "level-20": 0.023497223761966463
+        }
+      }
+    },
+    {
+      "question": {
+        "type": "score",
+        "instructions": "q",
+        "levels": [
+          "level-0",
+          "level-1",
+          "level-2",
+          "level-3",
+          "level-4",
+          "level-5",
+          "level-6",
+          "level-7",
+          "level-8",
+          "level-9",
+          "level-10",
+          "level-11",
+          "level-12",
+          "level-13",
+          "level-14",
+          "level-15",
+          "level-16",
+          "level-17",
+          "level-18",
+          "level-19",
+          "level-20"
+        ]
+      },
+      "value": 11.627945093773477,
+      "probabilities": {
+        "level-0": 0.08605930944146428,
+        "level-1": 0.06744173880887476,
+        "level-2": 0.04141000129587157,
+        "level-3": 0.007695293984101679,
+        "level-4": 0.008735091273484383,
+        "level-5": 0.06529281288339897,
+        "level-6": 0.024794166014593787,
+        "level-7": 0.05460183763164537,
+        "level-8": 0.027207150312205983,
+        "level-9": 0.016762597493952116,
+        "level-10": 0.030285718265563297,
+        "level-11": 0.07435725158555606,
+        "level-12": 0.049937632467139066,
+        "level-13": 0.04029055126907266,
+        "level-14": 0.04990364979239663,
+        "level-15": 0.05682798187710235,
+        "level-16": 0.0528974867834914,
+        "level-17": 0.04565440331610701,
+        "level-18": 0.0992349832403696,
+        "level-19": 0.07711311850164257,
+        "level-20": 0.023497223761966463
+      },
+      "expected": {
+        "value": 11.627945093773477,
+        "confidence": 0.049937632467139066,
+        "decided": true,
+        "probabilities": {
+          "level-0": 0.08605930944146428,
+          "level-1": 0.06744173880887476,
+          "level-2": 0.04141000129587157,
+          "level-3": 0.007695293984101679,
+          "level-4": 0.008735091273484383,
+          "level-5": 0.06529281288339897,
+          "level-6": 0.024794166014593787,
+          "level-7": 0.05460183763164537,
+          "level-8": 0.027207150312205983,
+          "level-9": 0.016762597493952116,
+          "level-10": 0.030285718265563297,
+          "level-11": 0.07435725158555606,
+          "level-12": 0.049937632467139066,
+          "level-13": 0.04029055126907266,
+          "level-14": 0.04990364979239663,
+          "level-15": 0.05682798187710235,
+          "level-16": 0.0528974867834914,
+          "level-17": 0.04565440331610701,
+          "level-18": 0.0992349832403696,
+          "level-19": 0.07711311850164257,
+          "level-20": 0.023497223761966463
+        }
+      }
+    },
+    {
+      "question": {
+        "type": "score",
+        "instructions": "q",
+        "levels": [
+          "level-0",
+          "level-1",
+          "level-2",
+          "level-3",
+          "level-4",
+          "level-5",
+          "level-6",
+          "level-7",
+          "level-8",
+          "level-9",
+          "level-10",
+          "level-11",
+          "level-12",
+          "level-13",
+          "level-14",
+          "level-15",
+          "level-16",
+          "level-17",
+          "level-18",
+          "level-19",
+          "level-20"
+        ]
+      },
+      "value": 11.627945093773478,
+      "probabilities": {
+        "level-0": 0.08605930944146428,
+        "level-1": 0.06744173880887476,
+        "level-2": 0.04141000129587157,
+        "level-3": 0.007695293984101679,
+        "level-4": 0.008735091273484383,
+        "level-5": 0.06529281288339897,
+        "level-6": 0.024794166014593787,
+        "level-7": 0.05460183763164537,
+        "level-8": 0.027207150312205983,
+        "level-9": 0.016762597493952116,
+        "level-10": 0.030285718265563297,
+        "level-11": 0.07435725158555606,
+        "level-12": 0.049937632467139066,
+        "level-13": 0.04029055126907266,
+        "level-14": 0.04990364979239663,
+        "level-15": 0.05682798187710235,
+        "level-16": 0.0528974867834914,
+        "level-17": 0.04565440331610701,
+        "level-18": 0.0992349832403696,
+        "level-19": 0.07711311850164257,
+        "level-20": 0.023497223761966463
+      },
+      "expected_error": true
+    }
+  ],
+  "reference_revision": "07fb1f3109dac2e69a7dafe9fa349d0daa52012d",
+  "python_version": "3.13.13",
+  "generator_sha256": "ba430f7ab683edbbf6efd6926b506b7616040608549562a21fceccbaff814c6a",
+  "complement_cases": [
+    {
+      "input": 0,
+      "expected": 1
+    },
+    {
+      "input": 5e-324,
+      "expected": 1.0
+    },
+    {
+      "input": 0.06999999999999999,
+      "expected": 0.93
+    },
+    {
+      "input": 0.07,
+      "expected": 0.93
+    },
+    {
+      "input": 0.07000000000000002,
+      "expected": 0.93
+    },
+    {
+      "input": 0.12345678904999999,
+      "expected": 0.8765432109
+    },
+    {
+      "input": 0.12345678905,
+      "expected": 0.8765432109
+    },
+    {
+      "input": 0.12345678905000002,
+      "expected": 0.8765432109
+    },
+    {
+      "input": 0.12345678914999998,
+      "expected": 0.8765432108
+    },
+    {
+      "input": 0.12345678915,
+      "expected": 0.8765432108
+    },
+    {
+      "input": 0.12345678915000001,
+      "expected": 0.8765432108
+    },
+    {
+      "input": 0.49999999994999994,
+      "expected": 0.5000000001
+    },
+    {
+      "input": 0.49999999995,
+      "expected": 0.5000000001
+    },
+    {
+      "input": 0.49999999995000005,
+      "expected": 0.5000000001
+    },
+    {
+      "input": 0.5000000000499999,
+      "expected": 0.5
+    },
+    {
+      "input": 0.50000000005,
+      "expected": 0.4999999999
+    },
+    {
+      "input": 0.5000000000500001,
+      "expected": 0.4999999999
+    },
+    {
+      "input": 0.9999999999499999,
+      "expected": 1e-10
+    },
+    {
+      "input": 0.99999999995,
+      "expected": 1e-10
+    },
+    {
+      "input": 0.9999999999500001,
+      "expected": 0.0
+    },
+    {
+      "input": 0.9999999999999999,
+      "expected": 0.0
+    },
+    {
+      "input": 1,
+      "expected": 0
+    }
+  ],
+  "wire_errors": [
+    {
+      "request": {
+        "state": "synthetic",
+        "questions": [
+          {
+            "name": "q",
+            "type": "boolean",
+            "instructions": "q"
+          }
+        ],
+        "schema_version": null
+      },
+      "path": "schema_version",
+      "message": "schema_version: only \"1\" is supported"
+    },
+    {
+      "request": {
+        "state": "synthetic",
+        "questions": [
+          {
+            "name": "q",
+            "type": "boolean",
+            "instructions": "q"
+          }
+        ],
+        "schema_version": 1
+      },
+      "path": "schema_version",
+      "message": "schema_version: only \"1\" is supported"
+    },
+    {
+      "request": {
+        "state": "synthetic",
+        "questions": [
+          {
+            "name": "q",
+            "type": "boolean",
+            "instructions": "q"
+          }
+        ],
+        "request_id": 7
+      },
+      "path": "request_id",
+      "message": "request_id: must be a string"
+    },
+    {
+      "request": {
+        "state": false,
+        "questions": [
+          {
+            "name": "q",
+            "type": "boolean",
+            "instructions": "q"
+          }
+        ]
+      },
+      "path": "state",
+      "message": "state: must be text, a JSON object, or an array"
+    },
+    {
+      "request": {
+        "state": "synthetic",
+        "questions": [
+          {
+            "name": "q",
+            "type": "boolean",
+            "instructions": "q",
+            "true": 7
+          }
+        ]
+      },
+      "path": "questions[0].true",
+      "message": "questions[0].true: must be a string"
+    },
+    {
+      "request": {
+        "state": "synthetic",
+        "questions": [
+          {
+            "name": "q",
+            "type": "boolean",
+            "instructions": "  "
+          }
+        ]
+      },
+      "path": "questions[0]",
+      "message": "questions[0]: instructions must be a non-empty string"
+    },
+    {
+      "request": {
+        "state": "synthetic",
+        "questions": [
+          {
+            "name": "q",
+            "type": "boolean",
+            "instructions": "\u001c\u001d\u001e\u001f"
+          }
+        ]
+      },
+      "path": "questions[0]",
+      "message": "questions[0]: instructions must be a non-empty string"
+    },
+    {
+      "request": {
+        "state": "synthetic",
+        "questions": [
+          {
+            "name": "q",
+            "type": "score",
+            "instructions": "q",
+            "levels": [
+              "a",
+              "a"
+            ]
+          }
+        ]
+      },
+      "path": "questions[0]",
+      "message": "questions[0]: levels must be unique"
+    },
+    {
+      "request": {
+        "state": "synthetic",
+        "questions": [
+          {
+            "name": "q",
+            "type": "score",
+            "instructions": "q",
+            "levels": [
+              1,
+              "b"
+            ]
+          }
+        ]
+      },
+      "path": "questions[0]",
+      "message": "questions[0]: levels must be non-empty strings"
+    },
+    {
+      "request": {
+        "state": "synthetic",
+        "questions": [
+          {
+            "name": "q",
+            "type": "score",
+            "instructions": "q",
+            "levels": []
+          }
+        ]
+      },
+      "path": "questions[0]",
+      "message": "questions[0]: need at least 2 levels, got 0"
+    },
+    {
+      "request": {
+        "state": "synthetic",
+        "questions": [
+          {
+            "name": "q",
+            "type": "choice",
+            "instructions": "q",
+            "options": [
+              "a",
+              "a"
+            ]
+          }
+        ]
+      },
+      "path": "questions[0].options[1]",
+      "message": "questions[0].options[1]: option 'a' is used twice"
+    },
+    {
+      "request": {
+        "state": "synthetic",
+        "questions": [
+          {
+            "name": "q",
+            "type": "choice",
+            "instructions": "q",
+            "options": []
+          }
+        ]
+      },
+      "path": "questions[0]",
+      "message": "questions[0]: need at least 2 options, got 0"
+    },
+    {
+      "request": {
+        "state": "synthetic",
+        "questions": [
+          {
+            "name": "q",
+            "type": "choice",
+            "instructions": "q",
+            "options": [
+              {
+                "name": "a",
+                "typo": 1
+              },
+              "b"
+            ]
+          }
+        ]
+      },
+      "path": "questions[0].options[0].typo",
+      "message": "questions[0].options[0].typo: unknown field"
+    },
+    {
+      "request": {
+        "state": "synthetic",
+        "questions": [
+          {
+            "name": "q",
+            "type": "choice",
+            "instructions": "q",
+            "options": [
+              {
+                "name": "a",
+                "description": 7
+              },
+              "b"
+            ]
+          }
+        ]
+      },
+      "path": "questions[0].options[0].description",
+      "message": "questions[0].options[0].description: must be a string"
+    }
+  ],
+  "wire_encodings": [
+    {
+      "probabilities": {
+        "true": 0.012345,
+        "false": 0.987655
+      },
+      "value": false,
+      "expected": {
+        "answers": {
+          "q": {
+            "type": "boolean",
+            "value": false,
+            "decided": true,
+            "confidence": 0.9877,
+            "probabilities": {
+              "true": 0.01235,
+              "false": 0.9877
+            }
+          }
+        },
+        "call": null
+      }
+    },
+    {
+      "probabilities": {
+        "true": 0.00012345,
+        "false": 0.99987655
+      },
+      "value": false,
+      "expected": {
+        "answers": {
+          "q": {
+            "type": "boolean",
+            "value": false,
+            "decided": true,
+            "confidence": 0.9999,
+            "probabilities": {
+              "true": 0.0001234,
+              "false": 0.9999
+            }
+          }
+        },
+        "call": null
+      }
+    },
+    {
+      "probabilities": {
+        "true": 0.12345,
+        "false": 0.87655
+      },
+      "value": false,
+      "expected": {
+        "answers": {
+          "q": {
+            "type": "boolean",
+            "value": false,
+            "decided": true,
+            "confidence": 0.8766,
+            "probabilities": {
+              "true": 0.1235,
+              "false": 0.8766
+            }
+          }
+        },
+        "call": null
+      }
+    },
+    {
+      "probabilities": {
+        "true": 0.12355,
+        "false": 0.87645
+      },
+      "value": false,
+      "expected": {
+        "answers": {
+          "q": {
+            "type": "boolean",
+            "value": false,
+            "decided": true,
+            "confidence": 0.8764,
+            "probabilities": {
+              "true": 0.1235,
+              "false": 0.8764
+            }
+          }
+        },
+        "call": null
+      }
+    },
+    {
+      "probabilities": {
+        "true": 0.50005,
+        "false": 0.49995
+      },
+      "value": true,
+      "expected": {
+        "answers": {
+          "q": {
+            "type": "boolean",
+            "value": true,
+            "decided": true,
+            "confidence": 0.5,
+            "probabilities": {
+              "true": 0.5,
+              "false": 0.5
+            }
+          }
+        },
+        "call": null
+      }
+    },
+    {
+      "probabilities": {
+        "true": 0.99995,
+        "false": 5e-05
+      },
+      "value": true,
+      "expected": {
+        "answers": {
+          "q": {
+            "type": "boolean",
+            "value": true,
+            "decided": true,
+            "confidence": 1.0,
+            "probabilities": {
+              "true": 1.0,
+              "false": 5e-05
+            }
+          }
+        },
+        "call": null
+      }
+    },
+    {
+      "probabilities": {
+        "true": 0.0,
+        "false": 1.0
+      },
+      "value": false,
+      "expected": {
+        "answers": {
+          "q": {
+            "type": "boolean",
+            "value": false,
+            "decided": true,
+            "confidence": 1.0,
+            "probabilities": {
+              "true": 0.0,
+              "false": 1.0
+            }
+          }
+        },
+        "call": null
+      }
+    },
+    {
+      "probabilities": {
+        "true": 1.0,
+        "false": 0.0
+      },
+      "value": true,
+      "expected": {
+        "answers": {
+          "q": {
+            "type": "boolean",
+            "value": true,
+            "decided": true,
+            "confidence": 1.0,
+            "probabilities": {
+              "true": 1.0,
+              "false": 0.0
+            }
+          }
+        },
+        "call": null
+      }
+    }
+  ]
+}

@@ -1,72 +1,60 @@
 # Development guide
 
-Start at [status/HANDOFF](../status/HANDOFF.md). This is a new native Rust library;
-the bootstrap intentionally contains no public API or placeholder provider.
+Start at [status/HANDOFF](../status/HANDOFF.md). This is a native Rust library with
+an unstable 0.1 alpha API. Edition 2024, Rust 1.85 minimum; CI checks stable and
+1.85.0 on Linux, macOS and Windows. Python 3.12+ runs the documentation/package
+tools; reference fixtures record the CPython version that generated them.
 
-## Local setup
-
-Use a Rust installation with cargo, rustfmt and clippy; Python 3.11+ is used for
-documentation checks and reference fixture generation. Edition 2024 and Rust 1.85
-are the working minimum; CI tests 1.85.0 plus stable. The local verification
-toolchain is recorded in [VALIDATION](../status/VALIDATION.md). There is no toolchain
-file that causes an unexpected installation on opening the checkout.
+## Local verification
 
 ```sh
 cargo fmt --all -- --check
 cargo check --locked --all-targets
-cargo clippy --locked --all-targets -- -D warnings
+cargo clippy --locked --all-features --all-targets -- -D warnings
 cargo test --locked --all-targets
-cargo test --locked --doc
-cargo doc --locked --no-deps
+cargo test --locked --all-features --all-targets
+cargo test --locked --all-features --doc
+RUSTDOCFLAGS="-D warnings" cargo doc --locked --all-features --no-deps
 python3 tools/check_docs.py
+python3 tools/check_package.py
 ```
 
-Commit Cargo.lock for reproducible project/CI checks. Once dependencies are added,
-also test the package as a downstream consumer without relying on this lockfile.
-No default check needs credentials or external model access. The scaffold has
-zero Rust tests; passing it proves no semantic behavior.
+The package checker builds the actual Cargo archive, checks the default dependency
+graph, and runs fresh downstream consumers with default and all optional features.
+It uses cached dependencies offline; run `cargo fetch --locked` first on a fresh
+checkout. Commit Cargo.lock. Ordinary checks use synthetic data, scripted providers,
+and a localhost HTTP server; they do not need credentials or call hosted models.
 
-## First implementation slice
+Feature checks: `--no-default-features`, `--features tokio`, `--features images`,
+`--features blocking`, `--features typesafe`, and `--all-features`. The blocking
+facade and built-in HTTP transport require a configured Tokio runtime as documented
+in rustdoc. The default provider API works with a caller-selected executor.
 
-Implement `question`, `answer`, `error`, ordered collections, and `state` in M1.
-Keep constructors fallible, fields private, deserialization validated. Port
-`make_answer` once and use it everywhere. Add a Rust fixture reader for
-`tests/fixtures/python-parity.json`; implement cases without changing expected
-outputs. Expand fixture coverage before claiming the whole normalizer complete.
-See the [full plan](../status/DEV_PLAN.md) for milestone exit criteria.
+## Examples
 
-## Reference fixture maintenance
+Run `cargo run --example hello`, `triage`, `filter`, or `rerank`. The image example
+is `cargo run --example images --features images`. Every example uses a clearly
+labeled synthetic provider. They demonstrate library behavior, not inference.
 
-```sh
-python3 -B tools/export_python_fixtures.py \
-  --source /path/to/semantic-operators-lib \
-  --output tests/fixtures/python-parity.json
-```
+## Reference fixtures
 
-The exporter verifies the pinned source revision and tracked cleanliness. It
-imports only local reference modules, runs synthetic cases, and makes no provider
-calls. A baseline change is a compatibility decision: inspect the source diff,
-update inventory/revision deliberately, regenerate, and explain changed cases.
-Do not execute a source checkout merely obtained from an untrusted remote.
+Four exporters live under tools/: `export_python_fixtures.py`,
+`export_core_edges.py`, `export_recipe_fixtures.py`, and `export_bench_fixtures.py`.
+Use their `--help` for source/output arguments. They verify the pinned source
+revision and hashes and make no provider calls. Fixtures retain generator hashes;
+the documentation checker catches stale provenance. The Python 3.13 reference
+includes Python 3.12+ compensated summation behavior; changing that baseline is a
+compatibility decision. Never derive expected parity values from Rust output.
 
 ## Change discipline
 
-Keep implementation commits bounded by module/behavior. Add tests for outcomes,
-numeric boundaries, cancellation and ordering, not for incidental private layout.
-Compile proposed API examples once the corresponding API exists. Document the
-chosen dependency version, feature impact, license and MSRV when adding it.
-Use `cargo tree -e features` to keep network/runtime dependencies out of core.
+Add behavior tests for numeric boundaries, invalid inputs, ordering, cancellation,
+and actual integration boundaries. Keep constructors fallible and normalize through
+the central answer implementation. Record deliberate reference differences in
+[COMPATIBILITY](COMPATIBILITY.md). Keep runtime/network dependencies optional.
+Update source-facing API examples and package checks when exports change.
 
-When features land, extend CI with no-default-features, each individual supported
-feature combination, all-features, package/consumer tests, and deny warnings in
-rustdoc. Never declare empty features as if an integration works. Keep live tests
-outside default CI; a separate opt-in command needs an explicit bounded brief.
-
-## Handoff
-
-Record actual checks, snapshot, limitations and external effects in status.
-Update the next action, development plan and cumulative synthesis; increment
-handoff_version for material changes. Commit and push requested work, validate
-the status manifest, and refresh the active-project pointer. No keys, live raw
-requests, or private documents belong in fixture commits.
-
+Update status, handoff_version, validation and cumulative synthesis after material
+work. Commit/push authorized changes and refresh the active-project pointer. Live
+qualification and publication follow their own separately scoped work; no keys or
+private input bodies belong in fixtures, logs or repository history.

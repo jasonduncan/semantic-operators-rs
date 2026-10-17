@@ -1,9 +1,10 @@
 # Compatibility contract
 
 Baseline: Python 0.12.0 at the exact revision in [source inventory](source-baseline.json).
-The C++ snapshot is supporting evidence. None of the Rust behavior below is
-implemented yet. Source tests are specifications to port, not a claim they were
-rerun wholesale during setup.
+The C++ snapshot is supporting evidence. Rust behavior below is implemented and
+checked by differential fixtures and targeted tests. The full sibling suites were
+not rerun wholesale. Golden outputs use CPython 3.13.13; Score summation follows
+CPython 3.12+ (earlier Python sum may differ at floating-point boundaries).
 
 ## Normalization (mandatory parity)
 
@@ -123,3 +124,20 @@ wire and transport before those milestones close. C++ comparisons are a useful
 second check; disagreements are documented and resolved against Python or an
 explicit design amendment. Live model stochastic outputs cannot prove bit parity.
 
+
+## Recorded implementation adaptations
+
+- Private fields and validating serde prevent invalid construction; Answer has no
+  unchecked Deserialize implementation. Provider output is revalidated centrally,
+  but an already-undecided answer is never restored by a weaker threshold.
+- Numeric parsing enables serde_json float_roundtrip. Python-compatible instruction
+  whitespace includes U+001C–U+001F, which Rust trim alone does not consider blank.
+- Question/State/Answer/request Debug omit prompt/input/raw values. Invalid wire
+  confidence errors omit arbitrary offending input repr while retaining the path.
+- Frame timestamps must be finite nonnegative and oldest-first; Python frames only
+  checks lengths. Image headers receive stricter structural checks for truncation.
+- TypeSafe additionally enforces current service image limits; see IMAGES.md.
+- Per-item Provider/Timeout/InvalidResponse errors are retained; local configuration,
+  invalid assets and Unsupported abort and drop pending calls. No error becomes unsure.
+- The package archive has a self-contained CRATE.md and offline examples; repository
+  status, source inventories and private development artifacts are excluded.

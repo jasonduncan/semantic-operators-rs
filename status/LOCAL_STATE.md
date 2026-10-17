@@ -3,13 +3,17 @@
 Project: `/Users/jason/PDLabsShare/Projects/semantic-operators-rs`.
 Remote: `https://github.com/jasonduncan/semantic-operators-rs.git`; private; main.
 
-Source siblings are referenced by exact path/revision in docs/source-baseline.json.
-They are needed only to inspect/regenerate reference fixtures, not to build Rust.
-The project has no environment file, credential, runtime database, process,
-provider budget, paid reservation or deployment. Build output is ignored in target/;
-future local runtime evidence belongs in ignored var/ and must be sanitized before
-being retained in Git. Cargo.lock is committed. Rust 1.98.1 was used locally.
+Local toolchains: Rust 1.98.1 and installed Rust 1.85.0 (MSRV). CPython 3.13.13 generated
+reference fixtures; CI tools use Python 3.12. Source siblings are pinned in
+`docs/source-baseline.json` and are not Rust build dependencies. Cargo.lock is
+committed; build/cache/archive/consumer output is ignored under target/.
 
-Private research dossier and session log live outside this repository under the
-PD Labs Research/system-one and logs directories; they are discovery/context, not
-required build inputs. Active-project registry lives under Catalogs/active-projects.
+No keys, environment file, live provider process, runtime database, paid budget,
+reservation or deployment was created. Tests use temporary synthetic image files
+and ephemeral localhost sockets and clean them on success. Runtime-driver guard
+tests can print the default panic hook while catching and returning a typed error;
+this is expected test evidence, not an escaping library panic.
+
+Reference checkouts were read only. Dossier and session logs live outside this
+repository under PD Labs Research/system-one and logs. The active registry is a
+pointer to this status package. No new global runtime/service is needed to resume.
