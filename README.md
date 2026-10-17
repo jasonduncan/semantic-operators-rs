@@ -14,7 +14,8 @@ no hosted inference or model-quality qualification has been performed.
 - Edition 2024, MSRV Rust 1.85, MIT license.
 - Default features have no network or Tokio dependency.
 - Repository: [jasonduncan/semantic-operators-rs](https://github.com/jasonduncan/semantic-operators-rs).
-- Release publication remains disabled. Crate name appears unregistered, not reserved.
+- Candidate: `0.1.0-alpha.1`, prepared for crates.io; not yet uploaded.
+- Crate name appears unregistered, not reserved.
 
 ## Use it locally
 

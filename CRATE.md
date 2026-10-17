@@ -5,6 +5,11 @@ model providers. This is an unpublished implementation candidate, validated with
 frozen Python outputs and offline scripted/localhost tests. Hosted inference and
 model quality have not been qualified.
 
+Version 0.1.0-alpha.1 is an initial alpha with an unstable API. It is a native
+Rust counterpart to Python semantic-operators 0.12 and C++ libsemop. No Python
+interpreter or C++ FFI is required. The implementation preserves the frozen Python
+normalization and text wire contracts with documented Rust adaptations.
+
 Default features provide Boolean, Choice, Score and Box questions, typed operators,
 async provider contracts, uncertainty-only cascades, traced flows, filtering,
 reranking, evaluation and Python-compatible text wire translation. No network

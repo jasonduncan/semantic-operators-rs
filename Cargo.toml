@@ -7,8 +7,14 @@ description = "Provider-neutral semantic operators with typed, confidence-aware 
 license = "MIT"
 repository = "https://github.com/jasonduncan/semantic-operators-rs"
 readme = "CRATE.md"
-publish = false
-include = ["/src/**", "/Cargo.toml", "/Cargo.lock", "/CRATE.md", "/LICENSE", "/examples/**"]
+documentation = "https://docs.rs/semantic-operators"
+keywords = ["semantic", "llm", "ai", "confidence", "operators"]
+categories = ["asynchronous"]
+publish = ["crates-io"]
+include = ["/src/**", "/Cargo.toml", "/Cargo.lock", "/CRATE.md", "/CHANGELOG.md", "/LICENSE", "/examples/**"]
+
+[package.metadata.docs.rs]
+all-features = true
 
 [lib]
 name = "semantic_operators"

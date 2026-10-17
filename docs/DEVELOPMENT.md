@@ -17,6 +17,7 @@ cargo test --locked --all-features --doc
 RUSTDOCFLAGS="-D warnings" cargo doc --locked --all-features --no-deps
 python3 tools/check_docs.py
 python3 tools/check_package.py
+cargo publish --dry-run --locked --offline --all-features
 ```
 
 The package checker builds the actual Cargo archive, checks the default dependency

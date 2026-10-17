@@ -1,61 +1,67 @@
 # Release procedure
 
-Nothing is released. Version `0.1.0-alpha.1` denotes the implemented alpha candidate and
-`publish = false` prevents accidental crates.io publication.
+Candidate: **semantic-operators 0.1.0-alpha.1**, MIT, edition 2024, Rust 1.85 minimum.
+This is the existing alpha version, retained for the first release. Public GitHub
+visibility is intentional. The manifest now allows crates.io only; no upload or
+release tag has occurred. API stability, hosted model quality and performance are
+not claimed. [Release notes](../CHANGELOG.md) remain marked unreleased until upload.
 
-On 2026-10-17 the crates.io API lookup for `semantic-operators` returned HTTP 403;
-the web lookup could not retrieve it either. This is **unverified availability**,
-not evidence that the name is taken or free. Creating the GitHub repository does
-not reserve the crate. Do not publish an empty placeholder to claim the name.
+## Prepared package
 
+The manifest includes source, synthetic examples, Cargo metadata/lockfile, CRATE.md,
+CHANGELOG.md and LICENSE. It excludes status, source inventories, qualification data,
+integrations, tool scripts and runtime artifacts. The package checker enforces that
+allowlist and runs downstream consumers with default and optional features.
+Keywords/category support registry discovery; docs.rs is configured to build all
+features so optional modules are documented. The docs.rs URL is a publication target,
+not evidence that a hosted page already exists.
 
-A secondary read-only check of the official `rust-lang/crates.io-index` GitHub
-repository returned 404 for both `se/ma/semantic-operators` and
-`se/ma/semantic_operators`, while the known `se/rd/serde` entry was accessible.
-The name therefore appears unregistered in that index at this observation, but
-this is not a registry availability guarantee or reservation. Recheck at release.
+## Verification before upload
 
-Before a release candidate:
+Run on the exact clean candidate revision:
 
-1. Finish M1–M6 gates, including parity, package/consumer and supported-platform CI.
-2. Review README/examples against actual exports; identify supported provider/model
-   capabilities and live verification limits. Keep source attribution/license.
-3. Recheck crates.io for hyphen/underscore conflicts and available package name.
-4. Inspect `cargo package --list` and package contents, dependencies, license and
-   sensitive-file exclusions. Keep private status/evidence outside the package.
-5. Choose version, minimum Rust version, changelog, and visibility with the owner.
-6. With explicit publication authorization, remove publish=false, run the package
-   checks and `cargo publish --dry-run`, then publish and verify registry/docs.rs.
-7. Tag the exact verified revision and record receipts and final compatibility scope.
+```sh
+python3 tools/check_docs.py
+python3 tools/check_package.py
+cargo publish --dry-run --locked --offline --all-features
+```
 
-Jason confirmed on 2026-10-17 that the GitHub repository is intentionally PUBLIC
-for eventual crates.io distribution. Keep that visibility. The implementation and
-CI are development evidence, not a published registry release. There are no
-release workflows, registry credentials, or automatic publishing in this project.
+The offline dry-run performs packaging/build verification without upload. It needs
+cached dependencies; fetch locked dependencies first on a fresh checkout. Hosted CI
+also runs the dry-run and the existing platform/MSRV/feature/package checks.
+Cargo may report that repository-only test targets were excluded: this is intentional;
+those tests run in CI before packaging. Do not suppress a build or validation failure.
 
+Inspect the archive list and SHA-256 in the validation receipt. Any later change to
+packaged files requires a fresh dry-run. Check the release name/version immediately
+before upload. A name lookup is not a reservation and dry-run does not prove publish
+authentication or registry acceptance.
 
-## Current release preparation
+## Publication
 
-Candidate: semantic-operators 0.1.0-alpha.1, MIT, edition 2024, Rust 1.85 minimum.
-The archive explicitly includes src, examples, Cargo metadata, CRATE.md and LICENSE;
-project status, qualification datasets, local paths in design/source inventory,
-and run artifacts are excluded. Retain the current alpha designation until an
-explicit version decision; semantic model qualification remains unperformed.
+The reviewable target is semantic-operators **0.1.0-alpha.1**. Once Jason directs
+publication of that version:
 
-Before upload, confirm the version/changelog, remove publish=false for the selected
-release, rerun the package audit and `cargo publish --dry-run`, then publish the
-verified revision using the owner's Cargo credential provider. Never place a token
-in a command, document or chat. Verify the resulting crates.io/docs.rs pages and tag.
-The [official Cargo publishing guide](https://doc.rust-lang.org/cargo/reference/publishing.html)
-was rechecked on 2026-10-17; packaging/dry-run verifies the archive before upload.
+1. Confirm clean/pushed Git state and passing candidate CI, recheck crates.io name
+   and version, and configure the owner's Cargo credential provider. Never print or
+   put tokens in commands, docs or chat.
+2. Mark the changelog with the release date and replace unpublished wording in
+   README.md/CRATE.md. Commit, repeat the package dry-run and verify changed docs.
+3. Run `cargo publish --locked` on that exact revision. If upload outcome is unknown,
+   inspect the registry before attempting anything again; do not assume failure.
+4. Verify the registry version and package checksum, docs.rs build and exported
+   feature documentation, then create tag `v0.1.0-alpha.1` at the published revision.
+5. Record registry/docs.rs/tag receipts and refresh status. A hosted model check is
+   separately scoped and is not implied by a published crate.
 
-## Name and package recheck — 2026-10-17
+No automatic publish workflow or release credentials are introduced by this project.
 
-The crates.io API at /api/v1/crates/semantic-operators returned 404. Sparse index
-entries for semantic-operators and semantic_operators also returned 404, while
-serde returned 200. These current observations support apparent availability,
-not reservation. Recheck immediately before upload.
+## Reference and name checks
 
-`python3 tools/check_package.py` passed: 31 files, 202.4 KiB unpacked / 52.4 KiB
-compressed; default dependency isolation and both extracted-package consumers
-(default and optional features). `publish=false` is still set; no upload occurred.
+The official [Cargo publishing guide](https://doc.rust-lang.org/cargo/reference/publishing.html),
+[manifest reference](https://doc.rust-lang.org/cargo/reference/manifest.html#the-publish-field)
+and [docs.rs metadata guide](https://docs.rs/about/metadata) informed this setup.
+On 2026-10-17 the crates.io API for semantic-operators and sparse index entries for
+semantic-operators/semantic_operators returned 404, with serde 200 as a control.
+This supports apparent availability, not a reserved name. Earlier API 403 results
+were inconclusive; no placeholder was published to claim the name.

@@ -10,7 +10,11 @@
   localization and blocking facade.
 - Add Python differential fixtures, synthetic examples, transport/runtime edge
   tests, feature/MSRV/platform CI, and actual Cargo archive consumer checks.
-- Keep publication disabled; no live model qualification or crate reservation.
+- Include optional integrations in docs.rs builds and package the release notes.
+- Add a standalone triage reference consumer and bounded synthetic evaluation
+  tools in the repository; these applications and datasets are not in the crate.
+- Target crates.io for the first alpha release. API remains unstable; no live
+  model qualification, performance claims or crate reservation.
 
 ## 0.1.0-dev.0 — unreleased
 

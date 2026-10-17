@@ -18,6 +18,8 @@ Read `status/README.md`, `status/HANDOFF.md`, `docs/DESIGN.md`, and
   require a separately scoped request with dataset, model, call/cost limit, and retained evidence.
 - Do not print credentials or raw private inputs. Keep generated runtime material in ignored `var/`.
 - Run the development checks and update status/evidence after meaningful work.
-- Repository creation and bootstrap do not authorize a release, crates.io publication,
-  public visibility, or acceptance of model quality. `publish = false` remains until release work.
+- Jason confirmed public GitHub visibility for crates.io distribution. Release
+  preparation uses `publish = ["crates-io"]`; this setting is not a registry upload.
+  Obtain direction for the exact version before actual publication. Do not infer
+  acceptance of model quality from publication or offline checks.
 

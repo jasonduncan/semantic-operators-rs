@@ -31,8 +31,13 @@ def main():
         directory = Path(temp)
         with tarfile.open(archive) as source:
             names = source.getnames()
-            if any("/status/" in n or n.endswith(".env") for n in names):
-                raise SystemExit("Private status/runtime material entered Cargo archive")
+            files = {n.removeprefix(name + "/") for n in names}
+            allowed = {"Cargo.toml", "Cargo.toml.orig", "Cargo.lock", "CRATE.md",
+                       "CHANGELOG.md", "LICENSE", ".cargo_vcs_info.json"}
+            if any(n not in allowed and not n.startswith(("src/", "examples/")) for n in files):
+                raise SystemExit("Unexpected file entered Cargo archive")
+            if not {"CHANGELOG.md", "LICENSE", "CRATE.md", "src/lib.rs"} <= files:
+                raise SystemExit("Required release content missing from Cargo archive")
             source.extractall(directory, filter="data")
         crate = directory / name
         consumer = directory / "consumer"
