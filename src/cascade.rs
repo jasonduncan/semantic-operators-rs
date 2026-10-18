@@ -54,6 +54,7 @@ impl Provider for Cascade {
 /// Bound a call with Tokio's timer. Requires a time-enabled Tokio runtime.
 /// Cancellation is local; the server may still finish and bill the request.
 #[cfg(feature = "tokio")]
+#[cfg_attr(docsrs, doc(cfg(feature = "tokio")))]
 pub struct TimeLimited<P> {
     provider: P,
     duration: std::time::Duration,

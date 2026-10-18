@@ -1,0 +1,26 @@
+{
+  "required_status_checks": {
+    "strict": true,
+    "contexts": [
+      "documentation",
+      "features-and-package",
+      "history",
+      "rust (ubuntu-latest, stable)",
+      "rust (ubuntu-latest, 1.85.0)",
+      "rust (macos-latest, stable)",
+      "rust (macos-latest, 1.85.0)",
+      "rust (windows-latest, stable)",
+      "rust (windows-latest, 1.85.0)"
+    ]
+  },
+  "enforce_admins": true,
+  "required_pull_request_reviews": {
+    "dismiss_stale_reviews": true,
+    "require_code_owner_reviews": false,
+    "required_approving_review_count": 1
+  },
+  "restrictions": null,
+  "allow_force_pushes": false,
+  "allow_deletions": false,
+  "required_conversation_resolution": true
+}

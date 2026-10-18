@@ -301,6 +301,7 @@ fn distribution(p: &Probabilities, labels: &[&str]) -> Result<(), Error> {
     Ok(())
 }
 // Nonoverlapping partial sums with the final half-even correction used by math.fsum.
+// Adapted from CPython math.fsum; see NOTICE.md and LICENSE-PYTHON.
 fn accurate_sum(values: impl IntoIterator<Item = f64>) -> f64 {
     let mut partials: Vec<f64> = Vec::new();
     for mut x in values {

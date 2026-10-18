@@ -1,6 +1,6 @@
 # Semantic Operators for Rust status and handoff
 
-Updated 2026-10-17. **Portfolio active; execution complete; alpha 0.1.0-alpha.1 published and verified.**
+Updated 2026-10-17. **Portfolio active; execution active; alpha published; open-source review and owner sign-offs tracked in CURRENT.md.**
 
 | Read | Purpose |
 |---|---|

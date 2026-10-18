@@ -4,6 +4,7 @@
 //! `typesafe`, `images`, `tokio`, or `blocking` for optional integrations.
 
 #![doc = include_str!("../CRATE.md")]
+#![cfg_attr(docsrs, feature(doc_cfg))]
 #![warn(
     clippy::missing_errors_doc,
     clippy::missing_panics_doc,
@@ -15,6 +16,7 @@
 pub mod answer;
 pub mod bench;
 #[cfg(feature = "blocking")]
+#[cfg_attr(docsrs, doc(cfg(feature = "blocking")))]
 pub mod blocking;
 pub mod cascade;
 pub mod each;
@@ -22,12 +24,15 @@ pub mod error;
 pub mod filter;
 pub mod flow;
 #[cfg(feature = "images")]
+#[cfg_attr(docsrs, doc(cfg(feature = "images")))]
 pub mod image;
 #[cfg(feature = "images")]
+#[cfg_attr(docsrs, doc(cfg(feature = "images")))]
 pub mod locate;
 pub mod operator;
 pub mod provider;
 #[cfg(feature = "typesafe")]
+#[cfg_attr(docsrs, doc(cfg(feature = "typesafe")))]
 pub mod providers;
 pub mod question;
 pub mod rerank;
@@ -39,6 +44,7 @@ pub use answer::{
 };
 pub use cascade::Cascade;
 #[cfg(feature = "tokio")]
+#[cfg_attr(docsrs, doc(cfg(feature = "tokio")))]
 pub use cascade::TimeLimited;
 pub use error::{Error, ErrorKind};
 pub use indexmap::IndexMap;

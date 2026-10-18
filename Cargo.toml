@@ -4,17 +4,18 @@ version = "0.1.0-alpha.1"
 edition = "2024"
 rust-version = "1.85"
 description = "Provider-neutral semantic operators with typed, confidence-aware answers"
-license = "MIT"
+license = "MIT AND Python-2.0"
 repository = "https://github.com/jasonduncan/semantic-operators-rs"
 readme = "CRATE.md"
 documentation = "https://docs.rs/semantic-operators"
 keywords = ["semantic", "llm", "ai", "confidence", "operators"]
 categories = ["asynchronous"]
 publish = ["crates-io"]
-include = ["/src/**", "/Cargo.toml", "/Cargo.lock", "/CRATE.md", "/CHANGELOG.md", "/LICENSE", "/examples/**"]
+include = ["/src/**", "/Cargo.toml", "/Cargo.lock", "/CRATE.md", "/CHANGELOG.md", "/LICENSE", "/LICENSE-PYTHON", "/NOTICE.md", "/examples/**"]
 
 [package.metadata.docs.rs]
 all-features = true
+rustdoc-args = ["--cfg", "docsrs"]
 
 [lib]
 name = "semantic_operators"

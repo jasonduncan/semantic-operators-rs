@@ -2,7 +2,7 @@
 
 **semantic-operators 0.1.0-alpha.1 is published.** Jason explicitly authorized the
 upload. Registry receipt: 2026-10-18T00:02:35.550910Z (2026-10-17 America/Chicago).
-MIT, edition 2024, Rust 1.85 minimum; API remains unstable.
+The published alpha metadata declares MIT; edition 2024, Rust 1.85 minimum; API remains unstable.
 
 - [Crates.io version](https://crates.io/crates/semantic-operators/0.1.0-alpha.1)
 - [Rust API docs](https://docs.rs/semantic-operators/0.1.0-alpha.1/semantic_operators/)
@@ -59,7 +59,7 @@ new version, substitute its version and tag in the following procedure:
 3. Run `cargo publish --locked` on that exact revision. If upload outcome is unknown,
    inspect the registry before attempting anything again; do not assume failure.
 4. Verify the registry version and package checksum, docs.rs build and exported
-   feature documentation, then create tag `v0.1.0-alpha.1` at the published revision.
+   feature documentation, then create the selected new version tag at the published revision.
 5. Record registry/docs.rs/tag receipts and refresh status. A hosted model check is
    separately scoped and is not implied by a published crate.
 
@@ -74,3 +74,16 @@ On 2026-10-17 the crates.io API for semantic-operators and sparse index entries 
 semantic-operators/semantic_operators returned 404, with serde 200 as a control.
 This supports apparent availability, not a reserved name. Earlier API 403 results
 were inconclusive; no placeholder was published to claim the name.
+
+## Unreleased open-source readiness corrections
+
+Current source retains original MIT terms and adds CPython attribution/license
+notices for the accurate-summation routines. Its aggregate SPDX expression is
+`MIT AND Python-2.0`. The next archive includes NOTICE.md and LICENSE-PYTHON; the
+immutable alpha.1 archive and registry metadata do not gain these corrections.
+Do not represent current-source checks as changes to that published artifact.
+
+The [maintainer setup packet](release/SETUP.md) contains concrete branch-protection
+and trusted-publishing proposals. They need the named reviewers/account setup and
+readiness sign-offs before activation. Publication still requires an exact new
+version. Changelog entries are maintained by hand; no auto-release on merge.

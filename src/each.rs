@@ -16,6 +16,7 @@ pub struct BatchOptions {
     pub context: Option<Value>,
     /// Explicit images available to each independent request.
     #[cfg(feature = "images")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "images")))]
     pub assets: crate::image::Assets,
 }
 impl Default for BatchOptions {

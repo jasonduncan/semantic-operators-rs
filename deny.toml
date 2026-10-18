@@ -1,0 +1,54 @@
+# Both the library and standalone consumer use this policy.
+# Checks cover every enabled feature and all platform dependencies; no target
+# filter or private-package exemption hides a lockfile dependency.
+[graph]
+all-features = true
+
+[advisories]
+unmaintained = "all"
+unsound = "all"
+yanked = "deny"
+ignore = []
+unused-ignored-advisory = "deny"
+
+[licenses]
+confidence-threshold = 0.95
+include-dev = true
+include-build = true
+unused-allowed-license = "deny"
+# Minimal set needed by the inspected lockfiles, 2026-10-17:
+# MIT/Apache-2.0: project-original code and most Rust ecosystem dependencies.
+# Python-2.0: CPython-compatible summation portions; see NOTICE.md and LICENSE-PYTHON.
+# ISC: ring's Apache-2.0 AND ISC, rustls-webpki, untrusted.
+# BSD-3-Clause: subtle. Unicode-3.0: ICU4X crates and unicode-ident.
+# Zlib: foldhash. CDLA-Permissive-2.0: Mozilla trust data in webpki-roots.
+# Alternatives do not grant extra permissions: e.g. r-efi's LGPL alternative
+# is NOT allowed; its MIT/Apache alternatives satisfy the declared expression.
+allow = [
+    "MIT",
+    "Apache-2.0",
+    "Python-2.0",
+    "ISC",
+    "BSD-3-Clause",
+    "Unicode-3.0",
+    "Zlib",
+    "CDLA-Permissive-2.0",
+]
+
+[licenses.private]
+ignore = false
+
+[bans]
+# Duplicates remain visible: current transitive platform/TLS graphs require
+# multiple windows-sys/base64 versions. They are not advisory waivers.
+multiple-versions = "warn"
+wildcards = "deny"
+# Only unpublished path dependencies (the standalone consumer) may omit version.
+allow-wildcard-paths = true
+highlight = "all"
+
+[sources]
+unknown-registry = "deny"
+unknown-git = "deny"
+allow-registry = ["https://github.com/rust-lang/crates.io-index"]
+allow-git = []

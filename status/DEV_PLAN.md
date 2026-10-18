@@ -218,3 +218,12 @@ repr diagnostic parity is deferred; next release version is not selected.
 Review acceptance complete: local checks and all nine hosted jobs passed at
 46cda9a. Follow-up scope is a selected issue or new release version; no further
 work is required for this review. Unicode diagnostic parity remains deferred.
+
+## Open-source readiness follow-up — 2026-10-17
+
+Technical remediation and the87-item assessment are implemented; verify hosted
+checks before closing this phase. Owner decisions remain explicit in the assessment:
+rights/trademark, contribution agreement, conduct contact, second owner/reviewer,
+2FA and branch/trusted-publisher activation. A next release needs an exact new
+version. The already-published alpha, previous milestones and deferred product scope
+remain unchanged. No automatic publication or model qualification is implied.

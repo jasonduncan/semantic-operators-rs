@@ -210,3 +210,15 @@ feature matrix reproduce the cancellation regression successfully in fresh CI.
 Review complete, changes unreleased. Closing edits only record status/evidence;
 source/tests/workflows match the passing revision. Published alpha.1/tag remain
 unchanged. No live provider calls or performance qualification occurred.
+
+## Open-source readiness assessment — 2026-10-17
+
+Applied the requested release checklist to the already-public alpha repository.
+Preserved published API/history/tag; closed technical/documentation/license-notice
+and automation gaps. CPython summation attribution prompted a combined SPDX
+correction for the next archive, not a relicensing of original MIT code. Safe
+repository security settings were enabled; no second owner/contact was invented.
+Created a focused starter issue and draft existing-alpha release, not an announcement.
+Prepared concrete protection/OIDC setup files while recording actual unverified
+rights, policies,2FA and account setup. Checklist sign-off remains pending; technical
+review completion is distinct from another launch. Raw logs are ignored locally.

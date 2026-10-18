@@ -13,7 +13,7 @@ jobs:
         toolchain: [stable, '1.85.0']
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@v7.0.1
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - name: Install Rust
         run: rustup toolchain install ${{ matrix.toolchain }} --profile minimal --component rustfmt --component clippy
       - run: cargo +${{ matrix.toolchain }} fmt --all -- --check
@@ -28,7 +28,7 @@ jobs:
       - run: cargo +${{ matrix.toolchain }} fmt --manifest-path integrations/triage-app/Cargo.toml -- --check
       - run: cargo +${{ matrix.toolchain }} clippy --locked --manifest-path integrations/triage-app/Cargo.toml --target-dir target/triage-app -- -D warnings
       - run: cargo +${{ matrix.toolchain }} build --locked --manifest-path integrations/triage-app/Cargo.toml --target-dir target/triage-app
-      - uses: actions/setup-python@v7.0.0
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
         with:
           python-version: '3.12'
       - run: python tools/check_triage_app.py --skip-build
@@ -36,24 +36,38 @@ jobs:
   documentation:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v7.0.1
-      - uses: actions/setup-python@v7.0.0
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
         with:
           python-version: '3.12'
       - run: python tools/check_docs.py
+      - name: Install nightly for docs.rs feature labels
+        run: rustup toolchain install nightly --profile minimal
+      - name: Build docs.rs configuration
+        run: cargo +nightly doc --locked --no-deps --all-features
+        env:
+          RUSTDOCFLAGS: --cfg docsrs -D warnings
   features-and-package:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v7.0.1
-      - uses: actions/setup-python@v7.0.0
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
         with:
           python-version: '3.12'
-      - run: cargo test --locked --no-default-features
-      - run: cargo test --locked --features tokio
-      - run: cargo test --locked --features images
-      - run: cargo test --locked --features blocking
-      - run: cargo test --locked --features typesafe
-      - run: cargo test --locked --all-features
+      - name: Test every distinct feature combination
+        shell: bash
+        run: |
+          # blocking and typesafe imply tokio: 16 subsets produce 10 distinct builds.
+          for features in "" images tokio tokio,images blocking blocking,images typesafe typesafe,images blocking,typesafe blocking,typesafe,images; do
+            cargo test --locked --no-default-features --features "$features"
+          done
+      - name: Run synthetic examples
+        shell: bash
+        run: |
+          for example in hello triage filter rerank; do
+            cargo run --locked --example "$example"
+          done
+          cargo run --locked --features images --example images
       - run: python tools/check_package.py
       - run: cargo publish --dry-run --locked --all-features
 

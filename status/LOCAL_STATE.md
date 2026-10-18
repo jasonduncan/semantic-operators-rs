@@ -1,6 +1,6 @@
 # Local state
 
-Project: `/Users/jason/PDLabsShare/Projects/semantic-operators-rs`.
+Project: this repository checkout (locate with `git rev-parse --show-toplevel`).
 Remote: `https://github.com/jasonduncan/semantic-operators-rs.git`; PUBLIC, confirmed intentional by Jason for crates.io; main.
 
 Local toolchains: Rust 1.98.1 and installed Rust 1.85.0 (MSRV). CPython 3.13.13 generated
@@ -61,3 +61,13 @@ Raw review/audit/test logs reside in ignored `target/best-practices/`. Installed
 nightly-aarch64-apple-darwin with Miri/rust-src (rustc 1.101.0-nightly,
 5d8fec066 2026-10-16); default toolchain unchanged. cargo-audit 0.22.2 scans both
 committed locks without advisory ignores. No hosted inference or new crate upload.
+
+## Open-source review tooling — 2026-10-17
+
+Installed cargo-deny0.20.2 and cargo-machete0.9.2 in the existing Cargo bin directory;
+Gitleaks8.30.1 was already available. Logs/reports live in ignored target/open-source;
+nightly docs and feature-check builds use isolated target subdirectories. No token
+values were read or retained. GitHub API checks used existing gh authentication.
+The repository has no Actions secrets/environments; trusted publishing remains a
+proposal. No service was started. Machine checkout paths were removed from the
+public current-tree source inventory; private local session log retains context.

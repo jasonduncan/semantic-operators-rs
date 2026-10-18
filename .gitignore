@@ -9,3 +9,9 @@ __pycache__/
 *.pyc
 /var/
 
+
+# Local editor and machine configuration
+/.idea/
+/.vscode/
+/config.local.*
+*.swp

@@ -331,3 +331,37 @@ feature matrix reproduce the cancellation regression successfully in fresh CI.
 Review complete, changes unreleased. Closing edits only record status/evidence;
 source/tests/workflows match the passing revision. Published alpha.1/tag remain
 unchanged. No live provider calls or performance qualification occurred.
+
+## Open-source readiness review — 2026-10-17
+
+Applied the owner-supplied87-item skill; starting HEAD48006c8. Full item statuses
+and sign-offs are in [the assessment](../docs/reviews/2026-10-17-rust-open-source.md).
+
+- Gitleaks8.30.1: all fetched branch/tag history, initially22 commits/~910KB, zero
+  findings. No rotation/history rewrite. Current-tree machine paths removed;
+  prior public history preserved. Full scan repeats at final source commit.
+- cargo-deny0.20.2: fresh advisories/bans/licenses/sources pass for both locks, with
+  eight explicit license IDs and no advisory ignores. Duplicate base64/windows-sys
+  warnings remain visible. cargo-audit0.22.2 strict scans pass for both locks.
+- cargo-machete0.9.2: no unused dependencies. Cargo lint/fmt and package consumers pass.
+- All10 effective feature combinations pass all-target checks. Five examples run,
+  four doctests and complete README example pass. Rust1.85 check passes. Nightly
+  docs.rs HTML/JSON build with warnings denied and inspected optional API labels.
+- API review from source/generated rustdoc:47 structs,9 enums,4 extension traits,
+  6 aliases,7 constants,19 modules,199 local functions/methods,47 public fields.
+  Existing exhaustive types/open traits and explicit IndexMap/serde_json/serde
+  exposure retained. No automated semver comparison or new performance measurement.
+- Local precommit unreleased archive: 34 files, 64598 bytes, SHA-256
+  841dda032ef11919d5fbd2083e8d7a8aa83c8aeb3ed432c2b67feca464ef2313. Required NOTICE.md/LICENSE-PYTHON verified in
+  actual archive; default runtime/network isolation and both downstream builds pass.
+  This archive is not the immutable published alpha and has not been uploaded.
+- CPython license copied verbatim from3.13.13 commit
+  01104ce1beb3135c2e0c01ec835b994c1f55a1c0; SHA-256
+  78b12c3a81360b357002334f0e70ea0e92eebf7a9b358805c03c48484945f3bb.
+- GitHub reporting/secrets/push-protection/Discussions settings enabled/read back.
+  Active tag ruleset25325227 prevents v* deletion/update without bypass. Main
+  protection and trusted-publisher configuration remain unperformed proposals.
+  One registry owner;2FA unverified. No Actions secrets/environments observed.
+
+Hosted source verification follows after push. No new crate, public release
+announcement, live provider call, owner invitation or credential was created.

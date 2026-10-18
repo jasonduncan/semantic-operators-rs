@@ -67,12 +67,14 @@ impl Request {
     }
     /// Attach an explicit asset registry, validated before dispatch.
     #[cfg(feature = "images")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "images")))]
     pub fn with_assets(mut self, assets: crate::image::Assets) -> Self {
         self.assets = assets;
         self
     }
     /// Borrow assets without opening files or resolving URLs.
     #[cfg(feature = "images")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "images")))]
     pub fn assets(&self) -> &crate::image::Assets {
         &self.assets
     }

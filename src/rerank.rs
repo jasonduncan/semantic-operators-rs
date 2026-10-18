@@ -248,6 +248,7 @@ fn invalid(message: &str) -> Error {
     Error::new(ErrorKind::InvalidArgument, message)
 }
 // Error-free partial summation plus half-even correction, matching math.fsum.
+// Adapted from CPython math.fsum; see NOTICE.md and LICENSE-PYTHON.
 fn accurate_sum(values: impl IntoIterator<Item = f64>) -> Result<f64> {
     let mut partials: Vec<f64> = Vec::new();
     for mut x in values {

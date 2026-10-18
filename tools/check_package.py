@@ -33,10 +33,10 @@ def main():
             names = source.getnames()
             files = {n.removeprefix(name + "/") for n in names}
             allowed = {"Cargo.toml", "Cargo.toml.orig", "Cargo.lock", "CRATE.md",
-                       "CHANGELOG.md", "LICENSE", ".cargo_vcs_info.json"}
+                       "CHANGELOG.md", "LICENSE", "LICENSE-PYTHON", "NOTICE.md", ".cargo_vcs_info.json"}
             if any(n not in allowed and not n.startswith(("src/", "examples/")) for n in files):
                 raise SystemExit("Unexpected file entered Cargo archive")
-            if not {"CHANGELOG.md", "LICENSE", "CRATE.md", "src/lib.rs"} <= files:
+            if not {"CHANGELOG.md", "LICENSE", "LICENSE-PYTHON", "NOTICE.md", "CRATE.md", "src/lib.rs"} <= files:
                 raise SystemExit("Required release content missing from Cargo archive")
             source.extractall(directory, filter="data")
         crate = directory / name

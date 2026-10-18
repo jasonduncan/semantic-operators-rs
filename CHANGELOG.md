@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+- Add CPython summation attribution and Python license notices; correct combined
+  package metadata to MIT AND Python-2.0 while retaining original project MIT terms.
+- Improve public onboarding, feature labels, contribution/versioning guidance,
+  license/source checks, full-history secret scanning and pinned CI actions.
+
 - Retain and latch interrupted flow attempts so cancelling a polled request
   cannot erase its trace or make partial execution appear successful.
 - Document public error contracts and add executable offline API examples.

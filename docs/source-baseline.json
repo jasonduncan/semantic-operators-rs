@@ -4,7 +4,6 @@
   "sources": [
     {
       "name": "Python semantic-operators-lib",
-      "local_path": "/Users/jason/PDLabsShare/Projects/semantic-operators-lib",
       "remote": "https://github.com/jasonduncan/semantic-operators.git",
       "revision": "07fb1f3109dac2e69a7dafe9fa349d0daa52012d",
       "tracked_clean": true,
@@ -197,7 +196,6 @@
     },
     {
       "name": "C++ libsemop",
-      "local_path": "/Users/jason/Development/Projects/libsemop",
       "remote": "https://github.com/jasonduncan/libsemop.git",
       "revision": "dc3b28f2d22ac6ca27ddcf0b7529a7082de56d82",
       "tracked_clean": true,

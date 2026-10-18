@@ -433,6 +433,7 @@ pub struct RunOptions {
     pub concurrency: NonZeroUsize,
     /// Request-local images for each independent benchmark case.
     #[cfg(feature = "images")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "images")))]
     pub assets: crate::image::Assets,
 }
 impl Default for RunOptions {
@@ -640,6 +641,7 @@ fn invalid(message: &str) -> Error {
     Error::new(ErrorKind::InvalidArgument, message)
 }
 // CPython math.fsum-style nonoverlapping partials and half-even final correction.
+// Adapted from CPython math.fsum; see NOTICE.md and LICENSE-PYTHON.
 fn accurate_sum(values: impl IntoIterator<Item = f64>) -> Result<f64> {
     let mut partials: Vec<f64> = Vec::new();
     for mut x in values {

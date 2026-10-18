@@ -1,9 +1,10 @@
 # Source baseline and provenance
 
 Observed 2026-10-17. [Machine-readable inventory](source-baseline.json) records
-local source paths, sanitized remotes, exact revisions, tracked cleanliness, and
+sanitized remotes, exact revisions, tracked cleanliness, and
 SHA-256 hashes. Originals remain in their existing repositories; no source
-repository was changed or bulk copied into this project.
+repository was changed or bulk copied into this project. Machine-specific checkout
+paths are omitted; fixture exporters take an explicit --source path.
 
 | Source | Frozen revision | Role |
 |---|---|---|

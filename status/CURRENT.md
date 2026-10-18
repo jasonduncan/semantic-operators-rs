@@ -1,22 +1,24 @@
 # Current state
 
-2026-10-17 · portfolio active · execution complete: best-practices review.
+2026-10-17 · portfolio active · execution active: open-source readiness verification.
 
-Applied the owner-supplied Rust Best Practices Guide to the repository. The working
-change retains cancelled flow attempts and prevents successful completion after a
-polled request is dropped. Public fallible APIs now document errors, three offline
-examples were added, and stricter library lints enforce those contracts. Weekly
-and manifest-change advisory checks cover both lockfiles; Dependabot proposes
-updates for review, without automatic merges.
+The [87-item assessment](../docs/reviews/2026-10-17-rust-open-source.md) records
+completed engineering work and unresolved owner decisions. Added CPython attribution
+and license notices for the summation routines; original code remains MIT and current
+combined package metadata is MIT AND Python-2.0. Expanded onboarding, contribution,
+versioning, security and governance docs, templates and CODEOWNERS. CI pins actions,
+tests all ten effective feature combinations, runs examples and labels optional APIs.
+License/source/advisory checks cover both locks; full-history secret scanning is added.
 
-See the [review](../docs/reviews/2026-10-17-rust-best-practices.md) and
-[validation](VALIDATION.md). All local checks, eight hosted CI jobs and the new dependency audit passed
-at 46cda9a69be953a0139e5c8875c273f6f3e52bce. Closing edits only record evidence.
-A minor Python Unicode repr difference remains confined to duplicate-name error
-text; it is documented in [compatibility](../docs/COMPATIBILITY.md).
+Enabled private vulnerability reporting, secret scanning/push protection, Discussions
+and immutable v* tags. Main-review and trusted-publishing proposals are inert in
+[the setup packet](../docs/release/SETUP.md). Sole owner remains jasonduncan; company
+rights, trademark review, contributor agreement choice, conduct contact, second owner,
+2FA and final launch sign-offs remain unresolved. This is not a complete launch approval.
 
-**Crates.io 0.1.0-alpha.1 remains the published version. These fixes are unreleased.**
-Its tag points to 30b827deebc5f25e4b31a9a9843437488f79458e; archive, docs.rs and
-registry consumer receipts remain in [RELEASE](../docs/RELEASE.md). Do not re-upload
-that version or move the tag. A later publication requires a selected new version.
-M1–M7 remain complete. No hosted model calls or performance qualification occurred.
+Local technical checks pass; hosted verification follows. No runtime behavior was
+changed by this pass. Earlier flow-cancellation fixes are also unreleased.
+**Crates.io remains at 0.1.0-alpha.1**, published from
+30b827deebc5f25e4b31a9a9843437488f79458e, with its original MIT metadata/archive.
+No new upload or tag replacement occurred; a GitHub release for that tag is a draft.
+No live model calls, model qualification or performance claim.
