@@ -214,3 +214,7 @@ focused lints and automated dependency maintenance. Acceptance requires regressi
 suites, strict stable/MSRV checks, Miri core/wire tests, both advisory scans,
 packaged consumers and hosted CI. Published alpha remains immutable. Full Unicode
 repr diagnostic parity is deferred; next release version is not selected.
+
+Review acceptance complete: local checks and all nine hosted jobs passed at
+46cda9a. Follow-up scope is a selected issue or new release version; no further
+work is required for this review. Unicode diagnostic parity remains deferred.

@@ -49,6 +49,9 @@ advisories. Strict --deny warnings runs also passed. These are current-known-adv
 checks, not comprehensive dependency review.
 
 Final source/doc/Miri/CI results are recorded in [VALIDATION](../../status/VALIDATION.md).
+All eight CI jobs and the separate dependency audit passed at commit 46cda9a.
+Local final native suites passed 54 default and 88 all-feature tests; four doctests
+and 12 Miri tests passed.
 Local raw logs reside under ignored target/best-practices. The published release
 receipt remains separate in [RELEASE](../RELEASE.md).
 

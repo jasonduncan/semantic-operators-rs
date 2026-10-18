@@ -289,8 +289,8 @@ record documentation/status and do not alter the immutable published package.
 Unreleased changes based on ac5323c1ffab3d8d485d2f1077f6ba84d3a446ed; published
 alpha.1 unchanged. [Review](../docs/reviews/2026-10-17-rust-best-practices.md).
 
-- `cargo test --locked --all-targets --all-features`: 88 Rust tests passed,
-  including two new flow cancellation regressions.
+- Final `cargo test --locked --all-targets`: 54 tests passed; all-feature variant:
+  88 tests passed, including two new flow cancellation regressions.
 - Four doctests passed with default/all features on stable, and all features on
   Rust 1.85. Strict all-target/all-feature Clippy passed on stable; library Clippy
   passed on 1.85. `cargo fmt --all -- --check` and warnings-denied rustdoc passed.
@@ -312,3 +312,22 @@ alpha.1 unchanged. [Review](../docs/reviews/2026-10-17-rust-best-practices.md).
 
 Raw outputs remain ignored under target/best-practices. Miri toolchain installed
 without changing the default toolchain. Source performance is not benchmarked.
+
+Review source commit: 46cda9a69be953a0139e5c8875c273f6f3e52bce.
+[CI 39083203184](https://github.com/jasonduncan/semantic-operators-rs/actions/runs/39083203184)
+and [dependency audit 39083203209](https://github.com/jasonduncan/semantic-operators-rs/actions/runs/39083203209)
+were queued after the push; final receipts follow.
+
+## Review verification complete — 2026-10-17
+
+[CI 39083203184](https://github.com/jasonduncan/semantic-operators-rs/actions/runs/39083203184)
+passed all eight jobs at 46cda9a69be953a0139e5c8875c273f6f3e52bce: Linux/macOS/Windows
+stable and Rust 1.85, documentation and feature/package verification. Every matrix
+job also passed the independent consumer and 19 Python tooling tests.
+[Dependency audit 39083203209](https://github.com/jasonduncan/semantic-operators-rs/actions/runs/39083203209)
+passed both strict lockfile scans with cargo-audit 0.22.2. The full default and
+feature matrix reproduce the cancellation regression successfully in fresh CI.
+
+Review complete, changes unreleased. Closing edits only record status/evidence;
+source/tests/workflows match the passing revision. Published alpha.1/tag remain
+unchanged. No live provider calls or performance qualification occurred.
