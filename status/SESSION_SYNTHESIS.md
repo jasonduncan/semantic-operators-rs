@@ -248,3 +248,16 @@ contribution policy, conduct contact, second owner/reviewer, 2FA and branch/OIDC
 activation remain open. The original crates.io alpha/tag are unchanged; GitHub
 release 416156626 is a draft. Issue 3 tracks the existing Unicode diagnostic gap.
 No new registry publication, public announcement or hosted model call occurred.
+
+## 2026-10-17 — alpha.2 published
+
+Jason confirmed main was pushed and directed a new release. Selected alpha.2,
+updated version/locks/install docs/changelog, and pushed candidate 291c8cc. All ten
+hosted jobs passed before upload. Cargo published the exact clean revision;
+registry/download/local archive identity and upstream notices were verified.
+Fresh default/optional registry consumers passed, docs.rs is live, and annotated
+v0.1.0-alpha.2 plus its public GitHub prerelease were created. The release includes
+the reviewed cancellation fix, public API docs and CPython notices. Prior alpha.1
+and its old GitHub draft remain intact. Detailed receipts are in VALIDATION and
+history/2026-10-17-alpha2-published.md. No live-model calls occurred. Publication is
+complete; unresolved owner/governance facts remain follow-ups, not claimed sign-offs.

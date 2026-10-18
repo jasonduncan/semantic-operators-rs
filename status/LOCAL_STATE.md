@@ -71,3 +71,11 @@ values were read or retained. GitHub API checks used existing gh authentication.
 The repository has no Actions secrets/environments; trusted publishing remains a
 proposal. No service was started. Machine checkout paths were removed from the
 public current-tree source inventory; private local session log retains context.
+
+## Alpha.2 release artifacts — 2026-10-17
+
+Logs, local/downloaded archives and JSON candidate/registry/docs receipts remain
+in ignored target/release-alpha2. Fresh registry consumers used temporary project
+directories (cleaned) and target/registry-alpha2 build cache. No provider dispatch
+or retained credentials. Existing Cargo auth handled publication. Exact publication
+receipts are durable in VALIDATION and docs/RELEASE. No service remains running.

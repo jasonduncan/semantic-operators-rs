@@ -1,6 +1,6 @@
 # Development plan
 
-Published version: 0.1.0-alpha.1. M1–M7 are implemented and verified offline and by hosted platform CI. Unreleased best-practices maintenance is described below. Requirement evidence is mapped in
+Published version: 0.1.0-alpha.2. M1–M7 and subsequent best-practices maintenance are implemented, verified and released. Historical phase records follow. Requirement evidence is mapped in
 [IMPLEMENTATION](../docs/IMPLEMENTATION.md).
 
 Original milestone scope and acceptance criteria follow.
@@ -227,3 +227,11 @@ rights/trademark, contribution agreement, conduct contact, second owner/reviewer
 2FA and branch/trusted-publisher activation. A next release needs an exact new
 version. The already-published alpha, previous milestones and deferred product scope
 remain unchanged. No automatic publication or model qualification is implied.
+
+## Alpha.2 publication complete — 2026-10-17
+
+Jason authorized a new release. Version 0.1.0-alpha.2 is published and verified:
+exact-source CI, registry archive identity, fresh default/optional consumers,
+docs.rs and the annotated tag/GitHub prerelease all pass. No release work remains.
+Next scope is a selected product issue or the owner/governance follow-ups above.
+No live-model qualification or performance measurement was added.
