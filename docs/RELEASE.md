@@ -1,5 +1,17 @@
 # Release procedure
 
+## Alpha.2 release candidate — 2026-10-17
+
+Jason explicitly requested a new release after the open-source review. The selected
+next version is **0.1.0-alpha.2**, containing the cancellation fix, CPython notices
+and combined MIT AND Python-2.0 metadata, API docs and repository maintenance work.
+Publication is authorized; upload/registry/docs.rs verification is pending. Existing
+Cargo credential-provider publication is retained for this release. Trusted-publishing
+and main-protection proposals remain inactive; unverified ownership/account/policy
+facts remain follow-ups, not falsely recorded as completed sign-offs.
+
+## Previous published alpha.1
+
 **semantic-operators 0.1.0-alpha.1 is published.** Jason explicitly authorized the
 upload. Registry receipt: 2026-10-18T00:02:35.550910Z (2026-10-17 America/Chicago).
 The published alpha metadata declares MIT; edition 2024, Rust 1.85 minimum; API remains unstable.
@@ -18,7 +30,7 @@ APIs. Publication does not establish hosted model quality or performance.
 ## Prepared package
 
 The manifest includes source, synthetic examples, Cargo metadata/lockfile, CRATE.md,
-CHANGELOG.md and LICENSE. It excludes status, source inventories, qualification data,
+CHANGELOG.md, LICENSE, LICENSE-PYTHON and NOTICE.md. It excludes status, source inventories, qualification data,
 integrations, tool scripts and runtime artifacts. The package checker enforces that
 allowlist and runs downstream consumers with default and optional features.
 Keywords/category support registry discovery; docs.rs is configured to build all
@@ -75,11 +87,11 @@ semantic-operators/semantic_operators returned 404, with serde 200 as a control.
 This supports apparent availability, not a reserved name. Earlier API 403 results
 were inconclusive; no placeholder was published to claim the name.
 
-## Unreleased open-source readiness corrections
+## Open-source readiness corrections in alpha.2
 
 Current source retains original MIT terms and adds CPython attribution/license
 notices for the accurate-summation routines. Its aggregate SPDX expression is
-`MIT AND Python-2.0`. The next archive includes NOTICE.md and LICENSE-PYTHON; the
+`MIT AND Python-2.0`. The alpha.2 archive includes NOTICE.md and LICENSE-PYTHON; the
 immutable alpha.1 archive and registry metadata do not gain these corrections.
 Do not represent current-source checks as changes to that published artifact.
 

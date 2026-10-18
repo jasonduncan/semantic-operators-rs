@@ -358,3 +358,10 @@ credential, public release announcement or crates.io upload was created.
 - [Private vulnerability reporting](https://docs.github.com/en/code-security/how-tos/report-and-fix-vulnerabilities/configure-vulnerability-reporting/configure-for-a-repository).
 - [Cargo compatibility](https://doc.rust-lang.org/cargo/reference/semver.html).
 - [Trusted publishing](https://crates.io/docs/trusted-publishing).
+
+## Subsequent release direction
+
+After receiving this assessment, Jason explicitly directed publication of a new
+release. Alpha.2 preparation/publication is recorded in [RELEASE](../RELEASE.md).
+That release direction supersedes the procedural launch hold; it does not certify
+unknown rights, trademark, account2FA or other unresolved checklist facts.

@@ -1,25 +1,18 @@
 # Current state
 
-2026-10-17 · portfolio active · execution complete: open-source readiness assessment.
+2026-10-17 · portfolio active · execution active: alpha.2 publication.
 
-The [87-item assessment](../docs/reviews/2026-10-17-rust-open-source.md) records
-completed engineering work and unresolved owner decisions. Added CPython attribution
-and license notices for the summation routines; original code remains MIT and current
-combined package metadata is MIT AND Python-2.0. Expanded onboarding, contribution,
-versioning, security and governance docs, templates and CODEOWNERS. CI pins actions,
-tests all ten effective feature combinations, runs examples and labels optional APIs.
-License/source/advisory checks cover both locks; full-history secret scanning is added.
+Jason explicitly directed a new release after the open-source assessment. Selected
+next prerelease: **semantic-operators 0.1.0-alpha.2**. Version, lockfile package
+records, install docs and changelog are updated; final package/hosted checks and
+upload are pending. Release includes the flow cancellation fix, upstream Python
+notices/composite license metadata, error contracts, examples and feature labels.
 
-Enabled private vulnerability reporting, secret scanning/push protection, Discussions
-and immutable v* tags. Main-review and trusted-publishing proposals are inert in
-[the setup packet](../docs/release/SETUP.md). Sole owner remains jasonduncan; company
-rights, trademark review, contributor agreement choice, conduct contact, second owner,
-2FA and final launch sign-offs remain unresolved. This is not a complete launch approval.
+Existing main890ddd1 was clean/pushed; CI and secret checks passed, with supply-chain
+checks passed on matching source d493ac9. The prior alpha.1 remains published and
+immutable. No runtime behavior beyond the already-reviewed cancellation fix is added.
 
-All local checks and ten hosted jobs pass at d493ac9521639c7d715d7df76c8e2f9fabc46ef8.
-Audit execution is complete; full launch sign-off remains pending. No runtime behavior was
-changed by this pass. Earlier flow-cancellation fixes are also unreleased.
-**Crates.io remains at 0.1.0-alpha.1**, published from
-30b827deebc5f25e4b31a9a9843437488f79458e, with its original MIT metadata/archive.
-No new upload or tag replacement occurred; a GitHub release for that tag is a draft.
-No live model calls, model qualification or performance claim.
+This publication direction does not establish unverified rights/trademark/account
+facts from the readiness review. Those governance hardening tasks remain follow-ups.
+No new provider/model validation or performance claim. See [RELEASE](../docs/RELEASE.md)
+and [VALIDATION](VALIDATION.md) for exact candidate and eventual publication receipts.

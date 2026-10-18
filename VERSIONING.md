@@ -1,19 +1,19 @@
 # Versioning and compatibility
 
-`semantic-operators` is currently `0.1.0-alpha.1`. Its API is experimental;
+`semantic-operators` is currently `0.1.0-alpha.2`. Its API is experimental;
 publication and passing tests do not imply qualified model accuracy or suitability
 for a particular application.
 
 ## Alpha releases
 
 Alpha releases may change public APIs or behavior. Pin an exact prerelease while
-evaluating the crate (`semantic-operators = "=0.1.0-alpha.1"`) and review the
+evaluating the crate (`semantic-operators = "=0.1.0-alpha.2"`) and review the
 [changelog](CHANGELOG.md) before updating. Breaking changes should include migration
 notes. There is no fixed deprecation period during alpha development.
 
 Repository main may contain unreleased changes. Registry versions are immutable;
 a new upload needs a new version. Tags use `v<version>`, for example
-`v0.1.0-alpha.1`. Release checks and publication are documented in the
+`v0.1.0-alpha.2`. Release checks and publication are documented in the
 [release procedure](docs/RELEASE.md).
 
 ## Compatibility policy after alpha

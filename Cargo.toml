@@ -1,6 +1,6 @@
 [package]
 name = "semantic-operators"
-version = "0.1.0-alpha.1"
+version = "0.1.0-alpha.2"
 edition = "2024"
 rust-version = "1.85"
 description = "Provider-neutral semantic operators with typed, confidence-aware answers"

@@ -20,14 +20,14 @@ no hosted inference or model-quality qualification has been performed.
 - Edition 2024, MSRV Rust 1.85. Original code is MIT; CPython-derived portions retain Python-2.0 terms.
 - Default features have no network or Tokio dependency.
 - Repository: [jasonduncan/semantic-operators-rs](https://github.com/jasonduncan/semantic-operators-rs).
-- Release: [0.1.0-alpha.1 on crates.io](https://crates.io/crates/semantic-operators/0.1.0-alpha.1).
-- [Rust API documentation](https://docs.rs/semantic-operators/0.1.0-alpha.1/semantic_operators/).
+- Release: [0.1.0-alpha.2 on crates.io](https://crates.io/crates/semantic-operators/0.1.0-alpha.2).
+- [Rust API documentation](https://docs.rs/semantic-operators/0.1.0-alpha.2/semantic_operators/).
 
 ## Install
 
 ```toml
 [dependencies]
-semantic-operators = "=0.1.0-alpha.1"
+semantic-operators = "=0.1.0-alpha.2"
 ```
 
 Add the dependency above to a Cargo binary project and paste this complete
@@ -132,7 +132,7 @@ Provider confidence is not a guarantee of correctness; measure it on your task.
 
 ## Compatibility and support
 
-The published `0.1.0-alpha.1` API is experimental. Pin an exact alpha version
+The `0.1.0-alpha.2` API is experimental. Pin an exact alpha version
 while evaluating it; inspect the [changelog](CHANGELOG.md) before upgrading.
 Rust 1.85 is the minimum supported compiler, checked alongside stable Rust on
 Linux, macOS and Windows. [Versioning](VERSIONING.md) describes breaking changes,
