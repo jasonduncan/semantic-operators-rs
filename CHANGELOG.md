@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.1.0-alpha.1 — unreleased
+## 0.1.0-alpha.1 — 2026-10-17
 
 - Implement validated Boolean/Choice/Score/Box questions, typed answers, exact
   normalization, metadata and Python schema-1 wire translation.
@@ -13,8 +13,8 @@
 - Include optional integrations in docs.rs builds and package the release notes.
 - Add a standalone triage reference consumer and bounded synthetic evaluation
   tools in the repository; these applications and datasets are not in the crate.
-- Target crates.io for the first alpha release. API remains unstable; no live
-  model qualification, performance claims or crate reservation.
+- First crates.io alpha release. API remains unstable; no live model
+  qualification or performance claims.
 
 ## 0.1.0-dev.0 — unreleased
 

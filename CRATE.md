@@ -1,7 +1,7 @@
 # Semantic Operators
 
 Native Rust questions and confidence-aware answers for interchangeable semantic
-model providers. This is an unpublished implementation candidate, validated with
+model providers. The implementation is validated with
 frozen Python outputs and offline scripted/localhost tests. Hosted inference and
 model quality have not been qualified.
 
@@ -9,6 +9,11 @@ Version 0.1.0-alpha.1 is an initial alpha with an unstable API. It is a native
 Rust counterpart to Python semantic-operators 0.12 and C++ libsemop. No Python
 interpreter or C++ FFI is required. The implementation preserves the frozen Python
 normalization and text wire contracts with documented Rust adaptations.
+
+```toml
+[dependencies]
+semantic-operators = "0.1.0-alpha.1"
+```
 
 Default features provide Boolean, Choice, Score and Box questions, typed operators,
 async provider contracts, uncertainty-only cascades, traced flows, filtering,

@@ -4,7 +4,7 @@ Define semantic questions once, ask interchangeable providers, and retain an
 explicit undecided answer when confidence is insufficient. Native Rust counterpart
 to Python semantic-operators 0.12 and C++ libsemop.
 
-**Implementation candidate; not published.** Boolean, Choice, Score, Box, typed
+**Initial alpha; API unstable.** Boolean, Choice, Score, Box, typed
 operators, async providers, cascade, deadlines, flows, filtering, reranking,
 evaluation, JSON wire translation, images, and TypeSafe transport are implemented.
 Verification uses frozen Python outputs, scripted providers and localhost HTTP;
@@ -14,14 +14,13 @@ no hosted inference or model-quality qualification has been performed.
 - Edition 2024, MSRV Rust 1.85, MIT license.
 - Default features have no network or Tokio dependency.
 - Repository: [jasonduncan/semantic-operators-rs](https://github.com/jasonduncan/semantic-operators-rs).
-- Candidate: `0.1.0-alpha.1`, prepared for crates.io; not yet uploaded.
-- Crate name appears unregistered, not reserved.
+- Release: `0.1.0-alpha.1` on crates.io.
 
-## Use it locally
+## Install
 
 ```toml
 [dependencies]
-semantic-operators = { path = "../semantic-operators-rs" }
+semantic-operators = "0.1.0-alpha.1"
 ```
 
 Define a typed operation and ask a provider supplied by your application:
