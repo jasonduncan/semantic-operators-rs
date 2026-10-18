@@ -256,3 +256,30 @@ stable and 1.85.0, documentation, feature/package checks and the new publish dry
 Preparation is complete. Portfolio active; execution ready for exact-version upload
 direction. No registry upload, release tag or live model request occurred. Closing
 edits record status/evidence only; tested package inputs and workflow are unchanged.
+
+## Published alpha 0.1.0-alpha.1 — 2026-10-17
+
+Jason explicitly directed publication. Updated release wording, committed
+30b827deebc5f25e4b31a9a9843437488f79458e, reran the archive/downstream checks,
+all-feature doctest and publish dry-run successfully, then ran cargo publish --locked.
+Cargo reported Published; registry created_at is 2026-10-18T00:02:35.550910Z.
+The registry, downloaded archive and local archive share SHA-256
+89da5d2536113c2cc55b2a645a95e29da1411415f93d53cb7cd14c77a8c7c8a4 (32 files, 54434 bytes).
+Downloaded .cargo_vcs_info.json matches the published commit. Pushed annotated
+v0.1.0-alpha.1 at that revision. Fresh crates.io consumers passed with default and
+optional TypeSafe/images/blocking features; no model invocation was involved.
+
+docs.rs initially returned 404 while processing; subsequent main/TypeSafe/image/
+blocking/TimeLimited pages returned 200. Existing Cargo credentials were used through
+Cargo; no credential value was printed or added to artifacts. Release CI 39081286724
+is completing; exact final result will be appended. No hosted inference or model
+quality acceptance occurred. The immutable release is public and installable.
+
+## Publication closed — 2026-10-17
+
+[Release CI 39081286724](https://github.com/jasonduncan/semantic-operators-rs/actions/runs/39081286724)
+passed all eight jobs at published revision 30b827deebc5f25e4b31a9a9843437488f79458e.
+Remote annotated tag v0.1.0-alpha.1 dereferences to that same SHA. Registry package,
+checksum, docs.rs optional APIs and fresh default/optional registry consumers are
+verified. Publication is complete; portfolio remains active. Closing changes only
+record documentation/status and do not alter the immutable published package.

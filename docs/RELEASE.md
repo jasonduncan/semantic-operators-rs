@@ -1,10 +1,19 @@
 # Release procedure
 
-Candidate: **semantic-operators 0.1.0-alpha.1**, MIT, edition 2024, Rust 1.85 minimum.
-This is the existing alpha version, retained for the first release. Public GitHub
-visibility is intentional. The manifest now allows crates.io only; no upload or
-release tag has occurred. API stability, hosted model quality and performance are
-not claimed. [Release notes](../CHANGELOG.md) remain marked unreleased until upload.
+**semantic-operators 0.1.0-alpha.1 is published.** Jason explicitly authorized the
+upload. Registry receipt: 2026-10-18T00:02:35.550910Z (2026-10-17 America/Chicago).
+MIT, edition 2024, Rust 1.85 minimum; API remains unstable.
+
+- [Crates.io version](https://crates.io/crates/semantic-operators/0.1.0-alpha.1)
+- [Rust API docs](https://docs.rs/semantic-operators/0.1.0-alpha.1/semantic_operators/)
+- [Release tag](https://github.com/jasonduncan/semantic-operators-rs/tree/v0.1.0-alpha.1)
+- Published revision: `30b827deebc5f25e4b31a9a9843437488f79458e`.
+- Archive SHA-256: `89da5d2536113c2cc55b2a645a95e29da1411415f93d53cb7cd14c77a8c7c8a4`.
+
+Registry checksum, downloaded archive and locally verified archive match. Package
+VCS metadata matches the tag. Fresh registry consumers run with default and optional
+features. docs.rs serves the main page plus TypeSafe, image, blocking and timeout
+APIs. Publication does not establish hosted model quality or performance.
 
 ## Prepared package
 
@@ -13,8 +22,7 @@ CHANGELOG.md and LICENSE. It excludes status, source inventories, qualification 
 integrations, tool scripts and runtime artifacts. The package checker enforces that
 allowlist and runs downstream consumers with default and optional features.
 Keywords/category support registry discovery; docs.rs is configured to build all
-features so optional modules are documented. The docs.rs URL is a publication target,
-not evidence that a hosted page already exists.
+features so optional modules are documented. The hosted documentation and optional API pages were verified after upload.
 
 ## Verification before upload
 
@@ -38,10 +46,10 @@ packaged files requires a fresh dry-run. Check the release name/version immediat
 before upload. A name lookup is not a reservation and dry-run does not prove publish
 authentication or registry acceptance.
 
-## Publication
+## Future publication
 
-The reviewable target is semantic-operators **0.1.0-alpha.1**. Once Jason directs
-publication of that version:
+The first alpha is already published; never repeat its upload. For an authorized
+new version, substitute its version and tag in the following procedure:
 
 1. Confirm clean/pushed Git state and passing candidate CI, recheck crates.io name
    and version, and configure the owner's Cargo credential provider. Never print or

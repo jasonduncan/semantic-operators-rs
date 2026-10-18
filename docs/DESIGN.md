@@ -1,6 +1,6 @@
 # Rust library design
 
-Implemented architecture v0.1 · 2026-10-17 · unpublished implementation candidate.
+Implemented architecture v0.1 · 2026-10-17 · published initial alpha 0.1.0-alpha.1.
 Jason requested implementation after the specification. Engineering choices below
 are implemented and tested offline; API stability and model quality are not implied.
 See [implementation mapping](IMPLEMENTATION.md) and [validation](../status/VALIDATION.md).

@@ -46,6 +46,7 @@ for development; publication and model qualification remain separate.
 | D15 | Explicit Blocking runtime and checked Tokio deadlines | Typed runtime misuse errors instead of hidden runtime creation |
 | D16 | Separate CRATE.md archive readme and packaged-consumer checks | Standalone usable package without private status/source inventories |
 
-0.1.0-alpha.1 remains unpublished with `publish=false`. The default feature set is
+0.1.0-alpha.1 was published to crates.io on 2026-10-17 (America/Chicago), with
+publication restricted to that registry. The default feature set is
 empty and does not link Tokio, HTTP or TLS dependencies. See IMPLEMENTATION.md for
 requirement coverage and COMPATIBILITY.md for deliberate deviations.

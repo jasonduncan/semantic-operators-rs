@@ -14,7 +14,8 @@ no hosted inference or model-quality qualification has been performed.
 - Edition 2024, MSRV Rust 1.85, MIT license.
 - Default features have no network or Tokio dependency.
 - Repository: [jasonduncan/semantic-operators-rs](https://github.com/jasonduncan/semantic-operators-rs).
-- Release: `0.1.0-alpha.1` on crates.io.
+- Release: [0.1.0-alpha.1 on crates.io](https://crates.io/crates/semantic-operators/0.1.0-alpha.1).
+- [Rust API documentation](https://docs.rs/semantic-operators/0.1.0-alpha.1/semantic_operators/).
 
 ## Install
 

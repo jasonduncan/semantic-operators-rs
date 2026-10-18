@@ -1,6 +1,6 @@
 # Implementation and requirement coverage
 
-2026-10-17 · 0.1.0-alpha.1 · native Rust, unpublished.
+2026-10-17 · 0.1.0-alpha.1 · native Rust, published to crates.io.
 This map links the original R1–R10 contract to shipped source and offline evidence.
 Executed checks and hosted CI receipts belong in [VALIDATION](../status/VALIDATION.md).
 

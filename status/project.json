@@ -3,9 +3,9 @@
   "project_id": "semantic-operators-rs",
   "name": "Semantic Operators for Rust",
   "portfolio_status": "active",
-  "execution_status": "ready",
-  "phase": "Alpha 0.1.0-alpha.1 prepared and verified; upload direction pending",
-  "summary": "Alpha release metadata/notes, archive audit, downstream consumers, publish dry-run and all eight CI jobs passed; not uploaded.",
+  "execution_status": "complete",
+  "phase": "Alpha 0.1.0-alpha.1 published and verified",
+  "summary": "Crates.io alpha published; checksum, source tag, docs.rs optional APIs, fresh consumers and all eight release CI jobs verified.",
   "repository": {
     "remote": "https://github.com/jasonduncan/semantic-operators-rs.git",
     "default_branch": "main"
@@ -18,10 +18,10 @@
     "validation": "VALIDATION.md",
     "local_state": "LOCAL_STATE.md"
   },
-  "next_action": "Jason directs publication of semantic-operators 0.1.0-alpha.1; follow docs/RELEASE.md for final wording, clean dry-run, registry upload and verification.",
+  "next_action": "Maintain the published alpha. Select the next issue, API change or separately bounded live qualification before starting another phase.",
   "blockers": [],
-  "updated_at": "2026-10-17T23:57:15Z",
-  "handoff_version": 9,
+  "updated_at": "2026-10-18T00:06:21Z",
+  "handoff_version": 10,
   "tags": [
     "rust",
     "semantic-operators"
