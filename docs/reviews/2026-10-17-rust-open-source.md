@@ -12,7 +12,7 @@ upload or public launch announcement is part of this review.
 Checked means evidence obtained or an explicit engineering alternative documented.
 Unchecked means unresolved. N/A and engineering waivers are shown explicitly; they
 do not impersonate legal/account-owner approval. Jason owns final release approval;
-Codex performed technical verification on 2026-10-17. Hosted results follow in
+Codex performed technical verification on 2026-10-17. All ten hosted jobs passed on source d493ac9; exact receipts are in
 [VALIDATION](../../status/VALIDATION.md).
 
 ## Decisions needed before a subsequent launch
@@ -56,7 +56,7 @@ Owner: Jason Duncan; technical reviewer: Codex.
 Owner: Jason Duncan; technical reviewer: Codex.
 
 - [x] **9. Run a secrets scanner over full history (`gitleaks detect` or `trufflehog git`), including all branches and tags.**
-  DONE: Gitleaks 8.30.1 scanned all fetched branches/tags/full history, initially22 commits, zero findings. CI repeats with full fetch, redaction and pinned binary hash.
+  DONE: Gitleaks 8.30.1 scanned all fetched branches/tags/full history, initially 22 commits, zero findings. CI repeats with full fetch, redaction and pinned binary hash.
 
 - [x] **10. Any secret ever committed is rotated, even if later deleted. Removing it from history does not make it safe.**
   NA: No secret identified by the scan; no rotation performed or claim that every possible secret is detectable.
@@ -71,7 +71,7 @@ Owner: Jason Duncan; technical reviewer: Codex.
   DONE: Reviewed all author identities: one existing maintainer identity. Preserved already-public attribution; did not rewrite history or silently change user Git identity.
 
 - [x] **14. Delete stale branches, experimental code, dead feature flags, and large binaries not needed by users.**
-  DONE: Only main and active Dependabot branches; no stale branch deletion justified. Largest tracked file is107433-byte synthetic fixture; no large binary payloads.
+  DONE: Only main and active Dependabot branches; no stale branch deletion justified. Largest tracked file is a 107433-byte synthetic fixture; no large binary payloads.
 
 - [x] **15. `.gitignore` covers `target/`, editor files, `.env`, and local config.**
   DONE: .gitignore covers build output, credentials/env, editor directories, swap files and local configuration; independent consumer has its own target ignore.
@@ -93,10 +93,10 @@ Owner: Jason Duncan; technical reviewer: Codex.
   DONE: Explicit allowlist and actual-archive checker exclude private status, fixtures, tools and CI; require LICENSE, LICENSE-PYTHON and NOTICE.md.
 
 - [x] **20. Package size is reasonable (crates.io limit is 10 MB; aim far lower).**
-  DONE: Verified package remains far below the10MB threshold; exact current archive size in validation.
+  DONE: Verified package remains far below the 10 MB threshold; exact current archive size in validation.
 
 - [x] **21. MSRV chosen deliberately and written in `rust-version` and the README.**
-  DONE: Cargo/README/VERSIONING state Rust1.85; CI tests it on all three platforms.
+  DONE: Cargo/README/VERSIONING state Rust 1.85; CI tests it on all three platforms.
 
 - [x] **22. Features: sensible `default` set, each feature documented, no feature that is required for the crate to compile. Optional deps use `dep:` syntax.**
   DONE: Empty defaults; all optional features documented; dep syntax retained; all 10 distinct feature closures checked.
@@ -130,7 +130,7 @@ Owner: Jason Duncan; technical reviewer: Codex.
   NA: No unsafe blocks; no fabricated second-engineer safety sign-off.
 
 - [x] **31. Public API reviewed item by item (`cargo public-api` lists it). Anything not intended for users becomes `pub(crate)` or moves behind a `#[doc(hidden)]` internal module.**
-  DONE: Reviewed source and generated nightly rustdoc JSON:47 structs,9 enums,4 extension traits,6 aliases,7 constants,19 modules,199 local functions/methods including generated/derived,47 public fields. No unintended public helper found. cargo-public-api not used.
+  DONE: Reviewed source and generated nightly rustdoc JSON: 47 structs, 9 enums, 4 extension traits,6 aliases,7 constants, 19 modules, 199 local functions/methods including generated/derived, 47 public fields. No unintended public helper found. cargo-public-api not used.
 
 - [x] **32. Public enums and structs that may grow are `#[non_exhaustive]`.**
   WAIVED: Preserve existing exhaustive enums and constructible public records: retrofitting non_exhaustive breaks the published API. Reconsider at a deliberate breaking release.
@@ -145,7 +145,7 @@ Owner: Jason Duncan; technical reviewer: Codex.
   DONE: Structured Error and FlowFailure implement std::error::Error. No anyhow/Box<dyn Error> library signatures; thiserror is not required.
 
 - [x] **36. No `unwrap`/`expect`/`panic!` on paths reachable from user input; documented `# Panics` where panics are intended.**
-  DONE: Previous source review retained only two constant NonZeroUsize expects(4/8); recoverable caller errors use Result. No new runtime code in this pass.
+  DONE: Previous source review retained only two constant NonZeroUsize expects (4/8); recoverable caller errors use Result. No new runtime code in this pass.
 
 - [x] **37. Library code logs through `log` or `tracing`, never `println!`.**
   DONE: Library prints/logs no user data; no logging facade is needed solely to satisfy this item. Examples may print.
@@ -198,19 +198,19 @@ Owner: Jason Duncan; technical reviewer: Codex.
 Owner: Jason Duncan; technical reviewer: Codex.
 
 - [x] **51. Unit and integration tests cover the core paths; doctests run (`cargo test --all-features` includes them).**
-  DONE: Prior source review passed54 default/88 all-feature tests and4 doctests; updated CI reruns full suites.
+  DONE: Prior source review passed 54 default / 88 all-feature tests and 4 doctests; updated CI passed full suites.
 
 - [x] **52. Test matrix: stable on Linux, macOS, and Windows, plus the declared MSRV on Linux. Add beta or nightly as non-blocking if useful.**
   DONE: Linux/macOS/Windows stable and1.85 matrix; nightly docs build additionally validates feature labels.
 
 - [x] **53. Feature combinations checked: `cargo hack check --feature-powerset` (or `--each-feature` if the powerset is too large), plus `--no-default-features`.**
-  DONE: Explicit powerset closure equivalent covers all 10 effective sets from 16 raw subsets; empty features included. Local all-target checks pass; CI runs tests for each.
+  DONE: Explicit powerset closure equivalent covers all 10 effective sets from 16 raw subsets; empty features included. Local all-target checks and hosted tests for each passed.
 
 - [x] **54. `cargo semver-checks` runs on PRs once 0.1.0 is out, to catch accidental breaking changes.**
   NA: Only0.1.0-alpha.1 exists; no stable0.1.0 baseline yet. Automated semver gate deferred until non-prerelease baseline, not falsely claimed.
 
 - [x] **55. Miri job for any crate with `unsafe`.**
-  NA: Unsafe forbidden; prior bounded12-test Miri run passed. No mandatory unsafe-specific Miri job applies.
+  NA: Unsafe forbidden; prior bounded 12-test Miri run passed. No mandatory unsafe-specific Miri job applies.
 
 - [x] **56. Examples and benchmarks compile in CI (`cargo check --all-targets`).**
   DONE: All-target checks compile examples; synthetic examples also run. No performance benchmark claim.
@@ -256,14 +256,14 @@ Owner: Jason Duncan; technical reviewer: Codex.
   PENDING: Main currently unprotected. Concrete required-review/CI/no-force-push policy prepared; second reviewer needed before activation to avoid blocking sole-maintainer contributions.
 
 - [x] **69. Release tags protected; consider signed tags.**
-  DONE: Active Immutable release tags ruleset25325227 prevents updates/deletion of v* tags with no bypass. Existing annotated tag preserved; signing not claimed.
+  DONE: Active Immutable release tags ruleset 25325227 prevents updates/deletion of v* tags with no bypass. Existing annotated tag preserved; signing not claimed.
 
 ## Versioning and release process
 
 Owner: Jason Duncan; technical reviewer: Codex.
 
 - [x] **70. Initial version agreed (`0.1.0` recommended) and the stability promise stated in the README.**
-  DONE: Already authorized/published0.1.0-alpha.1; README states experimental API. No new version selected/uploaded.
+  DONE: Already authorized/published 0.1.0-alpha.1; README states experimental API. No new version selected/uploaded.
 
 - [x] **71. Versioning policy written down: what counts as breaking, how MSRV bumps are treated (commonly a minor bump), deprecation period.**
   DONE: VERSIONING.md records prerelease pinning, breaking changes, MSRV increases and absence of a fixed deprecation window.
@@ -309,7 +309,7 @@ Owner: Jason Duncan; technical reviewer: Codex.
   DONE: CODEOWNERS assigns @jasonduncan; it does not substitute for enforced review.
 
 - [x] **84. Labels created: `good first issue`, `help wanted`, `bug`, `enhancement`, `breaking-change`; a few starter issues seeded.**
-  DONE: Required labels exist; seeded focused starter issue#3 for Unicode diagnostic parity. No artificial backlog generated.
+  DONE: Required labels exist; seeded focused starter issue #3 for Unicode diagnostic parity. No artificial backlog generated.
 
 - [x] **85. GitHub Discussions enabled (or a stated alternative channel) so questions stay out of issues.**
   DONE: Discussions enabled and linked for usage/design questions; question issue template removed.
@@ -338,8 +338,8 @@ repeat scan/CI/dry-run/registry/docs.rs checks in the supplied skill order.
 | Cargo/structure | Jason Duncan | Codex: package and metadata verified | Pending final release sign-off |
 | Code/API | Jason Duncan | Codex: manual/rustdoc API review, compatibility retained | Pending final release sign-off |
 | Documentation | Jason Duncan | Codex: examples/docs/link checks | Pending final release sign-off |
-| Testing/CI | Jason Duncan | Local checks passed; hosted receipt pending | Pending final release sign-off |
-| Security/supply chain | Jason Duncan | Scans pass; reporting/secrets/tag settings read back | Pending owners,2FA,branch/OIDC setup |
+| Testing/CI | Jason Duncan | Codex: local checks and all ten hosted jobs passed | Pending final release sign-off |
+| Security/supply chain | Jason Duncan | Scans pass; reporting/secrets/tag settings read back | Pending owners, 2FA,branch/OIDC setup |
 | Release process | Jason Duncan | Existing alpha verified; new setup proposal inert | Pending exact new version and authenticated workflow |
 | Community/governance | Jason Duncan | Onboarding/templates/discussions/starter issue | Pending conduct contact/policy |
 | Final go/no-go | Jason Duncan | **No-go for a new launch under this checklist** | Not signed |
@@ -348,7 +348,7 @@ repeat scan/CI/dry-run/registry/docs.rs checks in the supplied skill order.
 
 Enabled private vulnerability reporting, GitHub secret scanning/push protection,
 Discussions and immutable version-tag rules. Updated repository description/topics/
-docs homepage and added breaking-change label. Created [starter issue3](https://github.com/jasonduncan/semantic-operators-rs/issues/3)
+docs homepage and added breaking-change label. Created [starter issue 3](https://github.com/jasonduncan/semantic-operators-rs/issues/3)
 and a draft release for the existing alpha tag. No new owner, branch protection,
 credential, public release announcement or crates.io upload was created.
 

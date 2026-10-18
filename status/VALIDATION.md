@@ -334,34 +334,60 @@ unchanged. No live provider calls or performance qualification occurred.
 
 ## Open-source readiness review — 2026-10-17
 
-Applied the owner-supplied87-item skill; starting HEAD48006c8. Full item statuses
+Applied the owner-supplied 87-item skill; starting HEAD 48006c8. Full item statuses
 and sign-offs are in [the assessment](../docs/reviews/2026-10-17-rust-open-source.md).
 
-- Gitleaks8.30.1: all fetched branch/tag history, initially22 commits/~910KB, zero
+- Gitleaks 8.30.1: all fetched branch/tag history, initially 22 commits/~910KB, zero
   findings. No rotation/history rewrite. Current-tree machine paths removed;
   prior public history preserved. Full scan repeats at final source commit.
-- cargo-deny0.20.2: fresh advisories/bans/licenses/sources pass for both locks, with
+- cargo-deny 0.20.2: fresh advisories/bans/licenses/sources pass for both locks, with
   eight explicit license IDs and no advisory ignores. Duplicate base64/windows-sys
-  warnings remain visible. cargo-audit0.22.2 strict scans pass for both locks.
-- cargo-machete0.9.2: no unused dependencies. Cargo lint/fmt and package consumers pass.
-- All10 effective feature combinations pass all-target checks. Five examples run,
-  four doctests and complete README example pass. Rust1.85 check passes. Nightly
+  warnings remain visible. cargo-audit 0.22.2 strict scans pass for both locks.
+- cargo-machete 0.9.2: no unused dependencies. Cargo lint/fmt and package consumers pass.
+- All 10 effective feature combinations pass all-target checks. Five examples run,
+  four doctests and complete README example pass. Rust 1.85 check passes. Nightly
   docs.rs HTML/JSON build with warnings denied and inspected optional API labels.
-- API review from source/generated rustdoc:47 structs,9 enums,4 extension traits,
-  6 aliases,7 constants,19 modules,199 local functions/methods,47 public fields.
+- API review from source/generated rustdoc: 47 structs, 9 enums, 4 extension traits,
+  6 aliases,7 constants, 19 modules, 199 local functions/methods, 47 public fields.
   Existing exhaustive types/open traits and explicit IndexMap/serde_json/serde
   exposure retained. No automated semver comparison or new performance measurement.
 - Local precommit unreleased archive: 34 files, 64598 bytes, SHA-256
   841dda032ef11919d5fbd2083e8d7a8aa83c8aeb3ed432c2b67feca464ef2313. Required NOTICE.md/LICENSE-PYTHON verified in
   actual archive; default runtime/network isolation and both downstream builds pass.
   This archive is not the immutable published alpha and has not been uploaded.
-- CPython license copied verbatim from3.13.13 commit
+- CPython license copied verbatim from 3.13.13 commit
   01104ce1beb3135c2e0c01ec835b994c1f55a1c0; SHA-256
   78b12c3a81360b357002334f0e70ea0e92eebf7a9b358805c03c48484945f3bb.
 - GitHub reporting/secrets/push-protection/Discussions settings enabled/read back.
-  Active tag ruleset25325227 prevents v* deletion/update without bypass. Main
+  Active tag ruleset 25325227 prevents v* deletion/update without bypass. Main
   protection and trusted-publisher configuration remain unperformed proposals.
-  One registry owner;2FA unverified. No Actions secrets/environments observed.
+  One registry owner; 2FA unverified. No Actions secrets/environments observed.
 
 Hosted source verification follows after push. No new crate, public release
 announcement, live provider call, owner invitation or credential was created.
+
+## Open-source technical verification complete — 2026-10-17
+
+Source commit `d493ac9521639c7d715d7df76c8e2f9fabc46ef8` passed all ten hosted jobs:
+
+- [CI 39084379172](https://github.com/jasonduncan/semantic-operators-rs/actions/runs/39084379172):
+  eight jobs, Linux/macOS/Windows stable and 1.85; full regression/doctest/consumer
+  suites; all ten feature closures, examples, package consumers and publish dry-run;
+  nightly docs.rs feature labels and documentation/provenance validation.
+- [Supply chain 39084379180](https://github.com/jasonduncan/semantic-operators-rs/actions/runs/39084379180):
+  both strict advisory scans, both full license/advisory/bans/source policies, and
+  recursive unused-dependency scan. Duplicate transitive-version warnings visible.
+- [Secret scan 39084379157](https://github.com/jasonduncan/semantic-operators-rs/actions/runs/39084379157):
+  full fetched history with redaction and pinned Gitleaks archive checksum.
+
+Local final source scan covered 23 commits/~989KB with zero findings. Closing edits
+only reconcile docs/status and broaden .env ignore coverage into nested directories;
+`git check-ignore` confirms root/nested env, editor and local config paths. No source,
+test, dependency or workflow change after the passing commit. Local docs/status/scan
+checks are repeated for closing; hosted results above refer to the exact source SHA.
+
+Audit execution complete, not a final launch approval. Ownership/trademark,
+contribution policy, conduct contact, second owner/reviewer, 2FA and branch/OIDC
+activation remain open. The original crates.io alpha/tag are unchanged; GitHub
+release 416156626 is a draft. Issue 3 tracks the existing Unicode diagnostic gap.
+No new registry publication, public announcement or hosted model call occurred.

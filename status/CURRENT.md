@@ -1,6 +1,6 @@
 # Current state
 
-2026-10-17 · portfolio active · execution active: open-source readiness verification.
+2026-10-17 · portfolio active · execution complete: open-source readiness assessment.
 
 The [87-item assessment](../docs/reviews/2026-10-17-rust-open-source.md) records
 completed engineering work and unresolved owner decisions. Added CPython attribution
@@ -16,7 +16,8 @@ and immutable v* tags. Main-review and trusted-publishing proposals are inert in
 rights, trademark review, contributor agreement choice, conduct contact, second owner,
 2FA and final launch sign-offs remain unresolved. This is not a complete launch approval.
 
-Local technical checks pass; hosted verification follows. No runtime behavior was
+All local checks and ten hosted jobs pass at d493ac9521639c7d715d7df76c8e2f9fabc46ef8.
+Audit execution is complete; full launch sign-off remains pending. No runtime behavior was
 changed by this pass. Earlier flow-cancellation fixes are also unreleased.
 **Crates.io remains at 0.1.0-alpha.1**, published from
 30b827deebc5f25e4b31a9a9843437488f79458e, with its original MIT metadata/archive.

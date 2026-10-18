@@ -3,9 +3,9 @@
   "project_id": "semantic-operators-rs",
   "name": "Semantic Operators for Rust",
   "portfolio_status": "active",
-  "execution_status": "active",
-  "phase": "Open-source readiness review: hosted verification",
-  "summary": "Open-source checklist applied: license attribution, public docs, supply-chain/history gates and safe repository settings updated; owner sign-offs remain open.",
+  "execution_status": "complete",
+  "phase": "Open-source readiness assessment complete; owner sign-offs pending",
+  "summary": "87-item audit applied and technical fixes verified by ten hosted jobs; legal/account/policy sign-offs and next release remain pending.",
   "repository": {
     "remote": "https://github.com/jasonduncan/semantic-operators-rs.git",
     "default_branch": "main"
@@ -18,9 +18,9 @@
     "validation": "VALIDATION.md",
     "local_state": "LOCAL_STATE.md"
   },
-  "next_action": "Verify hosted CI and close assessment; owner must resolve rights, conduct contact, second maintainer/2FA and branch/trusted-publishing setup before a later launch.",
+  "next_action": "Resolve owner rights/trademark and contribution terms, conduct contact, second maintainer/2FA, then approve branch/trusted-publishing setup and select a new release version.",
   "blockers": [],
-  "updated_at": "2026-10-18T00:51:57Z",
+  "updated_at": "2026-10-18T00:58:22Z",
   "handoff_version": 12,
   "tags": [
     "rust",

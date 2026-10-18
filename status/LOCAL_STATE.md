@@ -64,8 +64,8 @@ committed locks without advisory ignores. No hosted inference or new crate uploa
 
 ## Open-source review tooling — 2026-10-17
 
-Installed cargo-deny0.20.2 and cargo-machete0.9.2 in the existing Cargo bin directory;
-Gitleaks8.30.1 was already available. Logs/reports live in ignored target/open-source;
+Installed cargo-deny 0.20.2 and cargo-machete 0.9.2 in the existing Cargo bin directory;
+Gitleaks 8.30.1 was already available. Logs/reports live in ignored target/open-source;
 nightly docs and feature-check builds use isolated target subdirectories. No token
 values were read or retained. GitHub API checks used existing gh authentication.
 The repository has no Actions secrets/environments; trusted publishing remains a

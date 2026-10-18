@@ -221,8 +221,8 @@ work is required for this review. Unicode diagnostic parity remains deferred.
 
 ## Open-source readiness follow-up — 2026-10-17
 
-Technical remediation and the87-item assessment are implemented; verify hosted
-checks before closing this phase. Owner decisions remain explicit in the assessment:
+Technical remediation and the 87-item assessment are complete; all ten hosted
+jobs passed on the reviewed source. Owner decisions remain explicit in the assessment:
 rights/trademark, contribution agreement, conduct contact, second owner/reviewer,
 2FA and branch/trusted-publisher activation. A next release needs an exact new
 version. The already-published alpha, previous milestones and deferred product scope

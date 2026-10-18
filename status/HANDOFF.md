@@ -1,9 +1,11 @@
 # Development handoff
 
-2026-10-17 · open-source readiness assessment; hosted checks pending.
+2026-10-17 · open-source readiness assessment complete; owner sign-offs pending.
 
 1. Read CURRENT, VALIDATION and the [assessment](../docs/reviews/2026-10-17-rust-open-source.md).
-2. Finish hosted CI/security/history verification and record its exact source SHA.
+2. Technical source d493ac9 passed eight CI jobs, the supply-chain job and the
+   full-history secret scan. Closing changes only record evidence and broaden
+   nested .env ignores; source/tests/workflows match the passing revision.
 3. Resolve the owner's open checklist decisions. Do not mark employment/client
    rights, trademark clearance or 2FA verified from a source license or scanner.
 4. The [setup packet](../docs/release/SETUP.md) contains reviewable main-protection
