@@ -119,6 +119,13 @@ and finish cannot turn a caught provider error into success. Every attempted
 request/result is retained in memory, including failed attempts. FlowFailure owns
 the error and trace. `ask_request` supports explicit image assets.
 
+Dropping a flow request future after polling retains its attempt and latches
+`ErrorKind::Runtime` for interrupted local execution. Later asks do no work and
+`finish` returns `FlowFailure`, even if the application catches an outer timeout
+or cancellation. Dropping an unpolled future records nothing. Flow attempt counts
+include local validation failures; they do not establish remote dispatch,
+cancellation, or billing.
+
 FlowOutcome has value, stopped_at, stopped_answer, trace, decided() and calls().
 An application can return Option::None successfully without confusing it with an
 uncertainty stop. Traces are not logged or persisted automatically.

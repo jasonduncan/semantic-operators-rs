@@ -42,6 +42,12 @@ pub struct Located {
 /// The original questions are replaced by `present` and `box`. A Box answer alone
 /// is never interpreted as evidence that the target exists. Provider capabilities
 /// and validation are checked through the ordinary request boundary.
+///
+/// # Errors
+/// Returns `InvalidArgument` for a blank target, `InvalidQuestion` for an
+/// invalid confidence threshold, and propagates request/image, provider, or
+/// response-validation errors. Uncertain presence or location remains a
+/// successful result with the corresponding optional value absent.
 pub async fn locate(
     provider: &dyn Provider,
     request: &Request,

@@ -64,6 +64,13 @@ Do not include raw response data. Error codes remain `invalid_request`,
 Byte ordering of JSON keys is not a semantic requirement, but ordered arrays,
 probability presentation order, exact request contents, and numeric results are.
 
+Known diagnostic limitation: duplicate-name messages reproduce quoting and control
+character escapes but do not fully reproduce Python `repr` for all Unicode classes.
+For example, NBSP (U+00A0) and zero-width space (U+200B) remain literal in Rust while
+Python escapes them. Validation, error classification and field paths are unchanged;
+byte-for-byte message parity is limited to the frozen cases. A complete Unicode
+repr implementation is deferred rather than adding a dependency solely for diagnostics.
+
 Python's wire encoder uses the first answer's call, even though cascades can have
 mixed calls. Rust schema 1 must reproduce this compatibility projection and
 document its information loss; rich library answers keep per-answer metadata.
@@ -106,7 +113,7 @@ per item. Input IDs are metadata, not part of provider state.
 | Explicit request-owned assets rather than global image lookup | Lifetime/thread safety; request body semantics retained |
 | Structured Result errors and flow exits | No Python exception emulation or implicit bool conversion |
 | Empty apply and empty operator names rejected | Tighten ambiguous Python library cases; wire already requires names/nonempty questions |
-| Flow provider failures latch until finish | Prevent caught error from becoming apparent success; documented C++ behavior |
+| Flow provider failures and interrupted polled requests latch until finish | Prevent caught error or local cancellation from becoming apparent success; local interruption retains its attempted trace |
 | Checked finite padding / positive pixel dimensions | Rust convenience validation; valid reference inputs retain results |
 | No implicit SDK retries | Clear call accounting; Python SDK retries depend on caller configuration |
 

@@ -32,6 +32,10 @@ pub enum AnswerValue {
 /// Conversion supported by a typed answer.
 pub trait AnswerType: Clone + Send + Sync + 'static {
     /// Check and copy a heterogeneous value.
+    ///
+    /// # Errors
+    /// Returns an error when the dynamic value cannot be represented by this
+    /// output type. Built-in conversions report `InvalidResponse` for a variant mismatch.
     fn from_answer_value(value: &AnswerValue) -> Result<Self, Error>;
 }
 macro_rules! typed {
@@ -110,6 +114,9 @@ impl<T> Answer<T> {
         self
     }
     /// Apply a threshold without restoring any previously undecided value.
+    ///
+    /// # Errors
+    /// Returns `InvalidArgument` if the threshold is nonfinite or outside `[0, 1]`.
     pub fn with_min_confidence(mut self, threshold: f64) -> Result<Self, Error> {
         if !threshold.is_finite() || !(0.0..=1.0).contains(&threshold) {
             return Err(Error::new(
@@ -131,6 +138,10 @@ impl<T> Answer<T> {
 impl Answer {
     /// Validate the retained provider candidate against the actual requested question.
     /// Existing abstentions remain undecided, including explicit provider abstentions.
+    ///
+    /// # Errors
+    /// Returns the normalization errors from [`make_answer`] if the retained
+    /// candidate or distribution is incompatible with `question`.
     pub fn revalidate(&self, question: &Question) -> Result<Self, Error> {
         let explicit = if matches!(question, Question::Box(_)) {
             Some(self.confidence)
@@ -151,6 +162,10 @@ impl Answer {
         Ok(answer)
     }
     /// Project into a typed answer, checking type even when the answer is undecided.
+    ///
+    /// # Errors
+    /// Propagates conversion errors from [`AnswerType::from_answer_value`],
+    /// including a type mismatch even when this answer is undecided.
     pub fn typed<T: AnswerType>(&self) -> Result<Answer<T>, Error> {
         let candidate = T::from_answer_value(&self.candidate)?;
         Ok(Answer {
@@ -167,6 +182,30 @@ fn invalid(msg: &str) -> Error {
     Error::new(ErrorKind::InvalidResponse, msg)
 }
 /// Validate a provider candidate and centrally apply ties and confidence thresholds.
+///
+/// A valid response below the threshold is successful but undecided; its
+/// probabilities remain available for inspection.
+///
+/// ```
+/// use semantic_operators::{AnswerValue, Boolean, IndexMap, Question, make_answer};
+/// # fn main() -> semantic_operators::Result<()> {
+/// let question = Question::from(Boolean::new("Does this need review?")?
+///     .with_min_confidence(0.8)?);
+/// let probabilities = IndexMap::from([("true".into(), 0.7), ("false".into(), 0.3)]);
+/// let answer = make_answer(&question, AnswerValue::Boolean(true), probabilities, None)?
+///     .typed::<bool>()?;
+/// assert_eq!(answer.value(), None);
+/// assert_eq!(answer.confidence(), 0.7);
+/// assert_eq!(answer.probabilities()["true"], 0.7);
+/// # Ok(())
+/// # }
+/// ```
+///
+/// # Errors
+/// Returns `InvalidResponse` for a mismatched value type, invalid or incomplete
+/// probabilities, disagreement between the value and distribution, or invalid
+/// Box confidence. Ties and insufficient confidence produce a successful
+/// undecided answer rather than an error.
 pub fn make_answer(
     question: &Question,
     value: AnswerValue,
@@ -306,6 +345,10 @@ fn accurate_sum(values: impl IntoIterator<Item = f64>) -> f64 {
 }
 /// Python-compatible `round(1 - p, 10)` for a finite probability in [0, 1].
 /// Invalid inputs return an argument error rather than entering normalization.
+///
+/// # Errors
+/// Returns `InvalidArgument` for nonfinite probabilities or values outside
+/// `[0, 1]`, and `Runtime` if decimal conversion fails.
 pub fn complement(p: f64) -> Result<f64, Error> {
     if !p.is_finite() || !(0.0..=1.0).contains(&p) {
         return Err(Error::new(

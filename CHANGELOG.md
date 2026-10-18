@@ -1,5 +1,13 @@
 # Changelog
 
+## Unreleased
+
+- Retain and latch interrupted flow attempts so cancelling a polled request
+  cannot erase its trace or make partial execution appear successful.
+- Document public error contracts and add executable offline API examples.
+- Enforce focused library hygiene lints and add dependency audits, weekly
+  dependency update PRs, and a contributor review checklist.
+
 ## 0.1.0-alpha.1 — 2026-10-17
 
 - Implement validated Boolean/Choice/Score/Box questions, typed answers, exact

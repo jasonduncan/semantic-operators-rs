@@ -1,6 +1,6 @@
 # Development plan
 
-Implementation candidate: 0.1.0-alpha.1. M1–M6 are implemented and verified offline and by hosted platform CI. Requirement evidence is mapped in
+Published version: 0.1.0-alpha.1. M1–M7 are implemented and verified offline and by hosted platform CI. Unreleased best-practices maintenance is described below. Requirement evidence is mapped in
 [IMPLEMENTATION](../docs/IMPLEMENTATION.md).
 
 Original milestone scope and acceptance criteria follow.
@@ -206,3 +206,11 @@ Remote annotated tag v0.1.0-alpha.1 dereferences to that same SHA. Registry pack
 checksum, docs.rs optional APIs and fresh default/optional registry consumers are
 verified. Publication is complete; portfolio remains active. Closing changes only
 record documentation/status and do not alter the immutable published package.
+
+## Rust best-practices review — 2026-10-17
+
+The requested review adds cancellation safety, public error contracts/examples,
+focused lints and automated dependency maintenance. Acceptance requires regression
+suites, strict stable/MSRV checks, Miri core/wire tests, both advisory scans,
+packaged consumers and hosted CI. Published alpha remains immutable. Full Unicode
+repr diagnostic parity is deferred; next release version is not selected.

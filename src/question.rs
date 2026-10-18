@@ -43,6 +43,10 @@ pub struct Boolean {
 }
 impl Boolean {
     /// Validate instructions and construct a question without a confidence threshold.
+    ///
+    /// # Errors
+    /// Returns `InvalidQuestion` when instructions are empty or contain only
+    /// reference-defined whitespace.
     pub fn new(text: impl Into<String>) -> Result<Self, Error> {
         Ok(Self {
             instructions: instructions(text.into())?,
@@ -76,6 +80,10 @@ pub struct Choice {
 }
 impl Choice {
     /// Validate instructions and at least two distinct nonempty option names.
+    ///
+    /// # Errors
+    /// Returns `InvalidQuestion` for blank instructions, fewer than two options,
+    /// or an empty option name. The ordered map supplies unique names.
     pub fn new(
         text: impl Into<String>,
         options: IndexMap<String, Option<String>>,
@@ -102,6 +110,10 @@ pub struct Score {
 }
 impl Score {
     /// Validate instructions and at least two unique nonempty levels.
+    ///
+    /// # Errors
+    /// Returns `InvalidQuestion` for blank instructions, fewer than two levels,
+    /// or empty or duplicate level descriptions.
     pub fn new(text: impl Into<String>, levels: Vec<String>) -> Result<Self, Error> {
         labels(levels.iter().map(String::as_str))?;
         Ok(Self {
@@ -124,6 +136,10 @@ pub struct BoxQuestion {
 }
 impl BoxQuestion {
     /// Construct a localization question.
+    ///
+    /// # Errors
+    /// Returns `InvalidQuestion` when instructions are empty or contain only
+    /// reference-defined whitespace.
     pub fn new(text: impl Into<String>) -> Result<Self, Error> {
         Ok(Self {
             instructions: instructions(text.into())?,
@@ -138,6 +154,9 @@ macro_rules! common { ($($ty:ty),*) => {$(
         /// Minimum confidence required for a decision.
         pub fn min_confidence(&self)->f64 { self.min_confidence }
         /// Set a finite confidence threshold in [0, 1].
+        ///
+        /// # Errors
+        /// Returns `InvalidQuestion` if the threshold is nonfinite or outside `[0, 1]`.
         pub fn with_min_confidence(mut self, value:f64)->Result<Self,Error> { self.min_confidence=confidence(value)?; Ok(self) }
     }
 )*}; }
@@ -216,6 +235,10 @@ pub struct Region {
 }
 impl Region {
     /// Validate finite edges in [0, 1], with top <= bottom and left <= right.
+    ///
+    /// # Errors
+    /// Returns `InvalidArgument` if an edge is nonfinite or outside `[0, 1]`,
+    /// if top exceeds bottom, or if left exceeds right. Zero-area regions are valid.
     pub fn new(top: f64, bottom: f64, left: f64, right: f64) -> Result<Self, Error> {
         if [top, bottom, left, right]
             .iter()
@@ -267,6 +290,10 @@ impl Region {
         )
     }
     /// Grow each side by a fraction of the region size, clipping to the image.
+    ///
+    /// # Errors
+    /// Returns `InvalidArgument` for nonfinite padding or resulting invalid
+    /// edges, such as negative padding that shrinks past the opposite edge.
     pub fn padded(&self, fraction: f64) -> Result<Self, Error> {
         if !fraction.is_finite() {
             return Err(Error::new(
@@ -284,6 +311,18 @@ impl Region {
         )
     }
     /// Pixel edges (left, top, right, bottom), using ties-to-even rounding.
+    ///
+    /// ```
+    /// use semantic_operators::Region;
+    /// # fn main() -> semantic_operators::Result<()> {
+    /// let region = Region::new(0.2, 0.6, 0.1, 0.5)?;
+    /// assert_eq!(region.pixels(1000, 500)?, (100, 100, 500, 300));
+    /// # Ok(())
+    /// # }
+    /// ```
+    ///
+    /// # Errors
+    /// Returns `InvalidArgument` if either pixel dimension is zero.
     pub fn pixels(&self, width: u32, height: u32) -> Result<(u32, u32, u32, u32), Error> {
         if width == 0 || height == 0 {
             return Err(Error::new(

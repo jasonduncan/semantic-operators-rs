@@ -186,3 +186,13 @@ Remote annotated tag v0.1.0-alpha.1 dereferences to that same SHA. Registry pack
 checksum, docs.rs optional APIs and fresh default/optional registry consumers are
 verified. Publication is complete; portfolio remains active. Closing changes only
 record documentation/status and do not alter the immutable published package.
+
+## Rust best-practices review — 2026-10-17
+
+The retried skill file was populated. Applied its Rust guidance with parallel source
+and documentation review. Found a dropped-future trace/success bug and added a
+minimal fix using the existing Runtime error, avoiding public enum changes. Added
+error contracts and three offline examples, lints, advisory CI, Dependabot and a
+PR checklist. Kept independent consumer locks and avoided speculative optimization
+or error-library changes. The Unicode diagnostic-only deviation is explicit.
+This is unreleased maintenance; the alpha publication/tag remain unchanged.

@@ -32,6 +32,10 @@ impl fmt::Debug for Config {
 }
 impl Config {
     /// Explicit credentials and model; default 30-second timeout and 4 MiB response limit.
+    ///
+    /// # Errors
+    /// Returns `InvalidArgument` for blank credentials/model or control characters
+    /// in the API key. Credentials are not included in diagnostics.
     pub fn new(api_key: impl Into<String>, model: impl Into<String>) -> Result<Self> {
         let api_key = api_key.into();
         let model = model.into();
@@ -51,6 +55,10 @@ impl Config {
         })
     }
     /// Set the complete HTTP(S) endpoint. Userinfo, query strings, and fragments are rejected.
+    ///
+    /// # Errors
+    /// Returns `InvalidArgument` for an invalid/non-HTTP(S) URL, a missing host,
+    /// or userinfo, query, or fragment components.
     pub fn with_endpoint(mut self, endpoint: impl Into<String>) -> Result<Self> {
         let endpoint = endpoint.into();
         let url =
@@ -68,6 +76,9 @@ impl Config {
         Ok(self)
     }
     /// Bound the whole transport operation, including a custom transport.
+    ///
+    /// # Errors
+    /// Returns `InvalidArgument` for a zero timeout.
     pub fn with_timeout(mut self, timeout: Duration) -> Result<Self> {
         if timeout.is_zero() {
             return Err(argument("timeout must be positive"));
@@ -76,6 +87,9 @@ impl Config {
         Ok(self)
     }
     /// Bound response allocation and JSON parsing.
+    ///
+    /// # Errors
+    /// Returns `InvalidArgument` for a zero response-byte limit.
     pub fn with_max_response_bytes(mut self, bytes: usize) -> Result<Self> {
         if bytes == 0 {
             return Err(argument("response byte limit must be positive"));
@@ -153,6 +167,11 @@ pub type TransportFuture<'a> = Pin<Box<dyn Future<Output = Result<HttpResponse>>
 /// Caller-owned transport. Never log keys/content or start I/O until polled.
 pub trait Transport: Send + Sync {
     /// Perform one attempt with no detached tasks or retries.
+    ///
+    /// # Errors
+    /// The returned future reports request-encoding, transport, timeout, or
+    /// response-size failures. Implementations must not replace failures with
+    /// synthetic successful responses or retry implicitly.
     fn send(&self, request: HttpRequest) -> TransportFuture<'_>;
 }
 /// Reusable rustls transport with redirects disabled.
@@ -162,6 +181,9 @@ pub struct ReqwestTransport {
 }
 impl ReqwestTransport {
     /// Construct an HTTP client without reading provider credentials from the environment.
+    ///
+    /// # Errors
+    /// Returns `Provider` if the reusable HTTP client cannot be constructed.
     pub fn new() -> Result<Self> {
         Ok(Self {
             client: reqwest::Client::builder()
@@ -320,6 +342,10 @@ impl fmt::Debug for TypeSafe {
 }
 impl TypeSafe {
     /// Build the default reusable transport.
+    ///
+    /// # Errors
+    /// Propagates [`ReqwestTransport::new`] errors when HTTP client construction
+    /// fails. No semantic request is sent during construction.
     pub fn new(config: Config) -> Result<Self> {
         Ok(Self::with_transport(
             config,

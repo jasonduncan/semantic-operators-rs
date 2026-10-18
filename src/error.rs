@@ -21,7 +21,7 @@ pub enum ErrorKind {
     Timeout,
     /// Unsupported capability.
     Unsupported,
-    /// Runtime misuse.
+    /// Runtime misuse or interrupted local execution.
     Runtime,
 }
 /// A classified error with an optional field path.

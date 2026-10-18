@@ -155,6 +155,10 @@ impl Report {
 }
 /// Reduce a normalized answer to a label. Score rounding is half up.
 /// Box is unsupported even when its answer is undecided.
+///
+/// # Errors
+/// Returns `InvalidArgument` for Box questions, or a normalization error if
+/// the answer is incompatible with the question.
 pub fn decide(question: &Question, answer: &Answer) -> Result<Option<Decision>> {
     if matches!(question, Question::Box(_)) {
         return Err(invalid("Box questions cannot be benchmarked"));
@@ -211,6 +215,12 @@ fn check_latencies(count: usize, latencies: &[f64], total: f64) -> Result<()> {
 }
 /// Score already-collected answers. Label subsets and empty case lists are valid.
 /// Answer and latency lengths must exactly match cases, and answer keys must match questions.
+///
+/// # Errors
+/// Returns `InvalidArgument` for unsupported Box questions, invalid labels,
+/// mismatched case/answer/latency lengths, missing or extra answer names, or
+/// nonfinite/negative timing values. Incompatible answers return their
+/// normalization error.
 pub fn score(
     questions: &Questions,
     cases: &[Case],
@@ -293,6 +303,11 @@ pub fn score(
     })
 }
 /// Apply a confidence threshold without provider calls or restoring old abstentions.
+///
+/// # Errors
+/// Returns `InvalidArgument` for a nonfinite threshold or one outside `[0, 1]`.
+/// Also propagates [`score`] errors if the supplied questions or cases do not
+/// match the retained report evidence.
 pub fn at_min_confidence(
     report: &Report,
     questions: &Questions,
@@ -325,6 +340,10 @@ pub fn at_min_confidence(
 }
 /// Compare decisions across aligned nonempty reports, including identical abstentions.
 /// One report is perfectly stable; stability does not measure correctness.
+///
+/// # Errors
+/// Returns `InvalidArgument` when no reports or cases are supplied, or the
+/// reports differ in case count or question names.
 pub fn stability(reports: &[Report]) -> Result<IndexMap<String, f64>> {
     let first = reports
         .first()
@@ -360,6 +379,10 @@ pub fn stability(reports: &[Report]) -> Result<IndexMap<String, f64>> {
 }
 /// Discounted cumulative gain at `k`; missing IDs have zero grade.
 /// Returns None when ideal gain is zero. Grades and intermediate gains must be finite.
+///
+/// # Errors
+/// Returns `InvalidArgument` if a relevance grade, cumulative gain, or final
+/// ratio cannot be represented as a finite number.
 pub fn ndcg(order: &[String], grades: &IndexMap<String, u32>, k: usize) -> Result<Option<f64>> {
     let gains: IndexMap<String, f64> = grades
         .iter()
@@ -395,6 +418,9 @@ pub fn ndcg(order: &[String], grades: &IndexMap<String, u32>, k: usize) -> Resul
     Ok(Some(result))
 }
 /// NDCG with the Python default cutoff of ten.
+///
+/// # Errors
+/// Propagates [`ndcg`] errors when gains or the final ratio are not finite.
 pub fn ndcg_default(order: &[String], grades: &IndexMap<String, u32>) -> Result<Option<f64>> {
     ndcg(order, grades, 10)
 }
@@ -421,6 +447,12 @@ impl Default for RunOptions {
 }
 /// Invoke a provider for all cases, aborting on failure and dropping pending work.
 /// Validate labels and request assets before any warm-up or measured call.
+///
+/// # Errors
+/// Returns label/request validation errors before dispatch, and propagates
+/// any provider, timeout, or malformed-response error during warm-up or
+/// measurement. On failure, pending local futures are dropped; no partial
+/// report or synthetic abstention is returned.
 pub async fn run(
     provider: &dyn Provider,
     questions: &Questions,
@@ -531,6 +563,11 @@ impl<T: PartialEq + Clone> FlowReport<T> {
     }
 }
 /// Score existing flow outcomes. Inconsistent completion/value states and failed traces are rejected.
+///
+/// # Errors
+/// Returns `InvalidArgument` for mismatched outcome/label/latency lengths,
+/// invalid timing values, inconsistent completion/value states, or a trace
+/// containing a failed call.
 pub fn score_flows<T: PartialEq + Clone>(
     results: Vec<FlowOutcome<T>>,
     expected: Vec<T>,
@@ -561,6 +598,11 @@ fn validate_flow_outcome<T>(result: &FlowOutcome<T>) -> Result<()> {
 }
 /// Run caller-supplied flow futures sequentially, retaining traces and aborting on failure.
 /// There is no automatic flow warm-up or retry. Inputs are borrowed by each future.
+///
+/// # Errors
+/// Propagates a callback [`FlowFailure`] immediately. An inconsistent outcome
+/// or failed trace also becomes a failure, retaining that outcome's trace and
+/// stopping before the next case.
 pub async fn run_flow<'a, I, T, F, Fut>(
     cases: &'a [(I, T)],
     mut flow: F,

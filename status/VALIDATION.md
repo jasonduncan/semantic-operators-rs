@@ -283,3 +283,32 @@ Remote annotated tag v0.1.0-alpha.1 dereferences to that same SHA. Registry pack
 checksum, docs.rs optional APIs and fresh default/optional registry consumers are
 verified. Publication is complete; portfolio remains active. Closing changes only
 record documentation/status and do not alter the immutable published package.
+
+## Rust best-practices review — 2026-10-17
+
+Unreleased changes based on ac5323c1ffab3d8d485d2f1077f6ba84d3a446ed; published
+alpha.1 unchanged. [Review](../docs/reviews/2026-10-17-rust-best-practices.md).
+
+- `cargo test --locked --all-targets --all-features`: 88 Rust tests passed,
+  including two new flow cancellation regressions.
+- Four doctests passed with default/all features on stable, and all features on
+  Rust 1.85. Strict all-target/all-feature Clippy passed on stable; library Clippy
+  passed on 1.85. `cargo fmt --all -- --check` and warnings-denied rustdoc passed.
+- `cargo +nightly miri test --locked --no-default-features --test core_parity
+  --test wire_contract`: all 12 tests passed (7 core, 5 wire); nightly 1.101.0
+  5d8fec066. This bounded interpreter run excludes networking/runtime integration.
+- cargo-audit 0.22.2: root and standalone consumer locks each contain 137 dependency
+  records; zero known vulnerabilities, warnings or ignored advisories, including
+  strict `--deny warnings` runs. RustSec database has 1338 advisories at
+  999ec89d5d3f10f20be14750ec8c2d8b44e0ac9b. Current-known-advisory evidence only.
+- Package archive/default dependency isolation/both extracted consumers passed.
+  Documentation links, fixture provenance and workflow YAML parsing passed.
+- An initial default-feature run stalled in the new regression despite passing
+  all-feature tests. A one-poll assertion made the failure immediate; clearing only
+  this crate's build artifacts and rebuilding made it pass. This supports stale
+  local build output, not a feature-specific source defect. Both full suites,
+  all-target strict Clippy and rustdoc passed after cleanup. Hosted results follow.
+  No live provider calls or publication.
+
+Raw outputs remain ignored under target/best-practices. Miri toolchain installed
+without changing the default toolchain. Source performance is not benchmarked.

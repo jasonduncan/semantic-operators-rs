@@ -4,6 +4,13 @@
 //! `typesafe`, `images`, `tokio`, or `blocking` for optional integrations.
 
 #![doc = include_str!("../CRATE.md")]
+#![warn(
+    clippy::missing_errors_doc,
+    clippy::missing_panics_doc,
+    clippy::dbg_macro,
+    clippy::print_stdout,
+    clippy::print_stderr
+)]
 
 pub mod answer;
 pub mod bench;

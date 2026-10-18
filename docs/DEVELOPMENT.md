@@ -37,6 +37,35 @@ Run `cargo run --example hello`, `triage`, `filter`, or `rerank`. The image exam
 is `cargo run --example images --features images`. Every example uses a clearly
 labeled synthetic provider. They demonstrate library behavior, not inference.
 
+## Dependency and code hygiene
+
+```sh
+cargo install cargo-audit --version 0.22.2 --locked
+cargo audit --file Cargo.lock --deny warnings
+cargo audit --file integrations/triage-app/Cargo.lock --deny warnings
+```
+
+The dependency-audit workflow runs on lockfile/manifest changes and weekly against
+the current RustSec database. A clean scan means no matching known advisories at
+that database revision, not a complete security assessment. Resolve findings or
+record a narrowly justified exception; do not add blanket ignores. Both manifests
+and GitHub Actions receive weekly Dependabot update PRs; no automatic merging.
+
+Library lints enforce error/panic documentation and reject accidental stdout,
+stderr or dbg output through CI's warnings-as-errors check. Keep the structured
+Error type and explicit Result/Option behavior; adding anyhow/thiserror solely for
+style is unnecessary. Performance changes need measurements and a stated workload.
+
+For an interpreter check of pure normalization/wire code:
+
+```sh
+rustup toolchain install nightly --profile minimal --component miri
+cargo +nightly miri test --locked --no-default-features --test core_parity --test wire_contract
+```
+
+This bounded Miri suite excludes networking and runtime integrations. Native CI
+and cancellation tests cover those separately; it is not a whole-program safety proof.
+
 ## Reference fixtures
 
 Four exporters live under tools/: `export_python_fixtures.py`,

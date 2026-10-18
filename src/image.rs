@@ -99,6 +99,11 @@ impl fmt::Display for Image {
 }
 impl Image {
     /// Inspect owned bytes without decoding or modifying pixels.
+    ///
+    /// # Errors
+    /// Returns `InvalidImage` for unsupported signatures, malformed inspected
+    /// headers, animation, file/dimension/area limit violations, or exhausted
+    /// reference identities. Successful inspection does not prove pixel decodability.
     pub fn from_bytes(data: impl Into<Arc<[u8]>>) -> Result<Self> {
         let data = data.into();
         if data.len() > MAX_FILE_BYTES {
@@ -139,6 +144,10 @@ impl Image {
         })
     }
     /// Read a caller-selected local path, with a bounded read and redacted errors.
+    ///
+    /// # Errors
+    /// Returns `InvalidImage` if the file cannot be opened/read or its bytes
+    /// fail [`Image::from_bytes`] validation. Errors omit the supplied path.
     pub fn from_path(path: impl AsRef<Path>) -> Result<Self> {
         let file = std::fs::File::open(path).map_err(|_| invalid("cannot open image file"))?;
         let mut data = Vec::new();
@@ -148,6 +157,10 @@ impl Image {
         Self::from_bytes(data)
     }
     /// Decode standard padded base64, ignoring whitespace; data URLs are rejected.
+    ///
+    /// # Errors
+    /// Returns `InvalidImage` for a data-URL prefix, invalid base64, excessive
+    /// encoded/decoded size, or any [`Image::from_bytes`] validation failure.
     pub fn from_base64(text: &str) -> Result<Self> {
         if text.starts_with("data:") {
             return Err(invalid("base64 image must not have a data: URL prefix"));
@@ -247,6 +260,10 @@ impl Assets {
         self.images.is_empty()
     }
     /// Validate unknown references and repeated-use byte limits before I/O.
+    ///
+    /// # Errors
+    /// Returns the same `InvalidImage` failures as [`Assets::references`] for
+    /// unknown handles, size/count overflow, or excessive repeated image use.
     pub fn validate(&self, state: &State, questions: &IndexMap<String, Question>) -> Result<()> {
         self.references(state, questions).map(|_| ())
     }
@@ -254,6 +271,10 @@ impl Assets {
     ///
     /// Object keys are scanned for Python 0.12 parity. The current hosted service
     /// does not replace references inside keys; a key is not an image placement.
+    ///
+    /// # Errors
+    /// Returns `InvalidImage` for an unattached UUID-shaped image reference,
+    /// reference-count/size overflow, or more than 32 MiB counting every use.
     pub fn references<'a>(
         &'a self,
         state: &State,
@@ -314,6 +335,10 @@ impl Assets {
     ///
     /// Current service sides start at 280 px and object keys are never image
     /// placements. Processed image size and server decoding cannot be proved here.
+    ///
+    /// # Errors
+    /// Propagates baseline reference/size errors and returns `InvalidImage`
+    /// for referenced images with a side below 280 px or references in object keys.
     pub fn validate_service_request(
         &self,
         state: &State,
@@ -418,6 +443,10 @@ fn is_reference(text: &str) -> bool {
 /// Timestamps are preserved, not sorted. Finite values are required by JSON;
 /// negative and nonmonotonic values remain allowed like the Python reference.
 /// Validation occurs before mutating the asset registry.
+///
+/// # Errors
+/// Returns `InvalidImage` for an empty image sequence, mismatched timestamp
+/// count, or nonfinite timestamps. These checks occur before assets are attached.
 pub fn frames(
     assets: &mut Assets,
     images: impl IntoIterator<Item = Image>,

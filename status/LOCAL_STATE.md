@@ -54,3 +54,10 @@ blocking/TimeLimited pages returned 200. Existing Cargo credentials were used th
 Cargo; no credential value was printed or added to artifacts. Release CI 39081286724
 is completing; exact final result will be appended. No hosted inference or model
 quality acceptance occurred. The immutable release is public and installable.
+
+## Rust review tooling — 2026-10-17
+
+Raw review/audit/test logs reside in ignored `target/best-practices/`. Installed
+nightly-aarch64-apple-darwin with Miri/rust-src (rustc 1.101.0-nightly,
+5d8fec066 2026-10-16); default toolchain unchanged. cargo-audit 0.22.2 scans both
+committed locks without advisory ignores. No hosted inference or new crate upload.

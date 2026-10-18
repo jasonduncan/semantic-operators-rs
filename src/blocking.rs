@@ -7,6 +7,9 @@ pub struct Blocking<P: Provider> {
 }
 impl<P: Provider> Blocking<P> {
     /// Build a private runtime with timers and I/O enabled.
+    ///
+    /// # Errors
+    /// Returns `Runtime` if the owned Tokio runtime cannot be created.
     pub fn new(provider: P) -> Result<Self> {
         let runtime = tokio::runtime::Builder::new_multi_thread()
             .enable_all()
@@ -18,6 +21,11 @@ impl<P: Provider> Blocking<P> {
         })
     }
     /// Run one checked request. Reject nesting inside an active Tokio runtime.
+    ///
+    /// # Errors
+    /// Returns `Runtime` inside an active Tokio runtime or if this facade has
+    /// shut down. Otherwise propagates request, provider, and response-validation
+    /// errors from the checked async call.
     pub fn ask(&self, request: &Request) -> Result<Answers> {
         if tokio::runtime::Handle::try_current().is_ok() {
             return Err(Error::new(

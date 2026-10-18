@@ -21,6 +21,10 @@ impl State {
 }
 impl TryFrom<Value> for State {
     type Error = Error;
+    /// Preserve text, objects, and arrays as provider state.
+    ///
+    /// # Errors
+    /// Returns `InvalidState` for a top-level null, Boolean, or number.
     fn try_from(value: Value) -> Result<Self, Error> {
         match value {
             Value::String(_) | Value::Object(_) | Value::Array(_) => Ok(Self(value)),

@@ -9,6 +9,10 @@ pub struct Cascade {
 }
 impl Cascade {
     /// Create a cascade of at least two providers with a finite `[0,1]` threshold.
+    ///
+    /// # Errors
+    /// Returns `InvalidArgument` if fewer than two providers are supplied or
+    /// `escalate_below` is nonfinite or outside `[0, 1]`.
     pub fn new(providers: Vec<Arc<dyn Provider>>, escalate_below: f64) -> Result<Self> {
         if providers.len() < 2
             || !escalate_below.is_finite()
@@ -57,6 +61,10 @@ pub struct TimeLimited<P> {
 #[cfg(feature = "tokio")]
 impl<P: Provider> TimeLimited<P> {
     /// Reject zero durations; timer starts when the future is polled.
+    ///
+    /// # Errors
+    /// Returns `InvalidArgument` for a zero duration. Runtime/timer availability
+    /// is checked when a call is polled, not during construction.
     pub fn new(provider: P, duration: std::time::Duration) -> Result<Self> {
         if duration.is_zero() {
             return Err(Error::new(

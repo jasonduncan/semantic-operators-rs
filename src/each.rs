@@ -44,6 +44,10 @@ pub struct Item {
 }
 impl Item {
     /// Validate an identifier and retain a previously validated state.
+    ///
+    /// # Errors
+    /// Returns `InvalidArgument` if `id` is empty. Batch functions separately
+    /// check identifiers for uniqueness.
     pub fn new(id: impl Into<String>, state: State) -> Result<Self> {
         let id = id.into();
         validate_ids([id.as_str()])?;
@@ -106,6 +110,12 @@ pub(crate) fn validate_ids<'a>(ids: impl IntoIterator<Item = &'a str>) -> Result
 /// errors remain per-item results. Other errors abort and drop pending futures;
 /// dropping a future does not establish remote cancellation. Empty inputs do no I/O.
 /// This primitive sends its states unchanged; recipes apply `context` beforehand.
+///
+/// # Errors
+/// Propagates local request/image validation errors and provider errors
+/// other than `Provider`, `Timeout`, or `InvalidResponse`. Those three kinds
+/// are retained as per-item [`ItemResult::Error`] values instead of failing
+/// the batch. An outer error drops pending local futures.
 pub async fn ask_each(
     provider: &dyn Provider,
     question: &Question,

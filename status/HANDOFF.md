@@ -1,22 +1,19 @@
 # Development handoff
 
-2026-10-17 · alpha 0.1.0-alpha.1 published; publication and verification complete.
+2026-10-17 · Rust best-practices review; changes unreleased.
 
-1. Inspect Git and read CURRENT.md/VALIDATION.md. Keep the repository public.
-2. The published version is **semantic-operators 0.1.0-alpha.1**. Never re-upload it.
-   Tag v0.1.0-alpha.1 and package VCS metadata identify
-   30b827deebc5f25e4b31a9a9843437488f79458e. Registry/download/local checksums match;
-   see [RELEASE](../docs/RELEASE.md). docs.rs optional modules are verified.
-3. Publication used existing Cargo credentials without exposing values. Fresh
-   crates.io consumers passed with default and optional features. Logs/receipts
-   remain ignored under target/release-check. [Release CI 39081286724](https://github.com/jasonduncan/semantic-operators-rs/actions/runs/39081286724)
-   passed all eight jobs at the published revision. No release work remains.
-4. Future development starts from a selected change or issue and uses a new version
-   for any further registry publication. Preserve the existing release tag.
-5. Live-provider evaluation remains separate: exact model and call ceiling are
-   still unset for the 12-ticket packet. Publication does not authorize those calls.
+1. Inspect Git, CURRENT.md, VALIDATION.md and the
+   [review](../docs/reviews/2026-10-17-rust-best-practices.md).
+2. Finish hosted CI before closing this phase. Final default/all-feature regression
+   suites, strict lints, rustdoc and package checks passed locally.
+3. Preserve published 0.1.0-alpha.1 and tag v0.1.0-alpha.1 at
+   30b827deebc5f25e4b31a9a9843437488f79458e. No second publication is authorized by
+   this review. Select a new version before a later release.
+4. Retained low-priority work: exact Python repr formatting for Unicode separator/
+   format characters in duplicate-name diagnostics. Semantics are unaffected.
+5. Keep dependency updates reviewed; neither audit success nor publication qualifies
+   model output. The 12-ticket live packet still lacks an exact model/call ceiling.
 
-No service remains running. The uploaded release only changed release wording from
-the verified candidate; Rust source and dependency declarations stayed unchanged.
-Closing repository documentation records outcomes without altering the published
-archive. Update status/validation and the active-project pointer after future work.
+No application service remains running. Verification logs are ignored under
+`target/best-practices/`. Update status, register/render and check the clean/pushed
+handoff after the final CI receipt.

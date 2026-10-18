@@ -99,6 +99,12 @@ impl Filtered {
 /// With a non-null context, each state becomes `{"context": ..., "item": ...}`.
 /// Duplicate IDs fail before I/O. Provider failures affect only their own items;
 /// invalid configuration and unsupported capabilities abort the batch.
+///
+/// # Errors
+/// Returns `InvalidArgument` for duplicate item identifiers and propagates
+/// local validation or unsupported-capability errors from [`ask_each`].
+/// Provider, timeout, and malformed-response failures become `Failed`
+/// verdicts for their individual items.
 pub async fn filter_items(
     provider: &dyn crate::Provider,
     question: &Boolean,

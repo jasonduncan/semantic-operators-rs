@@ -13,6 +13,10 @@ pub struct Candidate {
 }
 impl Candidate {
     /// Validate a local identifier; documents may be any JSON value.
+    ///
+    /// # Errors
+    /// Returns `InvalidArgument` if `id` is empty. [`rerank`] separately checks
+    /// identifiers for uniqueness.
     pub fn new(id: impl Into<String>, document: Value) -> Result<Self> {
         let id = id.into();
         validate_ids([id.as_str()])?;
@@ -97,6 +101,11 @@ impl Ranking {
     ///
     /// `allow_partial` permits unscored candidates; it never permits mixed models.
     /// Unknown model metadata stays unknown rather than claiming one common model.
+    ///
+    /// # Errors
+    /// Returns `InvalidArgument` if candidates are unscored and `allow_partial`
+    /// is false, or if answers report more than one nonempty model identity.
+    /// The mixed-model check applies even when partial results are allowed.
     pub fn top(&self, k: usize, allow_partial: bool) -> Result<&[Ranked]> {
         if !self.complete() && !allow_partial {
             return Err(invalid(
@@ -114,6 +123,10 @@ impl Ranking {
     ///
     /// Uses normalized `sum(weight * probability) / sum(probability)` and retains
     /// the original answers and unscored entries. No provider call occurs.
+    ///
+    /// # Errors
+    /// Returns `InvalidArgument` if weights do not match the rubric length, are
+    /// nonfinite or not strictly increasing, or weighted arithmetic is nonfinite.
     pub fn reweighted(&self, weights: &[f64]) -> Result<Self> {
         if weights.len() != self.question.levels().len()
             || weights.iter().any(|w| !w.is_finite())
@@ -157,6 +170,12 @@ impl Ranking {
 /// Each request contains `query`, `document`, and optional non-null `context`.
 /// Local IDs and retrieval positions are never added. Failures and abstentions
 /// remain unscored, while exact score ties preserve retrieval order.
+///
+/// # Errors
+/// Returns `InvalidArgument` for a blank query or duplicate candidate IDs,
+/// and propagates local validation or unsupported-capability errors. Provider,
+/// timeout, and malformed-response failures are retained in `unscored` rather
+/// than converted into scores.
 pub async fn rerank(
     provider: &dyn Provider,
     question: &Score,
@@ -210,6 +229,10 @@ pub async fn rerank(
     })
 }
 /// Re-rank existing answers with no additional calls.
+///
+/// # Errors
+/// Propagates the weight-validation and arithmetic errors from
+/// [`Ranking::reweighted`].
 pub fn reweighted(ranking: &Ranking, weights: &[f64]) -> Result<Ranking> {
     ranking.reweighted(weights)
 }

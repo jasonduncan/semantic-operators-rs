@@ -26,7 +26,8 @@
   uncertainty; invalid threshold; no escalation after errors; nested timeout order.
   Use a deterministic clock/runtime, not flaky wall-clock sleeps.
 - Flows: multi-question single call, dependent second call, unused undecided answer,
-  require stops, handled uncertainty, latched error, trace on every exit.
+  require stops, handled uncertainty, latched error, trace on every exit, and
+  cancellation after polling without loss of attempted-request evidence.
 - Recipes: empty inputs/no calls; duplicate IDs; capacity=1/8; peak concurrency;
   arbitrary completion order; input-order filter outcomes; stable rerank ties;
   errors unscored; normalization of reweighted expectations; invalid weights.

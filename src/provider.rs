@@ -27,6 +27,11 @@ impl std::fmt::Debug for Request {
 }
 impl Request {
     /// Construct a nonempty request, rejecting empty names before any provider call.
+    ///
+    /// # Errors
+    /// Returns `InvalidArgument` if questions are empty or any question name is
+    /// empty. Image references are checked later by [`Request::validate`], so
+    /// assets may be attached after construction.
     pub fn new(state: State, questions: Questions) -> Result<Self> {
         if questions.is_empty() || questions.keys().any(String::is_empty) {
             return Err(Error::new(
@@ -50,6 +55,10 @@ impl Request {
         &self.questions
     }
     /// Replace questions while preserving state and attached assets.
+    ///
+    /// # Errors
+    /// Returns `InvalidArgument` if the replacement map is empty or contains
+    /// an empty question name.
     pub fn with_questions(&self, questions: Questions) -> Result<Self> {
         let request = Self::new(self.state.clone(), questions)?;
         #[cfg(feature = "images")]
@@ -68,6 +77,11 @@ impl Request {
         &self.assets
     }
     /// Validate assets before calling a provider.
+    ///
+    /// # Errors
+    /// With `images` enabled, returns `InvalidImage` for unknown image references
+    /// or excessive repeated image use. With that feature disabled, this check
+    /// always succeeds.
     pub fn validate(&self) -> Result<()> {
         #[cfg(feature = "images")]
         self.assets.validate(&self.state, &self.questions)?;
@@ -79,6 +93,11 @@ impl Request {
 /// Consumers should use [`ask`] to check response coverage and normalization.
 pub trait Provider: Send + Sync {
     /// Answer the state and all its questions in one semantic invocation.
+    ///
+    /// # Errors
+    /// The returned future may fail with provider, timeout, unsupported-capability,
+    /// or input/response-validation errors. Implementations must preserve errors
+    /// as errors; uncertainty belongs in a successful answer.
     fn ask<'a>(&'a self, request: &'a Request) -> ProviderFuture<'a>;
 }
 impl<P: Provider + ?Sized> Provider for Arc<P> {
@@ -88,11 +107,19 @@ impl<P: Provider + ?Sized> Provider for Arc<P> {
 }
 
 /// Call a provider and verify input assets, response names, and answer semantics.
+///
+/// # Errors
+/// Propagates request validation and provider errors. Returns `InvalidResponse`
+/// for missing/extra answers or candidates incompatible with their questions.
 pub async fn ask<P: Provider + ?Sized>(provider: &P, request: &Request) -> Result<Answers> {
     request.validate()?;
     validate_answers(request, provider.ask(request).await?)
 }
 /// Check response coverage and requested thresholds; return answers in request order.
+///
+/// # Errors
+/// Returns `InvalidResponse` if answer names do not exactly match the request
+/// or an answer fails normalization against its question.
 pub fn validate_answers(request: &Request, answers: Answers) -> Result<Answers> {
     if answers.len() != request.questions.len()
         || answers

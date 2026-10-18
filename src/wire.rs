@@ -33,6 +33,11 @@ fn no_unknown(object: &Map<String, Value>, allowed: &[&str], path: &str) -> Resu
     Ok(())
 }
 /// Decode a parsed JSON request using the frozen schema-1 rules.
+///
+/// # Errors
+/// Returns `InvalidRequest` with a field path for unsupported schema versions,
+/// unknown fields, invalid state/question definitions, empty question lists,
+/// or duplicate names. Box is not part of schema 1.
 pub fn decode_request(request: Value) -> Result<WireRequest, Error> {
     let object = request
         .as_object()
@@ -269,10 +274,15 @@ fn significant(value: f64) -> Result<Value, Error> {
         .map(Value::Number)
         .ok_or_else(|| Error::new(ErrorKind::InvalidResponse, "wire numbers must be finite"))
 }
-/// Encode answers without raw data. Schema 1 projects only the first answer's call.
+/// Encode normalized answers, excluding the optional [`Answer::raw`] payload.
+/// Schema 1 projects only the first answer's call.
 /// The answer set must exactly cover the decoded request. This is a projection
 /// of already-normalized answers; call the checked provider boundary first to
 /// apply the request thresholds. Existing abstentions are preserved.
+///
+/// # Errors
+/// Returns `InvalidResponse` for missing/extra or incompatible answers,
+/// `Unsupported` for Box values/questions, or a numeric conversion error.
 pub fn encode_response(
     request: &WireRequest,
     answers: &IndexMap<String, Answer>,
